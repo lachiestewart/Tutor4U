@@ -1,12 +1,13 @@
 from django.db.models import *
 from django.core.validators import *
 
+#directory within mediafiles to store profile photos
 MEDIA_DIR = "uploads/"
 
 #regex for field validation
 numeric_regex = r"[0-9]"
 alpha_regex = r"[a-zA-Z]"
-alphanumeric_regex = "[" + numeric_regex + "|" + alpha_regex + "]"
+alphanumeric_regex = "(" + numeric_regex + "|" + alpha_regex + ")"
 space_char_regex = "[\s-]"
 
 #lists of strings for choice fields
@@ -14,43 +15,40 @@ GENDER_LIST = ["Male", "Female", "Non-Binary", "Other"]
 SUBJECT_LIST = ["Mathematics", "Physics", "Chemistry", "Biology", "English"]
 LEVEL_LIST = ["NCEA 1", "NCEA 2", "NCEA 3", "NCEA Scholarship", "100 Level", "200 Level", "300 Level", "400 Level", "Postgraduate"]
 
-
-def choiceMapper(choice_list: list):
-    """Converts list of readable choices into map of (db value, readable value)"""
-    return [(choice.upper().replace("-", "_").replace(" ", "_"), choice) for choice in choice_list]
-
+#Converts list of readable choices into map of (db value, readable value)
+choiceMapper = lambda choice_list: [(choice.upper().replace("-", "_").replace(" ", "_"), choice) for choice in choice_list]
 
 #choice field maps
 subject_choices = choiceMapper(SUBJECT_LIST)
 level_choices = choiceMapper(LEVEL_LIST)
+gender_choices = choiceMapper(GENDER_LIST)
 
 
 class User(Model):
     """Extends the Model class"""
-    #choice field maps
-    gender_choices = choiceMapper(GENDER_LIST)
 
     #User specific regex
     phone_number_regex = "^" + numeric_regex + r"{9,10}$"
-    name_regex = "^" + alpha_regex + "[" + alpha_regex + space_char_regex + "]" + "+"
 
     #validators
     phone_number_validator = RegexValidator(phone_number_regex)
-    name_validator = RegexValidator(name_regex)
     email_validator = EmailValidator()
 
     #Fields
     username = CharField(max_length=50)
     password = CharField(max_length=50)
-    first_name = CharField(max_length=50, validators=[name_validator])
-    last_name = CharField(max_length=50, validators=[name_validator])
+    first_name = CharField(max_length=50)
+    last_name = CharField(max_length=50)
     phone_number = CharField(max_length=15, validators=[phone_number_validator])
     email = CharField(max_length=64, validators=[email_validator])
     gender = CharField(max_length=10, choices=gender_choices)
-    profile_photo = ImageField(upload_to=MEDIA_DIR)
+    profile_photo = ImageField(upload_to=MEDIA_DIR, validators=[validate_image_file_extension])
 
     class Meta:
         abstract = True
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
 
 
 class Tutor(User):
@@ -94,9 +92,6 @@ class Want(Model):
 class Lesson(Model):
     """Extends the Model class, connects Tutors, Students and the topics covered in a lesson"""
     
-    #validators
-
-
     #Fields
     tutor = ForeignKey(Tutor, on_delete=CASCADE)
     student = ForeignKey(Student, on_delete=CASCADE)
