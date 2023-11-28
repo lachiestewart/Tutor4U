@@ -137,7 +137,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # White listing the frontend to interact with the backend
 CORS_ORIGIN_WHITELIST = []
 
-frontend_url = os.getenv('FRONTEND_URL')
+FRONTEND_URL = os.getenv('FRONTEND_URL')
 
-if frontend_url and frontend_url != "frontend_address":
-    CORS_ORIGIN_WHITELIST += [frontend_url[:-1]]
+if FRONTEND_URL and FRONTEND_URL != "frontend_address":
+    CORS_ORIGIN_WHITELIST += [FRONTEND_URL[:-1]]
+    print(f"Loaded {FRONTEND_URL} from .env")
+else:
+    print("Couldn't find FRONTEND_URL in .env or FRONTEND_URL has not been changed from default value 'frontend_address'")

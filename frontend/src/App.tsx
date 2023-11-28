@@ -2,33 +2,51 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import { useEffect, useState } from "react";
-
+import { Tutor } from "./interfaces";
+import { apiRequest } from "./api";
 
 function App() {
-  const [tutors, setTutors] = useState([] as string[])
-  const heading = "Tutors";
+    const [tutors, setTutors] = useState<Tutor[]>([]);
 
-  const handleSelectedItem = (item: string) => console.log(item);
+    const [alertVisible, setAlertVisible] = useState(false);
 
-  const handleButtonClicked = () => setAlertVisible(true);
+    const [selectedTutor, setSelectedTutor] = useState<Tutor>();
 
-  const [alertVisible, setAlertVisible] = useState(false);
+    const handleSelectedItem = (item: string, index:number) => {
+      console.log(item);
+      setSelectedTutor(tutors[index]);
+    };
 
-  useEffect(() => {
-    setTutors(["tutor 1", "tutor 2", "tutor 3"])
-  }, [])
+    const handleButtonClicked = () => setAlertVisible(true);
 
-  return (
-    <div>
-      {alertVisible && <Alert onClose={() => setAlertVisible(false)}>Look Out</Alert>}
-      <Button color="primary" onClick={handleButtonClicked}>Click Me</Button>
-      <ListGroup
-        items={tutors}
-        heading={heading}
-        onSelectItem={handleSelectedItem}
-      />
-    </div>
-  );
-}
+    const noTutorSelected = () => selectedTutor && <img src={selectedTutor.profile_photo} className="img-thumbnail" alt="Tutor profile photo" width="500"/>;
+
+    const fetchTutorsData = async () => {
+      const tutor_list:Tutor[] = await apiRequest<Tutor[]>("api/tutor/");
+      console.log(tutor_list);
+      setTutors(tutor_list);
+    };
+
+    useEffect(() => {
+      fetchTutorsData();
+      if (tutors.length > 0) {
+        setSelectedTutor(tutors[0]);
+      }
+      
+    }, []);
+
+    return (
+      <div>
+        {alertVisible && <Alert onClose={() => setAlertVisible(false)}>Look Out</Alert>}
+        <Button color="primary" onClick={handleButtonClicked}>Click Me</Button>
+        <ListGroup
+          items={tutors.map((tutor:Tutor) => tutor.username)}
+          heading={"Tutors"}
+          onSelectItem={handleSelectedItem}
+        />
+        {noTutorSelected()}
+      </div>
+    );
+  }
 
 export default App;
