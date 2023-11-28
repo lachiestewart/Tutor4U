@@ -44,12 +44,12 @@ If you would like to create a database super user, after running the previous co
 
     python manage.py createsuperuser
 
-To exit the virtual environment and return to the `Tutor4U` directory run the following commands:
+To exit the virtual environment and return to the `Tutor4U` directory, run the following commands:
 
     exit
     cd ..
 
-From the Tutor4U directory run the follwoing commands to download the necessary packages for the front-end:
+From the Tutor4U directory, run the follwoing commands to download the necessary packages for the front-end:
 
     cd frontend
     npm install
@@ -70,7 +70,7 @@ Note that a local address in the format `http://localhost:####/` with the port n
 To terminate either server press:
     `Control+C`
 
-To exhange server addresses to allow each end to exhange via HTTP Requests/Responses, from the `TUTOR4U`, execute the following commands with their respective addresses:
+To exhange server addresses to allow each end to exhange via HTTP Requests/Responses, from the `TUTOR4U`, execute the following commands, with their respective addresses:
 
     echo FRONTEND_URL=frontend_address >> backend/.env
     echo VITE_BACKEND_URL=backend_address >> frontend/.env
