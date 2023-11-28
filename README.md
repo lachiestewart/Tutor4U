@@ -31,7 +31,7 @@ Follow these instructions to download, initialise and run the Tutor4U web app fo
 
     git clone https://github.com/lachiestewart/Tutor4U.git
     
-From the `TUTOR4U` directory run these commands to download the necessary packages and initialise the Django SQLite Database:
+From the `TUTOR4U` directory run the following commands to download the necessary packages and initialise the Django SQLite Database:
     
     cd backend
     pip install pipenv
@@ -49,7 +49,7 @@ To exit the virtual environment and return to the `Tutor4U` directory, run the f
     exit
     cd ..
 
-From the Tutor4U directory, run the follwoing commands to download the necessary packages for the front-end:
+From the Tutor4U directory, run the following commands to download the necessary packages for the front-end:
 
     cd frontend
     npm install
