@@ -50,6 +50,9 @@ If you would like to create a database super user, after running the previous co
 To exit the virtual environment and return to the `Tutor4U` directory, run the following commands:
 
     exit
+    
+then:
+
     cd ..
 
 From the `Tutor4U` directory, run the following commands to download the necessary packages for the front-end:
