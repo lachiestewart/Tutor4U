@@ -29,3 +29,4 @@ dist-ssr
 backend/mediafiles/*
 db.sqlite3
 **/migrations
+**/.env
