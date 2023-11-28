@@ -40,16 +40,16 @@ From the `TUTOR4U` directory run these commands to download the necessary packag
     python manage.py makemigrations tutor4u
     python manage.py migrate
 
-If you would like to create a super user for the Database after running the previous commands run the following (while still inside the virtual environment) and enter your credentials: 
+If you would like to create a database super user, after running the previous commands, run the following commands (while still inside the virtual environment) and enter your credentials: 
 
     python manage.py createsuperuser
 
-To exit the virtual environment and return to the `Tutor4U` directory run:
+To exit the virtual environment and return to the `Tutor4U` directory run the following commands:
 
     exit
     cd ..
 
-From the Tutor4U directory run these commands to download the necessary packages for the front-end:
+From the Tutor4U directory run the follwoing commands to download the necessary packages for the front-end:
 
     cd frontend
     npm install
@@ -65,9 +65,9 @@ To run the front-end, open a separate terminal instance and run the following co
     cd frontend 
     npm run dev
 
-Note that a local address in the format `http://localhost:####/` with the port number represented by `####` appears in the terminal after each command.
+Note that a local address in the format `http://localhost:####/` with the port number represented by `####` appears in the terminal after each server is run.
 
-To terminate either end press: 
+To terminate either server press:
     `Control+C`
 
 To exhange server addresses to allow each end to exhange via HTTP Requests/Responses, from the `TUTOR4U`, execute the following commands with their respective addresses:
