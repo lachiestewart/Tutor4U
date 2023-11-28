@@ -1,40 +1,26 @@
 from django.contrib import admin
-from .models import Student, Tutor, Offer, Want, Lesson
-
-# Field Lists
-
-user_fields = ['username', 'password', 'first_name', 'last_name', 'phone_number', 'email', 'gender', 'profile_photo']
-
-student_fields = []
-
-tutor_fields = ['rate', 'available', 'remote', 'in_person', 'location', 'qualification', 'about']
-
-offer_fields = ['tutor', 'subject', 'level']
-
-want_fields = ['student', 'subject', 'level']
-
-lesson_fields = ['tutor', 'student', 'subject', 'level', 'date', 'duration', 'rate']
+from tutor4u.models import Student, Tutor, Offer, Want, Lesson
 
 
 # Admin Classes
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display = user_fields + student_fields
+    list_display = Student.student_fields
 
 class TutorAdmin(admin.ModelAdmin):
-    list_display = user_fields + tutor_fields
+    list_display = Tutor.tutor_fields
 
 class OfferAdmin(admin.ModelAdmin):
-    list_display = offer_fields
+    list_display = Offer.offer_fields
 
 class WantAdmin(admin.ModelAdmin):
-    list_display = want_fields
+    list_display = Want.want_fields
 
 class LessonAdmin(admin.ModelAdmin):
-    list_display = lesson_fields
+    list_display = Lesson.lesson_fields
 
 # class XAdmin(admin.ModelAdmin):
-#     list_display = X_fields
+#     list_display = X.x_fields
 
 
 
