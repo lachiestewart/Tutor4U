@@ -64,7 +64,9 @@ To run the back-end, run the following commands from the `Tutor4U` directory:
 
     cd backend 
     pipenv shell
+    
 then:
+
     python manage.py runserver
 
 To run the front-end, open a separate terminal instance and run the following commands from the `Tutor4U` directory:
