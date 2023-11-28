@@ -31,11 +31,14 @@ Follow these instructions to download, initialise and run the Tutor4U web app fo
 
     git clone https://github.com/lachiestewart/Tutor4U.git
     
-From the `TUTOR4U` directory run the following commands to download the necessary packages and initialise the Django SQLite Database:
+From the `Tutor4U` directory run the following commands to download the necessary packages and initialise the Django SQLite Database:
     
     cd backend
     pip install pipenv
     pipenv shell
+    
+then:
+
     pipenv install
     python manage.py makemigrations tutor4u
     python manage.py migrate
@@ -47,20 +50,26 @@ If you would like to create a database super user, after running the previous co
 To exit the virtual environment and return to the `Tutor4U` directory, run the following commands:
 
     exit
+    
+then:
+
     cd ..
 
-From the Tutor4U directory, run the following commands to download the necessary packages for the front-end:
+From the `Tutor4U` directory, run the following commands to download the necessary packages for the front-end:
 
     cd frontend
     npm install
 
-To run the back-end, run the following commands from the `TUTOR4U` directory:
+To run the back-end, run the following commands from the `Tutor4U` directory:
 
     cd backend 
     pipenv shell
+
+then:
+
     python manage.py runserver
 
-To run the front-end, open a separate terminal instance and run the following commands from the Tutor4U directory:
+To run the front-end, open a separate terminal instance and run the following commands from the `Tutor4U` directory:
 
     cd frontend 
     npm run dev
@@ -70,7 +79,7 @@ Note that a local address in the format `http://localhost:####/` with the port n
 To terminate either server press:
     `Control+C`
 
-To exhange server addresses to allow each end to exhange via HTTP Requests/Responses, from the `TUTOR4U`, execute the following commands, with their respective addresses:
+To exhange server addresses to allow each end to exhange via HTTP Requests/Responses, from the `Tutor4U` directory, execute the following commands, with their respective addresses:
 
     echo FRONTEND_URL=frontend_address >> backend/.env
     echo VITE_BACKEND_URL=backend_address >> frontend/.env
