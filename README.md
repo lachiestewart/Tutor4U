@@ -40,13 +40,9 @@ From the `TUTOR4U` directory run these commands to download the necessary packag
     python manage.py makemigrations tutor4u
     python manage.py migrate
 
-If you would like to create a super user for the Database after running the previous commands run the following (while still inside the virtual environment): 
+If you would like to create a super user for the Database after running the previous commands run the following (while still inside the virtual environment) and enter your credentials: 
 
     python manage.py createsuperuser
-    `your_user_name`
-    `your_email_address`
-    `your_password`
-    `your_password`
 
 To exit the virtual environment and return to the `Tutor4U` directory run:
 
