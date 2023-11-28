@@ -36,7 +36,7 @@ From the `Tutor4U` directory run the following commands to download the necessar
     cd backend
     pip install pipenv
     pipenv shell
-
+ 
     pipenv install
     python manage.py makemigrations tutor4u
     python manage.py migrate
