@@ -135,8 +135,9 @@ MEDIA_ROOT = BASE_DIR / 'mediafiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # White listing the frontend to interact with the backend
+CORS_ORIGIN_WHITELIST = []
 
+frontend_url = os.getenv('FRONTEND_URL')
 
-CORS_ORIGIN_WHITELIST = [
-    os.getenv('FRONTEND_URL')
-]
+if frontend_url and frontend_url != "frontend_address":
+    CORS_ORIGIN_WHITELIST += [frontend_url[:-1]]

@@ -2,12 +2,10 @@ import ListGroup from "./components/ListGroup";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
 import { useEffect, useState } from "react";
-//import { Tutor } from "./interfaces";
-//import axios, { AxiosResponse } from "axios"
 
 
 function App() {
-  const [tutors, setTutors] = useState([] as string[]) //as Tutor[]);
+  const [tutors, setTutors] = useState([] as string[])
   const heading = "Tutors";
 
   const handleSelectedItem = (item: string) => console.log(item);
@@ -25,7 +23,7 @@ function App() {
       {alertVisible && <Alert onClose={() => setAlertVisible(false)}>Look Out</Alert>}
       <Button color="primary" onClick={handleButtonClicked}>Click Me</Button>
       <ListGroup
-        items={tutors}//.map((tutor:Tutor) => tutor.username)}
+        items={tutors}
         heading={heading}
         onSelectItem={handleSelectedItem}
       />
