@@ -27,6 +27,6 @@ dist-ssr
 
 # Backend User uploaded media and data
 backend/mediafiles/*
-db.sqlite3
+backend/db.sqlite3
 **/migrations
 **/.env
