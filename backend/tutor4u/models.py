@@ -1,3 +1,4 @@
+from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db.models import *
 from django.core.validators import *
 
@@ -23,8 +24,32 @@ subject_choices = choiceMapper(SUBJECT_LIST)
 level_choices = choiceMapper(LEVEL_LIST)
 gender_choices = choiceMapper(GENDER_LIST)
 
+class UserManager(BaseUserManager):
 
-class User(Model):
+    use_in_migration = True
+
+    def create_user(self, username, password=None, **extra_fields):
+        if not username:
+            raise ValueError('Username is Required')
+        user = self.model(username=username, **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, username, password, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+        extra_fields.setdefault('is_active', True)
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff = True')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser = True')
+
+        return self.create_user(username, password, **extra_fields)
+
+
+class User(AbstractUser):
     """Extends the Model class"""
 
     # User specific regex
@@ -38,14 +63,17 @@ class User(Model):
     user_fields = ['username', 'password', 'first_name', 'last_name', 'phone_number', 'email', 'gender', 'profile_photo']
 
     # Fields
-    username = CharField(max_length=50, unique=True)
-    password = CharField(max_length=50)
-    first_name = CharField(max_length=50)
-    last_name = CharField(max_length=50)
+    #username = CharField(max_length=50, unique=True)
+    #password = CharField(max_length=50)
+    #first_name = CharField(max_length=50)
+    #last_name = CharField(max_length=50)
+    #email = CharField(max_length=64, validators=[email_validator])
+    id = BigAutoField(primary_key=True)
     phone_number = CharField(max_length=15, validators=[phone_number_validator])
-    email = CharField(max_length=64, validators=[email_validator])
     gender = CharField(max_length=10, choices=gender_choices)
     profile_photo = ImageField(upload_to=MEDIA_DIR, validators=[validate_image_file_extension])
+    is_tutor = BooleanField(default=False)
+    is_student = BooleanField(default=True)
 
     class Meta:
         abstract = True
@@ -53,24 +81,27 @@ class User(Model):
     def __str__(self):
         return f"{self.username}"
 
-
-class Student(User):
+class Student(Model):
     """Extends the User class, stores info about Users who are Students"""
     
     # Field List
     student_fields = User.user_fields + []
 
     # Fields
+    id = BigAutoField(primary_key=True)
+    user = OneToOneField(User, blank=False, on_delete=CASCADE)
     
 
 
-class Tutor(User):
+class Tutor(Model):
     """Extends the User class, stores info about Users who are Tutors"""
     
     # Field List
     tutor_fields = User.user_fields + ['rate', 'available', 'remote', 'in_person', 'location', 'qualification', 'about']
 
     # Fields
+    id = BigAutoField(primary_key=True)
+    user = OneToOneField(User, blank=False, on_delete=CASCADE)
     rate = DecimalField(max_digits=4, decimal_places=2)
     available = BooleanField(default=True)
     remote = BooleanField(default=True)
@@ -87,7 +118,8 @@ class Offer(Model):
     offer_fields = ['tutor', 'subject', 'level']
 
     # Fields
-    tutor = ForeignKey(Tutor, on_delete=CASCADE)
+    id = BigAutoField(primary_key=True)
+    tutor = ForeignKey(Tutor, blank=False, on_delete=CASCADE)
     subject = CharField(max_length=20, choices=subject_choices)
     level = CharField(max_length=20, choices=level_choices)
 
@@ -100,7 +132,8 @@ class Want(Model):
     want_fields = ['student', 'subject', 'level']
 
     # Fields
-    student = ForeignKey(Student, on_delete=CASCADE)
+    id = BigAutoField(primary_key=True)
+    student = ForeignKey(Student, blank=False, on_delete=CASCADE)
     subject = CharField(max_length=20, choices=subject_choices)
     level = CharField(max_length=20, choices=level_choices)
 
@@ -111,9 +144,10 @@ class Lesson(Model):
     # Field List
     lesson_fields = ['tutor', 'student', 'subject', 'level', 'date', 'duration', 'rate']
 
-    # Fields
-    tutor = ForeignKey(Tutor, on_delete=CASCADE)
-    student = ForeignKey(Student, on_delete=CASCADE)
+    # Fieldsblank=False
+    id = BigAutoField(primary_key=True)
+    tutor = ForeignKey(Tutor, blank=False, on_delete=CASCADE)
+    student = ForeignKey(Student, blank=False, on_delete=CASCADE)
     subject = CharField(max_length=20, choices=subject_choices)
     level = CharField(max_length=20, choices=level_choices)
     date = DateField()

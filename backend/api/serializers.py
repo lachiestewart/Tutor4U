@@ -6,12 +6,12 @@ from tutor4u.models import Student, Tutor, Offer, Want, Lesson
 class StudentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Student
-        fields = Student.student_fields
+        fields = ['username', 'first_name', 'last_name', 'phone_number', 'email', 'gender', 'profile_photo']
 
 class TutorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tutor
-        fields = Tutor.tutor_fields
+        fields = ['username', 'first_name', 'last_name', 'phone_number', 'email', 'gender', 'profile_photo', 'rate', 'available', 'remote', 'in_person', 'location', 'qualification', 'about']
 
 class OfferSerializer(serializers.ModelSerializer):
     class Meta:

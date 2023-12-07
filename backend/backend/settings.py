@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+from datetime import timedelta
 
 load_dotenv()
 
@@ -31,6 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'tutor4u.User'
 
 # Application definition
 
@@ -43,8 +45,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'tutor4u',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
+    'tutor4u'
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -144,3 +154,12 @@ if FRONTEND_URL and FRONTEND_URL != "frontend_address":
     print(f"Loaded {FRONTEND_URL} from .env")
 else:
     print("Couldn't find FRONTEND_URL in .env or FRONTEND_URL has not been changed from default value 'frontend_address'")
+
+# Simple JSON Web Tokens Settings
+
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "ROTATE_REFRESH_TOKENS": True,
+    "BLACKLIST_AFTER_ROTATION": True,
+}
