@@ -1,38 +1,51 @@
-from rest_framework import viewsets
+from django.shortcuts import render
 from rest_framework.views import APIView
+from .serializers import CreateUserSerializer, ListUserSerializer, ListStudentSerializer, ListTutorSerializer
 from rest_framework.response import Response
-from api.serializers import StudentSerializer, TutorSerializer, OfferSerializer, WantSerializer, LessonSerializer
-from tutor4u.models import Student, Tutor, Offer, Want, Lesson
-
-# View Classes
-
-class StudentView(viewsets.ModelViewSet):
-    serializer_class = StudentSerializer
-    queryset = Student.objects.all()
-
-class TutorView(viewsets.ModelViewSet):
-    serializer_class = TutorSerializer
-    queryset = Tutor.objects.all()
-
-class OfferView(viewsets.ModelViewSet):
-    serializer_class = OfferSerializer
-    queryset = Offer.objects.all()
-
-class WantView(viewsets.ModelViewSet):
-    serializer_class = WantSerializer
-    queryset = Want.objects.all()
-
-class LessonView(viewsets.ModelViewSet):
-    serializer_class = LessonSerializer
-    queryset = Lesson.objects.all()
-
-class TutorOffersView(APIView):
-    def get(self, request, tutor_num):
-        offers = Offer.objects.filter(tutor=tutor_num)
-        offer_serial = OfferSerializer(offers, many=True)
-        return Response(offer_serial.data)
+from .permissions import IsAdmin, IsStudent, IsTutor
+from tutor4u.models import User, Student, Tutor
 
 
-# class XView(viewsets.ModelViewSet):
-#     serializer_class = XSerializer
-#     queryset = X.objects.all()
+# View for registering users
+class RegisterUserView(APIView):
+
+    permission_classes = []
+
+    def post(self, request):
+        serializer = CreateUserSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data)
+
+
+# View for getting all Users
+class AllUsersView(APIView):
+
+    permission_classes = []
+
+    def get(self, request):
+        users = User.objects.all()
+        serializer = ListUserSerializer(users, many=True)
+        return Response(serializer.data)
+
+
+# View for getting all Students
+class AllStudentsView(APIView):
+
+    permission_classes = []
+
+    def get(self, request):
+        students = Student.objects.all()
+        serializer = ListStudentSerializer(students, many=True)
+        return Response(serializer.data)
+
+
+# View for getting all Students
+class AllTutorsView(APIView):
+
+    permission_classes = []
+
+    def get(self, request):
+        tutors = Tutor.objects.filter(approved=True)
+        serializer = ListTutorSerializer(tutors, many=True)
+        return Response(serializer.data)

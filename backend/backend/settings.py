@@ -11,11 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
-import os
 from datetime import timedelta
-
-load_dotenv()
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-vyj9%a$lq6^9h4h@2_dyrc6weiwb4f50u+rm9_xztos_-)=(w0'
+SECRET_KEY = 'django-insecure-!o4)%&k6=!&ln=k!*9j)=vljpb#+v#l1z^r7o*&vis)+y_4pl*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
-    'tutor4u'
+    'corsheaders',
+    'tutor4u',
 ]
 
 REST_FRAMEWORK = {
@@ -121,13 +118,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-NZ'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Pacific/Auckland'
 
 USE_I18N = True
 
 USE_TZ = True
+
+DEFAULT_CHARSET = 'utf-8'
 
 
 # Static files (CSS, JavaScript, Images)
@@ -144,22 +143,23 @@ MEDIA_ROOT = BASE_DIR / 'mediafiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# White listing the frontend to interact with the backend
-CORS_ORIGIN_WHITELIST = []
-
-FRONTEND_URL = os.getenv('FRONTEND_URL')
-
-if FRONTEND_URL and FRONTEND_URL != "frontend_address":
-    CORS_ORIGIN_WHITELIST += [FRONTEND_URL[:-1]]
-    print(f"Loaded {FRONTEND_URL} from .env")
-else:
-    print("Couldn't find FRONTEND_URL in .env or FRONTEND_URL has not been changed from default value 'frontend_address'")
-
 # Simple JSON Web Tokens Settings
-
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
 }
+
+# Adding url for front end to CORS Headers whitelist
+CORS_ORIGIN_WHITELIST = []
+
+FRONTEND_URL = config("FRONTEND_URL", default=None)
+
+match FRONTEND_URL:
+    case "frontend_address":
+        print("FRONTEND_URL has not been changed from default value 'frontend_address'")
+    case None:
+        print("Couldn't find FRONTEND_URL in .env")
+    case _:
+        CORS_ORIGIN_WHITELIST += [FRONTEND_URL.rstrip('/')]

@@ -1,15 +1,9 @@
-from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db.models import *
-from django.core.validators import *
+from django.contrib.auth.models import AbstractUser, BaseUserManager
+from django.core.validators import validate_image_file_extension
 
 # Directory within mediafiles to store profile photos
 MEDIA_DIR = "uploads/"
-
-# Regex for field validation
-numeric_regex = r"[0-9]"
-alpha_regex = r"[a-zA-Z]"
-alphanumeric_regex = "(" + numeric_regex + "|" + alpha_regex + ")"
-space_char_regex = "[\s-]"
 
 # Lists of strings for choice fields
 GENDER_LIST = ["Male", "Female", "Non-Binary", "Other"]
@@ -25,15 +19,20 @@ level_choices = choiceMapper(LEVEL_LIST)
 gender_choices = choiceMapper(GENDER_LIST)
 
 class UserManager(BaseUserManager):
+    """Creates a manager for the custom User class"""
 
     use_in_migration = True
 
     def create_user(self, username, password=None, **extra_fields):
         if not username:
             raise ValueError('Username is Required')
+
+        if not password:
+            raise ValueError('Password is Required')
+
         user = self.model(username=username, **extra_fields)
         user.set_password(password)
-        user.save(using=self._db)
+        user.save()
         return user
 
     def create_superuser(self, username, password, **extra_fields):
@@ -50,58 +49,40 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractUser):
-    """Extends the Model class"""
-
-    # User specific regex
-    phone_number_regex = "^" + numeric_regex + r"{9,10}$"
-
-    # Validators
-    phone_number_validator = RegexValidator(phone_number_regex)
-    email_validator = EmailValidator()
-
-    # Field List
-    user_fields = ['username', 'password', 'first_name', 'last_name', 'phone_number', 'email', 'gender', 'profile_photo']
+    """Extends the AbstractUser class, adds relevant fields"""
 
     # Fields
-    #username = CharField(max_length=50, unique=True)
-    #password = CharField(max_length=50)
-    #first_name = CharField(max_length=50)
-    #last_name = CharField(max_length=50)
-    #email = CharField(max_length=64, validators=[email_validator])
-    id = BigAutoField(primary_key=True)
-    phone_number = CharField(max_length=15, validators=[phone_number_validator])
-    gender = CharField(max_length=10, choices=gender_choices)
-    profile_photo = ImageField(upload_to=MEDIA_DIR, validators=[validate_image_file_extension])
+    phone_number = CharField(max_length=15, null=True, blank=True)
+    gender = CharField(max_length=10, choices=gender_choices, default="")
+    profile_photo = ImageField(upload_to=MEDIA_DIR, validators=[validate_image_file_extension], null=True, blank=True)
+    is_admin = BooleanField(default=False)
     is_tutor = BooleanField(default=False)
-    is_student = BooleanField(default=True)
+    is_student = BooleanField(default=False)
 
-    class Meta:
-        abstract = True
-    
+    objects = UserManager()
+
     def __str__(self):
-        return f"{self.username}"
+        return self.username
+
 
 class Student(Model):
-    """Extends the User class, stores info about Users who are Students"""
-    
-    # Field List
-    student_fields = User.user_fields + []
+    """Extends the Model class, stores info about Users who are Students"""
 
     # Fields
     id = BigAutoField(primary_key=True)
     user = OneToOneField(User, blank=False, on_delete=CASCADE)
     
+    def __str__(self):
+        return str(self.user)
 
 
 class Tutor(Model):
-    """Extends the User class, stores info about Users who are Tutors"""
-    
-    # Field List
-    tutor_fields = User.user_fields + ['rate', 'available', 'remote', 'in_person', 'location', 'qualification', 'about']
+    """Extends the Model class, stores info about Users who are Tutors"""
 
     # Fields
     id = BigAutoField(primary_key=True)
     user = OneToOneField(User, blank=False, on_delete=CASCADE)
+    approved = BooleanField(default=False)
     rate = DecimalField(max_digits=4, decimal_places=2)
     available = BooleanField(default=True)
     remote = BooleanField(default=True)
@@ -110,26 +91,12 @@ class Tutor(Model):
     qualification = CharField(max_length=50)
     about = CharField(max_length=200)
 
-
-class Offer(Model):
-    """Extends the Model class, connects Tutors with the subjects they offer to tutor"""
-
-    # Field List
-    offer_fields = ['tutor', 'subject', 'level']
-
-    # Fields
-    id = BigAutoField(primary_key=True)
-    tutor = ForeignKey(Tutor, blank=False, on_delete=CASCADE)
-    subject = CharField(max_length=20, choices=subject_choices)
-    level = CharField(max_length=20, choices=level_choices)
-
+    def __str__(self):
+        return str(self.user)
 
 
 class Want(Model):
     """Extends the Model class, connects Students with the subjects they want to learn"""
-
-    # Field List
-    want_fields = ['student', 'subject', 'level']
 
     # Fields
     id = BigAutoField(primary_key=True)
@@ -137,12 +104,25 @@ class Want(Model):
     subject = CharField(max_length=20, choices=subject_choices)
     level = CharField(max_length=20, choices=level_choices)
 
+    def __str__(self):
+        return f"{self.student.user} wants {self.subject} at {self.level}"
+
+
+class Offer(Model):
+    """Extends the Model class, connects Tutors with the subjects they offer to tutor"""
+
+    # Fields
+    id = BigAutoField(primary_key=True)
+    tutor = ForeignKey(Tutor, blank=False, on_delete=CASCADE)
+    subject = CharField(max_length=20, choices=subject_choices)
+    level = CharField(max_length=20, choices=level_choices)
+
+    def __str__(self):
+        return f"{self.tutor.user} offers {self.subject} at {self.level}"
+
 
 class Lesson(Model):
     """Extends the Model class, connects Tutors, Students and the topics covered in a lesson"""
-    
-    # Field List
-    lesson_fields = ['tutor', 'student', 'subject', 'level', 'date', 'duration', 'rate']
 
     # Fieldsblank=False
     id = BigAutoField(primary_key=True)
@@ -155,4 +135,4 @@ class Lesson(Model):
     rate = DecimalField(max_digits=4, decimal_places=2)
 
     def __str__(self):
-        return f"{self.tutor.username} - {self.student.username} - {self.subject}"
+        return f"{self.tutor.user} - {self.student.user} - {self.subject}"

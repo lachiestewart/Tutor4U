@@ -1,6 +1,6 @@
 interface User {
+  id:number
   username:string;
-  password:string;
   first_name:string;
   last_name:string;
   phone_number:string;
@@ -8,8 +8,10 @@ interface User {
   gender:string;
   profile_photo:string;
 }
-  
-export interface Tutor extends User{
+
+export interface Tutor{
+  id:number
+  user:User
   rate:number;
   available:boolean;
   remote:boolean;
@@ -19,7 +21,10 @@ export interface Tutor extends User{
   about:string;
 }
 
-export interface Student extends User {}
+export interface Student{
+  id:number
+  user:User
+}
 
 export interface Want {
   student:number;

@@ -1,35 +1,38 @@
 from rest_framework import serializers
-from tutor4u.models import Student, Tutor, Offer, Want, Lesson
+from tutor4u.models import User, Student, Tutor
 
-# Serializer Classes
 
-class StudentSerializer(serializers.ModelSerializer):
+class CreateUserSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = User
+        fields = ["id", "username", "password"]
+
+    def create(self, validated_data):
+        user = User.objects.create(username=validated_data["username"])
+        user.set_password(validated_data["password"])
+        user.save()
+        return user
+
+    
+class ListUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'phone_number', 'gender', 'profile_photo']
+
+
+class ListStudentSerializer(serializers.ModelSerializer):
+    user = ListUserSerializer()
+
     class Meta:
         model = Student
-        fields = ['username', 'first_name', 'last_name', 'phone_number', 'email', 'gender', 'profile_photo']
+        fields = ['id', 'user']
 
-class TutorSerializer(serializers.ModelSerializer):
+class ListTutorSerializer(serializers.ModelSerializer):
+    user = ListUserSerializer()
+
     class Meta:
         model = Tutor
-        fields = ['username', 'first_name', 'last_name', 'phone_number', 'email', 'gender', 'profile_photo', 'rate', 'available', 'remote', 'in_person', 'location', 'qualification', 'about']
-
-class OfferSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Offer
-        fields = Offer.offer_fields
+        fields = ['id', 'user', 'rate', 'available', 'remote', 'in_person', 'location', 'qualification', 'about']
 
 
-class WantSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Want
-        fields = Want.want_fields
-
-class LessonSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Lesson
-        fields = Lesson.lesson_fields
-
-# class XSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = X
-#         fields = X.x_fields

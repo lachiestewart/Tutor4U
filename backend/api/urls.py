@@ -1,22 +1,12 @@
 from django.urls import path
-from rest_framework import routers
-from api.views import StudentView, TutorView, OfferView, WantView, LessonView, TutorOffersView
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
-
-router = routers.DefaultRouter()
-router.register('student', StudentView, 'student_view')
-router.register('tutor', TutorView, 'tutor_view')
-router.register('offer', OfferView, 'offer_view')
-router.register('want', WantView, 'want_view')
-router.register('lesson', LessonView, 'lesson_view')
+from .views import RegisterUserView, AllUsersView, AllStudentsView, AllTutorsView
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
-    path('tutoroffers/<int:tutor_num>/', TutorOffersView.as_view(), 'tutor_offers'),
-    path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('register/', RegisterUserView.as_view(), name="sign_up"),
+    path('all-users/', AllUsersView.as_view(), name='all-users'),
+    path('all-students/', AllStudentsView.as_view(), name='all-students'),
+    path('all-tutors/', AllTutorsView.as_view(), name='all-tutors'),
 ]
-
-urlpatterns += router.urls
