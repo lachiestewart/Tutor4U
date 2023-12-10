@@ -22,8 +22,8 @@ The Tutor4U back-end is written in Python using the Django REST API Framework, w
 + [Django REST framework](https://www.django-rest-framework.org/)
 + [Django CORS headers](https://pypi.org/project/django-cors-headers/)
 + [Pillow](https://python-pillow.org/)
-+ [Python-Dotenv](https://pypi.org/project/python-dotenv/)
-
++ [Django REST framework simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/#)
++ [Python decouple](https://pypi.org/project/python-decouple/)
 
 ## Getting Started
 
