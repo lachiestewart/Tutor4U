@@ -10,6 +10,7 @@ django-cors-headers = "*"
 djangorestframework = "*"
 djangorestframework-simplejwt = "*"
 python-decouple = "*"
+stripe = "*"
 
 [dev-packages]
 

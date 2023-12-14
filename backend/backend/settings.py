@@ -163,3 +163,9 @@ match FRONTEND_URL:
         print("Couldn't find FRONTEND_URL in .env")
     case _:
         CORS_ORIGIN_WHITELIST += [FRONTEND_URL.rstrip('/')]
+
+
+# Stripe API Keys
+
+STRIPE_SECRET_KEY = config("STRIPE_SECRET_KEY")
+STRIPE_PUBLISHABLE_KEY = config("STRIPE_PUBLISHABLE_KEY")
