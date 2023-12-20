@@ -133,6 +133,9 @@ class Lesson(Model):
     date = DateField()
     duration = PositiveSmallIntegerField()
     rate = DecimalField(max_digits=4, decimal_places=2)
+    subject = CharField(max_length=20, choices=subject_choices)
+    payment_id = CharField(max_length=255, unique=True)
+    paid = BooleanField(default=False)
 
     def __str__(self):
         return f"{self.tutor.user} - {self.student.user} - {self.subject}"

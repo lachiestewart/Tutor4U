@@ -37,14 +37,3 @@ class ListTutorSerializer(ModelSerializer):
         model = Tutor
         fields = ['id', 'user', 'rate', 'available', 'remote',
                   'in_person', 'location', 'qualification', 'about']
-    
-
-class CardDetailsSerializer(Serializer):
-    card_number = CharField(required=True, max_length=20)
-    expiry_month = CharField(required=True, max_length=2, validators=[
-                             lambda month: 1 <= int(month) <= 12])
-    expiry_year = CharField(required=True, max_length=4, validators=[
-                            lambda year: datetime.datetime.now().year <= int(year)])
-    cvc = CharField(required=True, validators=[
-                            lambda cvc: len(cvc) in [3, 4] and cvc.isdigit()])
-    email = EmailField(required=True)
