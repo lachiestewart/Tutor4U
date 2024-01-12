@@ -23,14 +23,14 @@ class UserManager(BaseUserManager):
 
     use_in_migration = True
 
-    def create_user(self, username, password=None, **extra_fields):
-        if not username:
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
             raise ValueError('Username is Required')
 
         if not password:
             raise ValueError('Password is Required')
 
-        user = self.model(username=username, **extra_fields)
+        user = self.model(email=email, **extra_fields)
         user.set_password(password)
         user.save()
         return user
@@ -56,8 +56,6 @@ class User(AbstractUser):
     gender = CharField(max_length=10, choices=gender_choices, default="")
     profile_photo = ImageField(upload_to=MEDIA_DIR, validators=[validate_image_file_extension], null=True, blank=True)
     is_admin = BooleanField(default=False)
-    is_tutor = BooleanField(default=False)
-    is_student = BooleanField(default=False)
 
     objects = UserManager()
 

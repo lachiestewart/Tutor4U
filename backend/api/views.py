@@ -5,6 +5,11 @@ from rest_framework.response import Response
 from .permissions import IsAdmin, IsStudent, IsTutor
 from tutor4u.models import User, Student, Tutor
 
+# Big number used for default maximum for querying tutors by hourly rate
+INF = 1000
+
+def isBoolString(string):
+    return string.lower() in ["true", "false"]
 
 # View for registering users
 class RegisterUserView(APIView):
@@ -46,6 +51,35 @@ class AllTutorsView(APIView):
     permission_classes = []
 
     def get(self, request):
-        tutors = Tutor.objects.filter(approved=True)
+        
+        # Get only approved and available tutors
+        tutors = Tutor.objects.filter(approved=True, available=True)
+
+        # Filter by location if used
+        location = request.query_params.get('location', None)
+        if location is not None:
+            tutors = tutors.filter(location=location)
+
+        # Filter by hourly rate if used
+        minimum = request.query_params.get('minimum', 0)
+        tutors = tutors.filter(rate__gte=int(minimum))
+
+        maximum = request.query_params.get('maximum', INF)
+        tutors = tutors.filter(rate__lte=maximum)
+
+        # Filter by gender if used
+        gender = request.query_params.get('gender', None)
+        if gender is not None:
+            tutors = tutors.filter(user__gender=gender)
+
+        # Filter by remote if used
+        remote = request.query_params.get('remote', None)
+        if remote is not None and isBoolString(remote):
+            tutors = tutors.filter(remote=eval(remote))
+
+
+
+
+
         serializer = ListTutorSerializer(tutors, many=True)
         return Response(serializer.data)
