@@ -4,14 +4,14 @@ import { ErrorMessage } from "../../components/ErrorMessage";
 const shapes = { square: "rounded-none", round: "rounded-[10px]" } as const;
 const variants = {
   fill: {
-    blue_gray_700: "bg-blue_gray-700 text-white-A700",
     gray_200_01: "bg-gray-200_01",
+    blue_gray_700: "bg-blue_gray-700 text-white-A700",
     white_A700: "bg-white-A700 text-black-900",
     blue_gray_100: "bg-blue_gray-100",
   },
 } as const;
 const sizes = {
-  xs: "pb-1.5 pt-[9px] px-1.5",
+  xs: "pb-[9px] pt-[11px] px-[9px]",
   sm: "pb-2.5 pt-4 px-2.5",
 } as const;
 
@@ -53,10 +53,10 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       prefix,
       suffix,
       onChange,
-      shape = "",
+      shape = "round",
       size = "",
-      variant = "",
-      color = "",
+      variant = "fill",
+      color = "white_A700",
       ...restProps
     },
     ref,

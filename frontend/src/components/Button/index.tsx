@@ -3,15 +3,12 @@ import React from "react";
 const shapes = { round: "rounded-[10px]" } as const;
 const variants = {
   fill: {
-    gray_400: "bg-gray-400 text-black-900",
-    blue_100: "bg-blue-100",
-    light_green_900: "bg-light_green-900 text-white-A700",
-    red_900: "bg-red-900 text-white-A700",
     blue_A200: "bg-blue-A200 text-white-A700",
+    gray_400: "bg-gray-400",
     blue_gray_700: "bg-blue_gray-700 text-white-A700",
   },
 } as const;
-const sizes = { xs: "p-[5px]", sm: "p-[9px]", md: "p-3.5" } as const;
+const sizes = { xs: "p-[5px]", sm: "p-2.5", md: "p-3.5" } as const;
 
 export type ButtonProps = Omit<
   React.DetailedHTMLProps<

@@ -11,94 +11,42 @@ const Home = () => {
       </p>
       <ul>
         <li>
-          <Link to="/">TutorJobBoard</Link>
+          <Link to="/homepagemvp">HomePageMVP</Link>
         </li>
         <li>
-          <Link to="/homepage">HomePage</Link>
+          <Link to="/findatutorpagemvp">FindATutorPageMVP</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/tutorprofilepagemvp">TutorProfilePageMVP</Link>
         </li>
         <li>
-          <Link to="/findatutor">FindATutor</Link>
+          <Link to="/contactusmvp">ContactUsMVP</Link>
         </li>
         <li>
-          <Link to="/contact">Contact</Link>
+          <Link to="/infodivmvp">InfoDivMVP</Link>
         </li>
         <li>
-          <Link to="/tutorprofilepagedesktop">TutorProfilePageDesktop</Link>
+          <Link to="/tutorcodeofconductmvp">TutorCodeofConductMVP</Link>
         </li>
         <li>
-          <Link to="/admindashboard">AdminDashboard</Link>
+          <Link to="/loginpagemvp">LoginPageMVP</Link>
         </li>
         <li>
-          <Link to="/admintutors">AdminTutors</Link>
+          <Link to="/tutoronboardingmvp">TutorOnboardingMVP</Link>
         </li>
         <li>
-          <Link to="/adminlessons">AdminLessons</Link>
+          <Link to="/tutordashboardmvp">TutorDashboardMVP</Link>
         </li>
         <li>
-          <Link to="/tabdivlogincreated">TabDivLoginCreated</Link>
+          <Link to="/desktopframecontainermvp">DesktopFrameContainerMVP</Link>
         </li>
         <li>
-          <Link to="/tabdivlessonrequests">TabDivLessonRequests</Link>
+          <Link to="/findatutorpagemvpone">FindATutorPageMVPOne</Link>
         </li>
         <li>
-          <Link to="/tabdivapplications">TabDivApplications</Link>
-        </li>
-        <li>
-          <Link to="/tabdivsuggestedtutors">TabDivSuggestedTutors</Link>
-        </li>
-        <li>
-          <Link to="/tabdivupcominglessons">TabDivUpcomingLessons</Link>
-        </li>
-        <li>
-          <Link to="/tabdivinterviews">TabDivInterviews</Link>
-        </li>
-        <li>
-          <Link to="/tabdivcodeofconduct">TabDivCodeofConduct</Link>
-        </li>
-        <li>
-          <Link to="/tabdivactivetutors">TabDivActiveTutors</Link>
-        </li>
-        <li>
-          <Link to="/tabdivinactivetutors">TabDivInactiveTutors</Link>
-        </li>
-        <li>
-          <Link to="/loginpage">LoginPage</Link>
-        </li>
-        <li>
-          <Link to="/tutoronboarding">TutorOnboarding</Link>
-        </li>
-        <li>
-          <Link to="/tutordashboard">TutorDashboard</Link>
-        </li>
-        <li>
-          <Link to="/profilesettingspage">ProfileSettingsPage</Link>
-        </li>
-        <li>
-          <Link to="/tutorcodeofconduct">TutorCodeofConduct</Link>
-        </li>
-        <li>
-          <Link to="/tutormybadges">TutorMyBadges</Link>
-        </li>
-        <li>
-          <Link to="/profilesettingssubmenu">ProfileSettingsSubmenu</Link>
-        </li>
-        <li>
-          <Link to="/historysettingssubmenu">HistorySettingsSubmenu</Link>
-        </li>
-        <li>
-          <Link to="/tutoringsettingssubmenu">TutoringSettingsSubmenu</Link>
-        </li>
-        <li>
-          <Link to="/studentlessonrequest">StudentLessonRequest</Link>
-        </li>
-        <li>
-          <Link to="/findatutorpage">FindATutorPage</Link>
-        </li>
-        <li>
-          <Link to="/tutorprofilepage">TutorProfilePage</Link>
+          <Link to="/tutorprofilepagedesktopmvp">
+            TutorProfilePageDesktopMVP
+          </Link>
         </li>
       </ul>
     </div>

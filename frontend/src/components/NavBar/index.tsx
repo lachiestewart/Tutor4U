@@ -1,28 +1,34 @@
 import React from "react";
 
+import { useNavigate } from "react-router-dom";
+
 import { Button, Img, Text } from "components";
 
-type HeaderProps = React.DetailedHTMLProps<
+type NavBarProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
   HTMLDivElement
 > &
   Partial<{}>;
 
-const Header: React.FC<HeaderProps> = (props) => {
+const NavBar: React.FC<NavBarProps> = (props) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <header className={props.className}>
         <Img
-          className="h-14 md:h-auto object-cover w-[222px] sm:w-full"
+          className="common-pointer h-14 md:h-auto object-cover w-[222px] sm:w-full"
           src="images/img_union1.png"
           alt="unionOne"
+          onClick={() => navigate("/homepagemvp")}
         />
         <div className="flex md:flex-col flex-row gap-2.5 items-center justify-center p-2.5 w-auto md:w-full">
           <div className="flex md:flex-col flex-row gap-5 items-center justify-start px-2.5 w-auto md:w-full">
             <div className="flex flex-col items-center justify-start py-[3px] w-auto">
               <Text
-                className="text-center text-white-A700 text-xl w-auto"
+                className="common-pointer text-center text-white-A700 text-xl w-auto"
                 size="txtMontserratRomanMedium20"
+                onClick={() => navigate("/homepagemvp")}
               >
                 HOME
               </Text>
@@ -85,6 +91,6 @@ const Header: React.FC<HeaderProps> = (props) => {
   );
 };
 
-Header.defaultProps = {};
+NavBar.defaultProps = {};
 
-export default Header;
+export default NavBar;
