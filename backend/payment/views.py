@@ -10,14 +10,16 @@ import stripe
 endpoint_secret = 'whsec_123'
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
+publishable_key = settings.STRIPE_PUBLISHABLE_KEY
 
 class CreatePaymentIntentView(APIView):
     def get(self, request):
 
         amount = request.query_params.get('amount')
 
-        if amount is None:
-            return Response({'message': 'Amount is not provided'})
+        if amount is None or int(amount) < 50:
+            print("yeah not miuch dough")
+            return Response({'error': 'Amount is not provided or is less than $0.50 nzd', 'clientSecret': "lol"})
 
         # Create a PaymentIntent with the amount
         intent = stripe.PaymentIntent.create(
@@ -29,7 +31,7 @@ class CreatePaymentIntentView(APIView):
         print(f"created payment intent id: {intent['id']}")
 
         # Return the client secret
-        return Response({'client_secret': intent['client_secret']})
+        return Response({'clientSecret': intent['client_secret']})
         
 
 class UpdatePaymentIntentView(APIView):
@@ -59,3 +61,8 @@ class UpdatePaymentIntentView(APIView):
             print(f'Unhandled event type {event["type"]}')
 
         return Response(success=True)
+    
+
+class PublishableKeyView(APIView):
+    def get(self, request):
+        return Response({"publishableKey": publishable_key})
