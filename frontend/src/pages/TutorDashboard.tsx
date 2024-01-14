@@ -1,131 +1,14 @@
 import React from "react";
 
-import { Sidebar } from "react-pro-sidebar";
+import Sidebar from "components/Sidebar";
 
 import { Button, Img, Text } from "components";
 
-const TutorDashboardMVPPage: React.FC = () => {
+const TutorDashboard: React.FC = () => {
   return (
     <>
       <div className="bg-white-A700 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-center mx-auto w-auto sm:w-full md:w-full">
-        <Sidebar className="!sticky !w-[375px] bg-blue_gray-700 flex h-screen md:hidden justify-start overflow-auto md:px-5 top-[0]">
-          <div className="flex flex-col items-start justify-start w-[375px] sm:w-full">
-            <Img
-              className="h-[120px] sm:h-auto object-cover w-[375px] md:w-full"
-              src="images/img_sidebarheader.png"
-              alt="sidebarheader"
-            />
-            <div className="flex flex-col items-start justify-center w-full">
-              <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                <div className="flex flex-row gap-5 items-center justify-start w-full">
-                  <Img
-                    className="h-10 md:h-auto object-cover w-10"
-                    src="images/img_analytics.png"
-                    alt="analytics"
-                  />
-                  <Text
-                    className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                    size="txtMontserratRomanSemiBold28WhiteA700"
-                  >
-                    Dashboard
-                  </Text>
-                </div>
-              </div>
-              <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                <div className="flex flex-row gap-5 items-center justify-start w-full">
-                  <Img
-                    className="h-10 md:h-auto object-cover w-10"
-                    src="images/img_graduationcap.png"
-                    alt="graduationcap"
-                  />
-                  <Text
-                    className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                    size="txtMontserratRomanSemiBold28WhiteA700"
-                  >
-                    Job Board
-                  </Text>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-2.5 items-start justify-center mt-[378px] w-[375px] sm:w-full">
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_maleuser.png"
-                  alt="maleuser"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  Profile Settings
-                </Text>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_usdollarcircled.png"
-                  alt="usdollarcircled"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  Account Details
-                </Text>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_rules.png"
-                  alt="rules"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  Code of Conduct
-                </Text>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_questions.png"
-                  alt="questions"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  FAQs
-                </Text>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_logout.png"
-                  alt="logout"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  Logout
-                </Text>
-              </div>
-            </div>
-          </div>
-        </Sidebar>
+        <Sidebar />
         <div className="flex flex-1 flex-col gap-2.5 items-center justify-start max-w-[1055px] p-[30px] md:px-5 w-full">
           <div className="bg-white-A700 flex flex-col items-center justify-start max-w-[1000px] rounded-[10px] w-full">
             <div className="flex md:flex-col flex-row gap-2.5 items-start justify-start rounded-[10px] w-full">
@@ -253,4 +136,4 @@ const TutorDashboardMVPPage: React.FC = () => {
   );
 };
 
-export default TutorDashboardMVPPage;
+export default TutorDashboard;

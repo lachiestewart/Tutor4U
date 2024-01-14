@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Button, Img, List, Text } from "components";
 import NavBar from "components/NavBar";
 
-const HomePageMVPPage: React.FC = () => {
+const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   return (
@@ -444,4 +444,4 @@ const HomePageMVPPage: React.FC = () => {
   );
 };
 
-export default HomePageMVPPage;
+export default HomePage;

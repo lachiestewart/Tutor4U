@@ -1,13 +1,13 @@
 import React from "react";
 
 import { Button, Img, Input, Text } from "components";
-import Header from "components/Header";
+import NavBar from "components/NavBar";
 
-const ContactUsMVPPage: React.FC = () => {
+const ContactUs: React.FC = () => {
   return (
     <>
       <div className="bg-gray-200 flex flex-col font-montserrat gap-2.5 items-start justify-start mx-auto w-auto sm:w-full md:w-full">
-        <Header className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 h-[118px] md:h-auto items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
+      <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
         <div className="flex flex-col items-center justify-start md:px-10 sm:px-5 px-[54px] py-[30px] w-full">
           <div className="bg-gray-200_01 flex flex-col items-center justify-center md:px-5 px-[50px] py-5 rounded-[10px] w-auto sm:w-full">
             <div className="flex flex-col gap-2.5 items-center justify-start py-5 w-auto sm:w-full">
@@ -111,4 +111,4 @@ const ContactUsMVPPage: React.FC = () => {
   );
 };
 
-export default ContactUsMVPPage;
+export default ContactUs;

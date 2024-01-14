@@ -2,28 +2,28 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "pages/Home";
 import NotFound from "pages/NotFound";
-const TutorProfilePageDesktopMVP = React.lazy(
-  () => import("pages/TutorProfilePageDesktopMVP"),
+const TutorProfileLoggedIn = React.lazy(
+  () => import("pages/TutorProfileLoggedIn"),
 );
-const FindATutorPageMVPOne = React.lazy(
-  () => import("pages/FindATutorPageMVPOne"),
+const FindATutorLoggedIn = React.lazy(
+  () => import("pages/FindATutorLoggedIn"),
 );
-const DesktopFrameContainerMVP = React.lazy(
-  () => import("pages/DesktopFrameContainerMVP"),
+const Modals = React.lazy(
+  () => import("pages/Modals"),
 );
-const TutorDashboardMVP = React.lazy(() => import("pages/TutorDashboardMVP"));
-const TutorOnboardingMVP = React.lazy(() => import("pages/TutorOnboardingMVP"));
-const LoginPageMVP = React.lazy(() => import("pages/LoginPageMVP"));
-const TutorCodeofConductMVP = React.lazy(
-  () => import("pages/TutorCodeofConductMVP"),
+const TutorDashboard = React.lazy(() => import("pages/TutorDashboard"));
+const TutorOnboarding = React.lazy(() => import("pages/TutorOnboarding"));
+const LoginPage = React.lazy(() => import("pages/LoginPage"));
+const TutorCodeofConduct = React.lazy(
+  () => import("pages/TutorCodeofConduct"),
 );
-const InfoDivMVP = React.lazy(() => import("pages/InfoDivMVP"));
-const ContactUsMVP = React.lazy(() => import("pages/ContactUsMVP"));
-const TutorProfilePageMVP = React.lazy(
-  () => import("pages/TutorProfilePageMVP"),
+const InfoDiv = React.lazy(() => import("pages/InfoDiv"));
+const ContactUs = React.lazy(() => import("pages/ContactUs"));
+const TutorProfile = React.lazy(
+  () => import("pages/TutorProfile"),
 );
-const FindATutorPageMVP = React.lazy(() => import("pages/FindATutorPageMVP"));
-const HomePageMVP = React.lazy(() => import("pages/HomePageMVP"));
+const FindATutor = React.lazy(() => import("pages/FindATutor"));
+const HomePage = React.lazy(() => import("pages/HomePage"));
 const ProjectRoutes = () => {
   return (
     <React.Suspense fallback={<>Loading...</>}>
@@ -31,32 +31,32 @@ const ProjectRoutes = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/homepagemvp" element={<HomePageMVP />} />
-          <Route path="/findatutorpagemvp" element={<FindATutorPageMVP />} />
+          <Route path="/homepage" element={<HomePage />} />
+          <Route path="/findatutor" element={<FindATutor />} />
           <Route
-            path="/tutorprofilepagemvp"
-            element={<TutorProfilePageMVP />}
+            path="/tutorprofilepage"
+            element={<TutorProfile />}
           />
-          <Route path="/contactusmvp" element={<ContactUsMVP />} />
-          <Route path="/infodivmvp" element={<InfoDivMVP />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/infodiv" element={<InfoDiv />} />
           <Route
-            path="/tutorcodeofconductmvp"
-            element={<TutorCodeofConductMVP />}
+            path="/tutorcodeofconduct"
+            element={<TutorCodeofConduct />}
           />
-          <Route path="/loginpagemvp" element={<LoginPageMVP />} />
-          <Route path="/tutoronboardingmvp" element={<TutorOnboardingMVP />} />
-          <Route path="/tutordashboardmvp" element={<TutorDashboardMVP />} />
+          <Route path="/loginpage" element={<LoginPage />} />
+          <Route path="/tutoronboarding" element={<TutorOnboarding />} />
+          <Route path="/tutordashboard" element={<TutorDashboard />} />
           <Route
-            path="/desktopframecontainermvp"
-            element={<DesktopFrameContainerMVP />}
-          />
-          <Route
-            path="/findatutorpagemvpone"
-            element={<FindATutorPageMVPOne />}
+            path="/modals"
+            element={<Modals />}
           />
           <Route
-            path="/tutorprofilepagedesktopmvp"
-            element={<TutorProfilePageDesktopMVP />}
+            path="/findatutorloggedin"
+            element={<FindATutorLoggedIn />}
+          />
+          <Route
+            path="/tutorprofileloggedin"
+            element={<TutorProfileLoggedIn />}
           />
         </Routes>
       </Router>

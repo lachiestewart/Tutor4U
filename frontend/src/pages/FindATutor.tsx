@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Button, Img, Input, Line, Text } from "components";
-import Header from "components/Header";
 import TutorCardFindATutor from "components/TutorCardFindATutor";
+import NavBar from "components/NavBar";
 
-const FindATutorPageMVPPage: React.FC = () => {
+const FindATutor: React.FC = () => {
   return (
     <>
       <div className="bg-gray-200 flex flex-col font-montserrat items-start justify-start mx-auto w-auto sm:w-full md:w-full">
-        <Header className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
+        <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
         <div className="flex flex-col items-start justify-start p-2.5 w-full">
           <div className="flex flex-col gap-2.5 items-center justify-start max-w-[1421px] mx-auto md:px-5 py-6 w-full">
             <Text
@@ -776,4 +776,4 @@ const FindATutorPageMVPPage: React.FC = () => {
   );
 };
 
-export default FindATutorPageMVPPage;
+export default FindATutor;

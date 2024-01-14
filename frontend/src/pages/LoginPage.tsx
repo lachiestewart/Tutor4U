@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button, Img, Input, Line, Text } from "components";
 
-const LoginPageMVPPage: React.FC = () => {
+const LoginPage: React.FC = () => {
   return (
     <>
       <div className="bg-white-A700 flex sm:flex-col md:flex-col flex-row font-montserrat sm:gap-5 md:gap-5 items-center mx-auto w-full">
@@ -113,4 +113,4 @@ const LoginPageMVPPage: React.FC = () => {
   );
 };
 
-export default LoginPageMVPPage;
+export default LoginPage;

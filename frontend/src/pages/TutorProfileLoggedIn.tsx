@@ -1,15 +1,15 @@
 import React from "react";
+import Sidebar from "components/Sidebar";
 
 import { Button, Img, Input, Text } from "components";
-import Header from "components/Header";
 
-const TutorProfilePageMVPPage: React.FC = () => {
+const TutorProfileLoggedIn: React.FC = () => {
   return (
     <>
-      <div className="bg-gray-200 flex flex-col font-montserrat gap-2.5 items-start justify-start mx-auto w-auto sm:w-full md:w-full">
-        <Header className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 h-[118px] md:h-auto items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
-        <div className="flex flex-col items-center justify-start md:px-10 sm:px-5 px-[54px] py-[30px] w-full">
-          <div className="bg-white-A700 flex md:flex-col flex-row gap-[21px] items-start justify-start max-w-[977px] mx-auto md:px-5 px-6 py-2.5 rounded-[10px] w-full">
+      <div className="bg-gray-200 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-between mx-auto w-auto sm:w-full md:w-full">
+        <Sidebar />
+        <div className="flex flex-1 flex-col items-center justify-start md:px-5 px-[54px] py-[30px] w-full">
+          <div className="bg-white-A700 flex md:flex-col flex-row gap-[21px] items-start justify-start max-w-[977px] sm:px-5 px-6 py-2.5 rounded-[10px] w-full">
             <div className="flex flex-col gap-3.5 h-[907px] md:h-auto items-center justify-start sm:px-5 px-[33px] py-2.5 w-[358px]">
               <div className="flex flex-col gap-4 items-center justify-start w-[96%] md:w-full">
                 <div className="bg-blue_gray-100 h-[277px] rounded-[138px] w-[277px]"></div>
@@ -139,7 +139,7 @@ const TutorProfilePageMVPPage: React.FC = () => {
                 </>
               </Text>
             </div>
-            <div className="flex md:flex-1 flex-col gap-[11px] h-[785px] md:h-auto items-start justify-start p-[15px] w-auto md:w-full">
+            <div className="flex md:flex-1 flex-col gap-[11px] items-start justify-start p-[15px] w-auto md:w-full">
               <div className="flex sm:flex-col flex-row gap-1 items-center justify-center w-full">
                 <Text
                   className="flex-1 md:text-3xl sm:text-[28px] text-[32px] text-black-900 w-auto"
@@ -181,52 +181,29 @@ const TutorProfilePageMVPPage: React.FC = () => {
                   deserunt mollit anim id est laborum.&quot;
                 </>
               </Text>
-              <div className="bg-gray-200_01 flex flex-col items-center justify-center px-5 py-2.5 rounded-[10px] w-full">
-                <div className="flex flex-col gap-2.5 items-start justify-start py-2.5 w-full">
-                  <Text
-                    className="text-black-900 text-lg w-full"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Want to get in touch with this tutor?
-                  </Text>
-                  <Text
-                    className="max-w-[530px] md:max-w-full text-black-900 text-sm"
-                    size="txtMontserratRomanMedium14"
-                  >
-                    Put in your details below to get full access to the platform
-                    and contact this tutor for free!
-                  </Text>
-                  <div className="flex sm:flex-col flex-row gap-2.5 items-start justify-start w-full">
-                    <div className="flex flex-1 flex-col items-start justify-start w-full">
-                      <Text
-                        className="text-black-900 text-center text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
-                      >
-                        First Name
-                      </Text>
-                      <Input
-                        name="emailtextentry"
-                        placeholder=""
-                        className="p-0 w-full"
-                        wrapClassName="flex h-[50px] w-full"
-                      ></Input>
-                    </div>
-                    <div className="flex flex-1 flex-col items-start justify-start w-full">
-                      <Text
-                        className="text-black-900 text-center text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
-                      >
-                        Last Name
-                      </Text>
-                      <Input
-                        name="emailtextentry_One"
-                        placeholder=""
-                        className="p-0 w-full"
-                        wrapClassName="flex h-[50px] w-full"
-                      ></Input>
-                    </div>
+              <div className="bg-blue_gray-100 flex flex-col gap-[22px] items-start justify-start pb-5 pt-[13px] px-[15px] rounded-[10px] w-[570px] sm:w-full">
+                <Text
+                  className="sm:text-2xl md:text-[26px] text-[28px] text-black-900 text-center w-[381px]"
+                  size="txtMontserratRomanSemiBold28"
+                >
+                  Get in touch with (FName)
+                </Text>
+                <div className="flex flex-col gap-[15px] items-start justify-start w-[537px] sm:w-full">
+                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
+                    <Text
+                      className="text-black-900 text-center text-lg w-auto"
+                      size="txtMontserratRomanSemiBold18"
+                    >
+                      Full Name
+                    </Text>
+                    <Input
+                      name="emailtextentry"
+                      placeholder=""
+                      className="p-0 w-full"
+                      wrapClassName="flex h-[50px] w-full"
+                    ></Input>
                   </div>
-                  <div className="flex flex-col items-start justify-start w-full">
+                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
                     <Text
                       className="text-black-900 text-center text-lg w-auto"
                       size="txtMontserratRomanSemiBold18"
@@ -234,34 +211,29 @@ const TutorProfilePageMVPPage: React.FC = () => {
                       Email
                     </Text>
                     <Input
-                      name="emailtextentry_Two"
+                      name="emailtextentry_One"
                       placeholder=""
                       className="p-0 w-full"
                       wrapClassName="flex h-[50px] w-full"
                     ></Input>
                   </div>
-                  <div className="flex flex-col items-start justify-start w-full">
+                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
                     <Text
                       className="text-black-900 text-center text-lg w-auto"
                       size="txtMontserratRomanSemiBold18"
                     >
-                      Password
+                      Message
                     </Text>
-                    <Input
-                      name="emailtextentry_Three"
-                      placeholder=""
-                      className="p-0 w-full"
-                      wrapClassName="flex h-[50px] w-full"
-                    ></Input>
+                    <div className="bg-white-A700 h-[82px] rounded-[10px] w-full"></div>
                   </div>
                   <Button
-                    className="cursor-pointer font-medium leading-[normal] min-w-[198px] text-center text-sm"
+                    className="cursor-pointer font-medium leading-[normal] min-w-[83px] text-center text-sm"
                     shape="round"
                     color="blue_gray_700"
                     size="sm"
                     variant="fill"
                   >
-                    Get Access To All Tutors{" "}
+                    Submit
                   </Button>
                 </div>
               </div>
@@ -273,4 +245,4 @@ const TutorProfilePageMVPPage: React.FC = () => {
   );
 };
 
-export default TutorProfilePageMVPPage;
+export default TutorProfileLoggedIn;

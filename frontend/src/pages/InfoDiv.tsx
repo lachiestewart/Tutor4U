@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button, Img, Text } from "components";
 
-const InfoDivMVPPage: React.FC = () => {
+const InfoDiv: React.FC = () => {
   return (
     <>
       <div className="flex flex-col font-montserrat items-center justify-start mx-auto pt-[25px] w-auto sm:w-full md:w-full">
@@ -230,4 +230,4 @@ const InfoDivMVPPage: React.FC = () => {
   );
 };
 
-export default InfoDivMVPPage;
+export default InfoDiv;

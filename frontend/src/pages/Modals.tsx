@@ -2,7 +2,7 @@ import React from "react";
 
 import { Button, Input, Text } from "components";
 
-const DesktopFrameContainerMVPPage: React.FC = () => {
+const Modals: React.FC = () => {
   return (
     <>
       <div className="bg-white-A700 flex sm:flex-col md:flex-col flex-row font-montserrat sm:gap-10 md:gap-10 gap-[151px] items-start justify-start mx-auto p-11 md:px-10 sm:px-5 w-full">
@@ -138,4 +138,4 @@ const DesktopFrameContainerMVPPage: React.FC = () => {
   );
 };
 
-export default DesktopFrameContainerMVPPage;
+export default Modals;

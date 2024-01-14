@@ -11,41 +11,41 @@ const Home = () => {
       </p>
       <ul>
         <li>
-          <Link to="/homepagemvp">HomePageMVP</Link>
+          <Link to="/homepage">HomePage</Link>
         </li>
         <li>
-          <Link to="/findatutorpagemvp">FindATutorPageMVP</Link>
+          <Link to="/findatutor">FindATutor</Link>
         </li>
         <li>
-          <Link to="/tutorprofilepagemvp">TutorProfilePageMVP</Link>
+          <Link to="/tutorprofile">TutorProfile</Link>
         </li>
         <li>
-          <Link to="/contactusmvp">ContactUsMVP</Link>
+          <Link to="/contactus">ContactUs</Link>
         </li>
         <li>
-          <Link to="/infodivmvp">InfoDivMVP</Link>
+          <Link to="/modals">Modals</Link>
         </li>
         <li>
-          <Link to="/tutorcodeofconductmvp">TutorCodeofConductMVP</Link>
+          <Link to="/tutorcodeofconduct">TutorCodeofConduct</Link>
         </li>
         <li>
-          <Link to="/loginpagemvp">LoginPageMVP</Link>
+          <Link to="/loginpage">LoginPage</Link>
         </li>
         <li>
-          <Link to="/tutoronboardingmvp">TutorOnboardingMVP</Link>
+          <Link to="/tutoronboarding">TutorOnboarding</Link>
         </li>
         <li>
-          <Link to="/tutordashboardmvp">TutorDashboardMVP</Link>
+          <Link to="/tutordashboard">TutorDashboard</Link>
         </li>
         <li>
-          <Link to="/desktopframecontainermvp">DesktopFrameContainerMVP</Link>
+          <Link to="/infodiv">InfoDiv</Link>
         </li>
         <li>
-          <Link to="/findatutorpagemvpone">FindATutorPageMVPOne</Link>
+          <Link to="/findatutorloggedin">FindATutorLoggedIn</Link>
         </li>
         <li>
-          <Link to="/tutorprofilepagedesktopmvp">
-            TutorProfilePageDesktopMVP
+          <Link to="/tutorprofileloggedin">
+            TutorProfileLoggedIn
           </Link>
         </li>
       </ul>

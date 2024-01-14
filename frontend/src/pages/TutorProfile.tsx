@@ -1,133 +1,15 @@
 import React from "react";
 
-import { Sidebar } from "react-pro-sidebar";
-
 import { Button, Img, Input, Text } from "components";
+import NavBar from "components/NavBar";
 
-const TutorProfilePageDesktopMVPPage: React.FC = () => {
+const TutorProfile: React.FC = () => {
   return (
     <>
-      <div className="bg-gray-200 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-between mx-auto w-auto sm:w-full md:w-full">
-        <Sidebar className="!sticky !w-[380px] bg-blue_gray-700 flex h-screen md:hidden justify-start overflow-auto md:px-5 top-[0]">
-          <div className="flex flex-col items-start justify-start w-[380px] sm:w-full">
-            <Img
-              className="h-[120px] w-[380px]"
-              src="images/img_sidebarheader_blue_gray_900.svg"
-              alt="sidebarheader"
-            />
-            <div className="flex flex-col items-start justify-center w-full">
-              <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                <div className="flex flex-row gap-5 items-center justify-start w-full">
-                  <Img
-                    className="h-10 md:h-auto object-cover w-10"
-                    src="images/img_analytics.png"
-                    alt="analytics"
-                  />
-                  <Text
-                    className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                    size="txtMontserratRomanSemiBold28WhiteA700"
-                  >
-                    Dashboard
-                  </Text>
-                </div>
-              </div>
-              <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                <div className="flex flex-row gap-5 items-center justify-start w-full">
-                  <Img
-                    className="h-10 md:h-auto object-cover w-10"
-                    src="images/img_graduationcap.png"
-                    alt="graduationcap"
-                  />
-                  <Text
-                    className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                    size="txtMontserratRomanSemiBold28WhiteA700"
-                  >
-                    Find A Tutor
-                  </Text>
-                </div>
-              </div>
-              <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                <div className="flex flex-row gap-5 items-center justify-start w-full">
-                  <Img
-                    className="h-10 md:h-auto object-cover w-10"
-                    src="images/img_googleforms.png"
-                    alt="googleforms"
-                  />
-                  <Text
-                    className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                    size="txtMontserratRomanSemiBold28WhiteA700"
-                  >
-                    Lessons Requests
-                  </Text>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col gap-2.5 items-start justify-center mt-[388px] w-[380px] sm:w-full">
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_maleuser.png"
-                  alt="maleuser"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  Profile Settings
-                </Text>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_usdollarcircled.png"
-                  alt="usdollarcircled"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  Account Details
-                </Text>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_questions.png"
-                  alt="questions"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  FAQs
-                </Text>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-between p-[15px] w-full">
-              <div className="flex flex-row gap-5 items-center justify-start w-full">
-                <Img
-                  className="h-10 md:h-auto object-cover w-10"
-                  src="images/img_logout.png"
-                  alt="logout"
-                />
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-white-A700 w-auto"
-                  size="txtMontserratRomanSemiBold28WhiteA700"
-                >
-                  Logout
-                </Text>
-              </div>
-            </div>
-          </div>
-        </Sidebar>
-        <div className="flex flex-1 flex-col items-center justify-start md:px-5 px-[54px] py-[30px] w-full">
-          <div className="bg-white-A700 flex md:flex-col flex-row gap-[21px] items-start justify-start max-w-[977px] sm:px-5 px-6 py-2.5 rounded-[10px] w-full">
+      <div className="bg-gray-200 flex flex-col font-montserrat gap-2.5 items-start justify-start mx-auto w-auto sm:w-full md:w-full">
+      <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
+        <div className="flex flex-col items-center justify-start md:px-10 sm:px-5 px-[54px] py-[30px] w-full">
+          <div className="bg-white-A700 flex md:flex-col flex-row gap-[21px] items-start justify-start max-w-[977px] mx-auto md:px-5 px-6 py-2.5 rounded-[10px] w-full">
             <div className="flex flex-col gap-3.5 h-[907px] md:h-auto items-center justify-start sm:px-5 px-[33px] py-2.5 w-[358px]">
               <div className="flex flex-col gap-4 items-center justify-start w-[96%] md:w-full">
                 <div className="bg-blue_gray-100 h-[277px] rounded-[138px] w-[277px]"></div>
@@ -257,7 +139,7 @@ const TutorProfilePageDesktopMVPPage: React.FC = () => {
                 </>
               </Text>
             </div>
-            <div className="flex md:flex-1 flex-col gap-[11px] items-start justify-start p-[15px] w-auto md:w-full">
+            <div className="flex md:flex-1 flex-col gap-[11px] h-[785px] md:h-auto items-start justify-start p-[15px] w-auto md:w-full">
               <div className="flex sm:flex-col flex-row gap-1 items-center justify-center w-full">
                 <Text
                   className="flex-1 md:text-3xl sm:text-[28px] text-[32px] text-black-900 w-auto"
@@ -299,29 +181,52 @@ const TutorProfilePageDesktopMVPPage: React.FC = () => {
                   deserunt mollit anim id est laborum.&quot;
                 </>
               </Text>
-              <div className="bg-blue_gray-100 flex flex-col gap-[22px] items-start justify-start pb-5 pt-[13px] px-[15px] rounded-[10px] w-[570px] sm:w-full">
-                <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-black-900 text-center w-[381px]"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Get in touch with (FName)
-                </Text>
-                <div className="flex flex-col gap-[15px] items-start justify-start w-[537px] sm:w-full">
-                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
-                    <Text
-                      className="text-black-900 text-center text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Full Name
-                    </Text>
-                    <Input
-                      name="emailtextentry"
-                      placeholder=""
-                      className="p-0 w-full"
-                      wrapClassName="flex h-[50px] w-full"
-                    ></Input>
+              <div className="bg-gray-200_01 flex flex-col items-center justify-center px-5 py-2.5 rounded-[10px] w-full">
+                <div className="flex flex-col gap-2.5 items-start justify-start py-2.5 w-full">
+                  <Text
+                    className="text-black-900 text-lg w-full"
+                    size="txtMontserratRomanSemiBold18"
+                  >
+                    Want to get in touch with this tutor?
+                  </Text>
+                  <Text
+                    className="max-w-[530px] md:max-w-full text-black-900 text-sm"
+                    size="txtMontserratRomanMedium14"
+                  >
+                    Put in your details below to get full access to the platform
+                    and contact this tutor for free!
+                  </Text>
+                  <div className="flex sm:flex-col flex-row gap-2.5 items-start justify-start w-full">
+                    <div className="flex flex-1 flex-col items-start justify-start w-full">
+                      <Text
+                        className="text-black-900 text-center text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        First Name
+                      </Text>
+                      <Input
+                        name="emailtextentry"
+                        placeholder=""
+                        className="p-0 w-full"
+                        wrapClassName="flex h-[50px] w-full"
+                      ></Input>
+                    </div>
+                    <div className="flex flex-1 flex-col items-start justify-start w-full">
+                      <Text
+                        className="text-black-900 text-center text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        Last Name
+                      </Text>
+                      <Input
+                        name="emailtextentry_One"
+                        placeholder=""
+                        className="p-0 w-full"
+                        wrapClassName="flex h-[50px] w-full"
+                      ></Input>
+                    </div>
                   </div>
-                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
+                  <div className="flex flex-col items-start justify-start w-full">
                     <Text
                       className="text-black-900 text-center text-lg w-auto"
                       size="txtMontserratRomanSemiBold18"
@@ -329,29 +234,34 @@ const TutorProfilePageDesktopMVPPage: React.FC = () => {
                       Email
                     </Text>
                     <Input
-                      name="emailtextentry_One"
+                      name="emailtextentry_Two"
                       placeholder=""
                       className="p-0 w-full"
                       wrapClassName="flex h-[50px] w-full"
                     ></Input>
                   </div>
-                  <div className="flex flex-col items-start justify-start w-auto sm:w-full">
+                  <div className="flex flex-col items-start justify-start w-full">
                     <Text
                       className="text-black-900 text-center text-lg w-auto"
                       size="txtMontserratRomanSemiBold18"
                     >
-                      Message
+                      Password
                     </Text>
-                    <div className="bg-white-A700 h-[82px] rounded-[10px] w-full"></div>
+                    <Input
+                      name="emailtextentry_Three"
+                      placeholder=""
+                      className="p-0 w-full"
+                      wrapClassName="flex h-[50px] w-full"
+                    ></Input>
                   </div>
                   <Button
-                    className="cursor-pointer font-medium leading-[normal] min-w-[83px] text-center text-sm"
+                    className="cursor-pointer font-medium leading-[normal] min-w-[198px] text-center text-sm"
                     shape="round"
                     color="blue_gray_700"
                     size="sm"
                     variant="fill"
                   >
-                    Submit
+                    Get Access To All Tutors{" "}
                   </Button>
                 </div>
               </div>
@@ -363,4 +273,4 @@ const TutorProfilePageDesktopMVPPage: React.FC = () => {
   );
 };
 
-export default TutorProfilePageDesktopMVPPage;
+export default TutorProfile;
