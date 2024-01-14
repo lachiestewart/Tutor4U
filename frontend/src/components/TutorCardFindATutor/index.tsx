@@ -21,12 +21,12 @@ type TutorCardFindATutorProps = Omit<
 const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
   return (
     <>
-      <div className="bg-white-A700 flex flex-1 flex-col h-[325px] md:h-auto items-center justify-start rounded-[10px] w-full">
+      <div className="bg-white-A700 hover:shadow-lg hover:cursor-pointer flex flex-1 flex-col h-[325px] md:h-auto justify-start rounded-[10px] overflow-hidden w-full">
         <div
-          className="bg-cover bg-gradient  bg-no-repeat flex flex-col h-[231px] md:h-auto items-start justify-start p-2.5 w-full"
+          className="bg-cover bg-gradient  bg-no-repeat flex flex-col h-[231px] md:h-auto items-start justify-end p-2.5 w-full"
           style={{ backgroundImage: "url('images/img_frame13_231x220.png')" }}
         >
-          <div className="flex flex-col items-start justify-start px-2 w-auto">
+          <div className="flex flex-col items-start justify-end px-2 w-auto">
             <Text
               className="text-lg text-white-A700 w-auto"
               size="txtMontserratRomanSemiBold18WhiteA700"
@@ -41,7 +41,7 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
             </Text>
           </div>
         </div>
-        <div className="flex flex-col items-start justify-center p-2">
+        <div className="flex flex-col items-start justify-start p-2 pl-4">
           <Text className="text-black-900 text-xs" size="txtInterRegular12">
             {props?.tutorsubject}
           </Text>

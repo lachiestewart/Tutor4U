@@ -76,9 +76,9 @@ const FindATutor: React.FC = () => {
                   Search
                 </Text>
                 <Input
-                  name="emailtextentry"
-                  placeholder=""
-                  className="p-0 w-full"
+                  name="tutorTextSearchFilterEntry"
+                  placeholder="Search through tutor profiles...."
+                  className="p-4 w-full"
                   wrapClassName="border border-gray-400_02 border-solid flex h-[50px] w-full"
                 ></Input>
               </div>
@@ -98,12 +98,12 @@ const FindATutor: React.FC = () => {
                       Subjects
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
@@ -169,12 +169,12 @@ const FindATutor: React.FC = () => {
                       Tutoring Level
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
@@ -240,12 +240,12 @@ const FindATutor: React.FC = () => {
                       Tutor Rating
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <Img
                   className="h-[29px] w-full"
@@ -269,12 +269,12 @@ const FindATutor: React.FC = () => {
                       Location
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
@@ -340,12 +340,12 @@ const FindATutor: React.FC = () => {
                       Availability
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
@@ -411,12 +411,12 @@ const FindATutor: React.FC = () => {
                       Gender
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
@@ -482,12 +482,12 @@ const FindATutor: React.FC = () => {
                       Lesson Format
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
@@ -553,12 +553,12 @@ const FindATutor: React.FC = () => {
                       Tutor Rate
                     </Text>
                   </div>
-                  <Text
+                  <Button
                     className="text-indigo-A400 text-right text-xs w-[33px]"
                     size="txtMontserratRomanMedium12"
                   >
                     Reset
-                  </Text>
+                  </Button>
                 </div>
                 <Img
                   className="h-[29px] w-full"
@@ -569,13 +569,16 @@ const FindATutor: React.FC = () => {
               <Line className="bg-blue_gray-400 h-px w-full" />
             </div>
             <div className="flex flex-col gap-[15px] h-[1208px] md:h-auto items-center justify-start">
-              <Input
+              <div className="flex flex-row bg-white-A700 rounded-[10px] text-left items-center w-full p-2 text-lg">
+                <text className="w-auto font-medium">Filtering by:</text>
+              {/*<Input
                 name="filteredtutors"
                 placeholder="Filtering by:"
                 className="p-0 placeholder:text-black-900 text-center text-lg w-full"
                 wrapClassName="w-full"
                 size="sm"
-              ></Input>
+  ></Input>*/}
+              </div>
               <div className="gap-3 md:gap-5 grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
                 <div className="bg-white-A700 flex flex-1 flex-col h-[325px] md:h-auto items-center justify-start rounded-[10px] w-full">
                   <div
