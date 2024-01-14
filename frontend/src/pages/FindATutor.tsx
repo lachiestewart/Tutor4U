@@ -7,19 +7,19 @@ import NavBar from "components/NavBar";
 const FindATutor: React.FC = () => {
   return (
     <>
-      <div className="bg-gray-200 flex flex-col font-montserrat items-start justify-start mx-auto w-auto sm:w-full md:w-full">
+      <div className="bg-gray-200 flex flex-col font-montserrat items-start justify-start">
         <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
         <div className="flex flex-col items-start justify-start p-2.5 w-full">
-          <div className="flex flex-col gap-2.5 items-center justify-start max-w-[1421px] mx-auto md:px-5 py-6 w-full">
+          <div className="flex flex-col gap-2.5 items-center justify-start max-w-[1421px] mx-auto md:px-5 py-6 w-auto">
             <Text
-              className="md:text-3xl sm:text-[28px] text-[32px] text-black-900 text-center w-[207px]"
+              className="md:text-3xl sm:text-[28px] text-[32px] text-black-900 text-center"
               size="txtMontserratRomanBold32"
             >
               Find A Tutor
             </Text>
-            <div className="flex flex-col gap-2.5 items-center justify-start w-[66%] md:w-full">
+            <div className="flex flex-col gap-2.5 items-center justify-start w-auto md:w-auto">
               <Text
-                className="leading-[24.00px] text-black-900 text-center text-lg w-full"
+                className="leading-[24.00px] text-black-900 text-center text-lg"
                 size="txtMontserratRomanRegular18"
               >
                 If you see a tutor that you think could be a good fit, click
@@ -27,7 +27,7 @@ const FindATutor: React.FC = () => {
                 with them
               </Text>
               <Text
-                className="leading-[24.00px] text-black-900 text-center text-lg w-full"
+                className="leading-[24.00px] text-black-900 text-center text-lg"
                 size="txtMontserratRomanRegular18"
               >
                 Can’t seem to find the perfect tutor? Make a subject request and
@@ -44,10 +44,10 @@ const FindATutor: React.FC = () => {
               </Button>
             </div>
           </div>
-          <div className="flex md:flex-col flex-row gap-2.5 items-start justify-center max-w-[1421px] mx-auto md:px-5 w-full">
+          <div className="flex flex-row gap-2.5 items-start justify-center mx-auto md:px-5 w-[95%]">
             <div className="bg-white-A700 flex flex-col gap-[11px] items-start justify-center px-2.5 py-4 rounded-[10px] w-auto">
               <Text
-                className="text-black-900 text-lg w-[295px]"
+                className="text-black-900 text-lg w-auto"
                 size="txtMontserratRomanRegular18"
               >
                 <span className="text-black-900 font-montserrat text-left font-normal">
@@ -68,405 +68,374 @@ const FindATutor: React.FC = () => {
                   tutors
                 </span>
               </Text>
-              <div className="flex flex-col items-start justify-start w-[325px]">
-                <Text
-                  className="text-black-900 text-center text-lg w-auto"
-                  size="txtMontserratRomanSemiBold18"
-                >
-                  Search
-                </Text>
-                <Input
-                  name="tutorTextSearchFilterEntry"
-                  placeholder="Search through tutor profiles...."
-                  className="p-4 w-full"
-                  wrapClassName="border border-gray-400_02 border-solid flex h-[50px] w-full"
-                ></Input>
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
-              <div className="flex flex-col items-start justify-center w-[325px]">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-[149px]">
-                    <Img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_training.png"
-                      alt="training"
-                    />
-                    <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Subjects
-                    </Text>
-                  </div>
-                  <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
+             <form action="">
+               
+                <div className="flex flex-col items-start justify-start w-auto">
+                  <Text
+                    className="text-black-900 text-center text-lg w-auto"
+                    size="txtMontserratRomanSemiBold18"
                   >
-                    Reset
-                  </Button>
+                    Search
+                  </Text>
+                  <Input
+                    name="tutorTextSearchFilterEntry"
+                    placeholder="Search through tutor profiles...."
+                    className="p-3 w-full"
+                    wrapClassName="border border-gray-400_02 border-solid flex h-auto w-full"
+                  ></Input>
                 </div>
-                <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                <Line className="bg-blue_gray-400 h-px w-full my-4" />
+                <div className="flex flex-col items-start justify-center w-auto">
+                  <div className="filter-category-title-div">
+                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
+                      <Img
+                        className="h-[30px] md:h-auto object-cover w-[30px]"
+                        src="images/img_training.png"
+                        alt="training"
+                      />
+                      <Text
+                        className="text-black-900 text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        Subjects
+                      </Text>
+                    </div>
+                    <Button
+                      className="reset-btn"
                     >
-                      English
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
+                      Reset
+                    </Button>
                   </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      History
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Mathematics
-                    </Text>
-                    <Text
-                      className="text-black-900 text-center text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                </div>
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
-              <div className="flex flex-col items-start justify-center w-[325px]">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <Img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_university.png"
-                      alt="university"
-                    />
-                    <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Tutoring Level
-                    </Text>
-                  </div>
-                  <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
-                  >
-                    Reset
-                  </Button>
-                </div>
-                <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      NCEA L1
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      NCEA L2
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      NCEA L3
-                    </Text>
-                    <Text
-                      className="text-black-900 text-center text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
+                  <div className="flex flex-col h-auto gap-1
+                   md:h-auto items-start justify-start py-2 w-full flex-wrap">
+                        <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2 w-[325px]">
+                          <input className="rounded" type="checkbox" name="" value="" ></input>
+                          <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        English
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                        </div>
                   </div>
                 </div>
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
-              <div className="flex flex-col items-start justify-center w-[325px]">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <Img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_star.png"
-                      alt="star"
-                    />
-                    <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
+                <Line className="bg-blue_gray-400 h-px w-full my-4" />
+                <div className="flex flex-col items-start justify-center w-[325px]">
+                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
+                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
+                      <Img
+                        className="h-[30px] md:h-auto object-cover w-[30px]"
+                        src="images/img_university.png"
+                        alt="university"
+                      />
+                      <Text
+                        className="text-black-900 text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        Tutoring Level
+                      </Text>
+                    </div>
+                    <Button
+                      className="reset-btn"
                     >
-                      Tutor Rating
-                    </Text>
+                      Reset
+                    </Button>
                   </div>
-                  <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
-                  >
-                    Reset
-                  </Button>
-                </div>
-                <Img
-                  className="h-[29px] w-full"
-                  src="images/img_filterlistframe.svg"
-                  alt="filterlistframe"
-                />
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
-              <div className="flex flex-col items-start justify-center w-[325px]">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <Img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_location.png"
-                      alt="location"
-                    />
-                    <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Location
-                    </Text>
-                  </div>
-                  <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
-                  >
-                    Reset
-                  </Button>
-                </div>
-                <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Auckland
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Wellington
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Christchurch
-                    </Text>
-                    <Text
-                      className="text-black-900 text-center text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
+                  
+                  <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        NCEA L1
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        NCEA L2
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        NCEA L3
+                      </Text>
+                      <Text
+                        className="text-black-900 text-center text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
-              <div className="flex flex-col items-start justify-center w-[325px]">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <Img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_ok.png"
-                      alt="ok"
-                    />
-                    <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
+                <Line className="bg-blue_gray-400 h-px w-full my-4" />
+                <div className="flex flex-col items-start justify-center w-[325px]">
+                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
+                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
+                      <Img
+                        className="h-[30px] md:h-auto object-cover w-[30px]"
+                        src="images/img_star.png"
+                        alt="star"
+                      />
+                      <Text
+                        className="text-black-900 text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        Tutor Rating
+                      </Text>
+                    </div>
+                    <Button
+                      className="reset-btn"
                     >
-                      Availability
-                    </Text>
+                      Reset
+                    </Button>
                   </div>
-                  <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
-                  >
-                    Reset
-                  </Button>
+                  <Img
+                    className="h-[29px] w-full"
+                    src="images/img_filterlistframe.svg"
+                    alt="filterlistframe"
+                  />
                 </div>
-                <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                <Line className="bg-blue_gray-400 h-px w-full my-4" />
+                <div className="flex flex-col items-start justify-center w-[325px]">
+                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
+                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
+                      <Img
+                        className="h-[30px] md:h-auto object-cover w-[30px]"
+                        src="images/img_location.png"
+                        alt="location"
+                      />
+                      <Text
+                        className="text-black-900 text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        Location
+                      </Text>
+                    </div>
+                    <Button
+                      className="reset-btn"
                     >
-                      Available
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
+                      Reset
+                    </Button>
                   </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Limited Availability
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Not Available
-                    </Text>
-                    <Text
-                      className="text-black-900 text-center text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                </div>
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
-              <div className="flex flex-col items-start justify-center w-[325px]">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <Img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_toilet.png"
-                      alt="toilet"
-                    />
-                    <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Gender
-                    </Text>
-                  </div>
-                  <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
-                  >
-                    Reset
-                  </Button>
-                </div>
-                <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Male
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Female
-                    </Text>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
-                    <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      Non-Binary
-                    </Text>
-                    <Text
-                      className="text-black-900 text-center text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
-                    >
-                      ##
-                    </Text>
+                  <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Auckland
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Wellington
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Christchurch
+                      </Text>
+                      <Text
+                        className="text-black-900 text-center text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
+                <Line className="bg-blue_gray-400 h-px w-full my-4" />
+                <div className="flex flex-col items-start justify-center w-[325px]">
+                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
+                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
+                      <Img
+                        className="h-[30px] md:h-auto object-cover w-[30px]"
+                        src="images/img_ok.png"
+                        alt="ok"
+                      />
+                      <Text
+                        className="text-black-900 text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        Availability
+                      </Text>
+                    </div>
+                    <Button
+                      className="reset-btn"
+                    >
+                      Reset
+                    </Button>
+                  </div>
+                  <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Available
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Limited Availability
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Not Available
+                      </Text>
+                      <Text
+                        className="text-black-900 text-center text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                  </div>
+                </div>
+                <Line className="bg-blue_gray-400 h-px w-full my-4" />
+                <div className="flex flex-col items-start justify-center w-[325px]">
+                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
+                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
+                      <Img
+                        className="h-[30px] md:h-auto object-cover w-[30px]"
+                        src="images/img_toilet.png"
+                        alt="toilet"
+                      />
+                      <Text
+                        className="text-black-900 text-lg w-auto"
+                        size="txtMontserratRomanSemiBold18"
+                      >
+                        Gender
+                      </Text>
+                    </div>
+                    <Button
+                      className="reset-btn"
+                    >
+                      Reset
+                    </Button>
+                  </div>
+                  <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Male
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Female
+                      </Text>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
+                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <Text
+                        className="text-black-900 text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        Non-Binary
+                      </Text>
+                      <Text
+                        className="text-black-900 text-center text-xs w-auto"
+                        size="txtMontserratRomanMedium12Black900"
+                      >
+                        ##
+                      </Text>
+                    </div>
+                  </div>
+                </div>
+             </form>
+              <Line className="bg-blue_gray-400 h-px w-full my-4" />
               <div className="flex flex-col items-start justify-center w-[325px]">
                 <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                   <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
@@ -483,8 +452,7 @@ const FindATutor: React.FC = () => {
                     </Text>
                   </div>
                   <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
+                    className="reset-btn"
                   >
                     Reset
                   </Button>
@@ -537,7 +505,7 @@ const FindATutor: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
+              <Line className="bg-blue_gray-400 h-px w-full my-4" />
               <div className="flex flex-col items-start justify-center w-[325px]">
                 <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                   <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
@@ -554,8 +522,7 @@ const FindATutor: React.FC = () => {
                     </Text>
                   </div>
                   <Button
-                    className="text-indigo-A400 text-right text-xs w-[33px]"
-                    size="txtMontserratRomanMedium12"
+                    className="reset-btn"
                   >
                     Reset
                   </Button>
@@ -566,9 +533,9 @@ const FindATutor: React.FC = () => {
                   alt="filterlistframe_One"
                 />
               </div>
-              <Line className="bg-blue_gray-400 h-px w-full" />
+              <Line className="bg-blue_gray-400 h-px w-full my-4" />
             </div>
-            <div className="flex flex-col gap-[15px] h-[1208px] md:h-auto items-center justify-start">
+            <div className="flex flex-col gap-[15px] h-[1208px] w-[66%] max-w-[1100px] md:h-auto items-center justify-start">
               <div className="flex flex-row bg-white-A700 rounded-[10px] text-left items-center w-full p-2 text-lg">
                 <text className="w-auto font-medium">Filtering by:</text>
               {/*<Input

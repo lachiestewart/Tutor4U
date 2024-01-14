@@ -111,3 +111,12 @@ li:hover{
   justify-content: space-between;
 }
 
+/* Below tags were created by Jason*/
+
+.filter-category-title-div{
+  @apply flex flex-row gap-[20%] items-center justify-between p-1 w-full
+}
+
+.reset-btn{
+  @apply text-indigo-A400 text-right text-xs w-auto hover:font-semibold
+}
