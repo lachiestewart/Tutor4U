@@ -21,7 +21,7 @@ type TutorCardFindATutorProps = Omit<
 const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
   return (
     <>
-      <div className={props.className}>
+      <div className="bg-white-A700 flex flex-1 flex-col h-[325px] md:h-auto items-center justify-start rounded-[10px] w-full">
         <div
           className="bg-cover bg-gradient  bg-no-repeat flex flex-col h-[231px] md:h-auto items-start justify-start p-2.5 w-full"
           style={{ backgroundImage: "url('images/img_frame13_231x220.png')" }}

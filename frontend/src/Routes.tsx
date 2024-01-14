@@ -34,7 +34,7 @@ const ProjectRoutes = () => {
           <Route path="/homepage" element={<HomePage />} />
           <Route path="/findatutor" element={<FindATutor />} />
           <Route
-            path="/tutorprofilepage"
+            path="/tutorprofile"
             element={<TutorProfile />}
           />
           <Route path="/contactus" element={<ContactUs />} />
