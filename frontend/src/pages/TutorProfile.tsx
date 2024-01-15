@@ -8,13 +8,13 @@ const TutorProfile: React.FC = () => {
     <>
       <div className="bg-gray-200 flex flex-col font-montserrat gap-2.5 items-start justify-start mx-auto w-auto sm:w-full md:w-full">
       <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
-        <div className="flex flex-col items-center justify-start md:px-10 sm:px-5 px-[54px] py-[30px] w-full">
-          <div className="bg-white-A700 flex md:flex-col flex-row gap-[21px] items-start justify-start max-w-[977px] mx-auto md:px-5 px-6 py-2.5 rounded-[10px] w-full">
-            <div className="flex flex-col gap-3.5 h-[907px] md:h-auto items-center justify-start sm:px-5 px-[33px] py-2.5 w-[358px]">
+        <div className="flex flex-col items-center justify-start md:px-10 sm:px-5 px-auto py-[30px] w-full">
+          <div className="bg-white-A700 flex md:flex-col flex-row gap-[20px] items-start justify-center max-w-[1300px] mx-auto md:px-5 px-6 py-2.5 rounded-[10px] w-full">
+            <div className="flex flex-col gap-3.5 h-auto items-center justify-start sm:px-5 px-[10px] py-2.5 md:w-[100%] w-[30%]">
               <div className="flex flex-col gap-4 items-center justify-start w-[96%] md:w-full">
-                <div className="bg-blue_gray-100 h-[277px] rounded-[138px] w-[277px]"></div>
+                <div className="bg-blue_gray-100 h-[200px] rounded-[100%] w-[200px]"></div>
                 <Text
-                  className="sm:text-2xl md:text-[26px] text-[28px] text-black-900 text-center w-[277px]"
+                  className="sm:[20px] md:text-[22px] text-[24px] text-black-900 text-center"
                   size="txtMontserratRomanSemiBold28"
                 >
                   About (First Name)
@@ -128,18 +128,9 @@ const TutorProfile: React.FC = () => {
                   CELS 170
                 </Text>
               </div>
-              <Text
-                className="text-black-900 text-center text-lg w-36"
-                size="txtMontserratRomanRegular18"
-              >
-                <>
-                  XXX
-                  <br />
-                  XXX
-                </>
-              </Text>
+              
             </div>
-            <div className="flex md:flex-1 flex-col gap-[11px] h-[785px] md:h-auto items-start justify-start p-[15px] w-auto md:w-full">
+            <div className="flex md:flex-1 flex-col gap-[11px] h-[785px] md:h-auto items-start justify-start p-[15px] w-[70%] md:w-full">
               <div className="flex sm:flex-col flex-row gap-1 items-center justify-center w-full">
                 <Text
                   className="flex-1 md:text-3xl sm:text-[28px] text-[32px] text-black-900 w-auto"
@@ -167,7 +158,7 @@ const TutorProfile: React.FC = () => {
                 </Button>
               </div>
               <Text
-                className="leading-[24.00px] max-w-[570px] md:max-w-full text-black-900 text-lg"
+                className="leading-[24.00px] text-black-900 text-lg"
                 size="txtMontserratRomanRegular18"
               >
                 <>
@@ -190,7 +181,7 @@ const TutorProfile: React.FC = () => {
                     Want to get in touch with this tutor?
                   </Text>
                   <Text
-                    className="max-w-[530px] md:max-w-full text-black-900 text-sm"
+                    className="text-black-900 text-sm"
                     size="txtMontserratRomanMedium14"
                   >
                     Put in your details below to get full access to the platform
