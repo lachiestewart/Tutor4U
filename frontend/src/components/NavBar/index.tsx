@@ -22,6 +22,11 @@ const NavBar: React.FC<NavBarProps> = (props) => {
           alt="unionOne"
           onClick={() => navigate("/homepagemvp")}
         />
+        <div className="px-4 cursor-pointer">
+          <svg className="w-8 h-8 stroke-white-A700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+</svg>
+        </div>
         <div className="flex md:flex-col flex-row gap-2.5 items-center justify-center p-2.5 w-auto md:w-full">
           <div className="flex md:flex-col flex-row gap-5 items-center justify-start px-2.5 w-auto md:w-full">
             <div className="flex flex-col items-center justify-start py-[3px] w-auto">
