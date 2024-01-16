@@ -99,15 +99,15 @@ const TutorDashboard: React.FC = () => {
                       Status:
                     </Text>
                   </div>
-                  <div className="flex flex-col items-center justify-start w-full">
+                  <div className="flex flex-col items-start justify-start w-full">
                     <Text
-                      className="text-black-900 text-xl w-[157px]"
+                      className="text-black-900 text-xl"
                       size="txtMontserratRomanSemiBold20"
                     >
-                      Average Rating
+                      Average Rating:
                     </Text>
                   </div>
-                  <div className="flex flex-col items-center justify-start w-full">
+                  <div className="flex flex-col items-start justify-start w-full">
                     <Text
                       className="text-black-900 text-xl w-[137px]"
                       size="txtMontserratRomanSemiBold20"
@@ -115,7 +115,7 @@ const TutorDashboard: React.FC = () => {
                       Next Session:
                     </Text>
                   </div>
-                  <div className="flex flex-col items-center justify-start w-full">
+                  <div className="flex flex-col items-start justify-start w-full">
                     <Button
                       className="cursor-pointer font-medium leading-[normal] min-w-[157px] text-center text-md"
                       shape="round"

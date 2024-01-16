@@ -22,7 +22,7 @@ const sizeClasses = {
   txtMontserratRomanMedium20: "font-medium font-montserrat",
   txtMontserratRomanSemiBold18: "font-montserrat font-semibold",
   txtMontserratRomanSemiBold28: "font-montserrat font-semibold",
-  txtMontserratRomanMedium12: "font-medium font-montserrat",
+  txtMontserratRomanMedium12: "font-medium font-montserrat"
 } as const;
 
 export type TextProps = Partial<{

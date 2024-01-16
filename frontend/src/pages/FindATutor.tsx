@@ -20,7 +20,6 @@ const FindATutor: React.FC = () => {
             <div className="flex flex-col gap-2.5 items-center justify-start w-auto md:w-auto">
               <Text
                 className="leading-[24.00px] text-black-900 text-center text-lg"
-                size="txtMontserratRomanRegular18"
               >
                 If you see a tutor that you think could be a good fit, click
                 their box for their detailed profile page and to get in touch
@@ -28,7 +27,6 @@ const FindATutor: React.FC = () => {
               </Text>
               <Text
                 className="leading-[24.00px] text-black-900 text-center text-lg"
-                size="txtMontserratRomanRegular18"
               >
                 Can’t seem to find the perfect tutor? Make a subject request and
                 we will do our best to find one for you!
@@ -37,7 +35,7 @@ const FindATutor: React.FC = () => {
                 className="cursor-pointer font-semibold leading-[normal] min-w-[247px] text-center text-lg"
                 shape="round"
                 color="blue_gray_700"
-                size="xs"
+                size="sm"
                 variant="fill"
               >
                 Make A Subject Request
@@ -48,22 +46,21 @@ const FindATutor: React.FC = () => {
             <div className="sticky top-5 z-10 bg-white-A700 flex flex-col gap-[10px] min-w-[250px] items-start justify-center px-2.5 py-4 rounded-[10px] sm:w-full w-[25%]">
               <Text
                 className="text-black-900 text-lg w-auto"
-                size="txtMontserratRomanRegular18"
               >
-                <span className=" text-black-900 font-montserrat text-left font-normal">
+                <span className=" text-black-900 text-left">
                   Showing{" "}
                 </span>
-                <span className="text-blue-A700 font-montserrat text-left font-bold">
+                <span className="text-blue-A700 text-left font-bold">
                   375
                 </span>
-                <span className="text-black-900 font-montserrat text-left font-normal">
+                <span className="text-black-900 text-left">
                   {" "}
                   results of{" "}
                 </span>
-                <span className="text-blue-A700_01 font-montserrat text-left font-bold">
+                <span className="text-blue-A700_01 text-left font-bold">
                   561
                 </span>
-                <span className="text-black-900 font-montserrat text-left font-normal">
+                <span className="text-black-900 text-left">
                   {" "}
                   tutors
                 </span>
@@ -72,8 +69,7 @@ const FindATutor: React.FC = () => {
                
                 <div className="flex flex-col items-start justify-start w-full">
                   <Text
-                    className="text-black-900 text-start text-lg w-full"
-                    size="txtMontserratRomanSemiBold18"
+                    className="text-black-900 text-start text-lg w-full font-semibold"
                   >
                     Search
                   </Text>
@@ -95,8 +91,7 @@ const FindATutor: React.FC = () => {
                         alt="training"
                       />
                       <Text
-                        className="text-black-900 text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
+                        className="filter-category-title-text"
                       >
                         Subjects
                       </Text>
@@ -112,14 +107,12 @@ const FindATutor: React.FC = () => {
                         <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
                           <input className="rounded" type="checkbox" name="" value="" ></input>
                           <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         English
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
@@ -136,8 +129,7 @@ const FindATutor: React.FC = () => {
                         alt="university"
                       />
                       <Text
-                        className="text-black-900 text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
+                        className="filter-category-title-text"
                       >
                         Tutoring Level
                       </Text>
@@ -153,14 +145,12 @@ const FindATutor: React.FC = () => {
                         <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2 w-[325px]">
                           <input className="rounded" type="checkbox" name="" value="" ></input>
                           <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         NCEA L1
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
@@ -180,8 +170,7 @@ const FindATutor: React.FC = () => {
                         alt="star"
                       />
                       <Text
-                        className="text-black-900 text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
+                        className="filter-category-title-text"
                       >
                         Tutor Rating
                       </Text>
@@ -208,8 +197,7 @@ const FindATutor: React.FC = () => {
                         alt="location"
                       />
                       <Text
-                        className="text-black-900 text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
+                        className="filter-category-title-text"
                       >
                         Location
                       </Text>
@@ -222,22 +210,20 @@ const FindATutor: React.FC = () => {
                   </div>
                   <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                      <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         Auckland
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
                     </div>
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                    <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
                         className="text-black-900 text-xs w-auto"
                         size="txtMontserratRomanMedium12Black900"
@@ -245,14 +231,13 @@ const FindATutor: React.FC = () => {
                         Wellington
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
                     </div>
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                    <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
                         className="text-black-900 text-xs w-auto"
                         size="txtMontserratRomanMedium12Black900"
@@ -260,8 +245,7 @@ const FindATutor: React.FC = () => {
                         Christchurch
                       </Text>
                       <Text
-                        className="text-black-900 text-center text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
@@ -278,8 +262,7 @@ const FindATutor: React.FC = () => {
                         alt="ok"
                       />
                       <Text
-                        className="text-black-900 text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
+                        className="filter-category-title-text"
                       >
                         Availability
                       </Text>
@@ -292,46 +275,43 @@ const FindATutor: React.FC = () => {
                   </div>
                   <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                       
+                      <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         Available
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
                     </div>
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                       
+                      <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         Limited Availability
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
                     </div>
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                       
+                      <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         Not Available
                       </Text>
                       <Text
-                        className="text-black-900 text-center text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
@@ -348,8 +328,7 @@ const FindATutor: React.FC = () => {
                         alt="toilet"
                       />
                       <Text
-                        className="text-black-900 text-lg w-auto"
-                        size="txtMontserratRomanSemiBold18"
+                        className="filter-category-title-text"
                       >
                         Gender
                       </Text>
@@ -362,46 +341,43 @@ const FindATutor: React.FC = () => {
                   </div>
                   <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                       
+                      <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         Male
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
                     </div>
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                       
+                      <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         Female
                       </Text>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
                     </div>
                     <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <div className="bg-blue_gray-100 h-3 w-3"></div>
+                       
+                      <input className="rounded" type="checkbox" name="" value="" ></input>
                       <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-text"
                       >
                         Non-Binary
                       </Text>
                       <Text
-                        className="text-black-900 text-center text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
+                        className="filter-items-numbers-text"
                       >
                         ##
                       </Text>
@@ -419,8 +395,7 @@ const FindATutor: React.FC = () => {
                       alt="knowledgesharin"
                     />
                     <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
+                      className="filter-category-title-text"
                     >
                       Lesson Format
                     </Text>
@@ -433,46 +408,43 @@ const FindATutor: React.FC = () => {
                 </div>
                 <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
+                     
+                    <input className="rounded" type="checkbox" name="" value="" ></input>
                     <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                      className="filter-items-text"
                     >
                       Online
                     </Text>
                     <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                      className="filter-items-numbers-text"
                     >
                       ##
                     </Text>
                   </div>
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
+                     
+                    <input className="rounded" type="checkbox" name="" value="" ></input>
                     <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                      className="filter-items-text"
                     >
                       Face to face
                     </Text>
                     <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                      className="filter-items-numbers-text"
                     >
                       ##
                     </Text>
                   </div>
                   <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <div className="bg-blue_gray-100 h-3 w-3"></div>
+                     
+                    <input className="rounded" type="checkbox" name="" value="" ></input>
                     <Text
-                      className="text-black-900 text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                      className="filter-items-text"
                     >
                       Flexible
                     </Text>
                     <Text
-                      className="text-black-900 text-center text-xs w-auto"
-                      size="txtMontserratRomanMedium12Black900"
+                      className="filter-items-numbers-text"
                     >
                       ##
                     </Text>

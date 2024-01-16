@@ -402,7 +402,7 @@ const HomePage: React.FC = () => {
                 <div className="flex md:flex-col flex-row md:gap-10 gap-[68px] items-start justify-center max-w-[1269px] md:pl-10 sm:pl-5 pl-[82px] w-full">
                   <div className="flex flex-col items-center justify-start w-auto">
                     <Text
-                      className="text-black-900 text-lg text-right w-[300px] bg-red-700 "
+                      className="text-black-900 text-lg text-right w-[300px]  "
                       size="txtMontserratRomanSemiBold18"
                     >
                       Step 4. Get Tutored!

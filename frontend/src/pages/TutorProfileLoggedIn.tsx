@@ -6,10 +6,10 @@ import { Button, Img, Input, Text } from "components";
 const TutorProfileLoggedIn: React.FC = () => {
   return (
     <>
-      <div className="bg-gray-200 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-between mx-auto w-auto sm:w-full md:w-full">
+      <div className="main-outside-dive">
         <Sidebar />
-        <div className="flex flex-1 flex-col items-center justify-start md:px-5 px-[54px] py-[30px] w-full">
-          <div className="bg-white-A700 flex md:flex-col flex-row gap-[21px] items-start justify-start max-w-[977px] sm:px-5 px-6 py-2.5 rounded-[10px] w-full">
+        <div className="main-dashboard-div">
+          
             <div className="flex flex-col gap-3.5 h-[907px] md:h-auto items-center justify-start sm:px-5 px-[33px] py-2.5 w-[358px]">
               <div className="flex flex-col gap-4 items-center justify-start w-[96%] md:w-full">
                 <div className="bg-blue_gray-100 h-[277px] rounded-[138px] w-[277px]"></div>
@@ -238,7 +238,7 @@ const TutorProfileLoggedIn: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          
         </div>
       </div>
     </>

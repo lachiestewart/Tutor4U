@@ -135,11 +135,34 @@ li:hover{
   @apply flex flex-row gap-[20%] items-center justify-between p-1 w-full
 }
 
+.filter-category-title-text{
+  @apply text-black-900 text-xl w-auto font-semibold
+}
+
+.filter-items-text{
+  @apply text-black-900 text-sm w-auto font-medium
+}
+
+.filter-items-numbers-text{
+  @apply text-black-900 pl-5 text-xs w-auto font-medium
+}
+
 .reset-btn{
   @apply text-indigo-A400 text-right text-xs w-auto hover:font-semibold
 }
 
-/* Dashboard Sidebar */
+/* Logged In - General */
+
+/* This div contains the sidebar menu and everything in the main dashboard too*/
+.main-outside-div{
+  @apply bg-gray-200 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-between mx-auto w-auto sm:w-full md:w-full
+}
+
+.main-dashboard-div{
+  @apply bg-white-A700 flex flex-col  md:px-5  w-full md:flex-col gap-[21px] items-start justify-start max-w-[977px] sm:px-5 px-6 py-2.5 rounded-[10px]
+}
+
+/* Logged In - Dashboard Sidebar */
 
 .sidebar-items-outside-div{
   @apply flex flex-col items-center justify-between px-[10px] py-[5px] w-full
