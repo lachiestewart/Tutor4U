@@ -1,5 +1,4 @@
-
-    @tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -111,7 +110,26 @@ li:hover{
   justify-content: space-between;
 }
 
-/* Below tags were created by Jason*/
+/* Below @apply directives were created by Jason */
+
+/* General */
+
+.main-margin-div{
+  @apply max-w-[1500px] w-full items-center mx-auto
+}
+
+/* Home Page */
+
+
+.home-line-seperator{
+  @apply h-full w-[2px] bg-black-900
+}
+
+.fade-in{
+  @apply transition ease-in-out duration-300
+}
+
+/* Find a Tutor Page */
 
 .filter-category-title-div{
   @apply flex flex-row gap-[20%] items-center justify-between p-1 w-full
@@ -119,4 +137,14 @@ li:hover{
 
 .reset-btn{
   @apply text-indigo-A400 text-right text-xs w-auto hover:font-semibold
+}
+
+/* Dashboard Sidebar */
+
+.sidebar-items-outside-div{
+  @apply flex flex-col items-center justify-between px-[10px] py-[5px] w-full
+}
+
+.sidebar-items-inside-div{
+  @apply flex flex-row gap-5 p-3 items-center justify-start w-full rounded-xl hover:bg-blue-800 cursor-pointer
 }

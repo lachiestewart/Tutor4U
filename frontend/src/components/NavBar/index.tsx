@@ -13,19 +13,27 @@ type NavBarProps = React.DetailedHTMLProps<
 const NavBar: React.FC<NavBarProps> = (props) => {
   const navigate = useNavigate();
 
+function Dropdown(){
+  const [isOpen, setIsOpen] = useState(false);
+}
+
   return (
     <>
       <header className={props.className}>
-        <Img
-          className="common-pointer h-14 md:h-auto object-cover w-[222px] sm:w-full"
-          src="images/img_union1.png"
-          alt="unionOne"
-          onClick={() => navigate("/homepagemvp")}
-        />
-        <div className="px-4 cursor-pointer">
-          <svg className="w-8 h-8 stroke-white-A700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-</svg>
+        <div className="flex items-center justify-between md:w-full p-2">
+          <Img
+            className="common-pointer h-14 md:h-auto object-cover w-[222px] sm:w-full"
+            src="images/img_union1.png"
+            alt="Tutor4ULogo"
+            onClick={() => navigate("/homepage")}
+          />
+          <div
+          onClick={() => setIsOpen((prev) => !prev)}
+          className="px-10 cursor-pointer md:block hidden">
+            <svg className="w-8 h-8 stroke-white-A700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </div>
         </div>
         <div className="flex md:flex-col flex-row gap-2.5 items-center justify-center p-2.5 w-auto md:w-full">
           <div className="flex md:flex-col flex-row gap-5 items-center justify-start px-2.5 w-auto md:w-full">
@@ -33,7 +41,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
               <Text
                 className="common-pointer text-center text-white-A700 text-xl w-auto"
                 size="txtMontserratRomanMedium20"
-                onClick={() => navigate("/homepagemvp")}
+                onClick={() => navigate("/homepage")}
               >
                 HOME
               </Text>
@@ -42,6 +50,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
               <Text
                 className="text-center text-white-A700 text-xl w-auto"
                 size="txtMontserratRomanMedium20"
+                
               >
                 FOR STUDENTS
               </Text>
@@ -68,6 +77,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
               <Text
                 className="text-center text-white-A700 text-xl w-auto"
                 size="txtMontserratRomanMedium20"
+                onClick={() => navigate("/about")}
               >
                 ABOUT
               </Text>
@@ -76,6 +86,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
               <Text
                 className="text-center text-white-A700 text-xl w-auto"
                 size="txtMontserratRomanMedium20"
+                onClick={() => navigate("/contactus")}
               >
                 CONTACT
               </Text>

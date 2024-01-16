@@ -9,7 +9,7 @@ const FindATutor: React.FC = () => {
     <>
       <div className="bg-gray-200 flex flex-col font-montserrat items-start justify-start">
         <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
-        <div className="flex flex-col items-center justify-start p-2.5 w-[90%] mx-auto">
+        <div className="flex flex-col items-center justify-start p-2.5 w-[90%] sm:w-full mx-auto">
           <div className="flex flex-col gap-2.5 items-center justify-center max-w-[100%] md:px-5 py-6 w-full">
             <Text
               className="md:text-3xl sm:text-[28px] text-[32px] text-black-900 text-center"
@@ -44,13 +44,13 @@ const FindATutor: React.FC = () => {
               </Button>
             </div>
           </div>
-          <div className="flex flex-row gap-2.5 items-start justify-center w-full">
-            <div className="bg-white-A700 flex flex-col gap-[10px] min-w-[300px] items-start justify-center px-2.5 py-4 rounded-[10px] w-[25%]">
+          <div className="flex relative flex-row gap-2.5 items-start justify-center w-full sm:flex-col">
+            <div className="sticky top-5 z-10 bg-white-A700 flex flex-col gap-[10px] min-w-[250px] items-start justify-center px-2.5 py-4 rounded-[10px] sm:w-full w-[25%]">
               <Text
                 className="text-black-900 text-lg w-auto"
                 size="txtMontserratRomanRegular18"
               >
-                <span className="text-black-900 font-montserrat text-left font-normal">
+                <span className=" text-black-900 font-montserrat text-left font-normal">
                   Showing{" "}
                 </span>
                 <span className="text-blue-A700 font-montserrat text-left font-bold">
@@ -79,10 +79,11 @@ const FindATutor: React.FC = () => {
                   </Text>
                   <Input
                     name="tutorTextSearchFilterEntry"
-                    placeholder="Search through tutor profiles...."
+                    placeholder="Search through tutors...."
                     className="p-3 w-full"
                     wrapClassName="border border-gray-400_02 border-solid flex h-auto w-full"
                   ></Input>
+                  <div className="py-4 hidden sm:block"><text>Advance search</text></div>
                 </div>
                 <Line className="bg-blue_gray-400 h-px w-full my-4" />
                 <div className="flex flex-col items-start justify-center w-auto">
@@ -508,8 +509,8 @@ const FindATutor: React.FC = () => {
               </div>
               <Line className="bg-blue_gray-400 h-px w-full my-4" />
             </div>
-            <div className="flex flex-col gap-[15px] h-[1208px] w-[66%] max-w-[1100px] md:h-auto items-center justify-start">
-              <div className="flex flex-row bg-white-A700 rounded-[10px] text-left items-center w-full p-2 text-lg">
+            <div className="flex relative flex-col gap-[15px] h-[1208px] w-[66%] md:w-[75%] sm:w-full max-w-[1100px] md:h-auto items-center justify-start">
+              <div className="flex flex-row sticky top-5 z-10 bg-white-A700 rounded-[10px] text-left items-center w-full p-2 text-lg">
                 <text className="w-auto font-medium">Filtering by:</text>
               {/*<Input
                 name="filteredtutors"
@@ -519,7 +520,7 @@ const FindATutor: React.FC = () => {
                 size="sm"
   ></Input>*/}
               </div>
-              <div className="gap-3 md:gap-5 grid sm:grid-cols-1 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
+              <div className="gap-3 md:gap-5 grid sm:grid-cols-2 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
                 <div className="bg-white-A700 flex flex-1 flex-col h-[325px] md:h-auto items-center justify-start rounded-[10px] w-full">
                   <div
                     className="bg-cover bg-gradient  bg-no-repeat flex flex-col h-[231px] md:h-auto items-start justify-start p-2.5 w-full"

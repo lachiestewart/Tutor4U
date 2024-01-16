@@ -3,7 +3,7 @@ import { Img, List, Text } from "components";
 const Sidebar = () => {
     return (
         <List
-            className="bg-blue_gray-700 flex flex-col h-[1028px] items-start md:px-5 w-[380px] md:w-full"
+            className="sticky justify-between left-0 top-0 bg-blue_gray-700 flex flex-col h-[100vh] items-start md:px-5 w-[380px] sm:w-full"
             orientation="vertical"
         >
             <div className="flex flex-col items-start justify-start my-0 w-full">
@@ -13,8 +13,8 @@ const Sidebar = () => {
                     alt="sidebarheader"
                 />
                 <div className="flex flex-col items-start justify-center w-full">
-                    <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                        <div className="flex flex-row gap-5 items-center justify-start w-full">
+                    <div className="sidebar-items-outside-div">
+                        <div className="sidebar-items-inside-div">
                             <Img
                                 className="h-10 md:h-auto object-cover w-10"
                                 src="images/img_analytics.png"
@@ -28,8 +28,8 @@ const Sidebar = () => {
                             </Text>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                        <div className="flex flex-row gap-5 items-center justify-start w-full">
+                    <div className="sidebar-items-outside-div">
+                        <div className="sidebar-items-inside-div">
                             <Img
                                 className="h-10 md:h-auto object-cover w-10"
                                 src="images/img_graduationcap.png"
@@ -43,8 +43,8 @@ const Sidebar = () => {
                             </Text>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                        <div className="flex flex-row gap-5 items-center justify-start w-full">
+                    <div className="sidebar-items-outside-div">
+                        <div className="sidebar-items-inside-div">
                             <Img
                                 className="h-10 md:h-auto object-cover w-10"
                                 src="images/img_googleforms.png"
@@ -61,8 +61,8 @@ const Sidebar = () => {
                 </div>
             </div>
             <div className="flex flex-col gap-2.5 items-start justify-center my-0 w-full">
-                <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                    <div className="flex flex-row gap-5 items-center justify-start w-full">
+                <div className="sidebar-items-outside-div">
+                    <div className="sidebar-items-inside-div">
                         <Img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_maleuser.png"
@@ -76,8 +76,8 @@ const Sidebar = () => {
                         </Text>
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                    <div className="flex flex-row gap-5 items-center justify-start w-full">
+                <div className="sidebar-items-outside-div">
+                    <div className="sidebar-items-inside-div">
                         <Img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_usdollarcircled.png"
@@ -91,8 +91,8 @@ const Sidebar = () => {
                         </Text>
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                    <div className="flex flex-row gap-5 items-center justify-start w-full">
+                <div className="sidebar-items-outside-div">
+                    <div className="sidebar-items-inside-div">
                         <Img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_questions.png"
@@ -106,8 +106,8 @@ const Sidebar = () => {
                         </Text>
                     </div>
                 </div>
-                <div className="flex flex-col items-center justify-between p-[15px] w-full">
-                    <div className="flex flex-row gap-5 items-center justify-start w-full">
+                <div className="sidebar-items-outside-div">
+                    <div className="sidebar-items-inside-div">
                         <Img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_logout.png"

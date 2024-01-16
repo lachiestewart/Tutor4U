@@ -7,9 +7,9 @@ import { Button, Img, Text } from "components";
 const TutorDashboard: React.FC = () => {
   return (
     <>
-      <div className="bg-white-A700 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-center mx-auto w-auto sm:w-full md:w-full">
+      <div className="relative bg-white-A700 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-center w-full sm:w-full md:w-full">
         <Sidebar />
-        <div className="flex flex-1 flex-col gap-2.5 items-center justify-start max-w-[1055px] p-[30px] md:px-5 w-full">
+        <div className="flex flex-1 flex-col gap-2.5 items-start justify-start p-[30px] md:px-5 w-full h-[200vh]">
           <div className="bg-white-A700 flex flex-col items-center justify-start max-w-[1000px] rounded-[10px] w-full">
             <div className="flex md:flex-col flex-row gap-2.5 items-start justify-start rounded-[10px] w-full">
               <div className="flex flex-col h-[118px] md:h-auto items-start justify-start w-[120px]">
@@ -49,7 +49,7 @@ const TutorDashboard: React.FC = () => {
               >
                 My Students
               </Text>
-              <div className="bg-blue_gray-100 flex flex-col gap-2.5 h-full items-center justify-start px-5 py-[15px] rounded-[10px] w-full">
+              <div className="bg-blue_gray-100 flex flex-col gap-2.5 h-full items-left justify-start px-5 py-[15px] rounded-[10px] w-full">
                 <div className="flex sm:flex-col flex-row gap-2.5 items-center justify-between w-full">
                   <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
                     <Img
@@ -117,10 +117,10 @@ const TutorDashboard: React.FC = () => {
                   </div>
                   <div className="flex flex-col items-center justify-start w-full">
                     <Button
-                      className="cursor-pointer font-medium leading-[normal] min-w-[157px] text-center text-sm"
+                      className="cursor-pointer font-medium leading-[normal] min-w-[157px] text-center text-md"
                       shape="round"
                       color="blue_gray_700"
-                      size="xs"
+                      size="sm"
                       variant="fill"
                     >
                       Book Next Lesson
