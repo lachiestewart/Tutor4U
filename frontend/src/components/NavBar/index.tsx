@@ -15,12 +15,12 @@ const NavBar: React.FC<NavBarProps> = (props) => {
 
   return (
     <>
-      <header className={props.className}>
+      <header className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full">
         <Img
           className="common-pointer h-14 md:h-auto object-cover w-[222px] sm:w-full"
           src="images/img_union1.png"
           alt="unionOne"
-          onClick={() => navigate("/homepagemvp")}
+          onClick={() => navigate("/homepage")}
         />
         <div className="flex md:flex-col flex-row gap-2.5 items-center justify-center p-2.5 w-auto md:w-full">
           <div className="flex md:flex-col flex-row gap-5 items-center justify-start px-2.5 w-auto md:w-full">
@@ -28,7 +28,7 @@ const NavBar: React.FC<NavBarProps> = (props) => {
               <Text
                 className="common-pointer text-center text-white-A700 text-xl w-auto"
                 size="txtMontserratRomanMedium20"
-                onClick={() => navigate("/homepagemvp")}
+                onClick={() => navigate("/homepage")}
               >
                 HOME
               </Text>
@@ -69,8 +69,9 @@ const NavBar: React.FC<NavBarProps> = (props) => {
             </div>
             <div className="flex flex-col items-center justify-start py-[3px] w-auto">
               <Text
-                className="text-center text-white-A700 text-xl w-auto"
+                className="common-pointer text-center text-white-A700 text-xl w-auto"
                 size="txtMontserratRomanMedium20"
+                onClick={() => navigate("/contactus")}
               >
                 CONTACT
               </Text>

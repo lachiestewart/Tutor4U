@@ -30,7 +30,7 @@ const HomePage: React.FC = () => {
             <div className="flex flex-row gap-2.5 items-center justify-start w-full">
               <Button
                 className="common-pointer !text-blue_gray-100 cursor-pointer font-medium leading-[normal] min-w-[132px] text-center text-sm"
-                onClick={() => navigate("/findatutorpagemvp")}
+                onClick={() => navigate("/findatutor")}
                 shape="round"
                 color="blue_gray_700"
                 size="sm"
@@ -263,7 +263,7 @@ const HomePage: React.FC = () => {
                   </Text>
                   <Button
                     className="common-pointer !text-blue_gray-100 cursor-pointer font-medium leading-[normal] min-w-[136px] text-center text-sm"
-                    onClick={() => navigate("/findatutorpagemvp")}
+                    onClick={() => navigate("/findatutor")}
                     shape="round"
                     color="blue_gray_700"
                     size="sm"

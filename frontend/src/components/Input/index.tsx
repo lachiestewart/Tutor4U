@@ -1,5 +1,6 @@
 import React from "react";
 import { ErrorMessage } from "../../components/ErrorMessage";
+import { Text } from "../Text";
 
 const shapes = { square: "rounded-none", round: "rounded-[10px]" } as const;
 const variants = {
@@ -24,6 +25,7 @@ export type InputProps = Omit<
 > &
   Partial<{
     wrapClassName: string;
+    labelClassName: string;
     className: string;
     name: string;
     placeholder: string;
@@ -43,6 +45,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
   (
     {
       wrapClassName = "",
+      labelClassName ="",
       className = "",
       name = "",
       placeholder = "",
@@ -66,18 +69,24 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     };
 
     return (
-      <>
+      <div className="flex flex-col justify-center w-full">
+        {!!label && <Text
+          className={`text-left text-lg w-auto ${labelClassName}`}
+          size="txtMontserratRomanSemiBold18"
+        >
+          {label}
+        </Text>}
         <div
           className={`${wrapClassName} 
               ${(shape && shapes[shape]) || ""} 
               ${(variant && variants[variant]?.[color]) || ""} 
               ${(size && sizes[size]) || ""}`}
         >
-          {!!label && label}
+
           {!!prefix && prefix}
           <input
             ref={ref}
-            className={`${className} bg-transparent border-0`}
+            className={`${className} bg-transparent border-0 pl-5`}
             type={type}
             name={name}
             placeholder={placeholder}
@@ -87,7 +96,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {!!suffix && suffix}
         </div>
         {!!errors && <ErrorMessage errors={errors} />}
-      </>
+      </div>
     );
   },
 );
