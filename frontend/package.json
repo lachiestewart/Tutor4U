@@ -20,7 +20,7 @@
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview",
-    "build-css": "tailwindcss build src/styles.css -o public/styles.css"
+    "build-css": "tailwindcss build src/styles/tailwind.css -o public/styles.css"
   },
   "eslintConfig": {
     "extends": [

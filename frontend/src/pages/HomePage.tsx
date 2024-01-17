@@ -10,22 +10,19 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <div className="bg-white-A700 flex flex-col font-montserrat gap-[30px] items-start justify-start mx-auto w-auto sm:w-full md:w-full">
-        <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
-        
+      <div className="flex flex-col font-montserrat gap-[30px] items-start justify-start mx-auto w-auto sm:w-full md:w-full">
+        <NavBar className="bg-purple-primary flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
         <div className="main-margin-div">
           <div className="flex md:flex-col flex-row gap-2.5 items-center justify-between md:px-10 sm:px-5 px-[60px] py-[15px] w-full
           ">
             <div className="flex sm:flex-1 flex-col gap-6 items-start justify-start py-[47px] w-auto sm:w-full">
               <Text
-                className="text-4xl sm:text-[32px] md:text-[34px] text-black-900 w-auto"
-                size="txtMontserratRomanBold36"
+                className="text-4xl sm:text-[32px] md:text-[34px] font-bold text-black-900 w-auto"
               >
                 Your Top Tutor Marketplace
               </Text>
               <Text
-                className="leading-[22.00px] max-w-[522px] md:max-w-full text-black-900 text-lg"
-                size="txtMontserratRomanSemiBold18"
+                className="leading-[22.00px] max-w-[522px] md:max-w-full text-black-900 font-semibold text-lg"
               >
                 We connect amazing tutors with motivated students in every subject
                 at all levels right across NZ
@@ -52,10 +49,9 @@ const HomePage: React.FC = () => {
                 </Button>
               </div>
             </div>
-            <div className="flex flex-1 flex-col bg-red-700 h-auto md:h-auto items-end justify-center max-w-[637px] w-full">
+            <div className="flex flex-1 flex-col bg-red-600 h-auto md:h-auto items-end justify-center max-w-[637px] w-full">
               <Text
-                className=" max-w-[463px] md:max-w-full sm:text-2xl md:text-[26px] text-[28px] text-black-900 text-center"
-                size="txtMontserratRomanSemiBold28"
+                className=" max-w-[463px] md:max-w-full font-semibold sm:text-2xl md:text-[26px] text-[28px] text-black-900 text-center"
               >
                 SPLINE FIND A TUTOR DASHBOARD GRAPHIC
               </Text>
@@ -63,8 +59,7 @@ const HomePage: React.FC = () => {
           </div>
           <div className="flex flex-col gap-[30px] items-center justify-start md:px-10 sm:px-5 px-[60px] py-5 w-full">
             <Text
-              className="text-4xl sm:text-[32px] md:text-[34px] text-black-900 text-center w-auto"
-              size="txtMontserratRomanBold36"
+              className="text-4xl sm:text-[32px] md:text-[34px] font-bold text-black-900 text-center w-auto"
             >
               What Tutors Think Of Tutor4U
             </Text>

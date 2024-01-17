@@ -7,7 +7,7 @@ import NavBar from "components/NavBar";
 const FindATutor: React.FC = () => {
   return (
     <>
-      <div className="bg-gray-200 flex flex-col font-montserrat items-start justify-start">
+      <div className="main-div-gray">
         <NavBar className="bg-blue_gray-700 flex md:flex-col md:gap-2.5 items-center justify-between md:px-5 px-[60px] py-[27px] w-full" />
         <div className="flex flex-col items-center justify-start p-2.5 w-[90%] sm:w-full mx-auto">
           <div className="flex flex-col gap-2.5 items-center justify-center max-w-[100%] md:px-5 py-6 w-full">
@@ -103,7 +103,7 @@ const FindATutor: React.FC = () => {
                     </Button>
                   </div>
                   <div className="flex flex-col gap-1
-                   items-start justify-start p-2 w-full flex-wrap overflow-y-scroll ">
+                   items-start justify-start p-2 w-full flex-wrap overflow-y-scroll max-h-20">
                         <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
                           <input className="rounded" type="checkbox" name="" value="" ></input>
                           <Text

@@ -114,8 +114,17 @@ li:hover{
 
 /* General */
 
+/* This div needs to surround the navbar too */
+.main-div-gray{
+  @apply bg-gray-200 flex flex-col font-montserrat items-start justify-start
+}
+
 .main-margin-div{
   @apply max-w-[1500px] w-full items-center mx-auto
+}
+
+.h1{
+  @apply bg-black-900
 }
 
 /* Home Page */

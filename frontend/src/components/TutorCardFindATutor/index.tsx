@@ -23,7 +23,7 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
     <>
       <div className="bg-white-A700 transition ease-in-out duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:cursor-pointer flex flex-1 flex-col h-auto justify-start rounded-[10px] overflow-hidden w-full">
         <div
-          className="bg-cover bg-gradient  bg-no-repeat flex flex-col h-[231px] items-start justify-end p-2.5 w-full"
+          className="bg-cover bg-gradient bg-no-repeat flex flex-col h-[231px] items-start justify-end p-2.5 w-full"
           style={{ backgroundImage: "url('images/img_frame13_231x220.png')" }}
         >
           <div className="flex flex-col items-start justify-end px-2 w-auto">
