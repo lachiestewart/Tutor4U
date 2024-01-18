@@ -11,7 +11,9 @@ const FindATutor: React.FC = () => {
 
   return (
     <>
-      <div className={`flex w-full ${loggedIn?"flex-row":"flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}>
+      <div
+        className={`flex w-full ${loggedIn ? "flex-row" : "flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
+      >
         {loggedIn ? <Sidebar /> : <NavBar />}
         <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5 sm:w-full">
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
@@ -47,11 +49,8 @@ const FindATutor: React.FC = () => {
               <div className="sticky top-5 z-10 flex w-full flex-row items-center rounded-[10px] bg-white-A700 p-2 text-left text-lg">
                 <text className="w-auto font-medium">Filtering by:</text>
               </div>
-              <div className="gap-3 md:gap-5 grid sm:grid-cols-2 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
-                <TutorCard
-                  tutorFirstName="Naomi"
-                  tutorLastName="Ranger"
-                />
+              <div className="grid min-h-[auto] w-full grid-cols-3 justify-center gap-3 md:grid-cols-2 md:gap-5 sm:grid-cols-2">
+                <TutorCard tutorFirstName="Naomi" tutorLastName="Ranger" />
               </div>
             </div>
           </div>

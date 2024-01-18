@@ -150,7 +150,7 @@ h4 {
 }
 
 h5 {
-  @apply text-xl leading-[24.00px] 
+  @apply font-montserrat text-xl leading-[24.00px] 
 }
 
 p {

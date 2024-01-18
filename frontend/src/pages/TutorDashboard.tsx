@@ -1,9 +1,7 @@
 import React from "react";
-
 import Sidebar from "components/Sidebar";
-
 import { Button, Img, Text } from "components";
-import TutorDashboardProfileHeader from "components/TutorDashboardProfileHeader";
+import TutorDashboardProfileHeader from "components/ProfileHeader";
 
 const TutorDashboard: React.FC = () => {
   return (
@@ -14,12 +12,7 @@ const TutorDashboard: React.FC = () => {
           <TutorDashboardProfileHeader />
           <div className="flex w-full flex-col items-start justify-start">
             <div className="flex h-[300px] w-full flex-col items-center justify-start gap-2.5 md:h-auto">
-              <Text
-                className="w-auto text-center text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
-                size="txtMontserratRomanBold32"
-              >
-                My Students
-              </Text>
+              <h1>My Students</h1>
               <div className="items-left flex h-full w-full flex-col justify-start gap-2.5 rounded-[10px] bg-blue_gray-100 px-5 py-[15px]">
                 <div className="flex w-full flex-row items-center justify-between gap-2.5 sm:flex-col">
                   <div className="flex w-auto flex-row items-center justify-start gap-2.5">
@@ -28,12 +21,7 @@ const TutorDashboard: React.FC = () => {
                       src="images/img_studentimg.png"
                       alt="studentimg"
                     />
-                    <Text
-                      className="w-auto text-[25px] text-black-900 md:text-[23px] sm:text-[21px]"
-                      size="txtMontserratRomanSemiBold25"
-                    >
-                      Student Full Name
-                    </Text>
+                    <h3>Student Full Name</h3>
                   </div>
                   <div className="flex h-[53px] w-[53px] flex-col items-center justify-between md:h-auto">
                     <Img
@@ -45,46 +33,16 @@ const TutorDashboard: React.FC = () => {
                 </div>
                 <div className="flex h-full w-full flex-col items-center justify-start gap-[5px]">
                   <div className="flex w-full flex-row items-center justify-between gap-2.5">
-                    <Text
-                      className="w-[83px] text-xl text-black-900"
-                      size="txtMontserratRomanSemiBold20"
-                    >
-                      Subject:
-                    </Text>
-                    <Text
-                      className="w-[58px] text-xl text-black-900"
-                      size="txtMontserratRomanSemiBold20"
-                    >
-                      Level:
-                    </Text>
-                    <Text
-                      className="w-[131px] text-xl text-black-900"
-                      size="txtMontserratRomanSemiBold20"
-                    >
-                      Last Session:
-                    </Text>
-                    <Text
-                      className="w-[70px] text-xl text-black-900"
-                      size="txtMontserratRomanSemiBold20"
-                    >
-                      Status:
-                    </Text>
+                    <h4>Subject:</h4>
+                    <h4>Level:</h4>
+                    <h4>Last Session:</h4>
+                    <h4>Status:</h4>
                   </div>
                   <div className="flex w-full flex-col items-start justify-start">
-                    <Text
-                      className="text-xl text-black-900"
-                      size="txtMontserratRomanSemiBold20"
-                    >
-                      Average Rating:
-                    </Text>
+                    <h4>Average Rating:</h4>
                   </div>
                   <div className="flex w-full flex-col items-start justify-start">
-                    <Text
-                      className="w-[137px] text-xl text-black-900"
-                      size="txtMontserratRomanSemiBold20"
-                    >
-                      Next Session:
-                    </Text>
+                    <h4>Next Session:</h4>
                   </div>
                   <div className="flex w-full flex-col items-start justify-start">
                     <Button

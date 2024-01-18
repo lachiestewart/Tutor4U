@@ -2,7 +2,7 @@ import React from "react";
 import Sidebar from "components/Sidebar";
 
 import { Img, List, Text } from "components";
-import TutorDashboardProfileHeader from "components/TutorDashboardProfileHeader";
+import TutorDashboardProfileHeader from "components/ProfileHeader";
 
 const TutorCodeofConduct: React.FC = () => {
   return (
