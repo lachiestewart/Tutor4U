@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import React, { useState } from "react";
 
 import { Button, Img, Input, Line, Text } from "components";
 import NavBar from "components/NavBar";
