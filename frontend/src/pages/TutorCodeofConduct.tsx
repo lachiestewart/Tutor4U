@@ -6,27 +6,27 @@ import { Img, List, Text } from "components";
 const TutorCodeofConduct: React.FC = () => {
   return (
     <>
-      <div className="bg-white-A700 flex sm:flex-col md:flex-col flex-row font-montserrat sm:gap-5 md:gap-5 items-start justify-center mx-auto w-auto sm:w-full md:w-full">
+      <div className="mx-auto flex w-auto flex-row items-start justify-center bg-white-A700 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5">
         <Sidebar />
-        <div className="flex flex-col gap-2.5 items-center justify-start max-w-[1060px] p-[30px] md:px-5 w-full">
-          <div className="bg-white-A700 flex flex-col items-center justify-start max-w-[1000px] rounded-[10px] w-full">
-            <div className="flex md:flex-col flex-row gap-2.5 items-start justify-start rounded-[10px] w-full">
-              <div className="flex flex-col h-[118px] md:h-auto items-start justify-start w-[120px]">
+        <div className="flex w-full max-w-[1060px] flex-col items-center justify-start gap-2.5 p-[30px] md:px-5">
+          <div className="flex w-full max-w-[1000px] flex-col items-center justify-start rounded-[10px] bg-white-A700">
+            <div className="flex w-full flex-row items-start justify-start gap-2.5 rounded-[10px] md:flex-col">
+              <div className="flex h-[118px] w-[120px] flex-col items-start justify-start md:h-auto">
                 <Img
-                  className="h-[118px] md:h-auto rounded-[50%] w-full"
+                  className="h-[118px] w-full rounded-[50%] md:h-auto"
                   src="images/img_36477397310160.png"
                   alt="36477397310160"
                 />
               </div>
-              <div className="flex flex-1 flex-col items-start justify-start max-w-[870px] w-full">
+              <div className="flex w-full max-w-[870px] flex-1 flex-col items-start justify-start">
                 <Text
-                  className="md:text-3xl sm:text-[28px] text-[32px] text-black-900 w-[181px]"
+                  className="w-[181px] text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
                   size="txtMontserratRomanBold32"
                 >
                   Jason Hart
                 </Text>
                 <Text
-                  className="leading-[24.00px] text-black-900 text-xl"
+                  className="text-xl leading-[24.00px] text-black-900"
                   size="txtMontserratRomanRegular20"
                 >
                   <>
@@ -40,20 +40,20 @@ const TutorCodeofConduct: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-start justify-start w-full">
-            <div className="flex flex-col items-center justify-start w-full">
-              <div className="flex flex-col items-start justify-start w-full">
-                <div className="flex flex-col items-center justify-start w-full">
-                  <div className="flex flex-col gap-5 items-center justify-start w-auto md:w-full">
+          <div className="flex w-full flex-col items-start justify-start">
+            <div className="flex w-full flex-col items-center justify-start">
+              <div className="flex w-full flex-col items-start justify-start">
+                <div className="flex w-full flex-col items-center justify-start">
+                  <div className="flex w-auto flex-col items-center justify-start gap-5 md:w-full">
                     <Text
-                      className="md:text-3xl sm:text-[28px] text-[32px] text-black-900 text-center w-auto"
+                      className="w-auto text-center text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
                       size="txtMontserratRomanBold32"
                     >
                       Tutor4U Code of Conduct
                     </Text>
-                    <div className="flex flex-col gap-5 items-center justify-start w-full">
+                    <div className="flex w-full flex-col items-center justify-start gap-5">
                       <Text
-                        className="leading-[24.00px] text-black-900 text-center text-lg"
+                        className="text-center text-lg leading-[24.00px] text-black-900"
                         size="txtMontserratRomanRegular18"
                       >
                         <>
@@ -65,15 +65,15 @@ const TutorCodeofConduct: React.FC = () => {
                           by case basis by the Tutor4U team{" "}
                         </>
                       </Text>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           Ethical Behaviour
                         </Text>
                         <Text
-                          className="leading-[24.00px] max-w-[1000px] md:max-w-full text-black-900 text-lg"
+                          className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
                           size="txtMontserratRomanRegular18"
                         >
                           All tutors must interact with students in an ethical
@@ -87,15 +87,15 @@ const TutorCodeofConduct: React.FC = () => {
                           other personal characteristic.{" "}
                         </Text>
                       </div>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           Maintain Professionalism
                         </Text>
                         <Text
-                          className="leading-[24.00px] max-w-[1000px] md:max-w-full text-black-900 text-lg"
+                          className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
                           size="txtMontserratRomanRegular18"
                         >
                           You will professional with your interactions. As a
@@ -108,15 +108,15 @@ const TutorCodeofConduct: React.FC = () => {
                           with the platform.
                         </Text>
                       </div>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           Be Punctual{" "}
                         </Text>
                         <Text
-                          className="leading-[24.00px] text-black-900 text-lg"
+                          className="text-lg leading-[24.00px] text-black-900"
                           size="txtMontserratRomanRegular18"
                         >
                           <>
@@ -135,16 +135,16 @@ const TutorCodeofConduct: React.FC = () => {
                           </>
                         </Text>
                       </div>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           Ensure A Safe Environment For Yourself And Your
                           Students
                         </Text>
                         <Text
-                          className="leading-[24.00px] max-w-[1000px] md:max-w-full text-black-900 text-lg"
+                          className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
                           size="txtMontserratRomanRegular18"
                         >
                           You will prioritise the well-being and safety of
@@ -156,15 +156,15 @@ const TutorCodeofConduct: React.FC = () => {
                           to tutoring.
                         </Text>
                       </div>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           Keep Privacy Of Students
                         </Text>
                         <Text
-                          className="leading-[24.00px] max-w-[1000px] md:max-w-full text-black-900 text-lg"
+                          className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
                           size="txtMontserratRomanRegular18"
                         >
                           Maintain privacy of the students information. This
@@ -173,15 +173,15 @@ const TutorCodeofConduct: React.FC = () => {
                           performance.
                         </Text>
                       </div>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           All Lessons Must Be Recorded On The Tutor4U Platform
                         </Text>
                         <Text
-                          className="leading-[24.00px] max-w-[1000px] md:max-w-full text-black-900 text-lg"
+                          className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
                           size="txtMontserratRomanRegular18"
                         >
                           Tutors are strictly prohibited from offering or
@@ -191,15 +191,15 @@ const TutorCodeofConduct: React.FC = () => {
                           and paid through the Tutor4U platform.
                         </Text>
                       </div>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           Compliance & Enforcement
                         </Text>
                         <Text
-                          className="leading-[24.00px] max-w-[1000px] md:max-w-full text-black-900 text-lg"
+                          className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
                           size="txtMontserratRomanRegular18"
                         >
                           Tutor4U has the right to remove anyone from the
@@ -209,15 +209,15 @@ const TutorCodeofConduct: React.FC = () => {
                           will be treated on a case-by-case basis.
                         </Text>
                       </div>
-                      <div className="flex flex-col gap-[5px] items-start justify-start w-full">
+                      <div className="flex w-full flex-col items-start justify-start gap-[5px]">
                         <Text
-                          className="text-black-900 text-lg w-auto"
+                          className="w-auto text-lg text-black-900"
                           size="txtMontserratRomanSemiBold18"
                         >
                           Provide Correct Information
                         </Text>
                         <Text
-                          className="leading-[24.00px] max-w-[1000px] md:max-w-full text-black-900 text-lg"
+                          className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
                           size="txtMontserratRomanRegular18"
                         >
                           All tutors must be responsible for maintaining their

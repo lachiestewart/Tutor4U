@@ -7,27 +7,27 @@ import { Button, Img, Text } from "components";
 const TutorDashboard: React.FC = () => {
   return (
     <>
-      <div className="relative bg-white-A700 flex sm:flex-col md:flex-col flex-row font-montserrat gap-2.5 items-start justify-center w-full sm:w-full md:w-full">
+      <div className="relative flex w-full flex-row items-start justify-center gap-2.5 bg-white-A700 font-montserrat md:w-full md:flex-col sm:w-full sm:flex-col">
         <Sidebar />
-        <div className="flex flex-1 flex-col gap-2.5 items-start justify-start p-[30px] md:px-5 w-full h-[200vh]">
-          <div className="bg-white-A700 flex flex-col items-center justify-start max-w-[1000px] rounded-[10px] w-full">
-            <div className="flex md:flex-col flex-row gap-2.5 items-start justify-start rounded-[10px] w-full">
-              <div className="flex flex-col h-[118px] md:h-auto items-start justify-start w-[120px]">
+        <div className="flex h-[200vh] w-full flex-1 flex-col items-start justify-start gap-2.5 p-[30px] md:px-5">
+          <div className="flex w-full max-w-[1000px] flex-col items-center justify-start rounded-[10px] bg-white-A700">
+            <div className="flex w-full flex-row items-start justify-start gap-2.5 rounded-[10px] md:flex-col">
+              <div className="flex h-[118px] w-[120px] flex-col items-start justify-start md:h-auto">
                 <Img
-                  className="h-[118px] md:h-auto rounded-[50%] w-full"
+                  className="h-[118px] w-full rounded-[50%] md:h-auto"
                   src="images/img_36477397310160.png"
                   alt="36477397310160"
                 />
               </div>
-              <div className="flex flex-1 flex-col items-start justify-start max-w-[870px] w-full">
+              <div className="flex w-full max-w-[870px] flex-1 flex-col items-start justify-start">
                 <Text
-                  className="md:text-3xl sm:text-[28px] text-[32px] text-black-900 w-[181px]"
+                  className="w-[181px] text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
                   size="txtMontserratRomanBold32"
                 >
                   Jason Hart
                 </Text>
                 <Text
-                  className="leading-[24.00px] text-black-900 text-xl"
+                  className="text-xl leading-[24.00px] text-black-900"
                   size="txtMontserratRomanRegular20"
                 >
                   <>
@@ -41,83 +41,83 @@ const TutorDashboard: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col items-start justify-start w-full">
-            <div className="flex flex-col gap-2.5 h-[300px] md:h-auto items-center justify-start w-full">
+          <div className="flex w-full flex-col items-start justify-start">
+            <div className="flex h-[300px] w-full flex-col items-center justify-start gap-2.5 md:h-auto">
               <Text
-                className="md:text-3xl sm:text-[28px] text-[32px] text-black-900 text-center w-auto"
+                className="w-auto text-center text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
                 size="txtMontserratRomanBold32"
               >
                 My Students
               </Text>
-              <div className="bg-blue_gray-100 flex flex-col gap-2.5 h-full items-left justify-start px-5 py-[15px] rounded-[10px] w-full">
-                <div className="flex sm:flex-col flex-row gap-2.5 items-center justify-between w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
+              <div className="items-left flex h-full w-full flex-col justify-start gap-2.5 rounded-[10px] bg-blue_gray-100 px-5 py-[15px]">
+                <div className="flex w-full flex-row items-center justify-between gap-2.5 sm:flex-col">
+                  <div className="flex w-auto flex-row items-center justify-start gap-2.5">
                     <Img
-                      className="h-[52px] md:h-auto rounded-[50%] w-[52px]"
+                      className="h-[52px] w-[52px] rounded-[50%] md:h-auto"
                       src="images/img_studentimg.png"
                       alt="studentimg"
                     />
                     <Text
-                      className="sm:text-[21px] md:text-[23px] text-[25px] text-black-900 w-auto"
+                      className="w-auto text-[25px] text-black-900 md:text-[23px] sm:text-[21px]"
                       size="txtMontserratRomanSemiBold25"
                     >
                       Student Full Name
                     </Text>
                   </div>
-                  <div className="flex flex-col h-[53px] md:h-auto items-center justify-between w-[53px]">
+                  <div className="flex h-[53px] w-[53px] flex-col items-center justify-between md:h-auto">
                     <Img
-                      className="h-[34px] md:h-auto object-cover w-[34px]"
+                      className="h-[34px] w-[34px] object-cover md:h-auto"
                       src="images/img_expandarrow.png"
                       alt="expandarrow"
                     />
                   </div>
                 </div>
-                <div className="flex flex-col gap-[5px] h-full items-center justify-start w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-between w-full">
+                <div className="flex h-full w-full flex-col items-center justify-start gap-[5px]">
+                  <div className="flex w-full flex-row items-center justify-between gap-2.5">
                     <Text
-                      className="text-black-900 text-xl w-[83px]"
+                      className="w-[83px] text-xl text-black-900"
                       size="txtMontserratRomanSemiBold20"
                     >
                       Subject:
                     </Text>
                     <Text
-                      className="text-black-900 text-xl w-[58px]"
+                      className="w-[58px] text-xl text-black-900"
                       size="txtMontserratRomanSemiBold20"
                     >
                       Level:
                     </Text>
                     <Text
-                      className="text-black-900 text-xl w-[131px]"
+                      className="w-[131px] text-xl text-black-900"
                       size="txtMontserratRomanSemiBold20"
                     >
                       Last Session:
                     </Text>
                     <Text
-                      className="text-black-900 text-xl w-[70px]"
+                      className="w-[70px] text-xl text-black-900"
                       size="txtMontserratRomanSemiBold20"
                     >
                       Status:
                     </Text>
                   </div>
-                  <div className="flex flex-col items-start justify-start w-full">
+                  <div className="flex w-full flex-col items-start justify-start">
                     <Text
-                      className="text-black-900 text-xl"
+                      className="text-xl text-black-900"
                       size="txtMontserratRomanSemiBold20"
                     >
                       Average Rating:
                     </Text>
                   </div>
-                  <div className="flex flex-col items-start justify-start w-full">
+                  <div className="flex w-full flex-col items-start justify-start">
                     <Text
-                      className="text-black-900 text-xl w-[137px]"
+                      className="w-[137px] text-xl text-black-900"
                       size="txtMontserratRomanSemiBold20"
                     >
                       Next Session:
                     </Text>
                   </div>
-                  <div className="flex flex-col items-start justify-start w-full">
+                  <div className="flex w-full flex-col items-start justify-start">
                     <Button
-                      className="cursor-pointer font-medium leading-[normal] min-w-[157px] text-center text-md"
+                      className="text-md min-w-[157px] cursor-pointer text-center font-medium leading-[normal]"
                       shape="round"
                       color="blue_gray_700"
                       size="sm"

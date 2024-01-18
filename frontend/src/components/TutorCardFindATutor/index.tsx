@@ -11,10 +11,12 @@ type TutorCardFindATutorProps = Omit<
   | "tutorqualification"
 > &
   Partial<{
+    tutorfirstname: string;
+    tutorlastname: string;
     tutorfullname: string;
     tutorlocation: string;
     tutorsubject: string;
-    tutorrate: string;
+    tutorrate: number;
     tutorqualification: string;
   }>;
 
@@ -27,6 +29,20 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
           style={{ backgroundImage: "url('images/img_frame13_231x220.png')" }}
         >
           <div className="flex flex-col items-start justify-end px-2 w-auto">
+            <div className="flex flex-row gap-2">
+              <Text
+                className="text-xl text-white-A700 w-auto"
+                size="txtMontserratRomanSemiBold18WhiteA700"
+              >
+                {props?.tutorfirstname}
+              </Text>
+              <Text
+                className="text-xl text-white-A700 w-auto"
+                size="txtMontserratRomanSemiBold18WhiteA700"
+              >
+                {props?.tutorlastname}
+              </Text>
+            </div>
             <Text
               className="text-xl text-white-A700 w-auto"
               size="txtMontserratRomanSemiBold18WhiteA700"
@@ -46,7 +62,7 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
             {props?.tutorsubject}
           </Text>
           <Text className="text-black-900 text-s">
-            {props?.tutorrate}
+            ${props?.tutorrate}/hr 
           </Text>
           <Text
             className=" text-[12px] text-black-900"
@@ -64,7 +80,7 @@ TutorCardFindATutor.defaultProps = {
   tutorfullname: "Alicia Craig",
   tutorlocation: "Christchurch",
   tutorsubject: "Health | Biology",
-  tutorrate: "$35/hr",
+  tutorrate: 35,
   tutorqualification: "BSc in Sports Science",
 };
 

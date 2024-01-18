@@ -5,23 +5,15 @@ import NotFound from "pages/NotFound";
 const TutorProfileLoggedIn = React.lazy(
   () => import("pages/TutorProfileLoggedIn"),
 );
-const FindATutorLoggedIn = React.lazy(
-  () => import("pages/FindATutorLoggedIn"),
-);
-const Modals = React.lazy(
-  () => import("pages/Modals"),
-);
+const FindATutorLoggedIn = React.lazy(() => import("pages/FindATutorLoggedIn"));
+const Modals = React.lazy(() => import("pages/Modals"));
 const TutorDashboard = React.lazy(() => import("pages/TutorDashboard"));
 const TutorOnboarding = React.lazy(() => import("pages/TutorOnboarding"));
 const LoginPage = React.lazy(() => import("pages/LoginPage"));
-const TutorCodeofConduct = React.lazy(
-  () => import("pages/TutorCodeofConduct"),
-);
+const TutorCodeofConduct = React.lazy(() => import("pages/TutorCodeofConduct"));
 const InfoDiv = React.lazy(() => import("pages/InfoDiv"));
 const ContactUs = React.lazy(() => import("pages/ContactUs"));
-const TutorProfile = React.lazy(
-  () => import("pages/TutorProfile"),
-);
+const TutorProfile = React.lazy(() => import("pages/TutorProfile"));
 const FindATutor = React.lazy(() => import("pages/FindATutor"));
 const HomePage = React.lazy(() => import("pages/HomePage"));
 const ProjectRoutes = () => {
@@ -33,27 +25,15 @@ const ProjectRoutes = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/homepage" element={<HomePage />} />
           <Route path="/findatutor" element={<FindATutor />} />
-          <Route
-            path="/tutorprofile"
-            element={<TutorProfile />}
-          />
+          <Route path="/tutorprofile" element={<TutorProfile />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/infodiv" element={<InfoDiv />} />
-          <Route
-            path="/tutorcodeofconduct"
-            element={<TutorCodeofConduct />}
-          />
+          <Route path="/tutorcodeofconduct" element={<TutorCodeofConduct />} />
           <Route path="/loginpage" element={<LoginPage />} />
           <Route path="/tutoronboarding" element={<TutorOnboarding />} />
           <Route path="/tutordashboard" element={<TutorDashboard />} />
-          <Route
-            path="/modals"
-            element={<Modals />}
-          />
-          <Route
-            path="/findatutorloggedin"
-            element={<FindATutorLoggedIn />}
-          />
+          <Route path="/modals" element={<Modals />} />
+          <Route path="/findatutorloggedin" element={<FindATutorLoggedIn />} />
           <Route
             path="/tutorprofileloggedin"
             element={<TutorProfileLoggedIn />}

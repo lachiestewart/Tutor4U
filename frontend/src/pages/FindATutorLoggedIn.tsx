@@ -8,7 +8,7 @@ import FindATutorWidget from "components/FindATutorWidget";
 const FindATutorLoggedIn: React.FC = () => {
   return (
     <>
-      <div className="bg-gray-200 flex sm:flex-col md:flex-col flex-row font-montserrat sm:gap-5 md:gap-5 items-start justify-start mx-auto w-auto sm:w-full md:w-full">
+      <div className="main-outside-div">
         <Sidebar />
         <div className="flex flex-col items-start justify-start p-2.5 md:px-5 w-full">
           <div className="flex flex-col gap-2.5 items-center justify-start px-2.5 py-6 w-full">

@@ -44,9 +44,7 @@ const Home = () => {
           <Link to="/findatutorloggedin">FindATutorLoggedIn</Link>
         </li>
         <li>
-          <Link to="/tutorprofileloggedin">
-            TutorProfileLoggedIn
-          </Link>
+          <Link to="/tutorprofileloggedin">TutorProfileLoggedIn</Link>
         </li>
       </ul>
     </div>

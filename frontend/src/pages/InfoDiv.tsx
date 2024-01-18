@@ -5,11 +5,11 @@ import { Button, Img, Text } from "components";
 const InfoDiv: React.FC = () => {
   return (
     <>
-      <div className="flex flex-col font-montserrat items-center justify-start mx-auto pt-[25px] w-auto sm:w-full md:w-full">
-        <div className="flex md:flex-col flex-row md:gap-10 gap-[68px] items-start justify-center max-w-[1269px] mx-auto md:px-5 w-full">
-          <div className="flex flex-col items-end justify-start w-[286px]">
+      <div className="mx-auto flex w-auto flex-col items-center justify-start pt-[25px] font-montserrat md:w-full sm:w-full">
+        <div className="mx-auto flex w-full max-w-[1269px] flex-row items-start justify-center gap-[68px] md:flex-col md:gap-10 md:px-5">
+          <div className="flex w-[286px] flex-col items-end justify-start">
             <Text
-              className="leading-[22.00px] max-w-[286px] md:max-w-full text-black-900 text-lg text-right"
+              className="max-w-[286px] text-right text-lg leading-[22.00px] text-black-900 md:max-w-full"
               size="txtMontserratRomanSemiBold18"
             >
               Why Become A Tutor On Tutor4U?
@@ -20,9 +20,9 @@ const InfoDiv: React.FC = () => {
             src="images/img_centrelinediv.svg"
             alt="centrelinediv"
           />
-          <div className="flex flex-1 flex-col gap-2.5 items-start justify-start w-full">
+          <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5">
             <Text
-              className="text-black-900 text-sm"
+              className="text-sm text-black-900"
               size="txtMontserratRomanMedium14"
             >
               <>
@@ -44,7 +44,7 @@ const InfoDiv: React.FC = () => {
               </>
             </Text>
             <Button
-              className="!text-blue_gray-100 cursor-pointer font-medium leading-[normal] min-w-[132px] text-center text-sm"
+              className="min-w-[132px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
               shape="round"
               color="blue_gray_700"
               size="sm"
@@ -54,10 +54,10 @@ const InfoDiv: React.FC = () => {
             </Button>
           </div>
         </div>
-        <div className="flex md:flex-col flex-row md:gap-10 gap-[68px] items-start justify-start max-w-[1269px] mx-auto md:px-5 w-full">
-          <div className="flex flex-col items-center justify-start w-auto">
+        <div className="mx-auto flex w-full max-w-[1269px] flex-row items-start justify-start gap-[68px] md:flex-col md:gap-10 md:px-5">
+          <div className="flex w-auto flex-col items-center justify-start">
             <Text
-              className="leading-[22.00px] max-w-[286px] md:max-w-full text-black-900 text-lg text-right"
+              className="max-w-[286px] text-right text-lg leading-[22.00px] text-black-900 md:max-w-full"
               size="txtMontserratRomanSemiBold18"
             >
               <>Step 1. Complete A Tutor Application</>
@@ -68,9 +68,9 @@ const InfoDiv: React.FC = () => {
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_One"
           />
-          <div className="flex flex-1 flex-col gap-2.5 items-start justify-start py-5 w-full">
+          <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 py-5">
             <Text
-              className="text-black-900 text-sm"
+              className="text-sm text-black-900"
               size="txtMontserratRomanMedium14"
             >
               <>
@@ -86,9 +86,9 @@ const InfoDiv: React.FC = () => {
                 team will review them to see if you’re a good fit for tutoring.
               </>
             </Text>
-            <div className="flex flex-col items-center justify-start w-full">
+            <div className="flex w-full flex-col items-center justify-start">
               <Button
-                className="!text-blue_gray-100 cursor-pointer font-medium leading-[normal] min-w-[108px] text-center text-sm"
+                className="min-w-[108px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
                 shape="round"
                 color="blue_gray_700"
                 size="sm"
@@ -99,10 +99,10 @@ const InfoDiv: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex md:flex-col flex-row md:gap-10 gap-[68px] items-start justify-center max-w-[1269px] mx-auto md:px-5 w-full">
-          <div className="flex flex-col items-center justify-start w-auto">
+        <div className="mx-auto flex w-full max-w-[1269px] flex-row items-start justify-center gap-[68px] md:flex-col md:gap-10 md:px-5">
+          <div className="flex w-auto flex-col items-center justify-start">
             <Text
-              className="leading-[22.00px] max-w-[286px] md:max-w-full text-black-900 text-lg text-right"
+              className="max-w-[286px] text-right text-lg leading-[22.00px] text-black-900 md:max-w-full"
               size="txtMontserratRomanSemiBold18"
             >
               <>Step 2. Complete The Onboarding Process</>
@@ -113,14 +113,14 @@ const InfoDiv: React.FC = () => {
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Two"
           />
-          <div className="flex flex-1 flex-col gap-2.5 items-start justify-start py-5 w-full">
+          <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 py-5">
             <Img
-              className="h-[274px] sm:h-auto object-cover w-[366px] md:w-full"
+              className="h-[274px] w-[366px] object-cover md:w-full sm:h-auto"
               src="images/img_image12.png"
               alt="imageTwelve"
             />
             <Text
-              className="max-w-[627px] md:max-w-full text-black-900 text-sm"
+              className="max-w-[627px] text-sm text-black-900 md:max-w-full"
               size="txtMontserratRomanMedium14"
             >
               <>
@@ -137,10 +137,10 @@ const InfoDiv: React.FC = () => {
             </Text>
           </div>
         </div>
-        <div className="flex md:flex-col flex-row md:gap-10 gap-[68px] items-start justify-center max-w-[1269px] mx-auto md:px-5 w-full">
-          <div className="flex flex-col items-center justify-start w-auto">
+        <div className="mx-auto flex w-full max-w-[1269px] flex-row items-start justify-center gap-[68px] md:flex-col md:gap-10 md:px-5">
+          <div className="flex w-auto flex-col items-center justify-start">
             <Text
-              className="text-black-900 text-lg text-right w-auto"
+              className="w-auto text-right text-lg text-black-900"
               size="txtMontserratRomanSemiBold18"
             >
               <>Step 3. Profile Approval</>
@@ -151,9 +151,9 @@ const InfoDiv: React.FC = () => {
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Three"
           />
-          <div className="flex flex-1 flex-col items-start justify-start py-5 w-full">
+          <div className="flex w-full flex-1 flex-col items-start justify-start py-5">
             <Text
-              className="max-w-[627px] md:max-w-full text-black-900 text-sm"
+              className="max-w-[627px] text-sm text-black-900 md:max-w-full"
               size="txtMontserratRomanMedium14"
             >
               After that, we will let you know the outcome of the interview. If
@@ -163,10 +163,10 @@ const InfoDiv: React.FC = () => {
             </Text>
           </div>
         </div>
-        <div className="flex md:flex-col flex-row md:gap-10 gap-[68px] items-start justify-center max-w-[1269px] mx-auto md:px-5 w-full">
-          <div className="flex flex-col items-center justify-start w-auto">
+        <div className="mx-auto flex w-full max-w-[1269px] flex-row items-start justify-center gap-[68px] md:flex-col md:gap-10 md:px-5">
+          <div className="flex w-auto flex-col items-center justify-start">
             <Text
-              className="text-black-900 text-lg text-right w-auto"
+              className="w-auto text-right text-lg text-black-900"
               size="txtMontserratRomanSemiBold18"
             >
               <>Step 4. Publish Your Profile</>
@@ -177,9 +177,9 @@ const InfoDiv: React.FC = () => {
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Four"
           />
-          <div className="flex flex-1 flex-col items-start justify-start py-5 w-full">
+          <div className="flex w-full flex-1 flex-col items-start justify-start py-5">
             <Text
-              className="text-black-900 text-sm"
+              className="text-sm text-black-900"
               size="txtMontserratRomanMedium14"
             >
               <>
@@ -194,10 +194,10 @@ const InfoDiv: React.FC = () => {
             </Text>
           </div>
         </div>
-        <div className="flex md:flex-col flex-row md:gap-10 gap-[68px] items-start justify-center max-w-[1269px] mx-auto md:px-5 w-full">
-          <div className="flex flex-col items-center justify-start w-auto">
+        <div className="mx-auto flex w-full max-w-[1269px] flex-row items-start justify-center gap-[68px] md:flex-col md:gap-10 md:px-5">
+          <div className="flex w-auto flex-col items-center justify-start">
             <Text
-              className="leading-[22.00px] max-w-[286px] md:max-w-full text-black-900 text-lg text-right"
+              className="max-w-[286px] text-right text-lg leading-[22.00px] text-black-900 md:max-w-full"
               size="txtMontserratRomanSemiBold18"
             >
               <>Step 5. Manage Your Student Enquiries & Get Paid!</>
@@ -208,9 +208,9 @@ const InfoDiv: React.FC = () => {
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Five"
           />
-          <div className="flex flex-1 flex-col items-start justify-start py-5 w-full">
+          <div className="flex w-full flex-1 flex-col items-start justify-start py-5">
             <Text
-              className="text-black-900 text-sm"
+              className="text-sm text-black-900"
               size="txtMontserratRomanMedium14"
             >
               <>
