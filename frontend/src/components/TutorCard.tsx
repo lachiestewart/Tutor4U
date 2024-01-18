@@ -1,24 +1,19 @@
 import React from "react";
 
 import { Text } from "components";
+import { Tutor } from "interfaces";
 
 type TutorCardProps = {
-    tutorFirstName: string;
-    tutorLastName: string;
-    tutorLocation?: string;
-    tutorSubjects?: string[];
-    tutorRate?: number;
-    tutorQualification?: string;
-    tutorProfilePhoto?: string;
-  };
+  tutor: Tutor;
+};
 
-const TutorCard: React.FC<TutorCardProps> = (props) => {
+const TutorCard: React.FC<TutorCardProps> = ({ tutor }) => {
   return (
     <>
       <div className="bg-white-A700 transition ease-in-out duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:cursor-pointer flex flex-1 flex-col h-auto justify-start rounded-[10px] overflow-hidden w-full">
         <div
           className="bg-cover bg-gradient bg-no-repeat flex flex-col h-[231px] items-start justify-end p-2.5 w-full"
-          style={{ backgroundImage: `${props.tutorProfilePhoto}` }}
+          style={{ backgroundImage: `url(http://127.0.0.1:8000${tutor.user.profile_photo})` }}
         >
           <div className="flex flex-col items-start justify-end px-2 w-auto">
             <div className="flex flex-row gap-2">
@@ -26,29 +21,29 @@ const TutorCard: React.FC<TutorCardProps> = (props) => {
                 className="text-xl text-white-A700 w-auto"
                 size="txtMontserratRomanSemiBold18WhiteA700"
               >
-                {props.tutorFirstName} {props.tutorLastName}
+                {tutor.user.first_name} {tutor.user.last_name}
               </Text>
             </div>
             <Text
               className="text-white-A700 text-md w-auto"
               size="txtMontserratRomanRegular12"
             >
-              {props.tutorLocation}
+              {tutor.location}
             </Text>
           </div>
         </div>
         <div className="flex flex-col items-start justify-start p-2 pl-4">
-          <Text className="text-black-900 text-s" >
-            {props.tutorSubjects.join(" | ")}
-          </Text>
+          {/* will put list of tutor subjects here <Text className="text-black-900 text-s" >
+            {tutor.}
+          </Text> */}
           <Text className="text-black-900 text-s">
-            ${props.tutorRate}/hr 
+            ${tutor.rate}/hr
           </Text>
           <Text
             className=" text-[12px] text-black-900"
             size="txtInterRegular10Black900"
           >
-            {props.tutorQualification}
+            {tutor.qualification}
           </Text>
         </div>
       </div>
@@ -57,13 +52,27 @@ const TutorCard: React.FC<TutorCardProps> = (props) => {
 };
 
 TutorCard.defaultProps = {
-  tutorFirstName: "first name",
-  tutorLastName: "last name",
-  tutorLocation: "location",
-  tutorSubjects: ["subject 1", "subject 2"],
-  tutorRate: 99,
-  tutorQualification: "qualification",
-  tutorProfilePhoto: "url('images/img_frame13_231x220.png')",
+  tutor: {
+    id: 1,
+    user: {
+      id: 1,
+      username: "username",
+      first_name: "first name",
+      last_name: "last name",
+      phone_number: "111 111 1111",
+      email: "username@email.com",
+      gender: "gender",
+      profile_photo: "url('images/img_frame13_231x220.png')",
+    },
+    rate: 99,
+    availability: "availability",
+    remote: true,
+    in_person: true,
+    location: "location",
+    qualification: "qualification",
+    about: "about",
+  }
+
 };
 
 export default TutorCard;

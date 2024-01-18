@@ -7,22 +7,49 @@ import TutorCard from "components/TutorCard";
 import TutorFilterSidebar from "components/TutorFilterSidebar";
 import { Tutor } from "interfaces";
 
+type SearchParams = {
+  subjects: string[];
+  levels: string[];
+  min_rating: number;
+  location: string[];
+  availability: string[];
+  gender: string[];
+  lesson_format: string[];
+  min_rate: number;
+  max_rate: number;
+}
 
 const FindATutor: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   const [searchParams, setSearchParams] = useState<boolean>(false);
   const [tutors, setTutors] = useState<Tutor[]>(null);
 
+  const updateTutors = async () => {
+
+    const response: Response = await fetch(`http://127.0.0.1:8000/api/all-tutors/`);
+
+    const tutorList: Tutor[] = await response.json();
+
+    console.log(tutorList.map(tutor => tutor.user.first_name + " " + tutor.user.last_name + " " + tutor.user.profile_photo));
+
+    setTutors(tutorList);
+  }
+
+  const tutorCardList = (): JSX.Element[] => {
+    return tutors.map(tutor => <TutorCard key={tutor.id} tutor={tutor} />)
+  }
+
   useEffect(() => {
     console.log("querying backend for tutor details");
-    const t: any = fetch("http://127.0.0.1:8000/api/a/");
-    console.log(t);
-  }, [])
+    updateTutors();
+  }, [searchParams])
+
 
   return (
     <>
-      <div className={`flex w-full ${loggedIn?"flex-row":"flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}>
+      <div className={`flex w-full ${loggedIn ? "flex-row" : "flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}>
         {loggedIn ? <Sidebar /> : <NavBar />}
+        <button onClick={() => setSearchParams(!searchParams)}>press to refresh tutors</button>
         <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5 sm:w-full">
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
             <Text
@@ -58,10 +85,7 @@ const FindATutor: React.FC = () => {
                 <p className="w-auto font-medium">Filtering by:</p>
               </div>
               <div className="gap-3 md:gap-5 grid sm:grid-cols-2 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
-                <TutorCard
-                  tutorFirstName="Naomi"
-                  tutorLastName="Ranger"
-                />
+                {tutors ? tutorCardList() : <p>No Tutors Found</p>}
               </div>
             </div>
           </div>
