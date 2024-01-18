@@ -2,7 +2,11 @@ import { Text, Img } from "components";
 
 type TutorDashboardProfileHeaderProps = Omit<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-  "tutorfullname" | "tutorlocation" | "tutorsubject" | "tutorrate" | "tutorrating"
+  | "tutorfullname"
+  | "tutorlocation"
+  | "tutorsubject"
+  | "tutorrate"
+  | "tutorrating"
 > &
   Partial<{
     tutorfirstname: string;
@@ -11,10 +15,12 @@ type TutorDashboardProfileHeaderProps = Omit<
     tutorlocation: string;
     tutorsubject: string;
     tutorrate: number;
-    tutorrating: "";
+    tutorrating: number;
   }>;
 
-const TutorDashboardProfileHeader: React.FC<TutorDashboardProfileHeaderProps> = (props) => {
+const TutorDashboardProfileHeader: React.FC<
+  TutorDashboardProfileHeaderProps
+> = (props) => {
   return (
     <div className="flex w-full max-w-[1000px] flex-row items-center justify-start gap-4 bg-white-A700 md:flex-col">
       <div className="flex h-[120px] w-[120px] flex-col items-start justify-start md:h-auto">
