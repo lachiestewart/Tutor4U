@@ -39,7 +39,7 @@ const TutorFilterSidebar = () => {
                     className="p-3 w-full"
                     wrapClassName="border border-gray-400_02 border-solid flex h-auto w-full"
                   ></Input>
-                  <div className="py-4 hidden sm:block"><text>Advance search</text></div>
+                  <div className="py-4 hidden sm:block"><p>Advance search</p></div>
                 </div>
                 <Line className="bg-blue_gray-400 h-px w-full my-4" />
                 <div className="flex flex-col items-start justify-center w-auto">

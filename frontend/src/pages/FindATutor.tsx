@@ -1,14 +1,23 @@
-import React, { useState } from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Button, Img, Input, Line, Text } from "components";
 import NavBar from "components/NavBar";
 import Sidebar from "components/Sidebar";
 import TutorCard from "components/TutorCard";
 import TutorFilterSidebar from "components/TutorFilterSidebar";
+import { Tutor } from "interfaces";
+
 
 const FindATutor: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
+  const [searchParams, setSearchParams] = useState<boolean>(false);
+  const [tutors, setTutors] = useState<Tutor[]>(null);
+
+  useEffect(() => {
+    console.log("querying backend for tutor details");
+    const t: any = fetch("http://127.0.0.1:8000/api/a/");
+    console.log(t);
+  }, [])
 
   return (
     <>
@@ -46,7 +55,7 @@ const FindATutor: React.FC = () => {
             <TutorFilterSidebar />
             <div className="relative flex h-[1208px] w-[66%] max-w-[1100px] flex-col items-center justify-start gap-[15px] md:h-auto md:w-[75%] sm:w-full">
               <div className="sticky top-5 z-10 flex w-full flex-row items-center rounded-[10px] bg-white-A700 p-2 text-left text-lg">
-                <text className="w-auto font-medium">Filtering by:</text>
+                <p className="w-auto font-medium">Filtering by:</p>
               </div>
               <div className="gap-3 md:gap-5 grid sm:grid-cols-2 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
                 <TutorCard
