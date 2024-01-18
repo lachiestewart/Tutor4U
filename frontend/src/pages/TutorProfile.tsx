@@ -7,7 +7,7 @@ const TutorProfile: React.FC = () => {
   return (
     <>
       <div className="mx-auto flex w-auto flex-col items-start justify-start gap-2.5 bg-gray-200 font-montserrat md:w-full sm:w-full">
-        <NavBar className="flex w-full items-center justify-between bg-blue_gray-700 px-[60px] py-[27px] md:flex-col md:gap-2.5 md:px-5" />
+        <NavBar />
         <div className="px-auto flex w-full flex-col items-center justify-start py-[30px] md:px-10 sm:px-5">
           <div className="mx-auto flex w-full max-w-[1300px] flex-row items-start justify-center gap-[20px] rounded-[10px] bg-white-A700 px-6 py-2.5 md:flex-col md:px-5">
             <div className="flex h-auto w-[30%] flex-col items-center justify-start gap-3.5 px-[10px] py-2.5 md:w-[100%] sm:px-5">

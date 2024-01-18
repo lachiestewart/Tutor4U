@@ -10,7 +10,7 @@ const FindATutor: React.FC = () => {
   return (
     <>
       <div className="main-div-gray">
-        <NavBar className="flex w-full items-center justify-between bg-blue_gray-700 px-[60px] py-[27px] md:flex-col md:gap-2.5 md:px-5" />
+        <NavBar />
         <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5 sm:w-full">
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
             <Text

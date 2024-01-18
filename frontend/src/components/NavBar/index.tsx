@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { useNavigate } from "react-router-dom";
 
@@ -19,7 +19,7 @@ function Dropdown(){
 
   return (
     <>
-      <header className={props.className}>
+      <header className="flex w-full items-center justify-between bg-blue_gray-700 px-[60px] py-[27px] md:flex-col md:gap-2.5 md:px-5">
         <div className="flex items-center justify-between md:w-full p-2">
           <Img
             className="common-pointer h-14 md:h-auto object-cover w-[222px] sm:w-full"
@@ -28,7 +28,7 @@ function Dropdown(){
             onClick={() => navigate("/homepage")}
           />
           <div
-          onClick={() => setIsOpen((prev) => !prev)}
+          // {onClick={() => setIsOpen((prev) => !prev)}}
           className="px-10 cursor-pointer md:block hidden">
             <svg className="w-8 h-8 stroke-white-A700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
