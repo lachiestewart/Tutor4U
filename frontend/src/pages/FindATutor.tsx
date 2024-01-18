@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import { Button, Img, Input, Line, Text } from "components";
 import NavBar from "components/NavBar";
@@ -49,8 +49,8 @@ const FindATutor: React.FC = () => {
               </div>
               <div className="gap-3 md:gap-5 grid sm:grid-cols-2 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
                 <TutorCard
-                  tutorfirstname="Naomi"
-                  tutorlastname="Ranger"
+                  tutorFirstName="Naomi"
+                  tutorLastName="Ranger"
                 />
               </div>
             </div>
