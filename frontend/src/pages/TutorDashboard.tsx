@@ -3,6 +3,7 @@ import React from "react";
 import Sidebar from "components/Sidebar";
 
 import { Button, Img, Text } from "components";
+import TutorDashboardProfileHeader from "components/TutorDashboardProfileHeader";
 
 const TutorDashboard: React.FC = () => {
   return (
@@ -10,37 +11,7 @@ const TutorDashboard: React.FC = () => {
       <div className="relative flex w-full flex-row items-start justify-center gap-2.5 bg-white-A700 font-montserrat md:w-full md:flex-col sm:w-full sm:flex-col">
         <Sidebar />
         <div className="flex h-[200vh] w-full flex-1 flex-col items-start justify-start gap-2.5 p-[30px] md:px-5">
-          <div className="flex w-full max-w-[1000px] flex-col items-center justify-start rounded-[10px] bg-white-A700">
-            <div className="flex w-full flex-row items-start justify-start gap-2.5 rounded-[10px] md:flex-col">
-              <div className="flex h-[118px] w-[120px] flex-col items-start justify-start md:h-auto">
-                <Img
-                  className="h-[118px] w-full rounded-[50%] md:h-auto"
-                  src="images/img_36477397310160.png"
-                  alt="36477397310160"
-                />
-              </div>
-              <div className="flex w-full max-w-[870px] flex-1 flex-col items-start justify-start">
-                <Text
-                  className="w-[181px] text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
-                  size="txtMontserratRomanBold32"
-                >
-                  Jason Hart
-                </Text>
-                <Text
-                  className="text-xl leading-[24.00px] text-black-900"
-                  size="txtMontserratRomanRegular20"
-                >
-                  <>
-                    Academic Tutor - Science, Mathematics
-                    <br />
-                    Wellington, NZ
-                    <br />
-                    Tutor Rating: X X X X
-                  </>
-                </Text>
-              </div>
-            </div>
-          </div>
+          <TutorDashboardProfileHeader />
           <div className="flex w-full flex-col items-start justify-start">
             <div className="flex h-[300px] w-full flex-col items-center justify-start gap-2.5 md:h-auto">
               <Text

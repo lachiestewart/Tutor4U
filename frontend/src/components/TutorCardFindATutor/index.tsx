@@ -34,35 +34,35 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
                 className="text-xl text-white-A700 w-auto"
                 size="txtMontserratRomanSemiBold18WhiteA700"
               >
-                {props?.tutorfirstname}
+                {props.tutorfirstname}
               </Text>
               <Text
                 className="text-xl text-white-A700 w-auto"
                 size="txtMontserratRomanSemiBold18WhiteA700"
               >
-                {props?.tutorlastname}
+                {props.tutorlastname}
               </Text>
             </div>
             <Text
               className="text-xl text-white-A700 w-auto"
               size="txtMontserratRomanSemiBold18WhiteA700"
             >
-              {props?.tutorfullname}
+              {props.tutorfullname}
             </Text>
             <Text
               className="text-white-A700 text-md w-auto"
               size="txtMontserratRomanRegular12"
             >
-              {props?.tutorlocation}
+              {props.tutorlocation}
             </Text>
           </div>
         </div>
         <div className="flex flex-col items-start justify-start p-2 pl-4">
           <Text className="text-black-900 text-s" >
-            {props?.tutorsubject}
+            {props.tutorsubject}
           </Text>
           <Text className="text-black-900 text-s">
-            ${props?.tutorrate}/hr 
+            ${props.tutorrate}/hr 
           </Text>
           <Text
             className=" text-[12px] text-black-900"
