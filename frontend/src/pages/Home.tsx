@@ -41,9 +41,6 @@ const Home = () => {
           <Link to="/infodiv">InfoDiv</Link>
         </li>
         <li>
-          <Link to="/findatutorloggedin">FindATutorLoggedIn</Link>
-        </li>
-        <li>
           <Link to="/tutorprofileloggedin">TutorProfileLoggedIn</Link>
         </li>
       </ul>

@@ -1,16 +1,18 @@
-import React from "react";
+import React, {useState} from "react";
 
 import { Button, Img, Input, Line, Text } from "components";
-import TutorCardFindATutor from "components/TutorCardFindATutor";
 import NavBar from "components/NavBar";
+import Sidebar from "components/Sidebar";
+import TutorCard from "components/TutorCard";
 import TutorFilterSidebar from "components/TutorFilterSidebar";
-import FindATutorWidget from "components/FindATutorWidget";
 
 const FindATutor: React.FC = () => {
+  const [loggedIn, setLoggedIn] = useState<boolean>(false);
+
   return (
     <>
       <div className="main-div-gray">
-        <NavBar />
+        {loggedIn ? <Sidebar /> : <NavBar />}
         <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5 sm:w-full">
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
             <Text
@@ -39,7 +41,20 @@ const FindATutor: React.FC = () => {
             </Button>
           </div>
 
-          <FindATutorWidget />
+          <div className="flex relative flex-row gap-2.5 items-start justify-center w-full sm:flex-col">
+            <TutorFilterSidebar />
+            <div className="flex relative flex-col gap-[15px] h-[1208px] w-[66%] md:w-[75%] sm:w-full max-w-[1100px] md:h-auto items-center justify-start">
+              <div className="flex flex-row sticky top-5 z-10 bg-white-A700 rounded-[10px] text-left items-center w-full p-2 text-lg">
+                <text className="w-auto font-medium">Filtering by:</text>
+              </div>
+              <div className="gap-3 md:gap-5 grid sm:grid-cols-2 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
+                <TutorCard
+                  tutorfirstname="Naomi"
+                  tutorlastname="Ranger"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

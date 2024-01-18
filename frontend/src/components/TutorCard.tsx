@@ -2,25 +2,16 @@ import React from "react";
 
 import { Text } from "components";
 
-type TutorCardFindATutorProps = Omit<
-  React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
-  | "tutorfullname"
-  | "tutorlocation"
-  | "tutorsubject"
-  | "tutorrate"
-  | "tutorqualification"
-> &
-  Partial<{
+type TutorCardProps = {
     tutorfirstname: string;
     tutorlastname: string;
-    tutorfullname: string;
-    tutorlocation: string;
-    tutorsubject: string;
-    tutorrate: number;
-    tutorqualification: string;
-  }>;
+    tutorlocation?: string;
+    tutorsubject?: string;
+    tutorrate?: number;
+    tutorqualification?: string;
+  };
 
-const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
+const TutorCard: React.FC<TutorCardProps> = (props) => {
   return (
     <>
       <div className="bg-white-A700 transition ease-in-out duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:cursor-pointer flex flex-1 flex-col h-auto justify-start rounded-[10px] overflow-hidden w-full">
@@ -34,21 +25,9 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
                 className="text-xl text-white-A700 w-auto"
                 size="txtMontserratRomanSemiBold18WhiteA700"
               >
-                {props.tutorfirstname}
-              </Text>
-              <Text
-                className="text-xl text-white-A700 w-auto"
-                size="txtMontserratRomanSemiBold18WhiteA700"
-              >
-                {props.tutorlastname}
+                {props.tutorfirstname} {props.tutorlastname}
               </Text>
             </div>
-            <Text
-              className="text-xl text-white-A700 w-auto"
-              size="txtMontserratRomanSemiBold18WhiteA700"
-            >
-              {props.tutorfullname}
-            </Text>
             <Text
               className="text-white-A700 text-md w-auto"
               size="txtMontserratRomanRegular12"
@@ -68,7 +47,7 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
             className=" text-[12px] text-black-900"
             size="txtInterRegular10Black900"
           >
-            {props?.tutorqualification}
+            {props.tutorqualification}
           </Text>
         </div>
       </div>
@@ -76,12 +55,13 @@ const TutorCardFindATutor: React.FC<TutorCardFindATutorProps> = (props) => {
   );
 };
 
-TutorCardFindATutor.defaultProps = {
-  tutorfullname: "Alicia Craig",
+TutorCard.defaultProps = {
+  tutorfirstname: "first name",
+  tutorlastname: "last name",
   tutorlocation: "Christchurch",
   tutorsubject: "Health | Biology",
   tutorrate: 35,
   tutorqualification: "BSc in Sports Science",
 };
 
-export default TutorCardFindATutor;
+export default TutorCard;

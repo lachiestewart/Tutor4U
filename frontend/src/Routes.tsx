@@ -5,7 +5,6 @@ import NotFound from "pages/NotFound";
 const TutorProfileLoggedIn = React.lazy(
   () => import("pages/TutorProfileLoggedIn"),
 );
-const FindATutorLoggedIn = React.lazy(() => import("pages/FindATutorLoggedIn"));
 const Modals = React.lazy(() => import("pages/Modals"));
 const TutorDashboard = React.lazy(() => import("pages/TutorDashboard"));
 const TutorOnboarding = React.lazy(() => import("pages/TutorOnboarding"));
@@ -33,7 +32,6 @@ const ProjectRoutes = () => {
           <Route path="/tutoronboarding" element={<TutorOnboarding />} />
           <Route path="/tutordashboard" element={<TutorDashboard />} />
           <Route path="/modals" element={<Modals />} />
-          <Route path="/findatutorloggedin" element={<FindATutorLoggedIn />} />
           <Route
             path="/tutorprofileloggedin"
             element={<TutorProfileLoggedIn />}
