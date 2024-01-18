@@ -7,9 +7,9 @@ import TutorDashboardProfileHeader from "components/TutorDashboardProfileHeader"
 const TutorCodeofConduct: React.FC = () => {
   return (
     <>
-      <div className="mx-auto flex w-auto flex-row items-start justify-between bg-white-A700 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5">
+      <div className="flex w-full flex-row items-start justify-between bg-white-A700 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5">
         <Sidebar />
-        <div className="flex w-full max-w-[1060px] flex-col items-center justify-start gap-2.5 p-[30px] md:px-5">
+        <div className="flex w-full flex-col items-start justify-start gap-2.5 p-[30px] md:px-5">
           <TutorDashboardProfileHeader />
           <div className="flex w-full flex-col items-start justify-start">
             <div className="flex w-auto flex-col items-center justify-start gap-5 md:w-full">
@@ -41,7 +41,7 @@ const TutorCodeofConduct: React.FC = () => {
                     Ethical Behaviour
                   </Text>
                   <Text
-                    className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
+                    className="text-lg leading-[24.00px] text-black-900 md:max-w-full"
                     size="txtMontserratRomanRegular18"
                   >
                     All tutors must interact with students in an ethical manner.
@@ -62,7 +62,7 @@ const TutorCodeofConduct: React.FC = () => {
                     Maintain Professionalism
                   </Text>
                   <Text
-                    className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
+                    className=" text-lg leading-[24.00px] text-black-900 md:max-w-full"
                     size="txtMontserratRomanRegular18"
                   >
                     You will professional with your interactions. As a tutor in
@@ -108,7 +108,7 @@ const TutorCodeofConduct: React.FC = () => {
                     Ensure A Safe Environment For Yourself And Your Students
                   </Text>
                   <Text
-                    className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
+                    className=" text-lg leading-[24.00px] text-black-900 md:max-w-full"
                     size="txtMontserratRomanRegular18"
                   >
                     You will prioritise the well-being and safety of students.
@@ -127,7 +127,7 @@ const TutorCodeofConduct: React.FC = () => {
                     Keep Privacy Of Students
                   </Text>
                   <Text
-                    className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
+                    className=" text-lg leading-[24.00px] text-black-900 md:max-w-full"
                     size="txtMontserratRomanRegular18"
                   >
                     Maintain privacy of the students information. This could
@@ -143,7 +143,7 @@ const TutorCodeofConduct: React.FC = () => {
                     All Lessons Must Be Recorded On The Tutor4U Platform
                   </Text>
                   <Text
-                    className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
+                    className=" text-lg leading-[24.00px] text-black-900 md:max-w-full"
                     size="txtMontserratRomanRegular18"
                   >
                     Tutors are strictly prohibited from offering or providing
@@ -161,7 +161,7 @@ const TutorCodeofConduct: React.FC = () => {
                     Compliance & Enforcement
                   </Text>
                   <Text
-                    className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
+                    className="text-lg leading-[24.00px] text-black-900 md:max-w-full"
                     size="txtMontserratRomanRegular18"
                   >
                     Tutor4U has the right to remove anyone from the Tutor4U
@@ -179,7 +179,7 @@ const TutorCodeofConduct: React.FC = () => {
                     Provide Correct Information
                   </Text>
                   <Text
-                    className="max-w-[1000px] text-lg leading-[24.00px] text-black-900 md:max-w-full"
+                    className="text-lg leading-[24.00px] text-black-900 md:max-w-full"
                     size="txtMontserratRomanRegular18"
                   >
                     All tutors must be responsible for maintaining their records
