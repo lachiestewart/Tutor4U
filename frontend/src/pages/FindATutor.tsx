@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 import { Button, Img, Input, Line, Text } from "components";
 import NavBar from "components/NavBar";
@@ -11,7 +11,7 @@ const FindATutor: React.FC = () => {
 
   return (
     <>
-      <div className="main-div-gray">
+      <div className={`flex w-full ${loggedIn?"flex-row":"flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}>
         {loggedIn ? <Sidebar /> : <NavBar />}
         <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5 sm:w-full">
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
@@ -41,17 +41,14 @@ const FindATutor: React.FC = () => {
             </Button>
           </div>
 
-          <div className="flex relative flex-row gap-2.5 items-start justify-center w-full sm:flex-col">
+          <div className="relative flex w-full flex-row items-start justify-center gap-2.5 sm:flex-col">
             <TutorFilterSidebar />
-            <div className="flex relative flex-col gap-[15px] h-[1208px] w-[66%] md:w-[75%] sm:w-full max-w-[1100px] md:h-auto items-center justify-start">
-              <div className="flex flex-row sticky top-5 z-10 bg-white-A700 rounded-[10px] text-left items-center w-full p-2 text-lg">
+            <div className="relative flex h-[1208px] w-[66%] max-w-[1100px] flex-col items-center justify-start gap-[15px] md:h-auto md:w-[75%] sm:w-full">
+              <div className="sticky top-5 z-10 flex w-full flex-row items-center rounded-[10px] bg-white-A700 p-2 text-left text-lg">
                 <text className="w-auto font-medium">Filtering by:</text>
               </div>
-              <div className="gap-3 md:gap-5 grid sm:grid-cols-2 md:grid-cols-2 grid-cols-3 justify-center min-h-[auto] w-full">
-                <TutorCard
-                  tutorfirstname="Naomi"
-                  tutorlastname="Ranger"
-                />
+              <div className="grid min-h-[auto] w-full grid-cols-3 justify-center gap-3 md:grid-cols-2 md:gap-5 sm:grid-cols-2">
+                <TutorCard tutorfirstname="Naomi" tutorlastname="Ranger" />
               </div>
             </div>
           </div>

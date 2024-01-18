@@ -4,7 +4,6 @@ const Sidebar = () => {
     return (
         <List
             className="sticky justify-between left-0 top-0 bg-blue_gray-700 flex flex-col h-[100vh] items-start md:px-5 w-[380px] sm:w-full"
-            orientation="vertical"
         >
             <div className="flex flex-col items-start justify-start my-0 w-full">
                 <Img
