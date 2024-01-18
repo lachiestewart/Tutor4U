@@ -2,111 +2,56 @@ import React from "react";
 import Sidebar from "components/Sidebar";
 
 import { Button, Img, Input, List, Text } from "components";
+import TutorDashboardProfileHeader from "components/ProfileHeader";
 
 const TutorOnboarding: React.FC = () => {
   return (
     <>
-      <div className="mx-auto flex w-auto flex-row items-start justify-start bg-white-A700 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5">
+      <div className="mx-auto flex w-auto flex-row items-start justify-between bg-white-A700 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5">
         <Sidebar />
-        <div className="flex w-full max-w-[1060px] flex-col items-center justify-start gap-2.5 p-[30px] md:px-5">
-          <div className="flex w-full max-w-[1000px] flex-col items-center justify-start rounded-[10px] bg-white-A700">
-            <div className="flex w-full flex-row items-start justify-start gap-2.5 rounded-[10px] md:flex-col">
-              <div className="flex h-[118px] w-[120px] flex-col items-start justify-start md:h-auto">
-                <Img
-                  className="h-[118px] w-full rounded-[50%] md:h-auto"
-                  src="images/img_36477397310160.png"
-                  alt="36477397310160"
-                />
-              </div>
-              <div className="flex w-full max-w-[870px] flex-1 flex-col items-start justify-start">
-                <Text
-                  className="w-[181px] text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
-                  size="txtMontserratRomanBold32"
-                >
-                  Jason Hart
-                </Text>
-                <Text
-                  className="text-xl leading-[24.00px] text-black-900"
-                  size="txtMontserratRomanRegular20"
-                >
-                  <>
-                    Academic Tutor - Science, Mathematics
-                    <br />
-                    Wellington, NZ
-                    <br />
-                    Tutor Rating: X X X X
-                  </>
-                </Text>
-              </div>
-            </div>
-          </div>
+        <div className="flex w-full flex-col items-start justify-start gap-2.5 p-[30px] md:px-5">
+          <TutorDashboardProfileHeader />
           <div className="flex w-full flex-col items-start justify-start">
             <div className="flex w-full flex-col items-center justify-start gap-2.5">
-              <Text
-                className="w-auto text-center text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
-                size="txtMontserratRomanBold32"
-              >
-                Welcome to Tutor4U!
-              </Text>
+              <h1>Welcome to Tutor4U!</h1>
               <div className="flex w-full flex-col items-center justify-start gap-2.5">
-                <Text
-                  className="text-center text-lg leading-[24.00px] text-black-900"
-                  size="txtMontserratRomanRegular18"
-                >
-                  <>
-                    It&#39;s so awesome to see that you are taking your first
-                    steps in joining our amazing community of tutors!
-                    <br />
-                    <br />
-                    As you can see below, there are a few steps you will need to
-                    complete in order to get fully onboarded. Once you complete
-                    the steps below, you will have complete access to all the
-                    functionalities of the Tutor4U platform. But don&#39;t
-                    worry, we&#39;ve tried to make the process as streamlined as
-                    possible so that you can start getting students as quickly
-                    as possible!{" "}
-                  </>
-                </Text>
-                <Img
-                  className="h-[263px] w-full object-cover sm:h-auto"
+                <p className="text-center">
+                  It's so awesome to see that you are taking your first steps in
+                  joining our amazing community of tutors!
+                  <br />
+                  <br />
+                  As you can see below, there are a few steps you will need to
+                  complete in order to get fully onboarded. Once you complete
+                  the steps below, you will have complete access to all the
+                  functionalities of the Tutor4U platform. But don't worry,
+                  we've tried to make the process as streamlined as possible so
+                  that you can start getting students as quickly as possible!
+                </p>
+                <img
+                  className="w-[70%] object-cover sm:h-auto"
                   src="images/img_createtutor4ulogin.png"
-                  alt="createtutor4ulo"
+                  alt="Stage 1: Tutor4U onboarding journey"
                 />
-                <Text
-                  className="text-center text-lg leading-[24.00px] text-black-900"
-                  size="txtMontserratRomanRegular18"
-                >
-                  <>
-                    Please complete all the details below. Once submitted, the
-                    Tutor4U team will review your application. Once it&#39;s
-                    reviewed, you will be informed of the outcome and whether
-                    you will be invited for an interview.
-                    <br />
-                    <br />
-                    All fields are required unless otherwise stated. Please
-                    know, you will be able to change your profile settings if
-                    your application is accepted.{" "}
-                  </>
-                </Text>
+                <p className="text-center">
+                  Please complete all the details below. Once submitted, the
+                  Tutor4U team will review your application. Once it's reviewed,
+                  you will be informed of the outcome and whether you will be
+                  invited for an interview.
+                  <br />
+                  <br />
+                  All fields are required unless otherwise stated. Please know,
+                  you will be able to change your profile settings if your
+                  application is accepted.
+                </p>
               </div>
             </div>
           </div>
           <div className="flex w-full flex-col items-center justify-start rounded-[10px] bg-blue_gray-100">
             <div className="flex w-full flex-col items-start justify-start gap-5 rounded-[10px] bg-blue_gray-100 p-[15px]">
-              <Text
-                className="w-auto text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                size="txtMontserratRomanSemiBold28"
-              >
-                Personal Details
-              </Text>
+              <h3>Personal Details</h3>
               <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                 <div className="flex w-full flex-1 flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    First Name
-                  </Text>
+                  <h4>First Name</h4>
                   <Input
                     name="emailtextentry"
                     placeholder=""
@@ -115,12 +60,7 @@ const TutorOnboarding: React.FC = () => {
                   ></Input>
                 </div>
                 <div className="flex w-full flex-1 flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Last Name
-                  </Text>
+                  <h4>Last Name</h4>
                   <Input
                     name="emailtextentry_One"
                     placeholder=""
@@ -131,12 +71,7 @@ const TutorOnboarding: React.FC = () => {
               </div>
               <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                 <div className="flex w-full flex-1 flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Email Address
-                  </Text>
+                  <h4>Email Address</h4>
                   <Input
                     name="emailtextentry_Two"
                     placeholder=""
@@ -146,12 +81,7 @@ const TutorOnboarding: React.FC = () => {
                   ></Input>
                 </div>
                 <div className="flex w-full flex-1 flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Phone Number
-                  </Text>
+                  <h4>Phone Number</h4>
                   <Input
                     name="emailtextentry_Three"
                     placeholder=""
@@ -161,12 +91,7 @@ const TutorOnboarding: React.FC = () => {
                 </div>
               </div>
               <div className="flex w-full flex-col items-start justify-start">
-                <Text
-                  className="w-auto text-center text-lg text-black-900"
-                  size="txtMontserratRomanSemiBold18"
-                >
-                  Date of Birth
-                </Text>
+                <h4>Date of Birth</h4>
                 <Input
                   name="emailtextentry_Four"
                   placeholder=""
@@ -176,17 +101,12 @@ const TutorOnboarding: React.FC = () => {
               </div>
               <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                 <div className="flex w-full flex-1 flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Profile Photo
-                  </Text>
+                  <h4>Profile Photo</h4>
                   <div className="flex w-auto flex-row items-center justify-start gap-[50px] px-2.5 py-[5px]">
-                    <Img
+                    <img
                       className="h-16 w-[63px] rounded-[31px] object-cover md:h-auto"
                       src="images/img_36477397310160_64x63.png"
-                      alt="36477397310160_One"
+                      alt="Stage one of tutor onboarding journey"
                     />
                     <Button
                       className="min-w-[164px] cursor-pointer text-center text-sm font-medium leading-[normal]"
@@ -200,12 +120,7 @@ const TutorOnboarding: React.FC = () => {
                   </div>
                 </div>
                 <div className="flex w-full flex-1 flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Gender
-                  </Text>
+                  <h4>Gender</h4>
                   <Input
                     name="emailtextentry_Five"
                     placeholder=""
@@ -216,49 +131,27 @@ const TutorOnboarding: React.FC = () => {
               </div>
               <div className="flex w-full flex-col items-start justify-start gap-5">
                 <div className="flex w-full flex-col items-start justify-start">
-                  <Text
-                    className="max-w-[970px] text-lg text-black-900 md:max-w-full"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    About You (If accepted, this will be what visitors read on
-                    your profile page so try to advertise yourself well!)
-                  </Text>
+                  <h4>About You</h4>
+                  <p>
+                    If your application is accepted, this will be what visitors
+                    read on your profile page so try to advertise yourself well!
+                  </p>
                   <div className="h-[180px] w-full rounded-[10px] bg-white-A700"></div>
                 </div>
                 <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      LinkedIn Link (Optional)
-                    </Text>
+                    <h4>LinkedIn Link (Optional)</h4>
                     <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Website Link (Optional)
-                    </Text>
+                    <h4>Website Link (Optional)</h4>
                     <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                   </div>
                 </div>
-                <Text
-                  className="w-auto text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Academic Details
-                </Text>
+                <h3>Academic Details</h3>
                 <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      School Attended
-                    </Text>
+                    <h4>School Attended</h4>
                     <Input
                       name="emailtextentry_Nine"
                       placeholder=""
@@ -267,32 +160,17 @@ const TutorOnboarding: React.FC = () => {
                     ></Input>
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      University Attended (Optional)
-                    </Text>
+                    <h4>University Attended (Optional)</h4>
                     <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Highest Academic Qualification
-                  </Text>
+                  <h4>Highest Academic Qualification</h4>
                   <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                 </div>
                 <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      CV Upload
-                    </Text>
+                    <h4 className="w-full text-center">CV Upload</h4>
                     <Button
                       className="w-full cursor-pointer text-center text-sm font-medium leading-[normal]"
                       shape="round"
@@ -304,12 +182,9 @@ const TutorOnboarding: React.FC = () => {
                     </Button>
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
+                    <h4 className="w-full text-center">
                       Academic Transcript Upload
-                    </Text>
+                    </h4>
                     <Button
                       className="w-full cursor-pointer text-center text-sm font-medium leading-[normal]"
                       shape="round"
@@ -321,76 +196,36 @@ const TutorOnboarding: React.FC = () => {
                     </Button>
                   </div>
                 </div>
-                <Text
-                  className="w-auto text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Tutoring Details
-                </Text>
+                <h3>Tutoring Details</h3>
                 <div className="flex w-full flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Highest Academic Level You Can Tutor
-                  </Text>
+                  <h4>Highest Academic Level You Can Tutor</h4>
                   <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                 </div>
                 <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Primary Subject You Can Tutor
-                    </Text>
+                    <h4>Primary Subject You Can Tutor</h4>
                     <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Secondary Subject You Can Tutor (Optional)
-                    </Text>
+                    <h4>Secondary Subject You Can Tutor (Optional)</h4>
                     <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Specific Courses / Papers You Can Tutor
-                  </Text>
+                  <h4>Specific Courses / Papers You Can Tutor</h4>
                   <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Usual Tutoring Location
-                  </Text>
+                  <h4>Usual Tutoring Location</h4>
                   <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanSemiBold18"
-                  >
-                    Hourly Rate ($XX/hr)
-                  </Text>
+                  <h4>Hourly Rate ($XX/hr)</h4>
                   <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                 </div>
                 <div className="flex w-full flex-row items-start justify-start gap-2.5 md:flex-col">
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Tutorial Format
-                    </Text>
+                    <h4>Tutorial Format</h4>
                     <Input
                       name="emailtextentry_Eighteen"
                       placeholder=""
@@ -399,12 +234,7 @@ const TutorOnboarding: React.FC = () => {
                     ></Input>
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
-                    <Text
-                      className="w-auto text-center text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Tutoring Availability
-                    </Text>
+                    <h4>Tutoring Availability</h4>
                     <div className="h-[50px] w-full rounded-[10px] bg-white-A700"></div>
                   </div>
                 </div>
@@ -423,22 +253,14 @@ const TutorOnboarding: React.FC = () => {
           <div className="flex w-full flex-col items-center justify-start gap-2.5">
             <div className="flex w-full flex-col items-start justify-start">
               <div className="flex w-full flex-col items-center justify-start gap-2.5">
-                <Text
-                  className="w-auto text-center text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
-                  size="txtMontserratRomanBold32"
-                >
-                  Well Done - We would love to get to know you better!
-                </Text>
-                <Text
-                  className="w-auto text-center text-lg text-black-900"
-                  size="txtMontserratRomanRegular18"
-                >
+                <h1>Well Done - We would love to get to know you better!</h1>
+                <p>
                   The next step is to schedule an interview with one of our
                   team!{" "}
-                </Text>
+                </p>
                 <div className="flex w-full flex-col items-center justify-start gap-2.5">
                   <Img
-                    className="h-[263px] w-full object-cover md:h-auto"
+                    className=" w-[70%] object-cover md:h-auto"
                     src="images/img_createtutor4ulogin_263x1000.png"
                     alt="createtutor4ulo_One"
                   />

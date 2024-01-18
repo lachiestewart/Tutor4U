@@ -47,7 +47,9 @@ const FindATutor: React.FC = () => {
 
   return (
     <>
-      <div className={`flex w-full ${loggedIn ? "flex-row" : "flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}>
+      <div
+        className={`flex w-full ${loggedIn ? "flex-row" : "flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
+      >
         {loggedIn ? <Sidebar /> : <NavBar />}
         <button onClick={() => setSearchParams(!searchParams)}>press to refresh tutors</button>
         <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5 sm:w-full">

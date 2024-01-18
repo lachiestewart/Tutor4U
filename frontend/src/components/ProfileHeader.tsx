@@ -27,28 +27,18 @@ const TutorDashboardProfileHeader: React.FC<
         <Img
           className="h-[118px] w-full rounded-[50%] md:h-auto"
           src="images/img_36477397310160.png"
-          alt="36477397310160"
+          alt="Profile picture in dashboard header"
         />
       </div>
       <div className="flex w-full max-w-[870px] flex-1 flex-col items-start justify-start">
-        <Text
-          className="w-[181px] text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
-          size="txtMontserratRomanBold32"
-        >
-          {props.tutorfullname}
-        </Text>
-        <Text
-          className="text-xl leading-[24.00px] text-black-900"
-          size="txtMontserratRomanRegular20"
-        >
-          <>
-            Academic Tutor - {props.tutorsubject}
-            <br />
-            {props?.tutorlocation}
-            <br />
-            Tutor Rating: {props.tutorrating}
-          </>
-        </Text>
+        <h2>{props.tutorfullname}</h2>
+        <h5>
+          Academic Tutor - {props.tutorsubject}
+          <br />
+          {props?.tutorlocation}
+          <br />
+          Tutor Rating: {props.tutorrating}
+        </h5>
       </div>
     </div>
   );

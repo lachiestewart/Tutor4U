@@ -4,18 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 import { Button, Img, Text } from "components";
 
-type NavBarProps = React.DetailedHTMLProps<
-  React.HTMLAttributes<HTMLDivElement>,
-  HTMLDivElement
-> &
-  Partial<{}>;
-
-const NavBar: React.FC<NavBarProps> = (props) => {
+const NavBar: React.FC = () => {
   const navigate = useNavigate();
 
-function Dropdown(){
-  const [isOpen, setIsOpen] = useState(false);
-}
+  function Dropdown(){
+    const [isOpen, setIsOpen] = useState(false);
+  }
 
   return (
     <>
