@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Button, List, Text } from "components";
 import NavBar from "components/NavBar";
-import { TabsDefault } from "components/Tabs";
+import TabsDefault from "components/Tabs";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -13,6 +13,7 @@ const HomePage: React.FC = () => {
     <>
       <div className="mx-auto flex w-auto flex-col items-start justify-start gap-[30px] font-montserrat md:w-full sm:w-full">
         <NavBar />
+
         <div className="main-margin-div">
           <div
             className="flex w-full flex-row items-center justify-between gap-2.5 px-[60px] py-[15px] md:flex-col md:px-10 sm:px-5
@@ -87,16 +88,16 @@ const HomePage: React.FC = () => {
                     size="txtMontserratRomanRegular18"
                   >
                     <>
-                      I've been amazed with how straight-forward and simple
-                      it was to sign up as a tutor with Tutor4U. Within hours my
+                      I've been amazed with how straight-forward and simple it
+                      was to sign up as a tutor with Tutor4U. Within hours my
                       profile was up on the well-designed website, with the
                       option to modify my profile with ease whenever I want.
-                      It's been awesome - within weeks I had students
-                      getting in contact for tutoring, allowing me to help them
-                      learn the science I'm passionate about whilst putting
-                      some money in my back pocket! I would definitely recommend
-                      Tutor4U for anyone that wants to tutor students in a
-                      hassle-free and flexible way.
+                      It's been awesome - within weeks I had students getting in
+                      contact for tutoring, allowing me to help them learn the
+                      science I'm passionate about whilst putting some money in
+                      my back pocket! I would definitely recommend Tutor4U for
+                      anyone that wants to tutor students in a hassle-free and
+                      flexible way.
                     </>
                   </Text>
                 </div>
@@ -200,7 +201,7 @@ const HomePage: React.FC = () => {
             >
               Are you wanting to....
             </Text>
-            <TabsDefault />
+
             <div className="mx-auto flex w-full max-w-[1320px] flex-col items-center justify-start gap-[30px]">
               <div className="flex h-[37px] w-full flex-row items-center justify-center gap-4 md:h-auto sm:w-full">
                 <Button
@@ -285,9 +286,9 @@ const HomePage: React.FC = () => {
                         <br />- Availability
                         <br />
                         <br />
-                        Also, if you can't find a tutor to suit your needs,
-                        get in touch with us and we will do our best to find one
-                        for you.
+                        Also, if you can't find a tutor to suit your needs, get
+                        in touch with us and we will do our best to find one for
+                        you.
                       </>
                     </p>
                     <div className="flex w-full flex-row items-center justify-start gap-2.5">
@@ -326,8 +327,7 @@ const HomePage: React.FC = () => {
                       src="images/img_image12.png"
                       alt="imageTwelve"
                     />
-                    <p
-                    >
+                    <p>
                       <>
                         Each tutor has their own personalised profile page.
                         Their pages will provide key details and information so
@@ -354,11 +354,10 @@ const HomePage: React.FC = () => {
                   <div className="home-line-seperator"></div>
 
                   <div className="flex w-full flex-1 flex-col items-start justify-start py-5">
-                    <p
-                    >
+                    <p>
                       <>
-                        So what's the next step when you think you've
-                        found the right tutor? <br />
+                        So what's the next step when you think you've found the
+                        right tutor? <br />
                         <br />
                         Each profile has a contact form to fill out that will
                         allow you to email the tutor directly. They will then
@@ -380,11 +379,10 @@ const HomePage: React.FC = () => {
                   </div>
                   <div className="home-line-seperator"></div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start py-5">
-                    <p
-                    >
+                    <p>
                       <>
-                        Now that you're in touch with the tutor, you can
-                        receive their academic services.
+                        Now that you're in touch with the tutor, you can receive
+                        their academic services.
                         <br />
                         <br />
                         It's that simple!
