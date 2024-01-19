@@ -11,7 +11,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div className="mx-auto flex w-auto flex-col items-start justify-start gap-[30px] font-montserrat md:w-full sm:w-full">
-        <NavBar className="flex w-full items-center justify-between bg-purple-primary px-[60px] py-[27px] md:flex-col md:gap-2.5 md:px-5" />
+        <NavBar/>
         <div className="main-margin-div">
           <div
             className="flex w-full flex-row items-center justify-between gap-2.5 px-[60px] py-[15px] md:flex-col md:px-10 sm:px-5

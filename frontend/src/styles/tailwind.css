@@ -212,13 +212,3 @@ p {
 .main-dashboard-div {
   @apply flex w-full  flex-col items-start  justify-start gap-[21px] rounded-[10px] bg-white-A700 px-6  py-2.5 md:flex-col md:px-5 sm:px-5;
 }
-
-/* Logged In - Dashboard Sidebar */
-
-.sidebar-items-outside-div {
-  @apply flex w-full flex-col items-center justify-between px-[10px] py-[5px];
-}
-
-.sidebar-items-inside-div {
-  @apply flex w-full cursor-pointer flex-row items-center justify-start gap-5 rounded-xl p-3 hover:bg-blue-800;
-}
