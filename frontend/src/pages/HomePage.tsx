@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Button, List, Text } from "components";
 import NavBar from "components/NavBar";
+import { TabsDefault } from "components/Tabs";
 
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
@@ -11,7 +12,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div className="mx-auto flex w-auto flex-col items-start justify-start gap-[30px] font-montserrat md:w-full sm:w-full">
-        <NavBar/>
+        <NavBar />
         <div className="main-margin-div">
           <div
             className="flex w-full flex-row items-center justify-between gap-2.5 px-[60px] py-[15px] md:flex-col md:px-10 sm:px-5
@@ -86,13 +87,13 @@ const HomePage: React.FC = () => {
                     size="txtMontserratRomanRegular18"
                   >
                     <>
-                      I&#39;ve been amazed with how straight-forward and simple
+                      I've been amazed with how straight-forward and simple
                       it was to sign up as a tutor with Tutor4U. Within hours my
                       profile was up on the well-designed website, with the
                       option to modify my profile with ease whenever I want.
-                      It&#39;s been awesome - within weeks I had students
+                      It's been awesome - within weeks I had students
                       getting in contact for tutoring, allowing me to help them
-                      learn the science I&#39;m passionate about whilst putting
+                      learn the science I'm passionate about whilst putting
                       some money in my back pocket! I would definitely recommend
                       Tutor4U for anyone that wants to tutor students in a
                       hassle-free and flexible way.
@@ -199,45 +200,37 @@ const HomePage: React.FC = () => {
             >
               Are you wanting to....
             </Text>
+            <TabsDefault />
             <div className="mx-auto flex w-full max-w-[1320px] flex-col items-center justify-start gap-[30px]">
-              <div className="flex h-[37px] w-full flex-col items-center justify-center md:h-auto">
-                <div className="flex h-[37px] w-[400px] flex-row items-center justify-between gap-2.5 md:h-auto sm:w-full">
-                  <Button
-                    className="min-w-[118px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
-                    shape="round"
-                    color="blue_gray_700"
-                    size="sm"
-                    variant="fill"
-                  >
-                    Find A Tutor
-                  </Button>
-                  <Button
-                    className="min-w-[145px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
-                    shape="round"
-                    color="blue_gray_700"
-                    size="sm"
-                    variant="fill"
-                  >
-                    Become A Tutor
-                  </Button>
-                </div>
+              <div className="flex h-[37px] w-full flex-row items-center justify-center gap-4 md:h-auto sm:w-full">
+                <Button
+                  className="min-w-[118px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
+                  shape="round"
+                  color="blue_gray_700"
+                  size="sm"
+                  variant="fill"
+                >
+                  Find A Tutor
+                </Button>
+                <Button
+                  className="min-w-[145px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
+                  shape="round"
+                  color="blue_gray_700"
+                  size="sm"
+                  variant="fill"
+                >
+                  Become A Tutor
+                </Button>
               </div>
               <div className="flex w-full flex-col items-center justify-start pt-[25px]">
                 <div className="flex w-full max-w-[1269px] flex-row items-start justify-center gap-[68px] pl-[82px] md:flex-col md:gap-10 md:pl-10 sm:pl-5">
-                  <div className="flex w-[300px] flex-col items-end justify-start">
-                    <Text
-                      className="w-auto text-right text-lg text-black-900"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Why Find A Tutor On Tutor4U?
-                    </Text>
-                  </div>
+                  <h4 className="w-[300px] text-right">
+                    Why Find A Tutor On Tutor4U?
+                  </h4>
+
                   <div className="home-line-seperator"></div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5">
-                    <Text
-                      className="text-sm text-black-900"
-                      size="txtMontserratRomanMedium14"
-                    >
+                    <p>
                       <>
                         Tutor4U allows you to easily find private tutors from
                         around NZ based on your needs so that you can find one
@@ -248,7 +241,7 @@ const HomePage: React.FC = () => {
                         checks when they register ensuring top quality of all
                         the tutors on the platform.
                       </>
-                    </Text>
+                    </p>
                     <Button
                       className="common-pointer min-w-[136px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
                       onClick={() => navigate("/findatutor")}
@@ -264,12 +257,9 @@ const HomePage: React.FC = () => {
                 <div className="h-5 w-full bg-transparent"></div>
                 <div className="flex w-full max-w-[1269px] flex-row items-start justify-start gap-[68px] pl-[82px] md:flex-col md:gap-10 md:pl-10 sm:pl-5">
                   <div className="flex w-auto flex-col items-center justify-start">
-                    <Text
-                      className="w-[300px] text-right text-lg leading-[22.00px] text-black-900 md:max-w-full"
-                      size="txtMontserratRomanSemiBold18"
-                    >
+                    <h4 className="w-[300px] text-right md:max-w-full">
                       Step 1. Browse Through The Tutor4U Tutors
-                    </Text>
+                    </h4>
                   </div>
                   <div className="home-line-seperator"></div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 py-5">
@@ -278,10 +268,7 @@ const HomePage: React.FC = () => {
                       src="images/img_image11.png"
                       alt="imageEleven"
                     />
-                    <Text
-                      className="text-sm text-black-900"
-                      size="txtMontserratRomanMedium14"
-                    >
+                    <p>
                       <>
                         Tutor4U has developed a state of the art filtering
                         system so that you can quickly and easily find a tutor
@@ -298,11 +285,11 @@ const HomePage: React.FC = () => {
                         <br />- Availability
                         <br />
                         <br />
-                        Also, if you can&#39;t find a tutor to suit your needs,
+                        Also, if you can't find a tutor to suit your needs,
                         get in touch with us and we will do our best to find one
                         for you.
                       </>
-                    </Text>
+                    </p>
                     <div className="flex w-full flex-row items-center justify-start gap-2.5">
                       <Button
                         className="min-w-[197px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
@@ -328,12 +315,9 @@ const HomePage: React.FC = () => {
                 <div className="h-5 w-full bg-transparent"></div>
                 <div className="flex w-full max-w-[1269px] flex-row items-start justify-center gap-[68px] pl-[82px] md:flex-col md:gap-10 md:pl-10 sm:pl-5">
                   <div className="flex w-auto flex-col items-center justify-start">
-                    <Text
-                      className="w-[300px] text-right text-lg leading-[22.00px] text-black-900 md:max-w-full"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      <>Step 2. Read More On Each Tutor&#39;s Profile Page</>
-                    </Text>
+                    <h4 className="w-[300px] text-right md:max-w-full">
+                      Step 2. Read More On Each Tutor's Profile Page
+                    </h4>
                   </div>
                   <div className="home-line-seperator"></div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 py-5">
@@ -342,9 +326,7 @@ const HomePage: React.FC = () => {
                       src="images/img_image12.png"
                       alt="imageTwelve"
                     />
-                    <Text
-                      className="text-sm text-black-900"
-                      size="txtMontserratRomanMedium14"
+                    <p
                     >
                       <>
                         Each tutor has their own personalised profile page.
@@ -356,7 +338,7 @@ const HomePage: React.FC = () => {
                         Often they will mention their background, why they are
                         qualified to tutor and their interests.
                       </>
-                    </Text>
+                    </p>
                   </div>
                 </div>
                 <div className="h-5 w-full bg-transparent"></div>
@@ -372,12 +354,10 @@ const HomePage: React.FC = () => {
                   <div className="home-line-seperator"></div>
 
                   <div className="flex w-full flex-1 flex-col items-start justify-start py-5">
-                    <Text
-                      className="text-sm text-black-900"
-                      size="txtMontserratRomanMedium14"
+                    <p
                     >
                       <>
-                        So what&#39;s the next step when you think you&#39;ve
+                        So what's the next step when you think you've
                         found the right tutor? <br />
                         <br />
                         Each profile has a contact form to fill out that will
@@ -385,7 +365,7 @@ const HomePage: React.FC = () => {
                         receive your details and reply to you so that you can
                         organise a tutoring session.
                       </>
-                    </Text>
+                    </p>
                   </div>
                 </div>
                 <div className="h-5 w-full bg-transparent"></div>
@@ -400,18 +380,16 @@ const HomePage: React.FC = () => {
                   </div>
                   <div className="home-line-seperator"></div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start py-5">
-                    <Text
-                      className="text-sm text-black-900"
-                      size="txtMontserratRomanMedium14"
+                    <p
                     >
                       <>
-                        Now that you&#39;re in touch with the tutor, you can
+                        Now that you're in touch with the tutor, you can
                         receive their academic services.
                         <br />
                         <br />
-                        It&#39;s that simple!
+                        It's that simple!
                       </>
-                    </Text>
+                    </p>
                   </div>
                 </div>
               </div>
