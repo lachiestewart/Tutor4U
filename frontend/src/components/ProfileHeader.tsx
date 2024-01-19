@@ -1,4 +1,4 @@
-import { Text, Img } from "components";
+import { Text } from "components";
 
 type TutorDashboardProfileHeaderProps = Omit<
   React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>,
@@ -24,7 +24,7 @@ const TutorDashboardProfileHeader: React.FC<
   return (
     <div className="flex w-full max-w-[1000px] flex-row items-center justify-start gap-4 bg-white-A700 md:flex-col">
       <div className="flex h-[120px] w-[120px] flex-col items-start justify-start md:h-auto">
-        <Img
+        <img
           className="h-[118px] w-full rounded-[50%] md:h-auto"
           src="images/img_36477397310160.png"
           alt="Profile picture in dashboard header"

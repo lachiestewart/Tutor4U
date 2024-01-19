@@ -1,4 +1,4 @@
-import { Img, List, Text } from "components";
+import { List, Text } from "components";
 
 const Sidebar = () => {
     return (
@@ -6,7 +6,7 @@ const Sidebar = () => {
             className="sticky justify-between left-0 top-0 bg-blue_gray-700 flex flex-col h-[100vh] items-start md:px-5 w-[380px] sm:w-full"
         >
             <div className="flex flex-col items-start justify-start my-0 w-full">
-                <Img
+                <img
                     className="h-[120px] w-[380px]"
                     src="images/img_sidebarheader_blue_gray_900.svg"
                     alt="sidebarheader"
@@ -14,7 +14,7 @@ const Sidebar = () => {
                 <div className="flex flex-col items-start justify-center w-full">
                     <div className="sidebar-items-outside-div">
                         <div className="sidebar-items-inside-div">
-                            <Img
+                            <img
                                 className="h-10 md:h-auto object-cover w-10"
                                 src="images/img_analytics.png"
                                 alt="analytics"
@@ -29,7 +29,7 @@ const Sidebar = () => {
                     </div>
                     <div className="sidebar-items-outside-div">
                         <div className="sidebar-items-inside-div">
-                            <Img
+                            <img
                                 className="h-10 md:h-auto object-cover w-10"
                                 src="images/img_graduationcap.png"
                                 alt="graduationcap"
@@ -44,7 +44,7 @@ const Sidebar = () => {
                     </div>
                     <div className="sidebar-items-outside-div">
                         <div className="sidebar-items-inside-div">
-                            <Img
+                            <img
                                 className="h-10 md:h-auto object-cover w-10"
                                 src="images/img_googleforms.png"
                                 alt="googleforms"
@@ -62,7 +62,7 @@ const Sidebar = () => {
             <div className="flex flex-col gap-2.5 items-start justify-center my-0 w-full">
                 <div className="sidebar-items-outside-div">
                     <div className="sidebar-items-inside-div">
-                        <Img
+                        <img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_maleuser.png"
                             alt="maleuser"
@@ -77,7 +77,7 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-items-outside-div">
                     <div className="sidebar-items-inside-div">
-                        <Img
+                        <img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_usdollarcircled.png"
                             alt="usdollarcircled"
@@ -92,7 +92,7 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-items-outside-div">
                     <div className="sidebar-items-inside-div">
-                        <Img
+                        <img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_questions.png"
                             alt="questions"
@@ -107,7 +107,7 @@ const Sidebar = () => {
                 </div>
                 <div className="sidebar-items-outside-div">
                     <div className="sidebar-items-inside-div">
-                        <Img
+                        <img
                             className="h-10 md:h-auto object-cover w-10"
                             src="images/img_logout.png"
                             alt="logout"

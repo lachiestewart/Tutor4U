@@ -1,5 +1,5 @@
 
-import { Text, Input, Line, Img, Button } from "components";
+import { Text, Input, Line, Button } from "components";
 
 const TutorFilterSidebar = () => {
     return ( 
@@ -45,7 +45,7 @@ const TutorFilterSidebar = () => {
                 <div className="flex flex-col items-start justify-center w-auto">
                   <div className="filter-category-title-div">
                     <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <Img
+                      <img
                         className="h-[30px] md:h-auto object-cover w-[30px]"
                         src="images/img_training.png"
                         alt="training"
@@ -83,7 +83,7 @@ const TutorFilterSidebar = () => {
                 <div className="flex flex-col items-start justify-center w-full">
                   <div className="filter-category-title-div">
                     <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <Img
+                      <img
                         className="h-[30px] md:h-auto object-cover w-[30px]"
                         src="images/img_university.png"
                         alt="university"
@@ -124,7 +124,7 @@ const TutorFilterSidebar = () => {
                 <div className="flex flex-col items-start justify-center w-full">
                   <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                     <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <Img
+                      <img
                         className="h-[30px] md:h-auto object-cover w-[30px]"
                         src="images/img_star.png"
                         alt="star"
@@ -141,7 +141,7 @@ const TutorFilterSidebar = () => {
                       Reset
                     </Button>
                   </div>
-                  <Img
+                  <img
                     className="h-auto w-full"
                     src="images/img_filterlistframe.svg"
                     alt="filterlistframe"
@@ -151,7 +151,7 @@ const TutorFilterSidebar = () => {
                 <div className="flex flex-col items-start justify-center w-full">
                   <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                     <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <Img
+                      <img
                         className="h-[30px] md:h-auto object-cover w-[30px]"
                         src="images/img_location.png"
                         alt="location"
@@ -216,7 +216,7 @@ const TutorFilterSidebar = () => {
                 <div className="flex flex-col items-start justify-center w-full">
                   <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                     <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <Img
+                      <img
                         className="h-[30px] md:h-auto object-cover w-[30px]"
                         src="images/img_ok.png"
                         alt="ok"
@@ -282,7 +282,7 @@ const TutorFilterSidebar = () => {
                 <div className="flex flex-col items-start justify-center w-full">
                   <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                     <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <Img
+                      <img
                         className="h-[30px] md:h-auto object-cover w-[30px]"
                         src="images/img_toilet.png"
                         alt="toilet"
@@ -349,7 +349,7 @@ const TutorFilterSidebar = () => {
               <div className="flex flex-col items-start justify-center w-full">
                 <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                   <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <Img
+                    <img
                       className="h-[30px] md:h-auto object-cover w-[30px]"
                       src="images/img_knowledgesharing.png"
                       alt="knowledgesharin"
@@ -415,7 +415,7 @@ const TutorFilterSidebar = () => {
               <div className="flex flex-col items-start justify-center w-full">
                 <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
                   <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <Img
+                    <img
                       className="h-[30px] md:h-auto object-cover w-[30px]"
                       src="images/img_cash.png"
                       alt="cash"
@@ -433,7 +433,7 @@ const TutorFilterSidebar = () => {
                     Reset
                   </Button>
                 </div>
-                <Img
+                <img
                   className="h-auto w-full"
                   src="images/img_filterlistframe.svg"
                   alt="filterlistframe_One"

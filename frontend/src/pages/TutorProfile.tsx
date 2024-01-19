@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Img, Input, Text } from "components";
+import { Button, Input, Text } from "components";
 import NavBar from "components/NavBar";
 
 const TutorProfile: React.FC = () => {

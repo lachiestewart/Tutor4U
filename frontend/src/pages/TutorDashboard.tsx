@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "components/Sidebar";
-import { Button, Img, Text } from "components";
+import { Button, Text } from "components";
 import TutorDashboardProfileHeader from "components/ProfileHeader";
 
 const TutorDashboard: React.FC = () => {
@@ -16,7 +16,7 @@ const TutorDashboard: React.FC = () => {
               <div className="items-left flex h-full w-full flex-col justify-start gap-2.5 rounded-[10px] bg-blue_gray-100 px-5 py-[15px]">
                 <div className="flex w-full flex-row items-center justify-between gap-2.5 sm:flex-col">
                   <div className="flex w-auto flex-row items-center justify-start gap-2.5">
-                    <Img
+                    <img
                       className="h-[52px] w-[52px] rounded-[50%] md:h-auto"
                       src="images/img_studentimg.png"
                       alt="studentimg"
@@ -24,7 +24,7 @@ const TutorDashboard: React.FC = () => {
                     <h3>Student Full Name</h3>
                   </div>
                   <div className="flex h-[53px] w-[53px] flex-col items-center justify-between md:h-auto">
-                    <Img
+                    <img
                       className="h-[34px] w-[34px] object-cover md:h-auto"
                       src="images/img_expandarrow.png"
                       alt="expandarrow"

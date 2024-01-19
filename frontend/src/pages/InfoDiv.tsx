@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Img, Text } from "components";
+import { Button, Text } from "components";
 
 const InfoDiv: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ const InfoDiv: React.FC = () => {
               Why Become A Tutor On Tutor4U?
             </Text>
           </div>
-          <Img
+          <img
             className="h-full w-[138px]"
             src="images/img_centrelinediv.svg"
             alt="centrelinediv"
@@ -63,7 +63,7 @@ const InfoDiv: React.FC = () => {
               <>Step 1. Complete A Tutor Application</>
             </Text>
           </div>
-          <Img
+          <img
             className="h-full w-[138px]"
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_One"
@@ -108,13 +108,13 @@ const InfoDiv: React.FC = () => {
               <>Step 2. Complete The Onboarding Process</>
             </Text>
           </div>
-          <Img
+          <img
             className="h-full w-[138px]"
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Two"
           />
           <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 py-5">
-            <Img
+            <img
               className="h-[274px] w-[366px] object-cover md:w-full sm:h-auto"
               src="images/img_image12.png"
               alt="imageTwelve"
@@ -146,7 +146,7 @@ const InfoDiv: React.FC = () => {
               <>Step 3. Profile Approval</>
             </Text>
           </div>
-          <Img
+          <img
             className="h-full w-[138px]"
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Three"
@@ -172,7 +172,7 @@ const InfoDiv: React.FC = () => {
               <>Step 4. Publish Your Profile</>
             </Text>
           </div>
-          <Img
+          <img
             className="h-full w-[138px]"
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Four"
@@ -203,7 +203,7 @@ const InfoDiv: React.FC = () => {
               <>Step 5. Manage Your Student Enquiries & Get Paid!</>
             </Text>
           </div>
-          <Img
+          <img
             className="h-full w-[138px]"
             src="images/img_centrelinediv.svg"
             alt="centrelinediv_Five"

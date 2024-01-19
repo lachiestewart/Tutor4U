@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { Button, Img, Input, Line, Text } from "components";
+import { Button, Input, Line, Text } from "components";
 import ForgotPasswordModal from "components/ForgotPasswordModal";
 import SignUpModal from "components/SignUpModal";
 
@@ -44,7 +44,7 @@ const LoginPage: React.FC = () => {
       <div className="flex sm:flex-col flex-row font-montserrat w-screen h-screen">
         {/*Login form*/}
         <div className="bg-blue_gray-700 flex flex-col items-center md:px-5 w-[50%]">
-          <Img
+          <img
             className="h-[76px] mt-[134px]"
             src="images/img_union_white_a700.svg"
             alt="union"

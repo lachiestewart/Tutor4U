@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Img, Text } from "components";
+import { Button, Text } from "components";
 
 type HeaderProps = React.DetailedHTMLProps<
   React.HTMLAttributes<HTMLDivElement>,
@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = (props) => {
   return (
     <>
       <header className={props.className}>
-        <Img
+        <img
           className="h-14 md:h-auto object-cover w-[222px] sm:w-full"
           src="images/img_union1.png"
           alt="unionOne"
@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = (props) => {
               >
                 FOR STUDENTS
               </Text>
-              <Img
+              <img
                 className="h-5 md:h-auto object-cover w-5"
                 src="images/img_chevrondown.png"
                 alt="chevrondown"
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = (props) => {
               >
                 FOR TUTORS
               </Text>
-              <Img
+              <img
                 className="h-5 md:h-auto object-cover w-5"
                 src="images/img_chevrondown.png"
                 alt="chevrondown_One"

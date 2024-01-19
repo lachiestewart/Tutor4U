@@ -2,7 +2,7 @@ import React from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { Button, Img, List, Text } from "components";
+import { Button, List, Text } from "components";
 import NavBar from "components/NavBar";
 
 const HomePage: React.FC = () => {
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
               orientation="horizontal"
             >
               <div className="flex w-full max-w-[650px] flex-1 flex-col items-center justify-start gap-2.5">
-                <Img
+                <img
                   className="h-[199px] w-[200px] rounded-[50%] md:h-auto"
                   src="images/img_image3.png"
                   alt="imageThree"
@@ -74,7 +74,7 @@ const HomePage: React.FC = () => {
                   >
                     Dr Josh Houlton
                   </Text>
-                  <Img
+                  <img
                     className="h-12 w-[119px] object-cover md:h-auto"
                     src="images/img_image1.png"
                     alt="imageOne"
@@ -101,7 +101,7 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
               <div className="flex w-full flex-1 flex-col items-center justify-start gap-2.5">
-                <Img
+                <img
                   className="h-[200px] w-[200px] rounded-[50%] md:h-auto"
                   src="images/img_image4.png"
                   alt="imageFour"
@@ -113,7 +113,7 @@ const HomePage: React.FC = () => {
                   >
                     Ryan Dai
                   </Text>
-                  <Img
+                  <img
                     className="h-12 w-[119px] object-cover md:h-auto"
                     src="images/img_image1.png"
                     alt="imageOne"
@@ -144,17 +144,17 @@ const HomePage: React.FC = () => {
               As Featured In...
             </Text>
             <div className="mx-auto flex w-full max-w-[1320px] flex-row items-center justify-between md:flex-col md:gap-10">
-              <Img
+              <img
                 className="h-[122px] w-[187px] object-cover md:h-auto sm:w-1/2"
                 src="images/img_image5.png"
                 alt="imageFive"
               />
-              <Img
+              <img
                 className="h-[114px] w-[463px] object-cover md:w-1/2 sm:h-auto"
                 src="images/img_image6.png"
                 alt="imageSix"
               />
-              <Img
+              <img
                 className="h-[97px] w-[252px] object-cover md:h-auto sm:w-1/2"
                 src="images/img_image7.png"
                 alt="imageSeven"
@@ -169,17 +169,17 @@ const HomePage: React.FC = () => {
               Proudly Working Alongside....
             </Text>
             <div className="mx-auto flex w-full max-w-[1320px] flex-row items-center justify-between md:flex-col md:gap-10">
-              <Img
+              <img
                 className="h-[106px] w-[303px] object-cover md:w-1/2 sm:h-auto"
                 src="images/img_image8.png"
                 alt="imageEight"
               />
-              <Img
+              <img
                 className="h-[57px] w-[417px] object-cover md:w-1/2 sm:h-auto"
                 src="images/img_image9.png"
                 alt="imageNine"
               />
-              <Img
+              <img
                 className="h-[202px] w-[202px] object-cover md:h-auto"
                 src="images/img_image10.png"
                 alt="imageTen"
@@ -273,7 +273,7 @@ const HomePage: React.FC = () => {
                   </div>
                   <div className="home-line-seperator"></div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 py-5">
-                    <Img
+                    <img
                       className="h-[279px] w-[481px] object-cover md:w-full sm:h-auto"
                       src="images/img_image11.png"
                       alt="imageEleven"
@@ -337,7 +337,7 @@ const HomePage: React.FC = () => {
                   </div>
                   <div className="home-line-seperator"></div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 py-5">
-                    <Img
+                    <img
                       className="h-auto w-auto object-cover md:w-full"
                       src="images/img_image12.png"
                       alt="imageTwelve"

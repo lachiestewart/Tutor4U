@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button, Img, Input, Text } from "components";
+import { Button, Input, Text } from "components";
 import NavBar from "components/NavBar";
 
 interface MessageForm {
@@ -44,7 +44,7 @@ const ContactUs = () => {
       <div className="mx-auto flex w-auto flex-col items-center bg-gray-200 font-montserrat md:w-full sm:w-full">
         <div className="w-auto rounded-[10px] bg-gray-200_01 px-[50px] py-5 md:px-5 sm:w-full">
           <div className="flex w-auto flex-col items-center justify-start gap-2.5 py-5 sm:w-full">
-            <Img
+            <img
               className="h-[60px] w-[241px] object-cover md:h-auto sm:w-full"
               src="images/img_union21.png"
               alt="unionTwentyOne"

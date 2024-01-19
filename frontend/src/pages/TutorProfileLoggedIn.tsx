@@ -1,7 +1,7 @@
 import React from "react";
 import Sidebar from "components/Sidebar";
 
-import { Button, Img, Input, Text } from "components";
+import { Button, Input, Text } from "components";
 
 const TutorProfileLoggedIn: React.FC = () => {
   return (

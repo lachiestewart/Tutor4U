@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { Button, Img, Text } from "components";
+import { Button, Text } from "components";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const NavBar: React.FC = () => {
     <>
       <header className="flex w-full items-center justify-between bg-blue_gray-700 px-[60px] py-[27px] md:flex-col md:gap-2.5 md:px-5">
         <div className="flex items-center justify-between md:w-full p-2">
-          <Img
+          <img
             className="common-pointer h-14 md:h-auto object-cover w-[222px] sm:w-full"
             src="images/img_union1.png"
             alt="Tutor4ULogo"
@@ -48,7 +48,7 @@ const NavBar: React.FC = () => {
               >
                 FOR STUDENTS
               </Text>
-              <Img
+              <img
                 className="h-5 md:h-auto object-cover w-5"
                 src="images/img_chevrondown.png"
                 alt="chevrondown"
@@ -61,7 +61,7 @@ const NavBar: React.FC = () => {
               >
                 FOR TUTORS
               </Text>
-              <Img
+              <img
                 className="h-5 md:h-auto object-cover w-5"
                 src="images/img_chevrondown.png"
                 alt="chevrondown_One"
