@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button, Input, Text } from "components";
+import { Button, Input } from "components";
 import NavBar from "components/NavBar";
 
 interface MessageForm {
@@ -84,9 +84,9 @@ const ContactUs = () => {
                 wrapClassName="flex h-[50px] w-full"
               ></Input>
               <Input
-                label="For context are you a..."
+                label="So that we can help you better, are you a..."
                 onChange={(e) => handleChange("role", e)}
-                placeholder="student, tutor, parent ..."
+                placeholder="student, tutor, educational professional, parent ..."
                 className="w-full"
                 wrapClassName="flex h-[50px] w-full"
               ></Input>

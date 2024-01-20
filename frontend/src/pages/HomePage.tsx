@@ -6,6 +6,7 @@ import { Button, List, Text } from "components";
 import NavBar from "components/NavBar";
 import TabsDefault from "components/Tabs";
 
+
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
