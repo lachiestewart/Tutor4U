@@ -10,7 +10,7 @@ const Onboarding4:React.FC = () => {
             </h1>
             <p
             >
-              We’re so excited to have you onboard!
+              We're so excited to have you onboard!
             </p>
             <img
               className="w-[70%] object-cover sm:h-auto"
