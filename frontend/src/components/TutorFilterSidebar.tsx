@@ -1,447 +1,312 @@
-
 import { Text, Input, Line, Button } from "components";
 
 const TutorFilterSidebar = () => {
-    return ( 
-        <div className="sticky top-5 z-10 bg-white-A700 flex flex-col gap-[10px] min-w-[250px] items-start justify-center px-2.5 py-4 rounded-[10px] sm:w-full w-[25%]">
-              <Text
-                className="text-black-900 text-lg w-auto"
-              >
-                <span className=" text-black-900 text-left">
-                  Showing{" "}
-                </span>
-                <span className="text-blue-A700 text-left font-bold">
-                  375
-                </span>
-                <span className="text-black-900 text-left">
-                  {" "}
-                  results of{" "}
-                </span>
-                <span className="text-blue-A700_01 text-left font-bold">
-                  561
-                </span>
-                <span className="text-black-900 text-left">
-                  {" "}
-                  tutors
-                </span>
-              </Text>
-             <form action="" className="w-full">
-               
-                <div className="flex flex-col items-start justify-start w-full">
-                  <Text
-                    className="text-black-900 text-start text-lg w-full font-semibold"
-                  >
-                    Search
-                  </Text>
-                  <Input
-                    name="tutorTextSearchFilterEntry"
-                    placeholder="Search through tutors...."
-                    className="p-3 w-full"
-                    wrapClassName="border border-gray-400_02 border-solid flex h-auto w-full"
-                  ></Input>
-                  <div className="py-4 hidden sm:block"><p>Advance search</p></div>
-                </div>
-                <Line className="bg-blue_gray-400 h-px w-full my-4" />
-                <div className="flex flex-col items-start justify-center w-auto">
-                  <div className="filter-category-title-div">
-                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <img
-                        className="h-[30px] md:h-auto object-cover w-[30px]"
-                        src="images/img_training.png"
-                        alt="training"
-                      />
-                      <Text
-                        className="filter-category-title-text"
-                      >
-                        Subjects
-                      </Text>
-                    </div>
-                    <Button
-                      className="reset-btn"
-                    >
-                      Reset
-                    </Button>
-                  </div>
-                  <div className="flex flex-col gap-1
-                   items-start justify-start p-2 w-full flex-wrap overflow-y-scroll max-h-20">
-                        <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                          <input className="rounded" type="checkbox" name="" value="" ></input>
-                          <Text
-                        className="filter-items-text"
-                      >
-                        English
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                        </div>
-                  </div>
-                </div>
-                <Line className="bg-blue_gray-400 h-px w-full my-4" />
-                <div className="flex flex-col items-start justify-center w-full">
-                  <div className="filter-category-title-div">
-                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <img
-                        className="h-[30px] md:h-auto object-cover w-[30px]"
-                        src="images/img_university.png"
-                        alt="university"
-                      />
-                      <Text
-                        className="filter-category-title-text"
-                      >
-                        Tutoring Level
-                      </Text>
-                    </div>
-                    <Button
-                      className="reset-btn"
-                    >
-                      Reset
-                    </Button>
-                  </div>
-                  <div className="flex flex-col h-auto gap-1
-                   md:h-auto items-start justify-start py-2 w-full flex-wrap">
-                        <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2 w-[325px]">
-                          <input className="rounded" type="checkbox" name="" value="" ></input>
-                          <Text
-                        className="filter-items-text"
-                      >
-                        NCEA L1
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                        </div>
-                  </div>
-                  
-                    
-                  
-                </div>
-                <Line className="bg-blue_gray-400 h-px w-full my-4" />
-                <div className="flex flex-col items-start justify-center w-full">
-                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <img
-                        className="h-[30px] md:h-auto object-cover w-[30px]"
-                        src="images/img_star.png"
-                        alt="star"
-                      />
-                      <Text
-                        className="filter-category-title-text"
-                      >
-                        Tutor Rating
-                      </Text>
-                    </div>
-                    <Button
-                      className="reset-btn"
-                    >
-                      Reset
-                    </Button>
-                  </div>
-                  <img
-                    className="h-auto w-full"
-                    src="images/img_filterlistframe.svg"
-                    alt="filterlistframe"
-                  />
-                </div>
-                <Line className="bg-blue_gray-400 h-px w-full my-4" />
-                <div className="flex flex-col items-start justify-center w-full">
-                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <img
-                        className="h-[30px] md:h-auto object-cover w-[30px]"
-                        src="images/img_location.png"
-                        alt="location"
-                      />
-                      <Text
-                        className="filter-category-title-text"
-                      >
-                        Location
-                      </Text>
-                    </div>
-                    <Button
-                      className="reset-btn"
-                    >
-                      Reset
-                    </Button>
-                  </div>
-                  <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                      <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="filter-items-text"
-                      >
-                        Auckland
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
-                      >
-                        Wellington
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                    <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="text-black-900 text-xs w-auto"
-                        size="txtMontserratRomanMedium12Black900"
-                      >
-                        Christchurch
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-                <Line className="bg-blue_gray-400 h-px w-full my-4" />
-                <div className="flex flex-col items-start justify-center w-full">
-                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <img
-                        className="h-[30px] md:h-auto object-cover w-[30px]"
-                        src="images/img_ok.png"
-                        alt="ok"
-                      />
-                      <Text
-                        className="filter-category-title-text"
-                      >
-                        Availability
-                      </Text>
-                    </div>
-                    <Button
-                      className="reset-btn"
-                    >
-                      Reset
-                    </Button>
-                  </div>
-                  <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                       
-                      <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="filter-items-text"
-                      >
-                        Available
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                       
-                      <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="filter-items-text"
-                      >
-                        Limited Availability
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                       
-                      <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="filter-items-text"
-                      >
-                        Not Available
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-                <Line className="bg-blue_gray-400 h-px w-full my-4" />
-                <div className="flex flex-col items-start justify-center w-full">
-                  <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                    <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                      <img
-                        className="h-[30px] md:h-auto object-cover w-[30px]"
-                        src="images/img_toilet.png"
-                        alt="toilet"
-                      />
-                      <Text
-                        className="filter-category-title-text"
-                      >
-                        Gender
-                      </Text>
-                    </div>
-                    <Button
-                      className="reset-btn"
-                    >
-                      Reset
-                    </Button>
-                  </div>
-                  <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                       
-                      <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="filter-items-text"
-                      >
-                        Male
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                       
-                      <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="filter-items-text"
-                      >
-                        Female
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                    <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                       
-                      <input className="rounded" type="checkbox" name="" value="" ></input>
-                      <Text
-                        className="filter-items-text"
-                      >
-                        Non-Binary
-                      </Text>
-                      <Text
-                        className="filter-items-numbers-text"
-                      >
-                        ##
-                      </Text>
-                    </div>
-                  </div>
-                </div>
-             </form>
-              <Line className="bg-blue_gray-400 h-px w-full my-4" />
-              <div className="flex flex-col items-start justify-center w-full">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_knowledgesharing.png"
-                      alt="knowledgesharin"
-                    />
-                    <Text
-                      className="filter-category-title-text"
-                    >
-                      Lesson Format
-                    </Text>
-                  </div>
-                  <Button
-                    className="reset-btn"
-                  >
-                    Reset
-                  </Button>
-                </div>
-                <div className="flex flex-col h-[84px] md:h-auto items-start justify-center py-[11px] w-full">
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                     
-                    <input className="rounded" type="checkbox" name="" value="" ></input>
-                    <Text
-                      className="filter-items-text"
-                    >
-                      Online
-                    </Text>
-                    <Text
-                      className="filter-items-numbers-text"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                     
-                    <input className="rounded" type="checkbox" name="" value="" ></input>
-                    <Text
-                      className="filter-items-text"
-                    >
-                      Face to face
-                    </Text>
-                    <Text
-                      className="filter-items-numbers-text"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                  <div className="flex flex-row gap-2.5 h-[27px] md:h-auto items-center justify-start px-2.5 w-[325px]">
-                     
-                    <input className="rounded" type="checkbox" name="" value="" ></input>
-                    <Text
-                      className="filter-items-text"
-                    >
-                      Flexible
-                    </Text>
-                    <Text
-                      className="filter-items-numbers-text"
-                    >
-                      ##
-                    </Text>
-                  </div>
-                </div>
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full my-4" />
-              <div className="flex flex-col items-start justify-center w-full">
-                <div className="flex flex-row gap-[34px] items-center justify-between p-[5px] w-full">
-                  <div className="flex flex-row gap-2.5 items-center justify-start w-auto">
-                    <img
-                      className="h-[30px] md:h-auto object-cover w-[30px]"
-                      src="images/img_cash.png"
-                      alt="cash"
-                    />
-                    <Text
-                      className="text-black-900 text-lg w-auto"
-                      size="txtMontserratRomanSemiBold18"
-                    >
-                      Tutor Rate
-                    </Text>
-                  </div>
-                  <Button
-                    className="reset-btn"
-                  >
-                    Reset
-                  </Button>
-                </div>
-                <img
-                  className="h-auto w-full"
-                  src="images/img_filterlistframe.svg"
-                  alt="filterlistframe_One"
-                />
-              </div>
-              <Line className="bg-blue_gray-400 h-px w-full my-4" />
+  return (
+    <div className="sticky top-5 z-10 flex w-[25%] min-w-[250px] flex-col items-start justify-center gap-[10px] rounded-[10px] bg-white-A700 px-2.5 py-4">
+      <Text className="w-auto text-lg text-black-900">
+        <span className=" text-left text-black-900">Showing </span>
+        <span className="text-left font-bold text-blue-A700">375</span>
+        <span className="text-left text-black-900"> results of </span>
+        <span className="text-left font-bold text-blue-A700_01">561</span>
+        <span className="text-left text-black-900"> tutors</span>
+      </Text>
+      <form action="" className="w-full">
+        <div className="flex w-full flex-col items-start justify-start">
+          <h3>Search</h3>
+          <Input
+            name="tutorTextSearchFilterEntry"
+            placeholder="Search through tutors...."
+            className="w-full p-3"
+            wrapClassName="border border-gray-400_02 border-solid flex h-auto w-full"
+          ></Input>
+          <div className="block py-4 md:hidden">
+            <p>Advance search</p>
+          </div>
+        </div>
+        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <div className="flex w-auto flex-col items-start justify-center">
+          <div className="filter-category-title-div">
+            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+              <img
+                className="lg:h-auto h-[30px] w-[30px] object-cover"
+                src="images/img_training.png"
+                alt="training"
+              />
+              <h3>Subjects</h3>
             </div>
-     );
-}
- 
+            <Button className="reset-btn">Reset</Button>
+          </div>
+          <div
+            className="flex max-h-20 w-full
+                   flex-col flex-wrap items-start justify-start gap-1 overflow-y-scroll p-2"
+          >
+            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <p>English</p>
+              <p>##</p>
+            </div>
+          </div>
+        </div>
+        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <div className="flex w-full flex-col items-start justify-center">
+          <div className="filter-category-title-div">
+            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+              <img
+                className="h-[30px] w-[30px] object-cover md:h-auto"
+                src="images/img_university.png"
+                alt="university"
+              />
+              <Text className="filter-category-title-text">Tutoring Level</Text>
+            </div>
+            <Button className="reset-btn">Reset</Button>
+          </div>
+          <div
+            className="flex h-auto w-full flex-col
+                   flex-wrap items-start justify-start gap-1 py-2 md:h-auto"
+          >
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">NCEA L1</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+          </div>
+        </div>
+        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <div className="flex w-full flex-col items-start justify-center">
+          <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
+            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+              <img
+                className="h-[30px] w-[30px] object-cover md:h-auto"
+                src="images/img_star.png"
+                alt="star"
+              />
+              <Text className="filter-category-title-text">Tutor Rating</Text>
+            </div>
+            <Button className="reset-btn">Reset</Button>
+          </div>
+          <img
+            className="h-auto w-full"
+            src="images/img_filterlistframe.svg"
+            alt="filterlistframe"
+          />
+        </div>
+        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <div className="flex w-full flex-col items-start justify-center">
+          <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
+            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+              <img
+                className="h-[30px] w-[30px] object-cover md:h-auto"
+                src="images/img_location.png"
+                alt="location"
+              />
+              <Text className="filter-category-title-text">Location</Text>
+            </div>
+            <Button className="reset-btn">Reset</Button>
+          </div>
+          <div className="flex h-[84px] w-full flex-col items-start justify-center py-[11px] md:h-auto">
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">Auckland</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text
+                className="w-auto text-xs text-black-900"
+                size="txtMontserratRomanMedium12Black900"
+              >
+                Wellington
+              </Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text
+                className="w-auto text-xs text-black-900"
+                size="txtMontserratRomanMedium12Black900"
+              >
+                Christchurch
+              </Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+          </div>
+        </div>
+        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <div className="flex w-full flex-col items-start justify-center">
+          <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
+            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+              <img
+                className="h-[30px] w-[30px] object-cover md:h-auto"
+                src="images/img_ok.png"
+                alt="ok"
+              />
+              <Text className="filter-category-title-text">Availability</Text>
+            </div>
+            <Button className="reset-btn">Reset</Button>
+          </div>
+          <div className="flex h-[84px] w-full flex-col items-start justify-center py-[11px] md:h-auto">
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">Available</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">Limited Availability</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">Not Available</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+          </div>
+        </div>
+        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <div className="flex w-full flex-col items-start justify-center">
+          <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
+            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+              <img
+                className="h-[30px] w-[30px] object-cover md:h-auto"
+                src="images/img_toilet.png"
+                alt="toilet"
+              />
+              <Text className="filter-category-title-text">Gender</Text>
+            </div>
+            <Button className="reset-btn">Reset</Button>
+          </div>
+          <div className="flex h-[84px] w-full flex-col items-start justify-center py-[11px] md:h-auto">
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">Male</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">Female</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+            <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+              <input
+                className="rounded"
+                type="checkbox"
+                name=""
+                value=""
+              ></input>
+              <Text className="filter-items-text">Non-Binary</Text>
+              <Text className="filter-items-numbers-text">##</Text>
+            </div>
+          </div>
+        </div>
+      </form>
+      <Line className="my-4 h-px w-full bg-blue_gray-400" />
+      <div className="flex w-full flex-col items-start justify-center">
+        <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
+          <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+            <img
+              className="h-[30px] w-[30px] object-cover md:h-auto"
+              src="images/img_knowledgesharing.png"
+              alt="knowledgesharin"
+            />
+            <Text className="filter-category-title-text">Lesson Format</Text>
+          </div>
+          <Button className="reset-btn">Reset</Button>
+        </div>
+        <div className="flex h-[84px] w-full flex-col items-start justify-center py-[11px] md:h-auto">
+          <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+            <input className="rounded" type="checkbox" name="" value=""></input>
+            <Text className="filter-items-text">Online</Text>
+            <Text className="filter-items-numbers-text">##</Text>
+          </div>
+          <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+            <input className="rounded" type="checkbox" name="" value=""></input>
+            <Text className="filter-items-text">Face to face</Text>
+            <Text className="filter-items-numbers-text">##</Text>
+          </div>
+          <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
+            <input className="rounded" type="checkbox" name="" value=""></input>
+            <Text className="filter-items-text">Flexible</Text>
+            <Text className="filter-items-numbers-text">##</Text>
+          </div>
+        </div>
+      </div>
+      <Line className="my-4 h-px w-full bg-blue_gray-400" />
+      <div className="flex w-full flex-col items-start justify-center">
+        <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
+          <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+            <img
+              className="h-[30px] w-[30px] object-cover md:h-auto"
+              src="images/img_cash.png"
+              alt="cash"
+            />
+            <Text
+              className="w-auto text-lg text-black-900"
+              size="txtMontserratRomanSemiBold18"
+            >
+              Tutor Rate
+            </Text>
+          </div>
+          <Button className="reset-btn">Reset</Button>
+        </div>
+        <img
+          className="h-auto w-full"
+          src="images/img_filterlistframe.svg"
+          alt="filterlistframe_One"
+        />
+      </div>
+      <Line className="my-4 h-px w-full bg-blue_gray-400" />
+    </div>
+  );
+};
+
 export default TutorFilterSidebar;

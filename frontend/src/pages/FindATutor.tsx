@@ -63,23 +63,21 @@ const FindATutor: React.FC = () => {
         <button onClick={() => setSearchParams(!searchParams)}>
           press to refresh tutors
         </button>
-        <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5 sm:w-full">
+        <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5">
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
-            <Text
-              className="text-center text-[32px] text-black-900 md:text-3xl sm:text-[28px]"
-              size="txtMontserratRomanBold32"
+            <h1
             >
               Find A Tutor
-            </Text>
+            </h1>
 
-            <Text className="text-center text-lg leading-[24.00px] text-black-900">
+            <p className="text-center">
               If you see a tutor that you think could be a good fit, click their
-              box for their detailed profile page and to get in touch with them.{" "}
+              box for their detailed profile page and to get in touch with them.
               <br />
               <br />
-              Can’t seem to find the perfect tutor? Make a subject request and
+              Can't seem to find the perfect tutor? Make a subject request and
               we will do our best to find one for you!
-            </Text>
+            </p>
             <Button
               className="min-w-[247px] cursor-pointer bg-purple-primary text-center text-lg font-semibold leading-[normal]"
               shape="round"
@@ -91,9 +89,9 @@ const FindATutor: React.FC = () => {
             </Button>
           </div>
 
-          <div className="relative flex w-full flex-row items-start justify-center gap-2.5 sm:flex-col">
+          <div className="relative flex w-full flex-row items-start justify-center gap-2.5">
             <TutorFilterSidebar />
-            <div className="relative flex h-[1208px] w-[66%] flex-col items-center justify-start gap-[15px] md:h-auto md:w-[75%] sm:w-full">
+            <div className="relative flex h-[1208px] w-[66%] flex-col items-center justify-start gap-[15px] ">
               <div className="sticky top-5 z-10 flex w-full flex-row items-center rounded-[10px] bg-white-A700 p-2 text-left text-lg">
                 <p className="w-auto font-medium">Filtering by:</p>
               </div>

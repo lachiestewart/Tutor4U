@@ -44,7 +44,7 @@ const ContactUs = () => {
       <div className="mx-auto min-h-[100vh] h-auto flex flex-col items-center justify-start rounded-[10px] bg-gray-200 py-10  px-[50px] font-montserrat md:w-full md:px-5 sm:w-full">
         <div className="flex flex-col items-center gap-3">
           <img
-            className="h-[60px] w-[241px] object-cover md:h-auto sm:w-full"
+            className="md:w-[241px] object-cover md:h-[60px] sm:w-3/4"
             src="images/img_union21.png"
             alt="unionTwentyOne"
           />

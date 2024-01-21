@@ -22,10 +22,10 @@ const TutorDashboardProfileHeader: React.FC<
   TutorDashboardProfileHeaderProps
 > = (props) => {
   return (
-    <div className="flex w-full max-w-[1000px] flex-row items-center justify-start gap-4 bg-white-A700 md:flex-col">
-      <div className="flex h-[120px] w-[120px] flex-col items-start justify-start md:h-auto">
+    <div className="flex w-full max-w-[1000px] flex-row items-center justify-start gap-4 bg-white-A700 ">
+      <div className="flex h-[120px] w-[120px] flex-col items-start justify-start">
         <img
-          className="h-[118px] w-full rounded-[50%] md:h-auto"
+          className="md:h-[118px] w-full rounded-[50%] sm:h-auto"
           src="images/img_36477397310160.png"
           alt="Profile picture in dashboard header"
         />
