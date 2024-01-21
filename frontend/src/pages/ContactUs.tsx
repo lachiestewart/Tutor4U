@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button, Input, Text } from "components";
+import { Input, Text } from "components";
 import NavBar from "components/NavBar";
 
 interface MessageForm {
@@ -71,7 +71,7 @@ const ContactUs = () => {
                 <Input
                   label="First Name"
                   onChange={(e) => handleChange("fname", e)}
-                  placeholder="first name"
+                  placeHolder="first name"
                   className="w-full"
                   wrapClassName="flex h-[50px] w-full"
                 ></Input>
@@ -79,7 +79,7 @@ const ContactUs = () => {
                 <Input
                   label="Last Name"
                   onChange={(e) => handleChange("lname", e)}
-                  placeholder="last name"
+                  placeHolder="last name"
                   className="w-full"
                   wrapClassName="flex h-[50px] w-full"
                 ></Input>
@@ -87,7 +87,7 @@ const ContactUs = () => {
                 <Input
                   label="Email"
                   onChange={(e) => handleChange("email", e)}
-                  placeholder="email address"
+                  placeHolder="email address"
                   className="w-full"
                   wrapClassName="flex h-[50px] w-full"
                 ></Input>
@@ -95,7 +95,7 @@ const ContactUs = () => {
                 <Input
                   label="For context are you a..."
                   onChange={(e) => handleChange("role", e)}
-                  placeholder="student, tutor, parent ..."
+                  placeHolder="student, tutor, parent ..."
                   className="w-full"
                   wrapClassName="flex h-[50px] w-full"
                 ></Input>
@@ -103,7 +103,7 @@ const ContactUs = () => {
                 <Input
                   label="Message"
                   onChange={(e) => handleChange("message", e)}
-                  placeholder="message"
+                  placeHolder="message"
                   className="w-full"
                   wrapClassName="flex h-[130px] w-full"
                 ></Input>

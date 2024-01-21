@@ -1,5 +1,5 @@
 import { Text } from "./Text";
-import { Input } from "./Input";
+import { Input } from "./input2";
 import { useState } from "react";
 
 type ForgotPasswordModalProps = {
