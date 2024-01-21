@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Button, Input } from "components";
+import { Input, Text } from "components";
 import NavBar from "components/NavBar";
 
 interface MessageForm {
