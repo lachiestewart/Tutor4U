@@ -43,6 +43,9 @@ const Home = () => {
         <li>
           <Link to="/tutorprofileloggedin">TutorProfileLoggedIn</Link>
         </li>
+        <li>
+          <Link to="/testpage">TestPage</Link>
+        </li>
       </ul>
     </div>
   );

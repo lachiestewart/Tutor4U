@@ -17,18 +17,43 @@ const NavBar: React.FC = () => {
     children?: ReactNode;
   };
 
+  //NavBarChild was created by Jason. May need Lachie to check...
+  const NavBarChild: React.FC<SidebarItemProps> = ({
+    title,
+    onClick,
+    children,
+  }) => (
+    <div className="relative-t-25 flex flex-col bg-blue_gray-700 text-center">
+      <div
+        className="common-pointer flex w-full cursor-pointer flex-row items-center gap-[5px] rounded p-3 text-white-A700 hover:bg-blue_gray-400"
+        onClick={onClick}
+      >
+        <h3 className="text-align break-normal text-center text-gray-50">
+          {title}
+        </h3>
+        {!!children && (
+          <img
+            className="h-5 w-5 object-cover md:h-auto"
+            src="images/img_chevrondown.png"
+            alt="chevrondown"
+          />
+        )}
+      </div>
+      {!!children && children}
+    </div>
+  );
+
   const NavBarItem: React.FC<SidebarItemProps> = ({
     title,
     onClick,
     children,
   }) => (
-    <div className="flex flex-col">
+    <div className="lg:w-auto flex flex-col sm:w-full">
       <div
-        className="common-pointer flex flex-row w-auto items-center gap-[5px]"
+        className="common-pointer flex w-full flex-row items-center gap-[5px]"
         onClick={onClick}
       >
-        <h3 className="text-gray-50 text-align text-center break-normal"
-        >
+        <h3 className="lg:text-lg max-text-[10px] text-center text-gray-50">
           {title}
         </h3>
         {!!children && (
@@ -45,7 +70,7 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <header className="flex w-full items-center justify-between bg-blue_gray-700 px-[60px] py-[27px] flex-col lg:flex-row md:gap-2.5 md:px-5">
+      <header className="lg:flex-row flex w-full flex-col justify-between bg-blue_gray-700 px-[30px] py-[20px] md:gap-2.5 md:px-5">
         <div className="flex items-center justify-between p-2 md:w-full">
           {/* Tutor4U logo */}
           <img
@@ -57,8 +82,13 @@ const NavBar: React.FC = () => {
 
           {/* hamburger menu */}
           <div
-            className="lg:hidden block cursor-pointer px-10"
-            onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden block cursor-pointer md:px-10"
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+              console.log("Hamburger");
+              // Need help with the function below to show navbar items. Unsure how to write the logic
+              menuOpen ? <></> : <></>;
+            }}
           >
             <svg
               className="h-8 w-8 stroke-white-A700"
@@ -79,7 +109,7 @@ const NavBar: React.FC = () => {
 
         {/* Menu Items */}
         <div
-          className="lg:flex-row min-w-[900px] flex bg-red-500 items-center justify-end gap-5 p-2.5 md:flex-col"
+          className={`lg:flex-row lg:min-w-[76.5%] lg:flex w-full items-center justify-end gap-5 p-2.5 sm:flex-col ${menuOpen ? "sm:flex" : "sm:hidden"}`}
         >
           <NavBarItem title={"HOME"} onClick={() => navigate("/homepage")} />
 
@@ -87,11 +117,15 @@ const NavBar: React.FC = () => {
             title={"FOR STUDENTS"}
             children={
               forStudentsOpen ? (
-                <div className="lg:absolute item-center xl:mt-20 text-center">
-                  <div className="w-full rounded bg-blue_gray-700 p-3 text-white-A700 hover:bg-blue_gray-400">
-                    Item 1
-                  </div>
-                  <div>Item 1</div>
+                <div className="lg:absolute lg:mt-16">
+                  <NavBarChild
+                    title={"Find A Tutor"}
+                    onClick={() => navigate("/findatutor")}
+                  />
+                  <NavBarChild
+                    title={"Request A Lesson"}
+                    onClick={() => navigate("/requestalesson")}
+                  />{" "}
                 </div>
               ) : (
                 <></>
@@ -102,7 +136,18 @@ const NavBar: React.FC = () => {
 
           <NavBarItem
             title={"FOR TUTORS"}
-            children={forTutorsOpen ? <div>for tutors submenu</div> : <></>}
+            children={
+              forTutorsOpen ? (
+                <div className="lg:absolute lg:mt-16">
+                  <NavBarChild
+                    title={"Login"}
+                    onClick={() => navigate("/loginpage")}
+                  />
+                </div>
+              ) : (
+                <></>
+              )
+            }
             onClick={() => setForTutorsOpen(!forTutorsOpen)}
           />
 
@@ -117,7 +162,7 @@ const NavBar: React.FC = () => {
             className="min-w-[194px] cursor-pointer text-center font-montserrat text-xl font-medium leading-[normal] !text-black-900"
             shape="round"
             color="gray_400"
-            size="sm"
+            size="md"
             variant="fill"
           >
             TUTOR SIGN-UP
