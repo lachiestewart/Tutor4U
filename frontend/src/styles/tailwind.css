@@ -134,27 +134,27 @@ li:hover {
 
 /* Fonts / Text */
 h1 {
-  @apply font-montserrat text-4xl md:text-3xl font-bold;
+  @apply font-montserrat text-4xl md:text-3xl sm:text-2xl font-bold pt-5;
 }
 
 h2 {
-  @apply font-montserrat text-3xl md:text-2xl font-bold;
+  @apply font-montserrat lg:text-3xl md:text-2xl sm:text-xl font-bold;
 }
 
 h3 {
-  @apply font-montserrat text-2xl md:text-xl font-semibold;
+  @apply font-montserrat lg:text-2xl sm:text-xl font-semibold;
 }
 
 h4 {
-  @apply font-montserrat text-xl font-semibold;
+  @apply font-montserrat md:text-xl font-semibold;
 }
 
 h5 {
-  @apply font-montserrat text-xl leading-[24.00px] 
+  @apply font-montserrat md:text-xl sm:text-sm leading-[24.00px] 
 }
 
 p {
-  @apply font-montserrat text-lg leading-[26.00px] font-normal;
+  @apply font-montserrat md:text-lg sm:text-base leading-[26.00px] font-normal;
 }
 
 /* This div needs to surround the navbar too */

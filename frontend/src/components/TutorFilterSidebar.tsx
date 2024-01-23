@@ -1,6 +1,50 @@
 import { Text, Input, Line, Button } from "components";
 
 const TutorFilterSidebar = () => {
+  type SearchbarCategoryProps = {
+    title: string;
+    imgURL: string;
+    onClick?: () => void;
+    child?: string;
+    childAmount?: number;
+  };
+
+  //SearchBarCategory was created by Jason. May need Lachie to check...
+  const SearchBarCategory: React.FC<SearchbarCategoryProps> = ({
+    title,
+    imgURL,
+    onClick,
+    child,
+    childAmount,
+  }) => (
+    <div>
+      <div className="flex w-auto flex-col items-start justify-center ">
+        <div className="filter-category-title-div">
+          <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+            <img
+              className="lg:h-auto h-[30px] w-[30px] object-cover"
+              src={imgURL}
+              alt={title + " icon"}
+            />
+            <h3>{title}</h3>
+          </div>
+          <Button className="reset-btn">Reset</Button>
+        </div>
+        <div
+          className="flex max-h-20 w-full
+           flex-col flex-wrap items-start justify-start gap-1 overflow-y-scroll p-2"
+        >
+          <div className="flex w-auto flex-row items-center justify-start gap-2.5">
+            <input className="rounded" type="checkbox" name="" value=""></input>
+            <p className="text-base">{child}</p>
+            <p className="text-sm text-gray-500">({childAmount})</p>
+          </div>
+        </div>
+      </div>
+      <Line className="my-4 h-px w-full bg-blue_gray-400" />
+    </div>
+  );
+
   return (
     <div className="sticky top-5 z-10 flex w-[25%] min-w-[250px] flex-col items-start justify-center gap-[10px] rounded-[10px] bg-white-A700 px-2.5 py-4">
       <Text className="w-auto text-lg text-black-900">
@@ -13,47 +57,31 @@ const TutorFilterSidebar = () => {
       <form action="" className="w-full">
         <div className="flex w-full flex-col items-start justify-start">
           <h3>Search</h3>
-          <Input
+          <input
             name="tutorTextSearchFilterEntry"
             placeholder="Search through tutors...."
-            className="w-full p-3"
-            wrapClassName="border border-gray-400_02 border-solid flex h-auto w-full"
-          ></Input>
+            className="flex h-auto w-full rounded-[10px] border border-solid border-gray-400_02 p-3"
+          ></input>
           <div className="block py-4 md:hidden">
             <p>Advance search</p>
           </div>
         </div>
         <Line className="my-4 h-px w-full bg-blue_gray-400" />
-        <div className="flex w-auto flex-col items-start justify-center">
-          <div className="filter-category-title-div">
-            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
-              <img
-                className="lg:h-auto h-[30px] w-[30px] object-cover"
-                src="images/img_training.png"
-                alt="training"
-              />
-              <h3>Subjects</h3>
-            </div>
-            <Button className="reset-btn">Reset</Button>
-          </div>
-          <div
-            className="flex max-h-20 w-full
-                   flex-col flex-wrap items-start justify-start gap-1 overflow-y-scroll p-2"
-          >
-            <div className="flex w-auto flex-row items-center justify-start gap-2.5">
-              <input
-                className="rounded"
-                type="checkbox"
-                name=""
-                value=""
-              ></input>
-              <p>English</p>
-              <p>##</p>
-            </div>
-          </div>
-        </div>
-        <Line className="my-4 h-px w-full bg-blue_gray-400" />
-        <div className="flex w-full flex-col items-start justify-center">
+        <SearchBarCategory
+          title="Subjects"
+          child="English"
+          childAmount={5}
+          imgURL="images/img_training.png"
+         
+        />
+        <SearchBarCategory
+          title="Tutoring Level"
+          child="NCEA L1"
+          childAmount={3}
+          imgURL="images/img_university.png"
+          
+        />
+        {/* <div className="flex w-full flex-col items-start justify-center">
           <div className="filter-category-title-div">
             <div className="flex w-auto flex-row items-center justify-start gap-2.5">
               <img
@@ -81,7 +109,7 @@ const TutorFilterSidebar = () => {
             </div>
           </div>
         </div>
-        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <Line className="my-4 h-px w-full bg-blue_gray-400" /> */}
         <div className="flex w-full flex-col items-start justify-center">
           <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
             <div className="flex w-auto flex-row items-center justify-start gap-2.5">
@@ -101,7 +129,13 @@ const TutorFilterSidebar = () => {
           />
         </div>
         <Line className="my-4 h-px w-full bg-blue_gray-400" />
-        <div className="flex w-full flex-col items-start justify-center">
+        <SearchBarCategory
+          title="Location"
+          child="Auckland"
+          childAmount={3}
+          imgURL="images/img_location.png"
+        />
+        {/* <div className="flex w-full flex-col items-start justify-center">
           <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
             <div className="flex w-auto flex-row items-center justify-start gap-2.5">
               <img
@@ -156,7 +190,7 @@ const TutorFilterSidebar = () => {
             </div>
           </div>
         </div>
-        <Line className="my-4 h-px w-full bg-blue_gray-400" />
+        <Line className="my-4 h-px w-full bg-blue_gray-400" /> */}
         <div className="flex w-full flex-col items-start justify-center">
           <div className="flex w-full flex-row items-center justify-between gap-[34px] p-[5px]">
             <div className="flex w-auto flex-row items-center justify-start gap-2.5">

@@ -23,7 +23,7 @@ const TutorDashboardProfileHeader: React.FC<
 > = (props) => {
   return (
     <div className="flex w-full max-w-[1000px] flex-row items-center justify-start gap-4 bg-white-A700 ">
-      <div className="flex h-[120px] w-[120px] flex-col items-start justify-start">
+      <div className="flex sm:h-[80px] sm:w-[80px] md:h-[120px] md:w-[120px] flex-col items-start justify-start">
         <img
           className="md:h-[118px] w-full rounded-[50%] sm:h-auto"
           src="images/img_36477397310160.png"

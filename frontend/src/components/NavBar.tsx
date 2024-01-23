@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 
-import { Button, Text } from "components";
+import { Button } from "components";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();

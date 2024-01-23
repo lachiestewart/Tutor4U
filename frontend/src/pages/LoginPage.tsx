@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button, Input, Line, Text } from "components";
 import ForgotPasswordModal from "components/ForgotPasswordModal";
 import SignUpModal from "components/SignUpModal";
+import NavBar from "components/NavBar";
 
 interface LoginForm {
   email: string;
@@ -41,9 +42,10 @@ const LoginPage: React.FC = () => {
     <>
       {displayForgotPassword && <ForgotPasswordModal onHide={() => setDisplayForgotPassword(false)} />}
       {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
-      <div className="flex sm:flex-col flex-row font-montserrat w-screen h-screen">
+      {/* <NavBar /> */}
+      <div className="flex md:flex-row flex-col font-montserrat w-screen h-auto lg:h-screen">
         {/*Login form*/}
-        <div className="bg-blue_gray-700 flex flex-col items-center md:px-5 w-[50%]">
+        <div className="bg-blue_gray-700 flex flex-col items-center h-auto md:px-5 w-[50%]">
           <img
             className="h-[76px] mt-[134px]"
             src="images/img_union_white_a700.svg"
@@ -95,7 +97,7 @@ const LoginPage: React.FC = () => {
         </div>
 
 
-        <div className="flex flex-col items-center justify-center p-[89px] md:px-5 w-[40%] md:w-full">
+        <div className="flex flex-col items-center justify-center p-[89px] px-5 md:w-[50%] sm:w-full">
           <Text
             className="mt-[318px] md:text-3xl sm:text-[28px] text-[32px] text-center text-indigo-600"
             size="txtMontserratRomanBold32Indigo600"
