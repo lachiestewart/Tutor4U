@@ -2,6 +2,7 @@ import React from "react";
 import { Text } from ".";
 
 type InputProps = {
+  name?: string;
   className?: string;
   label?: string;
   labelClassName?: string;
@@ -10,14 +11,8 @@ type InputProps = {
   onChange?: (e: string) => void;
 };
 
-const Input: React.FC<InputProps> = ({
-  className,
-  label,
-  labelClassName,
-  wrapClassName,
-  placeHolder,
-  onChange,
-}) => {
+const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, wrapClassName, placeHolder, onChange }) => {
+
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     if (onChange) onChange(e?.target?.value);
   };
@@ -36,6 +31,7 @@ const Input: React.FC<InputProps> = ({
         className={`h-auto w-full items-start rounded-[10px] bg-white-A700 ${wrapClassName}`}
       >
         <input
+          name={name}
           className="w w-full border-0 bg-transparent px-5 py-3"
           placeholder={placeHolder}
           onChange={handleChange}
