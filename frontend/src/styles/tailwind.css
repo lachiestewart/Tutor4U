@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #3e4369;
+}
+/* Override default focus colors for tailwindcss-forms https://github.com/tailwindlabs/tailwindcss-forms */
+[type="text"]:focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="search"]:focus,
+[type="checkbox"]:focus,
+[type="radio"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  --tw-ring-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.react-datepicker-wrapper .react-datepicker__input-container input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  padding: 0px;
+}
+.react-datepicker__day.react-datepicker__day--keyboard-selected {
+  background: none;
+  color: black;
+}
+input:focus,
+textarea:focus {
+  outline: none !important;
+  outline-offset: 0 !important;
+  --tw-ring-offset-width: none !important;
+}
+
+li:focus-visible {
+  outline: none;
+}
+
+li:hover {
+  cursor: pointer;
+}
+
+.tab-panel--selected {
+  animation-name: tabPanel;
+  animation-duration: 300ms;
+  animation-timing-function: linear;
+}
+@keyframes tabPanel {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Input style */
+.input-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container label {
+  position: absolute;
+  transform-origin: top left;
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.input-container input {
+  transition: 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.ps-menu-icon {
+  width: unset !important;
+  min-width: unset !important;
+  justify-content: start !important;
+  margin: 0 !important;
+}
+.ps-menu-button,
+.ps-menu-icon {
+  height: unset !important;
+}
+.ps-menu-button:hover {
+  background-color: unset !important;
+}
+.ps-sidebar-container,
+.ps-submenu-content {
+  background-color: transparent !important;
+}
+.ps-collapsed .ps-menu-icon {
+  min-width: 100% !important;
+  justify-content: center !important;
+}
+.ps-collapsed {
+  width: 80px !important;
+}
+.ps-sidebar-container,
+.ps-menu-root,
+.ps-menu-root > ul {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.ps-sidebar-root {
+  min-width: unset !important;
+  border: none !important;
+}
+.ps-collapsed,
+.ps-collapsed .ps-menu-root,
+.ps-collapsed .ps-menu-button {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: unset !important;
+  margin-right: unset !important;
+}
+.ps-collapsed ul {
+  align-items: center;
+}
+.ps-menu-label {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Below @apply directives were created by Jason */
+
+/* General */
+
+/* Fonts / Text */
+h1 {
+  @apply font-montserrat text-4xl md:text-3xl sm:text-2xl font-bold pt-5;
+}
+
+h2 {
+  @apply font-montserrat lg:text-3xl md:text-2xl sm:text-xl font-bold;
+}
+
+h3 {
+  @apply font-montserrat lg:text-2xl sm:text-xl font-semibold;
+}
+
+h4 {
+  @apply font-montserrat md:text-xl font-semibold;
+}
+
+h5 {
+  @apply font-montserrat md:text-xl sm:text-sm leading-[24.00px] 
+}
+
+p {
+  @apply font-montserrat md:text-lg sm:text-base leading-[26.00px] font-normal;
+}
+
+/* This div needs to surround the navbar too */
+.main-div-gray {
+  @apply flex flex-col items-start justify-start bg-gray-200 font-montserrat;
+}
+
+.main-margin-div {
+  @apply mx-auto w-full max-w-[1500px] items-center;
+}
+
+.h1 {
+  @apply bg-black-900;
+}
+
+/* Home Page */
+
+.fade-in {
+  @apply transition-opacity delay-200 duration-700 ease-in-out;
+}
+
+/* Find a Tutor Page */
+
+.filter-category-title-div {
+  @apply flex w-full flex-row items-center justify-between gap-[7%] p-1;
+}
+
+.filter-category-title-text {
+  @apply w-auto text-xl font-semibold text-black-900;
+}
+
+.filter-items-text {
+  @apply w-auto text-sm font-medium text-black-900;
+}
+
+.filter-items-numbers-text {
+  @apply w-auto pl-5 text-xs font-medium text-black-900;
+}
+
+.reset-btn {
+  @apply w-auto text-right text-xs text-indigo-A400 hover:font-semibold;
+}
+
+/* Logged In - General */
+
+/* This div contains the sidebar menu and everything in the main dashboard too*/
+.main-outside-div {
+  @apply mx-auto flex w-auto flex-row items-start justify-between gap-2.5 bg-gray-200 font-montserrat md:w-full md:flex-col sm:w-full sm:flex-col;
+}
+
+.main-dashboard-div {
+  @apply flex w-full  flex-col items-start  justify-start gap-[21px] rounded-[10px] bg-white-A700 px-6  py-2.5 md:flex-col md:px-5 sm:px-5;
+}

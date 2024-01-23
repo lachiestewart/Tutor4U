@@ -18,7 +18,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
 class ListUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'username', 'phone_number', 'gender', 'profile_photo']
+        fields = ['id', 'username', 'first_name', 'last_name', 'phone_number', 'gender', 'profile_photo']
 
 
 class ListStudentSerializer(serializers.ModelSerializer):
@@ -33,6 +33,6 @@ class ListTutorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tutor
-        fields = ['id', 'user', 'rate', 'available', 'remote', 'in_person', 'location', 'qualification', 'about']
+        fields = ['id', 'user', 'rate', 'availability', 'remote', 'in_person', 'location', 'qualification', 'about']
 
 

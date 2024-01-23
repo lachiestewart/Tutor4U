@@ -9,6 +9,7 @@ MEDIA_DIR = "uploads/"
 GENDER_LIST = ["Male", "Female", "Non-Binary", "Other"]
 SUBJECT_LIST = ["Mathematics", "Physics", "Chemistry", "Biology", "English"]
 LEVEL_LIST = ["NCEA 1", "NCEA 2", "NCEA 3", "NCEA Scholarship", "100 Level", "200 Level", "300 Level", "400 Level", "Postgraduate"]
+AVAILABILITY_LIST = ["Available", "Limited-Availability", "Not Available"]
 
 # Converts list of readable choices into map of (db value, readable value)
 choiceMapper = lambda choice_list: [(choice.upper().replace("-", "_").replace(" ", "_"), choice) for choice in choice_list]
@@ -17,6 +18,7 @@ choiceMapper = lambda choice_list: [(choice.upper().replace("-", "_").replace(" 
 subject_choices = choiceMapper(SUBJECT_LIST)
 level_choices = choiceMapper(LEVEL_LIST)
 gender_choices = choiceMapper(GENDER_LIST)
+availability_choices = choiceMapper(AVAILABILITY_LIST)
 
 class UserManager(BaseUserManager):
     """Creates a manager for the custom User class"""
@@ -56,8 +58,6 @@ class User(AbstractUser):
     gender = CharField(max_length=10, choices=gender_choices, default="")
     profile_photo = ImageField(upload_to=MEDIA_DIR, validators=[validate_image_file_extension], null=True, blank=True)
     is_admin = BooleanField(default=False)
-    is_tutor = BooleanField(default=False)
-    is_student = BooleanField(default=False)
 
     objects = UserManager()
 
@@ -84,7 +84,7 @@ class Tutor(Model):
     user = OneToOneField(User, blank=False, on_delete=CASCADE)
     approved = BooleanField(default=False)
     rate = DecimalField(max_digits=4, decimal_places=2)
-    available = BooleanField(default=True)
+    availability = CharField(max_length=20, choices=availability_choices, default="")
     remote = BooleanField(default=True)
     in_person = BooleanField(default=True)
     location = CharField(max_length=30)
