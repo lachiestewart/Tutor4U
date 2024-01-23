@@ -9,7 +9,7 @@ const NavBar: React.FC = () => {
 
   const [forStudentsOpen, setForStudentsOpen] = useState<boolean>(false);
   const [forTutorsOpen, setForTutorsOpen] = useState<boolean>(false);
-  const [menuOpen, setMenuOpen] = useState<boolean>(true);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   type SidebarItemProps = {
     title: string;
@@ -17,23 +17,52 @@ const NavBar: React.FC = () => {
     children?: ReactNode;
   };
 
-  const NavBarItem: React.FC<SidebarItemProps> = ({ title, onClick, children }) => (
-    <div className="flex flex-col">
+  //NavBarChild was created by Jason. May need Lachie to check...
+  const NavBarChild: React.FC<SidebarItemProps> = ({
+    title,
+    onClick,
+    children,
+  }) => (
+    <div className="relative-t-25 flex flex-col bg-blue_gray-700 text-center">
       <div
-        className="common-pointer flex flex-row gap-[5px] items-center"
+        className="common-pointer flex w-full cursor-pointer flex-row items-center gap-[5px] rounded p-3 text-white-A700 hover:bg-blue_gray-400"
         onClick={onClick}
       >
-        <Text
-          className="text-center text-white-A700 text-xl w-auto"
-          size="txtMontserratRomanMedium20"
-        >
+        <h3 className="text-align break-normal text-center text-gray-50">
           {title}
-        </Text>
-        {!!children && <img
-          className="h-5 md:h-auto object-cover w-5"
-          src="images/img_chevrondown.png"
-          alt="chevrondown"
-        />}
+        </h3>
+        {!!children && (
+          <img
+            className="h-5 w-5 object-cover md:h-auto"
+            src="images/img_chevrondown.png"
+            alt="chevrondown"
+          />
+        )}
+      </div>
+      {!!children && children}
+    </div>
+  );
+
+  const NavBarItem: React.FC<SidebarItemProps> = ({
+    title,
+    onClick,
+    children,
+  }) => (
+    <div className="lg:w-auto flex flex-col sm:w-full">
+      <div
+        className="common-pointer flex w-full flex-row items-center gap-[5px]"
+        onClick={onClick}
+      >
+        <h3 className="lg:text-lg max-text-[10px] text-center text-gray-50">
+          {title}
+        </h3>
+        {!!children && (
+          <img
+            className="h-5 w-5 object-cover md:h-auto"
+            src="images/img_chevrondown.png"
+            alt="chevrondown"
+          />
+        )}
       </div>
       {!!children && children}
     </div>
@@ -41,12 +70,11 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-      <header className="flex w-full items-center justify-between bg-blue_gray-700 px-[60px] py-[27px] md:flex-col md:gap-2.5 md:px-5">
-        <div className="flex items-center justify-between md:w-full p-2">
-
+      <header className="lg:flex-row flex w-full flex-col justify-between bg-blue_gray-700 px-[30px] py-[20px] md:gap-2.5 md:px-5">
+        <div className="flex items-center justify-between p-2 md:w-full">
           {/* Tutor4U logo */}
           <img
-            className="common-pointer h-14 md:h-auto object-cover w-[222px] sm:w-full"
+            className="common-pointer h-14 w-[222px] object-cover md:h-auto"
             src="images/img_union1.png"
             alt="Tutor4ULogo"
             onClick={() => navigate("/homepage")}
@@ -54,45 +82,87 @@ const NavBar: React.FC = () => {
 
           {/* hamburger menu */}
           <div
-            className="px-10 cursor-pointer md:block hidden"
-            onClick={() => setMenuOpen(!menuOpen)}>
-            <svg className="w-8 h-8 stroke-white-A700" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            className="lg:hidden block cursor-pointer md:px-10"
+            onClick={() => {
+              setMenuOpen(!menuOpen);
+              console.log("Hamburger");
+              // Need help with the function below to show navbar items. Unsure how to write the logic
+              menuOpen ? <></> : <></>;
+            }}
+          >
+            <svg
+              className="h-8 w-8 stroke-white-A700"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
             </svg>
           </div>
         </div>
 
         {/* Menu Items */}
-        <div className={`flex md:flex-col flex-row gap-2.5 items-center justify-center p-2.5 w-auto md:w-full ${menuOpen && "md:hidden"}`}>
-          <div className="flex md:flex-col flex-row gap-5 items-center justify-start px-2.5 w-auto md:w-full">
+        <div
+          className={`lg:flex-row lg:min-w-[76.5%] lg:flex w-full items-center justify-end gap-5 p-2.5 sm:flex-col ${menuOpen ? "sm:flex" : "sm:hidden"}`}
+        >
+          <NavBarItem title={"HOME"} onClick={() => navigate("/homepage")} />
 
-            <NavBarItem title={"HOME"}
-              onClick={() => navigate("/homepage")}
-            />
+          <NavBarItem
+            title={"FOR STUDENTS"}
+            children={
+              forStudentsOpen ? (
+                <div className="lg:absolute lg:mt-16">
+                  <NavBarChild
+                    title={"Find A Tutor"}
+                    onClick={() => navigate("/findatutor")}
+                  />
+                  <NavBarChild
+                    title={"Request A Lesson"}
+                    onClick={() => navigate("/requestalesson")}
+                  />{" "}
+                </div>
+              ) : (
+                <></>
+              )
+            }
+            onClick={() => setForStudentsOpen(!forStudentsOpen)}
+          />
 
-            <NavBarItem title={"FOR STUDENTS"}
-              children={forStudentsOpen ? <div>for students submenu</div>: <></>}
-              onClick={() => setForStudentsOpen(!forStudentsOpen)}
-            />
+          <NavBarItem
+            title={"FOR TUTORS"}
+            children={
+              forTutorsOpen ? (
+                <div className="lg:absolute lg:mt-16">
+                  <NavBarChild
+                    title={"Login"}
+                    onClick={() => navigate("/loginpage")}
+                  />
+                </div>
+              ) : (
+                <></>
+              )
+            }
+            onClick={() => setForTutorsOpen(!forTutorsOpen)}
+          />
 
-            <NavBarItem title={"FOR TUTORS"}
-              children={forTutorsOpen ? <div>for tutors submenu</div>: <></>}
-              onClick={() => setForTutorsOpen(!forTutorsOpen)}
-            />
+          <NavBarItem title={"ABOUT"} />
 
-            <NavBarItem title={"ABOUT"} 
-            />
+          <NavBarItem
+            title={"CONTACT"}
+            onClick={() => navigate("/contactus")}
+          />
 
-            <NavBarItem title={"CONTACT"}
-              onClick={() => navigate("/contactus")}
-            />
-
-          </div>
           <Button
-            className="!text-black-900 cursor-pointer font-medium font-montserrat leading-[normal] min-w-[194px] text-center text-xl"
+            className="min-w-[194px] cursor-pointer text-center font-montserrat text-xl font-medium leading-[normal] !text-black-900"
             shape="round"
             color="gray_400"
-            size="sm"
+            size="md"
             variant="fill"
           >
             TUTOR SIGN-UP

@@ -37,7 +37,7 @@ const Sidebar: React.FC = () => {
 
     return (
         <div
-            className="sticky justify-between left-0 top-0 bg-blue_gray-700 flex flex-col h-[100vh] items-start md:px-5 w-[380px] sm:w-full"
+            className="sticky justify-between left-0 top-0 bg-blue_gray-700 flex flex-col h-[100vh] items-start md:w-[380px]"
         >
             <div className="flex flex-col items-start justify-start w-full">
                 {open && <img

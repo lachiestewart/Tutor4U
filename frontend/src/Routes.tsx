@@ -15,6 +15,7 @@ const ContactUs = React.lazy(() => import("pages/ContactUs"));
 const TutorProfile = React.lazy(() => import("pages/TutorProfile"));
 const FindATutor = React.lazy(() => import("pages/FindATutor"));
 const HomePage = React.lazy(() => import("pages/HomePage"));
+const TestPage = React.lazy(() => import("pages/TestPage"));
 const ProjectRoutes = () => {
   return (
     <React.Suspense fallback={<>Loading...</>}>
@@ -31,6 +32,7 @@ const ProjectRoutes = () => {
           <Route path="/loginpage" element={<LoginPage />} />
           <Route path="/tutoronboarding" element={<TutorOnboarding />} />
           <Route path="/tutordashboard" element={<TutorDashboard />} />
+          <Route path="/testpage" element={<TestPage />} />
           <Route path="/modals" element={<Modals />} />
           <Route
             path="/tutorprofileloggedin"
