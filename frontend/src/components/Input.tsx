@@ -9,9 +9,11 @@ type InputProps = {
   wrapClassName?: string;
   placeholder?: string;
   onChange?: (e: string) => void;
+  required: boolean;
+
 };
 
-const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, wrapClassName, placeholder, onChange }) => {
+const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, wrapClassName, placeholder, onChange, required }) => {
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     if (onChange) onChange(e?.target?.value);
@@ -35,7 +37,7 @@ const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, w
           className="w-full border-0 bg-transparent px-5 py-3"
           placeholder={placeholder}
           onChange={handleChange}
-          required
+          required={required}
         />
       </div>
     </div>
