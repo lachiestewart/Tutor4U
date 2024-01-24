@@ -32,9 +32,10 @@ const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, w
       >
         <input
           name={name}
-          className="w w-full border-0 bg-transparent px-5 py-3"
+          className="w-full border-0 bg-transparent px-5 py-3"
           placeholder={placeholder}
           onChange={handleChange}
+          required
         />
       </div>
     </div>

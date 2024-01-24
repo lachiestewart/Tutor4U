@@ -1,8 +1,6 @@
 import React, { ReactNode, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
-import Button from "components/Button";
+// import Button from "components/Button";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -23,7 +21,7 @@ const NavBar: React.FC = () => {
     onClick,
     children,
   }) => (
-    <div className="relative-t-25 flex flex-col bg-blue_gray-700 text-center">
+    <div className="relative-t-25 flex flex-col bg-blue_gray-700 text-center min-w-[150px]">
       <div
         className="common-pointer flex w-full cursor-pointer flex-row items-center gap-[5px] rounded p-3 text-white-A700 hover:bg-blue_gray-400"
         onClick={onClick}
@@ -48,7 +46,7 @@ const NavBar: React.FC = () => {
     onClick,
     children,
   }) => (
-    <div className="lg:w-auto flex flex-col sm:w-full">
+    <div className="lg:w-auto flex flex-col sm:w-full cursor-pointer">
       <div
         className="common-pointer flex w-full flex-row items-center gap-[5px]"
         onClick={onClick}
@@ -117,7 +115,8 @@ const NavBar: React.FC = () => {
             title={"FOR STUDENTS"}
             children={
               forStudentsOpen ? (
-                <div className="lg:absolute lg:mt-16">
+                // Need help with animation for dropdown
+                <div className={`lg:absolute lg:mt-16 ${forStudentsOpen ? "transition-opacity opacity-100 duration-700 ease-in-out" : "opacity-0"}  delay-200 `}>
                   <NavBarChild
                     title={"Find A Tutor"}
                     onClick={() => navigate("/findatutor")}
@@ -158,15 +157,15 @@ const NavBar: React.FC = () => {
             onClick={() => navigate("/contactus")}
           />
 
-          <Button
-            className="min-w-[194px] cursor-pointer text-center font-montserrat text-xl font-medium leading-[normal] !text-black-900"
+          <button
+            className="bg-blue-700 border-2 hover:border-2 border-blue_gray-700 py-2 px-3 rounded-xl text-violet-100 shadow-lg hover:bg-blue-900 ease-in-out  hover:border-blue-900 duration-300 font-semibold hover:text-white-A700 hover:shadow-xl"
             shape="round"
             color="gray_400"
             size="md"
             variant="fill"
           >
             TUTOR SIGN-UP
-          </Button>
+          </button>
         </div>
       </header>
     </>
