@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
-  const [open, setOpen] = useState<boolean>(true);
+  const [open, setOpen] = useState<boolean>(false);
 
   type SidebarItemProps = {
     title: string;
@@ -12,9 +12,9 @@ const Sidebar: React.FC = () => {
   };
 
   const SidebarItem: React.FC<SidebarItemProps> = ({ title, src, link }) => (
-    <div className="flex w-full flex-col items-center justify-between px-[10px] py-[5px]">
+    <div className="flex w-full flex-col items-center justify-between md:px-[10px] md:py-[5px] sm:px-[5px] sm:py-[2px]">
       <div
-        className="flex w-full cursor-pointer flex-row items-center justify-start gap-5 rounded-xl p-3 hover:bg-blue-800"
+        className="flex w-full cursor-pointer flex-row items-center justify-start sm:gap-2 md:gap-5 rounded-xl sm:p-2 md:p-3 hover:bg-violet-950"
         onClick={() => link && navigate(link)}
       >
         <img className="h-8 w-8 object-cover" src={src} alt={title + " icon"} />
@@ -24,11 +24,11 @@ const Sidebar: React.FC = () => {
   );
 
   return (
-    <div className={`lg:w-auto lg:h-[100vh] sticky left-0 top-0 flex flex-col items-start justify-between bg-blue_gray-700   ${open? "sm:w-full md:min-w-[250px] lg:min-w-[300px]": "md:w-15" }`}>
+    <div className={`lg:w-auto z-10 sm:h-[100vh] sticky left-0 top-0 flex flex-col items-start justify-between bg-blue_gray-700   ${open? "sm:w-full md:min-w-[300px] lg:min-w-[300px]": "md:w-15" }`}>
       <div className="flex w-full flex-col items-start justify-start">
-        <div className="flex w-full flex-row items-center justify-start gap-2 bg-gray-800 p-2 py-4">
+        <div className="flex w-full flex-row items-center justify-start gap-2 bg-violet-950 p-2 py-4">
           <svg
-            className="z-10 m-1 h-8 w-8 min-w-[20px]"
+            className="z-10 m-3 h-8 w-8 min-w-[20px] cursor-pointer"
             viewBox="0 -4.5 20 20"
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -64,7 +64,7 @@ const Sidebar: React.FC = () => {
           {open && (
             <img
               src="images\img_union1.png"
-              className="lg:w-[180px] h-auto w-[250px] pb-2"
+              className="h-[60px] pb-3 m2 cursor-pointer"
             />
           )}
         </div>

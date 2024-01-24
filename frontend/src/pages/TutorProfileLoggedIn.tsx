@@ -7,9 +7,9 @@ import Input from "components/Input";
 const TutorProfileLoggedIn: React.FC = () => {
   return (
     <>
-      <div className="main-outside-dive">
+      <div className="mx-auto flex w-full items-start justify-between gap-2.5 bg-gray-200 font-montserrat md:flex-row sm:flex-col md:mt-0 sm:mt-[-100vh]">
         <Sidebar />
-        <div className="main-dashboard-div">
+        <div className="flex w-full flex-col items-start justify-start gap-[21px] rounded-[10px] bg-white-A700 px-6  py-2.5 md:flex-col md:px-5 sm:px-5">
           <div className="flex h-[907px] flex-col items-center justify-start gap-3.5 px-[33px] py-2.5 md:h-auto sm:px-5">
             <div className="flex w-[96%] flex-col items-center justify-start gap-4 md:w-full">
               <div className="h-[277px] w-[277px] rounded-[138px] bg-blue_gray-100"></div>
