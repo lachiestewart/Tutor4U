@@ -159,10 +159,6 @@ const NavBar: React.FC = () => {
 
           <button
             className="bg-blue-700 border-2 hover:border-2 border-blue_gray-700 py-2 px-3 rounded-xl text-violet-100 shadow-lg hover:bg-blue-900 ease-in-out  hover:border-blue-900 duration-300 font-semibold hover:text-white-A700 hover:shadow-xl"
-            shape="round"
-            color="gray_400"
-            size="md"
-            variant="fill"
           >
             TUTOR SIGN-UP
           </button>

@@ -6,17 +6,16 @@ type InputProps = {
   className?: string;
   label?: string;
   labelClassName?: string;
-  wrapClassName?: string;
   placeholder?: string;
   onChange?: (e: string) => void;
-  required: boolean;
-
+  required?: boolean;
+  type?: string;
 };
 
-const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, wrapClassName, placeholder, onChange, required }) => {
+const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, placeholder, onChange, required, type }) => {
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    if (onChange) onChange(e?.target?.value);
+    if (onChange) onChange(e?.target?.value); 
   };
 
   return (
@@ -30,7 +29,7 @@ const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, w
         </Text>
       )}
       <div
-        className={`h-auto w-full items-start rounded-[10px] bg-white-A700 ${wrapClassName}`}
+        className="h-auto w-full items-start rounded-[10px] bg-white-A700"
       >
         <input
           name={name}
@@ -38,10 +37,13 @@ const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, w
           placeholder={placeholder}
           onChange={handleChange}
           required={required}
+          type={type}
         />
       </div>
     </div>
   );
 };
+
+Input.defaultProps = {required: false, type: "text"};
 
 export default Input;
