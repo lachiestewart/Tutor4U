@@ -1,36 +1,20 @@
 import React from "react";
 import { useState } from "react";
-
 import { useNavigate } from "react-router-dom";
 
-// import TabsDefault from "components/Tabs";
 import NavBar from "components/NavBar";
 import Button from "components/Button";
+import SignUpModal from "components/SignUpModal";
 
-// This is all to do with fade-in animations (https://medium.com/@jacobvejlinjensen/how-to-create-a-smooth-appear-on-scroll-transition-with-tailwind-css-and-react-82f2a32ab295)
-// import { useEffect, useState } from "react";
-
-// export function useIsVisible(ref) {
-//   const [isIntersecting, setIntersecting] = useState(false);
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(([entry]) => {
-//       setIntersecting(entry.isIntersecting);
-//     });
-//     observer.observe(ref.current);
-//     return () => {
-//       observer.disconnect();
-//     };
-//   }, [ref]);
-//   return isIntersecting;
-// }
+// 
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [info, setInfo] = useState<boolean>(true);
-
+  const [displaySignup, setDisplaySignup] = useState<boolean>(false);
   return (
     <>
+    {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
       <div className="mx-auto flex w-auto flex-col items-start justify-start gap-[30px] font-montserrat md:w-full sm:w-full">
         <NavBar />
 
@@ -235,7 +219,7 @@ const Home: React.FC = () => {
                         alt="imageEleven"
                       />
                       <p>
-                        <>
+                        
                           Tutor4U has developed a state of the art filtering
                           system so that you can quickly and easily find a tutor
                           that suits your needs.
@@ -254,7 +238,7 @@ const Home: React.FC = () => {
                           Also, if you can't find a tutor to suit your needs,
                           get in touch with us and we will do our best to find
                           one for you.
-                        </>
+                        
                       </p>
                       <div className="flex w-full flex-row items-center justify-start gap-2.5">
                         <Button
@@ -263,6 +247,7 @@ const Home: React.FC = () => {
                           color="blue_gray_700"
                           size="sm"
                           variant="fill"
+                          onClick={() => navigate("/findatutor")}
                         >
                           Browse Through Tutors
                         </Button>
@@ -290,16 +275,16 @@ const Home: React.FC = () => {
                         alt="imageTwelve"
                       />
                       <p>
-                        <>
-                          Each tutor has their own personalised profile page.
-                          Their pages will provide key details and information
+                        
+                          Each tutor gets a personalised profile page where
+                          you'll be able to see their key details and information
                           so you can know a little about them before you get in
                           touch.
                           <br />
                           <br />
-                          Often they will mention their background, why they are
+                          Often they will mention talk about background, why they're
                           qualified to tutor and their interests.
-                        </>
+                        
                       </p>
                     </div>
                   </div>
@@ -369,6 +354,7 @@ const Home: React.FC = () => {
                         color="blue_gray_700"
                         size="sm"
                         variant="fill"
+                        onClick={setDisplaySignup}
                       >
                         Sign Up Today
                       </Button>
@@ -398,6 +384,7 @@ const Home: React.FC = () => {
                         color="blue_gray_700"
                         size="sm"
                         variant="fill"
+                        onClick={setDisplaySignup}
                       >
                         Apply Now
                       </Button>

@@ -8,7 +8,7 @@ const TutorDashboard = React.lazy(() => import("./pages/TutorDashboard"));
 const TutorOnboarding = React.lazy(() => import("./pages/TutorOnboarding"));
 const LoginPage = React.lazy(() => import("./pages/LoginPage"));
 const TutorCodeofConduct = React.lazy(() => import("./pages/TutorCodeofConduct"));
-const InfoDiv = React.lazy(() => import("./pages/InfoDiv"));
+
 const ContactUs = React.lazy(() => import("./pages/ContactUs"));
 const TutorProfile = React.lazy(() => import("./pages/TutorProfile"));
 const FindATutor = React.lazy(() => import("./pages/FindATutor"));
@@ -29,7 +29,7 @@ const ProjectRoutes = () => {
           <Route path="/findatutor" element={<FindATutor />} />
           <Route path="/tutorprofile" element={<TutorProfile />} />
           <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/infodiv" element={<InfoDiv />} />
+          
           <Route path="/tutorcodeofconduct" element={<TutorCodeofConduct />} />
           <Route path="/loginpage" element={<LoginPage />} />
           <Route path="/tutoronboarding" element={<TutorOnboarding />} />

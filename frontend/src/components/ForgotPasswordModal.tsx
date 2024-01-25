@@ -22,7 +22,7 @@ const closeModal = () => {
   };
 
   return (
-    <div >
+    <div className="relative z-10">
       <div className="flex absolute top-0 bg-gray-900 opacity-50 w-[100vw] h-[100vh]"
       onClick={closeModal}></div>
       <div className="fixed top-1/2 left-1/2 mb-[588px] mt-10 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-[10px] bg-gray-200_01 px-[50px] py-5 md:mt-0 md:px-5 md:w-auto sm:w-full">

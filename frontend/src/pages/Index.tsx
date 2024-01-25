@@ -31,9 +31,8 @@ const Home = () => {
         <li>
           <Link to="/tutordashboard">TutorDashboard</Link>
         </li>
-        <li>
-          <Link to="/infodiv">InfoDiv</Link>
-        </li>
+        
+       
         <li>
           <Link to="/tutorprofileloggedin">TutorProfileLoggedIn</Link>
         </li>
