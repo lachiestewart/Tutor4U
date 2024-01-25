@@ -132,6 +132,10 @@ li:hover {
 
 /* General */
 
+.fade-in {
+  @apply transition-opacity delay-200 duration-700 ease-in-out;
+}
+
 /* Fonts / Text */
 h1 {
   @apply font-montserrat text-4xl md:text-3xl sm:text-2xl font-bold pt-5;
@@ -172,8 +176,20 @@ p {
 
 /* Home Page */
 
-.fade-in {
-  @apply transition-opacity delay-200 duration-700 ease-in-out;
+.info-blocks-wrapper {
+  @apply flex w-full max-w-[1269px] flex-col lg:items-center sm:items-start justify-start gap-9 lg:py-[25px] sm:py-0 
+}
+
+.info-blocks {
+  @apply lg:flex-row lg:gap-10 flex w-full flex-col items-start justify-center sm:gap-3 sm:pl-5 md:pl-0
+}
+
+.info-title {
+  @apply lg:w-[300px] text-right md:max-w-full
+}
+
+.info-information {
+  @apply lg:pl-10 flex w-full flex-1 flex-col items-start justify-start gap-2.5 border-l-2 border-gray-400 sm:pl-5
 }
 
 /* Find a Tutor Page */
