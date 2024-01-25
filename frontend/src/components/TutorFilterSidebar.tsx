@@ -30,7 +30,7 @@ const TutorFilterSidebar = () => {
             />
             <h3>{title}</h3>
           </div>
-          <Button className="reset-btn">Reset</Button>
+          <button className="reset-btn">Reset</button>
         </div>
         <div
           className="flex max-h-20 w-full
@@ -74,14 +74,12 @@ const TutorFilterSidebar = () => {
           child="English"
           childAmount={5}
           imgURL="images/img_training.png"
-         
         />
         <SearchBarCategory
           title="Tutoring Level"
           child="NCEA L1"
           childAmount={3}
           imgURL="images/img_university.png"
-          
         />
         {/* <div className="flex w-full flex-col items-start justify-center">
           <div className="filter-category-title-div">
@@ -122,7 +120,7 @@ const TutorFilterSidebar = () => {
               />
               <Text className="filter-category-title-text">Tutor Rating</Text>
             </div>
-            <Button className="reset-btn">Reset</Button>
+            <button className="reset-btn">Reset</button>
           </div>
           <img
             className="h-auto w-full"
@@ -203,7 +201,7 @@ const TutorFilterSidebar = () => {
               />
               <Text className="filter-category-title-text">Availability</Text>
             </div>
-            <Button className="reset-btn">Reset</Button>
+            <button className="reset-btn">Reset</button>
           </div>
           <div className="flex h-[84px] w-full flex-col items-start justify-center py-[11px] md:h-auto">
             <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
@@ -249,7 +247,7 @@ const TutorFilterSidebar = () => {
               />
               <Text className="filter-category-title-text">Gender</Text>
             </div>
-            <Button className="reset-btn">Reset</Button>
+            <button className="reset-btn">Reset</button>
           </div>
           <div className="flex h-[84px] w-full flex-col items-start justify-center py-[11px] md:h-auto">
             <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
@@ -296,7 +294,7 @@ const TutorFilterSidebar = () => {
             />
             <Text className="filter-category-title-text">Lesson Format</Text>
           </div>
-          <Button className="reset-btn">Reset</Button>
+          <button className="reset-btn">Reset</button>
         </div>
         <div className="flex h-[84px] w-full flex-col items-start justify-center py-[11px] md:h-auto">
           <div className="flex h-[27px] w-[325px] flex-row items-center justify-start gap-2.5 px-2.5 md:h-auto">
@@ -332,7 +330,7 @@ const TutorFilterSidebar = () => {
               Tutor Rate
             </Text>
           </div>
-          <Button className="reset-btn">Reset</Button>
+          <button className="reset-btn">Reset</button>
         </div>
         <img
           className="h-auto w-full"

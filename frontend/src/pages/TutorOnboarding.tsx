@@ -27,7 +27,7 @@ const TutorOnboarding: React.FC = () => {
   return (
     <div className="mx-auto flex w-auto flex-row items-start justify-between bg-white-A700 font-montserrat md:w-full md:flex-row md:gap-5 sm:w-full sm:flex-col sm:gap-2">
       <Sidebar />
-      <div className="flex w-full flex-col items-start justify-start gap-2.5 md:p-[30px] sm:py-3 sm:pr-2 md:px-5 md:mt-0 sm:mt-[-100vh] sm:pl-20">
+      <div className="flex w-full flex-col items-start justify-start gap-2.5 md:mt-0 md:px-5 sm:mt-[-100vh] sm:py-3 sm:pr-2 sm:pl-20">
         <TutorDashboardProfileHeader />
         <Onboarding stage={onboardingStage} />
       </div>

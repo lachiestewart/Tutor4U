@@ -4,19 +4,21 @@ import CodeOfConductTerms from "./CodeOfConductTerms";
 
 const Onboarding3: React.FC = () => {
   return (
-    <div className="flex w-full flex-col items-center justify-start gap-2.5">
-      <h1>Congratulations - We would love to have you onboard!</h1>
-      <p>
-        All you have to do now is agree to the code of conduct and then you'll
-        have full access to Tutor4U!
+    <div className="flex w-full flex-col items-center justify-start gap-3">
+      <h1 className="text-center">
+        Congratulations - We would love to have you onboard!
+      </h1>
+      <p className="text-center">
+        The last step is to agree to our Code of Conduct and then you'll join
+        our tutor community & have full access to Tutor4U!
       </p>
       <div className="flex w-full flex-col items-center justify-start gap-2.5">
         <img
-          className=" w-[70%] object-cover sm:h-auto"
+          className="lg:w-[70%] object-cover sm:h-auto sm:w-full"
           src="images/img_createtutor4ulogin_1.png"
           alt="createtutor4ulo_Two"
         />
-        <p className="mb-10 text-center">
+        <p className=" text-center">
           Please read the following carefully. We need to ensure that all tutors
           on the platform abides by these rules. If any tutor is found to be
           behaving out of line with the below, Tutor4U has the right to suspend
@@ -43,7 +45,7 @@ const Onboarding3: React.FC = () => {
         size="sm"
         variant="fill"
       >
-        Accept the Code of Conduct
+        I agree to the Tutor Code of Conduct
       </Button>
     </div>
   );

@@ -1,10 +1,11 @@
 import React from "react";
-import Text from "./Text";
+
 
 type InputProps = {
   name?: string;
   className?: string;
-  label?: string;
+  label: string;
+  description?: string;
   labelClassName?: string;
   placeholder?: string;
   onChange?: (e: string) => void;
@@ -12,21 +13,29 @@ type InputProps = {
   type?: string;
 };
 
-const Input: React.FC<InputProps> = ({ name, className, label, labelClassName, placeholder, onChange, required, type }) => {
+const Input: React.FC<InputProps> = ({ name, description, className, label, labelClassName, placeholder, onChange, required, type }) => {
 
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
     if (onChange) onChange(e?.target?.value); 
   };
 
   return (
-    <div className={`flex flex-col ${className}`}>
+    <div className={`flex w-full flex-col ${className}`}>
       {!!label && (
-        <Text
-          className={`w-auto text-left text-lg ${labelClassName}`}
-          size="txtMontserratRomanSemiBold18"
+        <h4
+          className={`w-auto text-left  ${labelClassName}`}
+          
         >
           {label}
-        </Text>
+        </h4>
+      )}
+      {!!description && (
+        <p
+          className={`w-auto text-left text-sm`}
+          
+        >
+          {description}
+        </p>
       )}
       <div
         className="h-auto w-full items-start rounded-[10px] bg-white-A700"
