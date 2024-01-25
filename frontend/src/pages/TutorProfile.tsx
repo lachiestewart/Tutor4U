@@ -192,7 +192,7 @@ const TutorProfile: React.FC = () => {
                       name="emailtextentry"
                       placeholder=""
                       className="w-full p-0"
-                      wrapClassName="flex h-[50px] w-full"
+
                     ></Input>
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
@@ -206,7 +206,7 @@ const TutorProfile: React.FC = () => {
                       name="emailtextentry_One"
                       placeholder=""
                       className="w-full p-0"
-                      wrapClassName="flex h-[50px] w-full"
+
                     ></Input>
                   </div>
                 </div>
@@ -221,7 +221,6 @@ const TutorProfile: React.FC = () => {
                     name="emailtextentry_Two"
                     placeholder=""
                     className="w-full p-0"
-                    wrapClassName="flex h-[50px] w-full"
                   ></Input>
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
@@ -235,7 +234,6 @@ const TutorProfile: React.FC = () => {
                     name="emailtextentry_Three"
                     placeholder=""
                     className="w-full p-0"
-                    wrapClassName="flex h-[50px] w-full"
                   ></Input>
                 </div>
                 <Button

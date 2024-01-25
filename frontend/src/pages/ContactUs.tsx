@@ -64,25 +64,24 @@ const ContactUs = () => {
                   onChange={(e) => handleChange("fname", e)}
                   placeholder="First name"
                   className="w-full"
-                  wrapClassName="flex h-[50px] w-full"
+                  
                 ></Input>
                 <Input
                   label="Last Name"
                   onChange={(e) => handleChange("lname", e)}
                   placeholder="Last name"
                   className="w-full"
-                  wrapClassName="flex h-[50px] w-full"
+                  
                 ></Input>
                 <Input
                   label="Email"
                   onChange={(e) => handleChange("email", e)}
                   placeholder="Email address"
                   className="w-full"
-                  wrapClassName="flex h-[50px] w-full"
+                  
                 ></Input>
                 <div className="flex w-full flex-col text-left text-lg">
                   <h4
-                    onChange={(e) => handleChange("role", e)}
                     className="w-auto text-left text-lg"
                   >
                     So that we can help you better, are you a...
@@ -90,7 +89,7 @@ const ContactUs = () => {
                   <select
                     required
                     className="h-auto w-full rounded-[10px] border-0 p-2 px-5 py-3 placeholder-gray-200"
-                    onChange={(e) => handleChange("role", e)}
+                    onChange={(e) => handleChange("role", e.target.value)}
                   >
                     <option className="text-gray-300" value="">
                       Please select one of the options...
@@ -120,7 +119,6 @@ const ContactUs = () => {
                 ></Input> */}
                 <div className="text-lg flex w-full flex-col text-left">
                   <h4
-                    onChange={(e) => handleChange("role", e)}
                     className="w-auto text-left text-lg"
                   >
                     Message
@@ -130,6 +128,7 @@ const ContactUs = () => {
                     rows={5}
                     className="h-auto w-full rounded-[10px] border-0 p-2 px-5 py-3 placeholder-gray-400"
                     placeholder="Let us know how we can help you :)"
+                    onChange={(e) => handleChange("message", e.target.value)}
                   >
                     
                   </textarea>

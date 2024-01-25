@@ -44,7 +44,6 @@ const closeModal = () => {
               onChange={(e: string) => setEmail(e)}
               placeholder="email"
               className="w-full"
-              wrapClassName="flex h-[50px] w-full"
             ></Input>
             <button
               className="w-1/2 min-w-[83px] rounded-[10px] bg-blue_gray-700 p-[5px] py-3 text-center text-sm font-medium text-white-A700"
