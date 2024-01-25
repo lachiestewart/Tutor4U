@@ -15,14 +15,14 @@ const Onboarding1: React.FC = () => {
               <br />
               <br />
               As you can see below, there are a few steps you will need to
-              complete in order to get fully onboarded. Once you complete the
-              steps below, you will have complete access to all the
+              complete in order to get fully onboarded. Once you complete all of them, 
+              you will have complete access to all the
               functionalities of the Tutor4U platform. But don't worry, we've
               tried to make the process as streamlined as possible so that you
               can start getting students as quickly as possible!
             </p>
             <img
-              className="w-[70%] object-cover sm:h-auto"
+              className="lg:w-[70%] sm:w-[100%] object-cover"
               src="images/img_createtutor4ulogin.png"
               alt="Stage 1: Tutor4U onboarding journey"
             />

@@ -8,7 +8,7 @@ const TutorCodeofConduct: React.FC = () => {
   return (
     <div className="mx-auto flex w-auto items-start justify-between gap-2.5 bg-white-A700 font-montserrat md:flex-row sm:w-full sm:flex-col sm:gap-5">
       <Sidebar />
-      <div className="mx-auto flex w-auto items-start justify-between gap-2.5 bg-white-A700 font-montserrat flex-col sm:ml-[90px] md:ml-0 sm:my-5 mr-3 md:mt-0 sm:mt-[-100vh]">
+      <div className="mx-auto mr-3 flex w-auto flex-col items-start justify-between gap-2.5 bg-white-A700 font-montserrat md:ml-0 md:mt-0 sm:my-5 sm:ml-[90px] sm:mt-[-100vh]">
         <TutorDashboardProfileHeader />
         <div className="lg:gap-5 flex w-full flex-col items-center justify-start md:w-full sm:gap-2">
           <h1>Tutor4U Code of Conduct</h1>

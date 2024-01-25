@@ -50,7 +50,7 @@ const LoginPage: React.FC = () => {
       <NavBar />
       <div className="flex flex-row md:min-h-[85vh] w-full sm:flex-col font-montserrat md:flex-row">
         {/*Login form*/}
-        <div className="md:m-5 sm:m-1 flex h-auto w-full lg:flex-row flex-col items-center rounded-[10px] bg-blue_gray-700 p-10 py-10 md:px-5">
+        <div className="md:m-5 sm:m-2 flex h-auto w-full lg:flex-row flex-col items-center rounded-[10px] bg-blue_gray-700 p-10 py-10 md:px-5">
           <div className="w-full flex items-center flex-col">
             <img
               className="mt-[20px] h-[76px]"
