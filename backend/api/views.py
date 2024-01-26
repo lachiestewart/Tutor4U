@@ -45,7 +45,21 @@ class AllTutorsView(APIView):
 
     permission_classes = []
 
-    def get(self, request):
+    def post(self, request):
+
         tutors = Tutor.objects.filter(approved=True)
+        
+        availability_values = request.data.get('availability', [])
+        if availability_values:
+            tutors = tutors.filter(availability__in=availability_values)   
+    
+        gender_values = request.data.get('gender', [])
+        print(gender_values)
+        if gender_values:
+            tutors = tutors.filter(user__gender__in=gender_values)
+        
+        print(tutors)
+
+
         serializer = ListTutorSerializer(tutors, many=True)
         return Response(serializer.data)

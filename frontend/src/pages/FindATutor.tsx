@@ -7,7 +7,9 @@ import TutorFilterSidebar from "../components/TutorFilterSidebar";
 import { Tutor } from "interfaces";
 import Button from "../components/Button";
 
-type SearchParams = {
+const TOTAL_TUTORS = 561;
+
+export type SearchParams = {
   subjects: string[];
   levels: string[];
   min_rating: number;
@@ -19,35 +21,45 @@ type SearchParams = {
   max_rate: number;
 };
 
+const defaultParams: SearchParams = {
+  subjects: [],
+  levels: [],
+  min_rating: 0,
+  location: [],
+  availability: [],
+  gender: [],
+  lesson_format: [],
+  min_rate: 0,
+  max_rate: Infinity
+}
+
 const FindATutor: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
-  const [searchParams, setSearchParams] = useState<boolean>(false);
-  const [tutors, setTutors] = useState<Tutor[] | null>(null);
+  const [searchParams, setSearchParams] = useState<SearchParams>(defaultParams);
+  const [tutors, setTutors] = useState<Tutor[]>([]);
 
   const updateTutors = async () => {
+    
     const response: Response = await fetch(
       `http://127.0.0.1:8000/api/all-tutors/`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(searchParams),
+      }
     );
 
     const tutorList: Tutor[] = await response.json();
 
-    console.log(
-      tutorList.map(
-        (tutor) =>
-          tutor.user.first_name +
-          " " +
-          tutor.user.last_name +
-          " " +
-          tutor.user.profile_photo,
-      ),
-    );
-
+    console.log(tutorList.map(tutor => tutor.user.first_name + " " + tutor.user.last_name),);
     setTutors(tutorList);
   };
 
 
   useEffect(() => {
-    console.log("querying backend for tutor details");
+    console.log("searching tutors...");
     updateTutors();
   }, [searchParams]);
 
@@ -57,9 +69,6 @@ const FindATutor: React.FC = () => {
         className={`flex w-full ${loggedIn ? "flex-row" : "flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
       >
         {loggedIn ? <Sidebar /> : <NavBar />}
-        <button onClick={() => setSearchParams(!searchParams)}>
-          press to refresh tutors
-        </button>
         <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5">
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
             <h1
@@ -87,7 +96,7 @@ const FindATutor: React.FC = () => {
           </div>
 
           <div className="relative flex w-full flex-row items-start justify-center gap-2.5">
-            <TutorFilterSidebar />
+            <TutorFilterSidebar defaultParams={defaultParams} setPageParams={setSearchParams} selectedTutors={tutors.length} totalTutors={TOTAL_TUTORS} />
             <div className="relative flex h-[1208px] w-[66%] flex-col items-center justify-start gap-[15px] ">
               <div className="sticky top-5 z-10 flex w-full flex-row items-center rounded-[10px] bg-white-A700 p-2 text-left text-lg">
                 <p className="w-auto font-medium">Filtering by:</p>
