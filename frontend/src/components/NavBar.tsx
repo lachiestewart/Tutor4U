@@ -1,6 +1,7 @@
 import React, { ReactNode, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import Button from "components/Button";
+import SignUpModal from "components/SignUpModal";
 
 const NavBar: React.FC = () => {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ const NavBar: React.FC = () => {
   const [forStudentsOpen, setForStudentsOpen] = useState<boolean>(false);
   const [forTutorsOpen, setForTutorsOpen] = useState<boolean>(false);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [displaySignup, setDisplaySignup] = useState<boolean>(false);
 
   type SidebarItemProps = {
     title: string;
@@ -68,6 +70,7 @@ const NavBar: React.FC = () => {
 
   return (
     <>
+   
       <header className="lg:flex-row flex w-full flex-col justify-between bg-blue_gray-700 px-[30px] py-[20px] md:gap-2.5 md:px-5">
         <div className="flex items-center justify-between p-2 md:w-full">
           {/* Tutor4U logo */}
@@ -159,11 +162,13 @@ const NavBar: React.FC = () => {
 
           <button
             className="bg-blue-700 border-2 hover:border-2 border-blue_gray-700 py-2 px-3 rounded-xl text-violet-100 shadow-lg hover:bg-blue-900 ease-in-out  hover:border-blue-900 duration-300 font-semibold hover:text-white-A700 hover:shadow-xl"
+            onClick={setDisplaySignup}
           >
             TUTOR SIGN-UP
           </button>
         </div>
       </header>
+      {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
     </>
   );
 };

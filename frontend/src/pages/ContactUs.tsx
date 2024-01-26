@@ -2,6 +2,8 @@ import { useState } from "react";
 import NavBar from "components/NavBar";
 import Input from "components/Input";
 import Button from "components/Button";
+import SignUpModal from "components/SignUpModal";
+import { useNavigate } from "react-router-dom";
 
 interface MessageForm {
   fname: string;
@@ -19,7 +21,9 @@ const ContactUs = () => {
     role: "",
     message: "",
   });
+  const navigate = useNavigate();
   const [formComplete, setFormComplete] = useState<boolean>(false);
+  const [displaySignup, setDisplaySignup] = useState<boolean>(false);
 
   const handleChange = (field: keyof MessageForm, value: string) => {
     /** Updates the state of messageForm when a change is made to an input */
@@ -40,6 +44,7 @@ const ContactUs = () => {
 
   return (
     <>
+    {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
       <NavBar />
       <div className="mx-auto flex h-auto min-h-[100vh] flex-col items-center justify-start rounded-[10px] bg-gray-200 py-10  px-[50px] font-montserrat md:w-full md:px-5 sm:w-full">
         <div className="flex flex-col items-center gap-3">
@@ -165,8 +170,10 @@ const ContactUs = () => {
                 be in touch shortly!
               </h4>
               <div className="flex gap-2.5">
-                <Button>Look Through Our Tutors</Button>
-                <Button>Apply To Become A Tutor</Button>
+                <Button
+                onClick={() => navigate("/findatutor")}>Look Through Our Tutors</Button>
+                <Button
+                onClick={setDisplaySignup}>Apply To Become A Tutor</Button>
               </div>
             </div>
           )}

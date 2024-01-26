@@ -43,10 +43,10 @@ const SignUpModal = (props: SignUpModalProps) => {
 
   return (
     <div className="relative z-10">
-      <div className="fixed top-0 flex h-full w-[100vw] bg-gray-900 opacity-50"></div>
+      <div className="fixed top-0 flex h-full w-[100vw] bg-gray-900 opacity-50" onClick={() => props.onHide()}></div>
       <div className="fixed top-1/2 left-1/2 mt-[54px] flex w-auto -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-[10px] bg-gray-200_01 px-[50px] py-5 md:mt-0 md:w-auto md:px-5 sm:w-[90%]">
-        <div className="fixed top-0 right-1 p-2 cursor-pointer" 
-        // onClick={setDisplaySignup}
+        <div className="fixed top-0 right-1 p-2 cursor-pointer" onClick={() => props.onHide()}
+        
         >
           <h3 className="text-gray-600">X</h3>
         </div>

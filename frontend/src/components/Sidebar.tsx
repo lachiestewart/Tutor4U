@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
 
   return (
     <div
-      className={`lg:w-auto sticky left-0 top-0 z-10 flex flex-col items-start justify-between bg-blue_gray-700 sm:h-[100vh]   ${open ? "lg:min-w-[300px] md:min-w-[300px] sm:w-full" : "md:w-15"}`}
+      className={`lg:w-auto sticky left-0 top-0 z-10 flex flex-col items-start justify-between bg-blue_gray-700 sm:h-[100vh]   ${open ? "lg:min-w-[300px] md:min-w-[300px] sm:w-full" : "md:w-15 "}`}
     >
       <div className="flex w-full flex-col items-start justify-start">
         <div className="bg-violet-950 flex w-full flex-row items-center justify-start gap-2 p-2 py-4">

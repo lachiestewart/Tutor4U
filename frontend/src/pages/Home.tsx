@@ -20,16 +20,16 @@ const Home: React.FC = () => {
 
         <div className="main-margin-div">
           <div
-            className="flex w-full flex-row items-center justify-between gap-20 px-[60px] py-[15px] md:px-10 sm:px-5
+            className="flex w-full lg:flex-row items-center justify-between gap-20 px-[60px] py-[15px] md:px-10 sm:px-5 sm:flex-col-reverse
           "
           >
-            <div className="flex w-auto flex-col items-start justify-start gap-6 py-[47px] sm:w-full sm:flex-1">
+            <div className="flex w-auto flex-col lg:items-start sm:items-center text-center justify-start gap-6 py-[47px] sm:w-full sm:flex-1">
               <h1>Your Top Tutor Marketplace</h1>
               <h3>
                 We connect amazing tutors with motivated students in every
                 subject at all levels right across NZ
               </h3>
-              <div className="flex w-full flex-row items-center justify-start gap-2.5">
+              <div className="flex w-full flex-row items-center lg:justify-start sm:justify-center gap-2.5">
                 <Button
                   className="common-pointer min-w-[132px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
                   onClick={() => navigate("/findatutor")}
@@ -46,6 +46,7 @@ const Home: React.FC = () => {
                   color="blue_gray_700"
                   size="sm"
                   variant="fill"
+                  onClick={setDisplaySignup}
                 >
                   Register as a Tutor
                 </Button>
@@ -57,59 +58,63 @@ const Home: React.FC = () => {
           </div>
           <div className="flex w-full flex-col items-center justify-start gap-[30px] px-[60px] py-5 md:px-10 sm:px-5">
             <h1>What Tutors Think Of Tutor4U</h1>
-            <div className="mx-auto flex w-full max-w-[1320px] flex-row gap-5">
-              <div className="flex w-full max-w-[650px] flex-col items-center justify-start">
+            <div className="mx-auto flex w-full max-w-[1320px] lg:flex-row sm:flex-col gap-5">
+              <div className="flex w-full sm:flex-row gap-5 lg:flex-col items-center justify-start">
                 <img
                   className="h-[199px] w-[200px] rounded-[50%] md:h-auto"
                   src="images/img_image3.png"
                   alt="imageThree"
                 />
-                <div className="flex h-3 w-full flex-row items-center justify-between md:h-auto">
-                  <h4>Dr Josh Houlton</h4>
-                  <img
-                    className="h-12 w-[119px] object-cover md:h-auto"
-                    src="images/img_image1.png"
-                    alt="imageOne"
-                  />
-                </div>
-                <div className="flex w-full flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px]">
-                  <p>
-                    I've been amazed with how straight-forward and simple it was
-                    to sign up as a tutor with Tutor4U. Within hours my profile
-                    was up on the well-designed website, with the option to
-                    modify my profile with ease whenever I want. It's been
-                    awesome - within weeks I had students getting in contact for
-                    tutoring, allowing me to help them learn the science I'm
-                    passionate about whilst putting some money in my back
-                    pocket! I would definitely recommend Tutor4U for anyone that
-                    wants to tutor students in a hassle-free and flexible way.
-                  </p>
+                <div>
+                  <div className="gap-auto flex w-full flex-row items-center justify-between md:h-auto">
+                    <h4>Dr Josh Houlton</h4>
+                    <img
+                      className="h-12 w-[119px] object-cover"
+                      src="images/img_image1.png"
+                      alt="imageOne"
+                    />
+                  </div>
+                  <div className="flex w-full px-2 text-justify flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px]">
+                    <p>
+                      I've been amazed with how straight-forward and simple it was
+                      to sign up as a tutor with Tutor4U. Within hours my profile
+                      was up on the well-designed website, with the option to
+                      modify my profile with ease whenever I want. It's been
+                      awesome - within weeks I had students getting in contact for
+                      tutoring, allowing me to help them learn the science I'm
+                      passionate about whilst putting some money in my back
+                      pocket! I would definitely recommend Tutor4U for anyone that
+                      wants to tutor students in a hassle-free and flexible way.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="flex w-full flex-col items-center justify-start">
+              <div className="flex w-full sm:flex-row-reverse gap-5 lg:flex-col items-center justify-start">
                 <img
                   className="h-[200px] w-[200px] rounded-[50%]"
                   src="images/img_image4.png"
                   alt="imageFour"
                 />
-                <div className="gap-auto flex w-full flex-row items-center justify-between">
-                  <h4>Ryan Dai</h4>
-                  <img
-                    className="h-12 w-[119px] object-cover md:h-auto"
-                    src="images/img_image1.png"
-                    alt="imageOne"
-                  />
-                </div>
-                <div className="flex w-full flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px]">
-                  <p>
-                    Tutor4U has been a great platform to get myself out there
-                    and directly connect with students. I have been tutoring for
-                    a few years now- usually I have to find the students through
-                    different ways but the students now come to me. No signing
-                    to be contracted with tutoring companies either. Just a
-                    service that connects students directly to tutors. Easy to
-                    set up and the students come rolling to you.
-                  </p>
+                <div>
+                  <div className="gap-auto flex w-full flex-row items-center justify-between">
+                    <h4>Ryan Dai</h4>
+                    <img
+                      className="h-12 w-[119px] object-cover"
+                      src="images/img_image1.png"
+                      alt="imageOne"
+                    />
+                  </div>
+                  <div className="flex w-full text-justify px-2 flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px]">
+                    <p>
+                      Tutor4U has been a great platform to get myself out there
+                      and directly connect with students. I have been tutoring for
+                      a few years now- usually I have to find the students through
+                      different ways but the students now come to me. No signing
+                      to be contracted with tutoring companies either. Just a
+                      service that connects students directly to tutors. Easy to
+                      set up and the students come rolling to you.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
