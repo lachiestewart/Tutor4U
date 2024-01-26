@@ -33,6 +33,6 @@ class ListTutorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tutor
-        fields = ['id', 'user', 'rate', 'availability', 'remote', 'in_person', 'location', 'qualification', 'about']
+        fields = ['id', 'user', 'rate', 'availability', 'online', 'face_to_face', 'location', 'qualification', 'about']
 
 

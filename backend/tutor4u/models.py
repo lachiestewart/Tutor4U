@@ -9,16 +9,18 @@ MEDIA_DIR = "uploads/"
 GENDER_LIST = ["Male", "Female", "Non-Binary", "Other"]
 SUBJECT_LIST = ["Mathematics", "Physics", "Chemistry", "Biology", "English"]
 LEVEL_LIST = ["NCEA 1", "NCEA 2", "NCEA 3", "NCEA Scholarship", "100 Level", "200 Level", "300 Level", "400 Level", "Postgraduate"]
-AVAILABILITY_LIST = ["Available", "Limited-Availability", "Not Available"]
+AVAILABILITY_LIST = ["Available", "Limited Availability", "Not Available"]
+LOCATION_LIST = ["Dunedin", "Christchurch", "Wellington", "Palmerston North", "Hamilton", "Auckland"]
 
 # Converts list of readable choices into map of (db value, readable value)
-choiceMapper = lambda choice_list: [(choice.upper().replace("-", "_").replace(" ", "_"), choice) for choice in choice_list]
+choiceMapper = lambda choice_list: [(choice.upper().replace(" ", "_"), choice) for choice in choice_list]
 
 # Choice field maps
 subject_choices = choiceMapper(SUBJECT_LIST)
 level_choices = choiceMapper(LEVEL_LIST)
 gender_choices = choiceMapper(GENDER_LIST)
 availability_choices = choiceMapper(AVAILABILITY_LIST)
+location_choices = choiceMapper(LOCATION_LIST)
 
 class UserManager(BaseUserManager):
     """Creates a manager for the custom User class"""
@@ -85,9 +87,9 @@ class Tutor(Model):
     approved = BooleanField(default=False)
     rate = DecimalField(max_digits=4, decimal_places=2)
     availability = CharField(max_length=20, choices=availability_choices, default="")
-    remote = BooleanField(default=True)
-    in_person = BooleanField(default=True)
-    location = CharField(max_length=30)
+    online = BooleanField(default=True)
+    face_to_face = BooleanField(default=True)
+    location = CharField(max_length=30, choices=location_choices)
     qualification = CharField(max_length=50)
     about = CharField(max_length=200)
 
