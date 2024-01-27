@@ -65,7 +65,7 @@ const StudentSidebar: React.FC = () => {
           </svg>
           {open && (
             <img
-              src="images\img_union1.png"
+              src="/images/img_union1.png"
               className="m2 h-[60px] cursor-pointer pb-3"
             />
             
