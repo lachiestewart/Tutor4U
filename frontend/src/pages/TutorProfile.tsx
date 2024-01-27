@@ -3,7 +3,7 @@ import Text from "components/Text";
 import NavBar from "components/NavBar";
 import Button from "components/Button";
 import Input from "components/Input";
-import Sidebar from "components/Sidebar";
+import StudentSidebar from "components/StudentSidebar";
 import { useParams } from "react-router-dom";
 import { Offer, Tutor } from "interfaces";
 
@@ -108,8 +108,8 @@ const TutorProfile: React.FC = () => {
   return (
     <>
       <div className={`mx-auto flex w-auto h-auto ${loggedIn ? "flex-row" : "flex-col"} items-center justify-start gap-2.5 bg-gray-200 font-montserrat`}>
-        {loggedIn ? <Sidebar /> : <NavBar />}
-        <div className="mx-7 h-auto flex max-w-[1300px] items-start justify-center gap-[20px] rounded-[10px] bg-white-A700 px-6 py-2.5 md:flex-row sm:flex-col">
+        {loggedIn ? <StudentSidebar /> : <NavBar />}
+        <div className="mx-auto h-auto w flex max-w-[1300px] items-start justify-center gap-[20px] rounded-[10px] bg-white-A700 px-6 py-2.5 md:flex-row sm:flex-col">
           <div className="flex h-auto w-[100%] flex-col items-center justify-start gap-3.5 px-[10px] py-2.5 md:w-[30%] sm:px-5">
             <div className="flex w-[96%] flex-col items-center justify-start gap-4 md:w-full">
 

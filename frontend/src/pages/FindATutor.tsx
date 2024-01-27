@@ -34,7 +34,7 @@ const defaultParams: SearchParams = {
 };
 
 const FindATutor: React.FC = () => {
-  const [loggedIn, setLoggedIn] = useState<boolean>(false);
+  const [loggedIn, setLoggedIn] = useState<boolean>(true);
   const [searchParams, setSearchParams] = useState<SearchParams>(defaultParams);
   const [tutors, setTutors] = useState<Tutor[]>([]);
 
@@ -52,15 +52,11 @@ const FindATutor: React.FC = () => {
 
     const tutorList: Tutor[] = await response.json();
 
-<<<<<<< HEAD
     console.log(
       tutorList.map(
         (tutor) => tutor.user.first_name + " " + tutor.user.last_name,
       ),
     );
-=======
-    console.log(tutorList.map(tutor => tutor.id));//tutor.user.first_name + " " + tutor.user.last_name));
->>>>>>> b3f5e42e5ec1f1e7bac3aea01f447f62cbee14dd
     setTutors(tutorList);
   };
 
@@ -73,11 +69,14 @@ const FindATutor: React.FC = () => {
 
   return (
     <>
-      <div
-        className={`flex w-full ${loggedIn ? "flex-row" : "flex-col"} items-start justify-between bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
-      >
+      {/* <div
+        className={`relative flex w-full ${loggedIn ? "md:flex-row" : "flex-col"} items-start justify-center bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
+      > */}
+        <div className={`relative flex w-full items-start justify-center gap-2.5 ${loggedIn ? "flex-row" : "flex-col"} bg-gray-300 font-montserrat `}>
         {loggedIn ? <Sidebar /> : <NavBar />}
-        <div className="mx-auto flex w-[90%] flex-col items-center justify-center gap-4 p-2.5 py-6 md:px-5">
+        <div
+          className={`mx-auto flex w-[90%] flex-col items-center justify-center gap-4 ${loggedIn ? "" : ""} p-2.5 py-6 md:px-5`}
+        >
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
             <h1>Find A Tutor</h1>
 
