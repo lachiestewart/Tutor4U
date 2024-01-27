@@ -27,21 +27,21 @@ export interface Student {
 }
 
 export interface Want {
-  id: number
+  id: number;
   student: Student;
   subject: string;
   level: string;
 }
 
 export interface Offer {
-  id: number
+  id: number;
   tutor: Tutor;
   subject: string;
   level: string;
 }
 
 export interface Lesson {
-  id: number
+  id: number;
   tutor: number;
   student: number;
   subject: string;

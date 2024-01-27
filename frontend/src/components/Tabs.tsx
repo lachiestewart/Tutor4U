@@ -25,7 +25,7 @@ const data = [
 
 const TabsDefault: React.FC = () => {
   return (
-    <Tabs >
+    <Tabs>
       <TabsHeader>
         {data.map(({ label, value }) => (
           <Tab key={value} value={value}>

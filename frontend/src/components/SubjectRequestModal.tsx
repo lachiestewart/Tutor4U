@@ -47,7 +47,7 @@ const SubjectRequestModal = (props: SignUpModalProps) => {
         className="fixed top-0 flex h-full w-[100vw] bg-gray-900 opacity-50"
         onClick={() => props.onHide()}
       ></div>
-      <div className="fixed top-1/2 left-1/2 max-h-[90vh] overflow-auto flex w-auto -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-start rounded-[10px] bg-gray-200_01 px-[50px] py-5  md:w-auto md:px-5 sm:w-[90%]">
+      <div className="fixed top-1/2 left-1/2 flex max-h-[90vh] w-auto -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-start overflow-auto rounded-[10px] bg-gray-200_01 px-[50px] py-5  md:w-auto md:px-5 sm:w-[90%]">
         <div
           className="fixed top-0 right-1 cursor-pointer p-2"
           onClick={() => props.onHide()}
@@ -95,7 +95,7 @@ const SubjectRequestModal = (props: SignUpModalProps) => {
                 <option>Other</option>
               </select>
             </div>
-            <div className="flex lg:flex-row w-full gap-2">
+            <div className="lg:flex-row flex w-full gap-2">
               <div className="flex w-full flex-col items-start justify-start">
                 <h4>Tutoring Level Needed</h4>
                 <select className="h-auto w-full items-start rounded-[10px] border-0 bg-transparent bg-white-A700 px-5 py-3">
@@ -113,7 +113,7 @@ const SubjectRequestModal = (props: SignUpModalProps) => {
                   <option>University Postgraduate Level</option>
                 </select>
               </div>
-              
+
               <div className="flex w-full flex-col items-start justify-start">
                 <h4>Subject</h4>
                 <select
@@ -147,16 +147,17 @@ const SubjectRequestModal = (props: SignUpModalProps) => {
               </div>
             </div>
             <div className="flex w-full flex-col text-left text-lg">
-              <h4 className="w-auto text-left text-lg">Specific Subjects / Papers (Optional)</h4>
+              <h4 className="w-auto text-left text-lg">
+                Specific Subjects / Papers (Optional)
+              </h4>
               <input
-              
                 type="text"
                 onChange={(e) => handleChange("papers", e)}
                 placeholder="Specific university paper codes can go here"
                 className="h-auto w-full items-start rounded-[10px] bg-white-A700 px-5 py-3"
               ></input>
             </div>
-            <div className="flex w-full gap-2 flex-col">
+            <div className="flex w-full flex-col gap-2">
               <Input
                 label="Roughly, how many hours of tutoring would you like? (Hours)"
                 onChange={(e) => handleChange("fname", e)}
@@ -176,14 +177,14 @@ const SubjectRequestModal = (props: SignUpModalProps) => {
                   <option>Within a fortnight</option>
                   <option>Within a month</option>
                   <option>Longer than a month</option>
-                  
                 </select>
               </div>
             </div>
             <div className="flex w-full flex-col items-start justify-start">
               <h4>Specific Help Needed</h4>
               <p>
-                The more information you can give about the help that's needed, the better :)
+                The more information you can give about the help that's needed,
+                the better :)
               </p>
               <textarea
                 required
@@ -193,9 +194,7 @@ const SubjectRequestModal = (props: SignUpModalProps) => {
                 onChange={(e) => handleChange("About you", e.target.value)}
               ></textarea>
             </div>
-            
-            
-            
+
             <Button>Put in lesson request</Button>
             {/* <button
               className="w-1/2 min-w-[83px] rounded-[10px] bg-blue_gray-700 p-[5px] py-3 text-center text-sm font-medium text-white-A700"

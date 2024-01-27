@@ -1,6 +1,5 @@
 import React from "react";
 
-
 type InputProps = {
   name?: string;
   className?: string;
@@ -14,29 +13,29 @@ type InputProps = {
   type?: string;
 };
 
-const Input: React.FC<InputProps> = ({ name, description, className, label, labelClassName, wrapClassName, placeholder, onChange, required, type }) => {
-
+const Input: React.FC<InputProps> = ({
+  name,
+  description,
+  className,
+  label,
+  labelClassName,
+  wrapClassName,
+  placeholder,
+  onChange,
+  required,
+  type,
+}) => {
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-    if (onChange) onChange(e?.target?.value); 
+    if (onChange) onChange(e?.target?.value);
   };
 
   return (
     <div className={`flex w-full flex-col ${className}`}>
       {!!label && (
-        <h4
-          className={`w-auto text-left  ${labelClassName}`}
-          
-        >
-          {label}
-        </h4>
+        <h4 className={`w-auto text-left  ${labelClassName}`}>{label}</h4>
       )}
       {!!description && (
-        <p
-          className={`w-auto text-left text-sm`}
-          
-        >
-          {description}
-        </p>
+        <p className={`w-auto text-left text-sm`}>{description}</p>
       )}
       <div
         className={`h-auto w-full items-start rounded-[10px] bg-white-A700 ${wrapClassName}`}
@@ -54,6 +53,6 @@ const Input: React.FC<InputProps> = ({ name, description, className, label, labe
   );
 };
 
-Input.defaultProps = {required: false, type: "text"};
+Input.defaultProps = { required: false, type: "text" };
 
 export default Input;

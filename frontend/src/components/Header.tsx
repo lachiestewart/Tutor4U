@@ -14,57 +14,57 @@ const Header: React.FC<HeaderProps> = (props) => {
     <>
       <header className={props.className}>
         <img
-          className="h-14 md:h-auto object-cover w-[222px] sm:w-full"
+          className="h-14 w-[222px] object-cover md:h-auto sm:w-full"
           src="images/img_union1.png"
           alt="unionOne"
         />
-        <div className="flex md:flex-col flex-row gap-2.5 items-center justify-center p-2.5 w-auto md:w-full">
-          <div className="flex md:flex-col flex-row gap-5 items-center justify-start px-2.5 w-auto md:w-full">
-            <div className="flex flex-col items-center justify-start py-[3px] w-auto">
+        <div className="flex w-auto flex-row items-center justify-center gap-2.5 p-2.5 md:w-full md:flex-col">
+          <div className="flex w-auto flex-row items-center justify-start gap-5 px-2.5 md:w-full md:flex-col">
+            <div className="flex w-auto flex-col items-center justify-start py-[3px]">
               <Text
-                className="text-center text-white-A700 text-xl w-auto"
+                className="w-auto text-center text-xl text-white-A700"
                 size="txtMontserratRomanMedium20"
               >
                 HOME
               </Text>
             </div>
-            <div className="flex flex-row gap-[5px] items-center justify-start py-[3px] w-auto">
+            <div className="flex w-auto flex-row items-center justify-start gap-[5px] py-[3px]">
               <Text
-                className="text-center text-white-A700 text-xl w-auto"
+                className="w-auto text-center text-xl text-white-A700"
                 size="txtMontserratRomanMedium20"
               >
                 FOR STUDENTS
               </Text>
               <img
-                className="h-5 md:h-auto object-cover w-5"
+                className="h-5 w-5 object-cover md:h-auto"
                 src="images/img_chevrondown.png"
                 alt="chevrondown"
               />
             </div>
-            <div className="flex flex-row gap-[5px] items-center justify-start py-[3px] w-auto">
+            <div className="flex w-auto flex-row items-center justify-start gap-[5px] py-[3px]">
               <Text
-                className="text-center text-white-A700 text-xl w-auto"
+                className="w-auto text-center text-xl text-white-A700"
                 size="txtMontserratRomanMedium20"
               >
                 FOR TUTORS
               </Text>
               <img
-                className="h-5 md:h-auto object-cover w-5"
+                className="h-5 w-5 object-cover md:h-auto"
                 src="images/img_chevrondown.png"
                 alt="chevrondown_One"
               />
             </div>
-            <div className="flex flex-col items-center justify-start py-[3px] w-auto">
+            <div className="flex w-auto flex-col items-center justify-start py-[3px]">
               <Text
-                className="text-center text-white-A700 text-xl w-auto"
+                className="w-auto text-center text-xl text-white-A700"
                 size="txtMontserratRomanMedium20"
               >
                 ABOUT
               </Text>
             </div>
-            <div className="flex flex-col items-center justify-start py-[3px] w-auto">
+            <div className="flex w-auto flex-col items-center justify-start py-[3px]">
               <Text
-                className="text-center text-white-A700 text-xl w-auto"
+                className="w-auto text-center text-xl text-white-A700"
                 size="txtMontserratRomanMedium20"
               >
                 CONTACT
@@ -72,7 +72,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             </div>
           </div>
           <Button
-            className="!text-black-900 cursor-pointer font-medium font-montserrat leading-[normal] min-w-[194px] text-center text-xl"
+            className="min-w-[194px] cursor-pointer text-center font-montserrat text-xl font-medium leading-[normal] !text-black-900"
             shape="round"
             color="gray_400"
             size="sm"

@@ -10,14 +10,22 @@ type SearchbarCategoryProps = {
   children: React.ReactNode;
 };
 
-const SearchBarCategory: React.FC<SearchbarCategoryProps> = ({ title, src, children }) => (
+const SearchBarCategory: React.FC<SearchbarCategoryProps> = ({
+  title,
+  src,
+  children,
+}) => (
   <>
     <Line className="my-4 h-px w-full bg-blue_gray-400" />
     <div className="flex flex-row gap-2.5">
-      <img className="lg:h-auto object-cover h-[30px] w-[30px] " src={src} alt={src + "icon"} />
+      <img
+        className="lg:h-auto h-[30px] w-[30px] object-cover "
+        src={src}
+        alt={src + "icon"}
+      />
       <h3>{title}</h3>
     </div>
-    <div className="flex flex-col flex-wrap gap-2 ml-2">{children}</div>
+    <div className="ml-2 flex flex-col flex-wrap gap-2">{children}</div>
   </>
 );
 
@@ -29,11 +37,17 @@ type TickBoxesProps = {
   onChange: (category: string, selected: string[]) => void;
 };
 
-const TickBoxes: React.FC<TickBoxesProps> = ({ category, values, onChange }) => {
-
+const TickBoxes: React.FC<TickBoxesProps> = ({
+  category,
+  values,
+  onChange,
+}) => {
   const [selected, setSelected] = useState<string[]>([]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, category: string) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    category: string,
+  ) => {
     const newSelected = [...selected];
 
     if (e.target.checked) {
@@ -44,7 +58,7 @@ const TickBoxes: React.FC<TickBoxesProps> = ({ category, values, onChange }) => 
 
     console.log(category, newSelected);
 
-    setSelected(newSelected)
+    setSelected(newSelected);
 
     onChange(category, newSelected);
   };
@@ -63,10 +77,6 @@ const TickBoxes: React.FC<TickBoxesProps> = ({ category, values, onChange }) => 
   ));
 };
 
-
-
-
-
 type TutorFilterSidebarProps = {
   defaultParams: SearchParams;
   onChange: (params: SearchParams) => void;
@@ -74,24 +84,30 @@ type TutorFilterSidebarProps = {
   totalTutors: number;
 };
 
-
-const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({ defaultParams, onChange, selectedTutors, totalTutors, }) => {
-
+const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
+  defaultParams,
+  onChange,
+  selectedTutors,
+  totalTutors,
+}) => {
   const [filterParams, setFilterParams] = useState<SearchParams>(defaultParams);
 
   useEffect(() => {
     onChange(filterParams);
-  }, [filterParams])
+  }, [filterParams]);
 
   const handleChange = (category: string, selected: string[]) => {
-    setFilterParams({ ...filterParams, [category]: selected })
-  }
+    setFilterParams({ ...filterParams, [category]: selected });
+  };
 
   return (
     <div className="sticky top-5 z-10 flex w-[25%] min-w-[250px] flex-col items-start justify-center gap-[10px] rounded-[10px] bg-white-A700 px-2.5 py-4">
       <Text className="w-auto text-lg text-black-900">
-        Showing <span className="font-bold text-blue-A700">{selectedTutors}</span> results of{" "}
-        <span className=" font-bold text-blue-A700_01">{totalTutors}</span> tutors
+        Showing{" "}
+        <span className="font-bold text-blue-A700">{selectedTutors}</span>{" "}
+        results of{" "}
+        <span className=" font-bold text-blue-A700_01">{totalTutors}</span>{" "}
+        tutors
       </Text>
       <h3>Search</h3>
       <Input
@@ -108,7 +124,10 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({ defaultParams, 
         />
       </SearchBarCategory>
 
-      <SearchBarCategory title={"Tutoring Level"} src={"images/img_university.png"}>
+      <SearchBarCategory
+        title={"Tutoring Level"}
+        src={"images/img_university.png"}
+      >
         <TickBoxes
           category={"levels"}
           values={["NCEA 3", "100 level", "200 level"]}
@@ -145,7 +164,10 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({ defaultParams, 
         />
       </SearchBarCategory>
 
-      <SearchBarCategory title={"Lesson Format"} src={"images/img_knowledgesharing.png"}>
+      <SearchBarCategory
+        title={"Lesson Format"}
+        src={"images/img_knowledgesharing.png"}
+      >
         <TickBoxes
           category={"lesson_format"}
           values={["Online", "Face to face"]}

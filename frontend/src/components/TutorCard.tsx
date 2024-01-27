@@ -12,24 +12,27 @@ const TutorCard: React.FC<TutorCardProps> = ({ tutor }) => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="bg-white-A700 transition ease-in-out duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:cursor-pointer flex flex-1 flex-col h-auto justify-start rounded-[10px] overflow-hidden w-full"
+      <div
+        className="flex h-auto w-full flex-1 transform flex-col justify-start overflow-hidden rounded-[10px] bg-white-A700 transition duration-300 ease-in-out hover:-translate-y-1 hover:cursor-pointer hover:shadow-lg"
         onClick={() => navigate("/tutorprofile/" + tutor.id)}
       >
         <div
-          className="bg-cover bg-gradient bg-no-repeat flex flex-col h-[231px] items-start justify-end p-2.5 w-full"
-          style={{ backgroundImage: `url(http://127.0.0.1:8000${tutor.user.profile_photo})` }}
+          className="flex h-[231px] w-full flex-col items-start justify-end bg-gradient bg-cover bg-no-repeat p-2.5"
+          style={{
+            backgroundImage: `url(http://127.0.0.1:8000${tutor.user.profile_photo})`,
+          }}
         >
-          <div className="flex flex-col items-start justify-end px-2 w-auto">
+          <div className="flex w-auto flex-col items-start justify-end px-2">
             <div className="flex flex-row gap-2">
               <Text
-                className="text-xl text-white-A700 w-auto"
+                className="w-auto text-xl text-white-A700"
                 size="txtMontserratRomanSemiBold18WhiteA700"
               >
                 {tutor.user.first_name} {tutor.user.last_name}
               </Text>
             </div>
             <Text
-              className="text-white-A700 text-md w-auto"
+              className="text-md w-auto text-white-A700"
               size="txtMontserratRomanRegular12"
             >
               {tutor.location}
@@ -40,9 +43,7 @@ const TutorCard: React.FC<TutorCardProps> = ({ tutor }) => {
           {/* will put list of tutor subjects here <Text className="text-black-900 text-s" >
             {tutor.}
           </Text> */}
-          <Text className="text-black-900 text-s">
-            ${tutor.rate}/hr
-          </Text>
+          <Text className="text-s text-black-900">${tutor.rate}/hr</Text>
           <Text
             className=" text-[12px] text-black-900"
             size="txtInterRegular10Black900"
@@ -75,8 +76,7 @@ TutorCard.defaultProps = {
     location: "location",
     qualification: "qualification",
     about: "about",
-  }
-
+  },
 };
 
 export default TutorCard;

@@ -10,7 +10,7 @@ const CodeOfConductTerms: React.FC = () => {
     title,
     description,
   }) => (
-    <div className="flex w-full flex-col items-start justify-start sm:gap-0.5 lg:gap-1.5">
+    <div className="lg:gap-1.5 flex w-full flex-col items-start justify-start sm:gap-0.5">
       <h4>{title}</h4>
       <p>{description}</p>
     </div>

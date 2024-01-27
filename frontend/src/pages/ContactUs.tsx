@@ -44,7 +44,7 @@ const ContactUs = () => {
 
   return (
     <>
-    {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
+      {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
       <NavBar />
       <div className="mx-auto flex h-auto min-h-[100vh] flex-col items-center justify-start rounded-[10px] bg-gray-200 py-10  px-[50px] font-montserrat md:w-full md:px-5 sm:w-full">
         <div className="flex flex-col items-center gap-3">
@@ -54,12 +54,13 @@ const ContactUs = () => {
             alt="unionTwentyOne"
           />
           <h4 className="pt-3">We'd love to hear from you!</h4>
-          
-          {!formComplete ? (<div className="flex flex-col gap-3">
-            <p className="text-center">
-              Fill in the details below and one of our team will get back to you
-              as soon as possible :)
-            </p>
+
+          {!formComplete ? (
+            <div className="flex flex-col gap-3">
+              <p className="text-center">
+                Fill in the details below and one of our team will get back to
+                you as soon as possible :)
+              </p>
               <form
                 className="flex w-full flex-col items-center justify-start gap-3"
                 onSubmit={handleSubmit}
@@ -69,26 +70,21 @@ const ContactUs = () => {
                   onChange={(e) => handleChange("fname", e)}
                   placeholder="First name"
                   className="w-full"
-                  
                 ></Input>
                 <Input
                   label="Last Name"
                   onChange={(e) => handleChange("lname", e)}
                   placeholder="Last name"
                   className="w-full"
-                  
                 ></Input>
                 <Input
                   label="Email"
                   onChange={(e) => handleChange("email", e)}
                   placeholder="Email address"
                   className="w-full"
-                  
                 ></Input>
                 <div className="flex w-full flex-col text-left text-lg">
-                  <h4
-                    className="w-auto text-left text-lg"
-                  >
+                  <h4 className="w-auto text-left text-lg">
                     So that we can help you better, are you a...
                   </h4>
                   <select
@@ -101,7 +97,9 @@ const ContactUs = () => {
                     </option>
                     <option value="Student">Student</option>
                     <option value="Tutor">Tutor</option>
-                    <option value="Parent / Caregiver">Parent / Caregiver</option>
+                    <option value="Parent / Caregiver">
+                      Parent / Caregiver
+                    </option>
                     <option value="Teacher / Educational Professional">
                       Teacher / Educational Professional
                     </option>
@@ -122,21 +120,15 @@ const ContactUs = () => {
                   className="w-full"
                   wrapClassName="flex items-start h-[130px] w-full"
                 ></Input> */}
-                <div className="text-lg flex w-full flex-col text-left">
-                  <h4
-                    className="w-auto text-left text-lg"
-                  >
-                    Message
-                  </h4>
+                <div className="flex w-full flex-col text-left text-lg">
+                  <h4 className="w-auto text-left text-lg">Message</h4>
                   <textarea
                     required
                     rows={5}
                     className="h-auto w-full rounded-[10px] border-0 p-2 px-5 py-3 placeholder-gray-400"
                     placeholder="Let us know how we can help you :)"
                     onChange={(e) => handleChange("message", e.target.value)}
-                  >
-                    
-                  </textarea>
+                  ></textarea>
                 </div>
                 <Button
                   className="w-1/2 min-w-[83px] rounded-[10px] bg-blue_gray-700 p-[5px] py-3 text-center text-sm font-medium text-white-A700"
@@ -145,7 +137,7 @@ const ContactUs = () => {
                   Submit
                 </Button>
               </form>
-          </div>
+            </div>
           ) : (
             <div className="flex flex-col items-center gap-10 pt-10">
               <img
@@ -170,10 +162,12 @@ const ContactUs = () => {
                 be in touch shortly!
               </h4>
               <div className="flex gap-2.5">
-                <Button
-                onClick={() => navigate("/findatutor")}>Look Through Our Tutors</Button>
-                <Button
-                onClick={setDisplaySignup}>Apply To Become A Tutor</Button>
+                <Button onClick={() => navigate("/findatutor")}>
+                  Look Through Our Tutors
+                </Button>
+                <Button onClick={setDisplaySignup}>
+                  Apply To Become A Tutor
+                </Button>
               </div>
             </div>
           )}

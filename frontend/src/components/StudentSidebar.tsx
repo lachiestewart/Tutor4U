@@ -68,7 +68,6 @@ const StudentSidebar: React.FC = () => {
               src="/images/img_union1.png"
               className="m2 h-[60px] cursor-pointer pb-3"
             />
-            
           )}
         </div>
 

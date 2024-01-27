@@ -6,15 +6,16 @@ const Modals = React.lazy(() => import("./pages/Modals"));
 const TutorDashboard = React.lazy(() => import("./pages/TutorDashboard"));
 const TutorOnboarding = React.lazy(() => import("./pages/TutorOnboarding"));
 const LoginPage = React.lazy(() => import("./pages/LoginPage"));
-const TutorCodeofConduct = React.lazy(() => import("./pages/TutorCodeofConduct"));
+const TutorCodeofConduct = React.lazy(
+  () => import("./pages/TutorCodeofConduct"),
+);
 const ContactUs = React.lazy(() => import("./pages/ContactUs"));
 const TutorProfile = React.lazy(() => import("./pages/TutorProfile"));
 const FindATutor = React.lazy(() => import("./pages/FindATutor"));
 const Home = React.lazy(() => import("./pages/Home"));
 const TestPage = React.lazy(() => import("./pages/TestPage"));
 const Index = React.lazy(() => import("./pages/Index"));
-
-
+const JobBoard = React.lazy(() => import("./pages/JobBoard"));
 
 const ProjectRoutes = () => {
   return (
@@ -29,6 +30,7 @@ const ProjectRoutes = () => {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/tutorcodeofconduct" element={<TutorCodeofConduct />} />
           <Route path="/loginpage" element={<LoginPage />} />
+          <Route path="/jobboard" element={<JobBoard />} />
           <Route path="/tutoronboarding" element={<TutorOnboarding />} />
           <Route path="/tutordashboard" element={<TutorDashboard />} />
           <Route path="/testpage" element={<TestPage />} />
@@ -36,7 +38,7 @@ const ProjectRoutes = () => {
         </Routes>
       </BrowserRouter>
     </React.Suspense>
-  )
-}
+  );
+};
 
-export default ProjectRoutes
+export default ProjectRoutes;

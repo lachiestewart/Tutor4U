@@ -43,10 +43,14 @@ const SignUpModal = (props: SignUpModalProps) => {
 
   return (
     <div className="relative z-10">
-      <div className="fixed top-0 flex h-full w-[100vw] bg-gray-900 opacity-50" onClick={() => props.onHide()}></div>
+      <div
+        className="fixed top-0 flex h-full w-[100vw] bg-gray-900 opacity-50"
+        onClick={() => props.onHide()}
+      ></div>
       <div className="fixed top-1/2 left-1/2 mt-[54px] flex w-auto -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-[10px] bg-gray-200_01 px-[50px] py-5 md:mt-0 md:w-auto md:px-5 sm:w-[90%]">
-        <div className="fixed top-0 right-1 p-2 cursor-pointer" onClick={() => props.onHide()}
-        
+        <div
+          className="fixed top-0 right-1 cursor-pointer p-2"
+          onClick={() => props.onHide()}
         >
           <h3 className="text-gray-600">X</h3>
         </div>
@@ -68,7 +72,7 @@ const SignUpModal = (props: SignUpModalProps) => {
             className="flex w-full flex-col items-center justify-start gap-4"
             onSubmit={handleSubmit}
           >
-            <div className="flex md:flex-row sm:flex-col w-full gap-2">
+            <div className="flex w-full gap-2 md:flex-row sm:flex-col">
               <Input
                 label="First Name"
                 onChange={(e) => handleChange("fname", e)}
@@ -92,12 +96,7 @@ const SignUpModal = (props: SignUpModalProps) => {
               wrapClassName="flex h-[50px] w-full"
             ></Input>
             <div className="flex w-full flex-col text-left text-lg">
-              <h4
-                
-                className="w-auto text-left text-lg"
-              >
-                Password
-              </h4>
+              <h4 className="w-auto text-left text-lg">Password</h4>
               <input
                 required
                 type="password"
@@ -107,12 +106,7 @@ const SignUpModal = (props: SignUpModalProps) => {
               ></input>
             </div>
             <div className="flex w-full flex-col text-left text-lg">
-              <h4
-                
-                className="w-auto text-left text-lg"
-              >
-                Confirm Password
-              </h4>
+              <h4 className="w-auto text-left text-lg">Confirm Password</h4>
               <input
                 required
                 type="password"

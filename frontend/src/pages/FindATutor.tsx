@@ -38,7 +38,8 @@ const FindATutor: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(true);
   const [searchParams, setSearchParams] = useState<SearchParams>(defaultParams);
   const [tutors, setTutors] = useState<Tutor[]>([]);
-  const [displaySubjectRequest, setdisplaySubjectRequest] = useState<boolean>(false);
+  const [displaySubjectRequest, setdisplaySubjectRequest] =
+    useState<boolean>(false);
 
   const updateTutors = async () => {
     const response: Response = await fetch(
@@ -74,8 +75,12 @@ const FindATutor: React.FC = () => {
       {/* <div
         className={`relative flex w-full ${loggedIn ? "md:flex-row" : "flex-col"} items-start justify-center bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
       > */}
-      {displaySubjectRequest && <SubjectRequestModal onHide={() => setdisplaySubjectRequest(false)} />}
-        <div className={`relative flex w-full items-start justify-center gap-2.5 ${loggedIn ? "flex-row" : "flex-col"} bg-gray-300 font-montserrat `}>
+      {displaySubjectRequest && (
+        <SubjectRequestModal onHide={() => setdisplaySubjectRequest(false)} />
+      )}
+      <div
+        className={`relative flex w-full items-start justify-center gap-2.5 ${loggedIn ? "flex-row" : "flex-col"} bg-gray-300 font-montserrat `}
+      >
         {loggedIn ? <StudentSidebar /> : <NavBar />}
         <div
           className={`mx-auto flex w-[90%] flex-col items-center justify-center gap-4 ${loggedIn ? "" : ""} p-2.5 py-6 md:px-5`}

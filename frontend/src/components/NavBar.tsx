@@ -22,7 +22,7 @@ const NavBar: React.FC = () => {
     onClick,
     children,
   }) => (
-    <div className="relative-t-25 flex flex-col bg-blue_gray-700 text-center min-w-[150px]">
+    <div className="relative-t-25 flex min-w-[150px] flex-col bg-blue_gray-700 text-center">
       <div
         className="common-pointer flex w-full cursor-pointer flex-row items-center gap-[5px] rounded p-3 text-white-A700 hover:bg-blue_gray-400"
         onClick={onClick}
@@ -47,7 +47,7 @@ const NavBar: React.FC = () => {
     onClick,
     children,
   }) => (
-    <div className="lg:w-auto flex flex-col sm:w-full cursor-pointer">
+    <div className="lg:w-auto flex cursor-pointer flex-col sm:w-full">
       <div
         className="common-pointer flex w-full flex-row items-center gap-[5px]"
         onClick={onClick}
@@ -69,7 +69,6 @@ const NavBar: React.FC = () => {
 
   return (
     <>
-   
       <header className="lg:flex-row flex w-full flex-col justify-between bg-blue_gray-700 px-[30px] py-[20px] md:gap-2.5 md:px-5">
         <div className="flex items-center justify-between p-2 md:w-full">
           {/* Tutor4U logo */}
@@ -118,7 +117,9 @@ const NavBar: React.FC = () => {
             children={
               forStudentsOpen ? (
                 // Need help with animation for dropdown
-                <div className={`lg:absolute lg:mt-16 ${forStudentsOpen ? "transition-opacity opacity-100 duration-700 ease-in-out" : "opacity-0"}  delay-200 `}>
+                <div
+                  className={`lg:absolute lg:mt-16 ${forStudentsOpen ? "opacity-100 transition-opacity duration-700 ease-in-out" : "opacity-0"}  delay-200 `}
+                >
                   <NavBarChild
                     title={"Find A Tutor"}
                     onClick={() => navigate("/findatutor")}
@@ -160,7 +161,7 @@ const NavBar: React.FC = () => {
           />
 
           <button
-            className="bg-blue-700 border-2 hover:border-2 border-blue_gray-700 py-2 px-3 rounded-xl text-violet-100 shadow-lg hover:bg-blue-900 ease-in-out  hover:border-blue-900 duration-300 font-semibold hover:text-white-A700 hover:shadow-xl"
+            className="rounded-xl border-2 border-blue_gray-700 bg-blue-700 py-2 px-3 font-semibold text-violet-100 shadow-lg duration-300 ease-in-out  hover:border-2 hover:border-blue-900 hover:bg-blue-900 hover:text-white-A700 hover:shadow-xl"
             onClick={() => setDisplaySignup}
           >
             TUTOR SIGN-UP

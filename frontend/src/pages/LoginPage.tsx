@@ -25,8 +25,6 @@ const LoginPage: React.FC = () => {
     setDisplayForgotPassword(true);
   };
 
-
-
   const handleChange = (field: keyof LoginForm, value: string) => {
     /** Updates the state of messageForm when a change is made to an input */
     setLoginForm((prevState) => ({ ...prevState, [field]: value }));
@@ -50,10 +48,10 @@ const LoginPage: React.FC = () => {
       )}
       {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
       <NavBar />
-      <div className="flex flex-row md:min-h-[85vh] w-full sm:flex-col font-montserrat md:flex-row">
+      <div className="flex w-full flex-row font-montserrat md:min-h-[85vh] md:flex-row sm:flex-col">
         {/*Login form*/}
-        <div className="md:m-5 sm:m-2 flex h-auto w-full lg:flex-row flex-col items-center rounded-[10px] bg-blue_gray-700 p-10 py-10 md:px-5">
-          <div className="w-full flex items-center flex-col">
+        <div className="lg:flex-row flex h-auto w-full flex-col items-center rounded-[10px] bg-blue_gray-700 p-10 py-10 md:m-5 md:px-5 sm:m-2">
+          <div className="flex w-full flex-col items-center">
             <img
               className="mt-[20px] h-[76px]"
               src="images/img_union_white_a700.svg"
@@ -63,7 +61,7 @@ const LoginPage: React.FC = () => {
               Login To Your Account
             </h1>
             <form
-              className="flex sm:w-full md:w-[70%] max-w-[700px] flex-col items-center justify-center gap-2.5"
+              className="flex max-w-[700px] flex-col items-center justify-center gap-2.5 md:w-[70%] sm:w-full"
               onSubmit={handleSubmit}
             >
               <Input
@@ -98,8 +96,8 @@ const LoginPage: React.FC = () => {
               </div>
             </form>
           </div>
-          <div className="sm:my-[40px] lg:mx-[40px] sm:w-full md:w-[70%] sm:h-[3px] lg:h-full lg:w-[2px] max-w-[700px] bg-white-A700" />
-          <div className="max-w-[700px] sm:w-full md:w-[70%] flex flex-col items-center">
+          <div className="lg:mx-[40px] lg:h-full lg:w-[2px] max-w-[700px] bg-white-A700 md:w-[70%] sm:my-[40px] sm:h-[3px] sm:w-full" />
+          <div className="flex max-w-[700px] flex-col items-center md:w-[70%] sm:w-full">
             <h1 className="mb-[20px] text-center text-[32px] text-white-A700 md:text-3xl sm:text-[28px]">
               New Here?
             </h1>
@@ -107,9 +105,7 @@ const LoginPage: React.FC = () => {
               We'd love for you to apply to be a tutor and join our amazing
               community!
             </h2>
-            <button
-              className="rounded-xl border-2 border-blue_gray-700 bg-blue-700 py-2 px-8 animate-bounce font-semibold text-violet-100 shadow-lg duration-300 ease-in-out  hover:border-2 hover:border-blue-900 hover:bg-blue-900 hover:text-white-A700 hover:shadow-xl"
-            >
+            <button className="animate-bounce rounded-xl border-2 border-blue_gray-700 bg-blue-700 py-2 px-8 font-semibold text-violet-100 shadow-lg duration-300 ease-in-out  hover:border-2 hover:border-blue-900 hover:bg-blue-900 hover:text-white-A700 hover:shadow-xl">
               Count Me In!
             </button>
           </div>

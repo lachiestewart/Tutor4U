@@ -1,15 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{ts,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
         purple: {
           primary: "#3E4369",
-          secondary: "#2D304C"
+          secondary: "#2D304C",
         },
         gray: {
           200: "#e9e9e9",
@@ -31,16 +28,16 @@ export default {
           A700_01: "#2a59ff",
         },
         light_green: { 900: "#218b00" },
-        teal: { primary: "#46a1af", secondary:"#027688" },
+        teal: { primary: "#46a1af", secondary: "#027688" },
         black: { 900: "#000000", "900_cc": "#000000cc" },
         indigo: { 600: "#3b3bb3", A400: "#4f4ae6" },
         white: { A700: "#ffffff" },
       },
       fontFamily: {
         montserrat: "Montserrat",
-        inter: "Inter"
+        inter: "Inter",
       },
     },
   },
   plugins: [],
-}
+};

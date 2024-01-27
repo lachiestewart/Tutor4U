@@ -41,8 +41,7 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
 }) => {
   return (
     <button
-      className="bg-blue_gray-700 border-2 hover:border-2 border-blue_gray-700 py-2 px-3 rounded-xl text-violet-100 shadow-lg hover:bg-blue-800 ease-in-out  hover:border-gray-300 duration-300 font-semibold hover:text-white-A700 hover:shadow-xl"
-      
+      className="rounded-xl border-2 border-blue_gray-700 bg-blue_gray-700 py-2 px-3 font-semibold text-violet-100 shadow-lg duration-300 ease-in-out  hover:border-2 hover:border-gray-300 hover:bg-blue-800 hover:text-white-A700 hover:shadow-xl"
       {...restProps}
     >
       {!!leftIcon && leftIcon}

@@ -6,7 +6,7 @@ import NavBar from "components/NavBar";
 import Button from "components/Button";
 import SignUpModal from "components/SignUpModal";
 
-// 
+//
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -14,21 +14,19 @@ const Home: React.FC = () => {
   const [displaySignup, setDisplaySignup] = useState<boolean>(false);
   return (
     <>
-    {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
+      {displaySignup && <SignUpModal onHide={() => setDisplaySignup(false)} />}
       <div className="mx-auto flex w-auto flex-col items-start justify-start gap-[30px] font-montserrat md:w-full sm:w-full">
         <NavBar />
 
         <div className="main-margin-div">
-          <div
-            className="flex w-full lg:flex-row items-center justify-between gap-20 px-[60px] py-[15px] md:px-10 sm:px-5 sm:flex-col-reverse"
-          >
-            <div className="flex w-auto flex-col lg:items-start sm:items-center text-center justify-start gap-6 py-[47px] sm:w-full sm:flex-1">
+          <div className="lg:flex-row flex w-full items-center justify-between gap-20 px-[60px] py-[15px] md:px-10 sm:flex-col-reverse sm:px-5">
+            <div className="lg:items-start text-start flex w-auto flex-col justify-start gap-6 py-[47px] sm:w-full sm:flex-1 sm:items-center">
               <h1>Your Top Tutor Marketplace</h1>
               <h3>
                 We connect amazing tutors with motivated students in every
                 subject at all levels right across NZ
               </h3>
-              <div className="flex w-full flex-row items-center lg:justify-start sm:justify-center gap-2.5">
+              <div className="lg:justify-start flex w-full flex-row items-center gap-2.5 sm:justify-center">
                 <Button
                   className="common-pointer min-w-[132px] cursor-pointer text-center text-sm font-medium leading-[normal] !text-blue_gray-100"
                   onClick={() => navigate("/findatutor")}
@@ -57,8 +55,8 @@ const Home: React.FC = () => {
           </div>
           <div className="flex w-full flex-col items-center justify-start gap-[30px] px-[60px] py-5 md:px-10 sm:px-5">
             <h1>What Tutors Think Of Tutor4U</h1>
-            <div className="mx-auto flex w-full max-w-[1320px] lg:flex-row sm:flex-col gap-5">
-              <div className="flex w-full sm:flex-row gap-5 lg:flex-col items-center justify-start">
+            <div className="lg:flex-row mx-auto flex w-full max-w-[1320px] gap-5 sm:flex-col">
+              <div className="lg:flex-col flex w-full items-center justify-start gap-5 sm:flex-row">
                 <img
                   className="h-[199px] w-[200px] rounded-[50%] md:h-auto"
                   src="images/img_image3.png"
@@ -73,22 +71,23 @@ const Home: React.FC = () => {
                       alt="imageOne"
                     />
                   </div>
-                  <div className="flex w-full px-2 text-justify flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px]">
+                  <div className="flex w-full flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px] px-2 text-justify">
                     <p>
-                      I've been amazed with how straight-forward and simple it was
-                      to sign up as a tutor with Tutor4U. Within hours my profile
-                      was up on the well-designed website, with the option to
-                      modify my profile with ease whenever I want. It's been
-                      awesome - within weeks I had students getting in contact for
-                      tutoring, allowing me to help them learn the science I'm
-                      passionate about whilst putting some money in my back
-                      pocket! I would definitely recommend Tutor4U for anyone that
-                      wants to tutor students in a hassle-free and flexible way.
+                      I've been amazed with how straight-forward and simple it
+                      was to sign up as a tutor with Tutor4U. Within hours my
+                      profile was up on the well-designed website, with the
+                      option to modify my profile with ease whenever I want.
+                      It's been awesome - within weeks I had students getting in
+                      contact for tutoring, allowing me to help them learn the
+                      science I'm passionate about whilst putting some money in
+                      my back pocket! I would definitely recommend Tutor4U for
+                      anyone that wants to tutor students in a hassle-free and
+                      flexible way.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="flex w-full sm:flex-row-reverse gap-5 lg:flex-col items-center justify-start">
+              <div className="lg:flex-col flex w-full items-center justify-start gap-5 sm:flex-row-reverse">
                 <img
                   className="h-[200px] w-[200px] rounded-[50%]"
                   src="images/img_image4.png"
@@ -103,15 +102,15 @@ const Home: React.FC = () => {
                       alt="imageOne"
                     />
                   </div>
-                  <div className="flex w-full text-justify px-2 flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px]">
+                  <div className="flex w-full flex-col items-center justify-start rounded-[10px] bg-gray-400_01 p-[5px] px-2 text-justify">
                     <p>
                       Tutor4U has been a great platform to get myself out there
-                      and directly connect with students. I have been tutoring for
-                      a few years now- usually I have to find the students through
-                      different ways but the students now come to me. No signing
-                      to be contracted with tutoring companies either. Just a
-                      service that connects students directly to tutors. Easy to
-                      set up and the students come rolling to you.
+                      and directly connect with students. I have been tutoring
+                      for a few years now- usually I have to find the students
+                      through different ways but the students now come to me. No
+                      signing to be contracted with tutoring companies either.
+                      Just a service that connects students directly to tutors.
+                      Easy to set up and the students come rolling to you.
                     </p>
                   </div>
                 </div>
@@ -223,26 +222,24 @@ const Home: React.FC = () => {
                         alt="imageEleven"
                       />
                       <p>
-                        
-                          Tutor4U has developed a state of the art filtering
-                          system so that you can quickly and easily find a tutor
-                          that suits your needs.
-                          <br />
-                          <br />
-                          You can search based on:
-                          <br />- Subjects
-                          <br />- Tutor rate
-                          <br />- Teaching level
-                          <br />- Location
-                          <br />- Lesson format
-                          <br />- Gender
-                          <br />- Availability
-                          <br />
-                          <br />
-                          Also, if you can't find a tutor to suit your needs,
-                          get in touch with us and we will do our best to find
-                          one for you.
-                        
+                        Tutor4U has developed a state of the art filtering
+                        system so that you can quickly and easily find a tutor
+                        that suits your needs.
+                        <br />
+                        <br />
+                        You can search based on:
+                        <br />- Subjects
+                        <br />- Tutor rate
+                        <br />- Teaching level
+                        <br />- Location
+                        <br />- Lesson format
+                        <br />- Gender
+                        <br />- Availability
+                        <br />
+                        <br />
+                        Also, if you can't find a tutor to suit your needs, get
+                        in touch with us and we will do our best to find one for
+                        you.
                       </p>
                       <div className="flex w-full flex-row items-center justify-start gap-2.5">
                         <Button
@@ -279,16 +276,13 @@ const Home: React.FC = () => {
                         alt="imageTwelve"
                       />
                       <p>
-                        
-                          Each tutor gets a personalised profile page where
-                          you'll be able to see their key details and information
-                          so you can know a little about them before you get in
-                          touch.
-                          <br />
-                          <br />
-                          Often they will mention talk about background, why they're
-                          qualified to tutor and their interests.
-                        
+                        Each tutor gets a personalised profile page where you'll
+                        be able to see their key details and information so you
+                        can know a little about them before you get in touch.
+                        <br />
+                        <br />
+                        Often they will mention talk about background, why
+                        they're qualified to tutor and their interests.
                       </p>
                     </div>
                   </div>
@@ -315,13 +309,11 @@ const Home: React.FC = () => {
                     <h4 className="info-title">Step 4. Get Tutored!</h4>
                     <div className="info-information">
                       <p>
-                        
-                          Now that you're in touch with the tutor, you can
-                          receive their academic services.
-                          <br />
-                          <br />
-                          It's that simple!
-                        
+                        Now that you're in touch with the tutor, you can receive
+                        their academic services.
+                        <br />
+                        <br />
+                        It's that simple!
                       </p>
                     </div>
                   </div>

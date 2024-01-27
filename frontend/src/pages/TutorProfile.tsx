@@ -10,27 +10,32 @@ import { Offer, Tutor } from "interfaces";
 type ProfileSidebarSectionProps = {
   title: string;
   items: string[];
-}
+};
 
-const ProfileSidebarSection: React.FC<ProfileSidebarSectionProps> = ({ title, items }) => {
-  return (<div className="flex w-auto flex-col items-center justify-start px-2.5">
-    <Text
-      className="w-[279px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-      size="txtMontserratRomanSemiBold28"
-    >
-      {title}
-    </Text>
-    {items.map(item => (
+const ProfileSidebarSection: React.FC<ProfileSidebarSectionProps> = ({
+  title,
+  items,
+}) => {
+  return (
+    <div className="flex w-auto flex-col items-center justify-start px-2.5">
       <Text
-        className="w-auto text-center text-lg text-black-900"
-        size="txtMontserratRomanRegular18"
-        key={item}
+        className="w-[279px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
+        size="txtMontserratRomanSemiBold28"
       >
-        {item}
+        {title}
       </Text>
-    ))}
-  </div>)
-}
+      {items.map((item) => (
+        <Text
+          className="w-auto text-center text-lg text-black-900"
+          size="txtMontserratRomanRegular18"
+          key={item}
+        >
+          {item}
+        </Text>
+      ))}
+    </div>
+  );
+};
 
 const defaultTutor: Tutor = {
   id: 0,
@@ -51,10 +56,9 @@ const defaultTutor: Tutor = {
   location: "location",
   qualification: "qualification",
   about: "about",
-}
+};
 
 const TutorProfile: React.FC = () => {
-
   const [loggedIn, setLoggedIn] = useState<boolean>(true);
   const [tutor, setTutor] = useState<Tutor>(defaultTutor);
   const [tutorOffers, setTutorOffers] = useState<Offer[]>([] as Offer[]);
@@ -62,9 +66,8 @@ const TutorProfile: React.FC = () => {
   const params = useParams();
 
   const updateTutor = async (id: number) => {
-
     const response: Response = await fetch(
-      `http://127.0.0.1:8000/api/tutor/?id=${id}`
+      `http://127.0.0.1:8000/api/tutor/?id=${id}`,
     );
 
     const responseJson = await response.json();
@@ -81,9 +84,8 @@ const TutorProfile: React.FC = () => {
   };
 
   const updateTutorOffers = async (id: number) => {
-
     const response: Response = await fetch(
-      `http://127.0.0.1:8000/api/offers/?id=${id}`
+      `http://127.0.0.1:8000/api/offers/?id=${id}`,
     );
 
     const responseJson = await response.json();
@@ -107,14 +109,19 @@ const TutorProfile: React.FC = () => {
 
   return (
     <>
-      <div className={`mx-auto flex w-auto h-auto ${loggedIn ? "flex-row" : "flex-col"} items-center justify-start gap-2.5 bg-gray-200 font-montserrat`}>
+      <div
+        className={`mx-auto flex h-auto w-auto ${loggedIn ? "flex-row" : "flex-col"} items-center justify-start gap-2.5 bg-gray-200 font-montserrat`}
+      >
         {loggedIn ? <StudentSidebar /> : <NavBar />}
-        <div className="mx-auto h-auto w flex max-w-[1300px] items-start justify-center gap-[20px] rounded-[10px] bg-white-A700 px-6 py-2.5 md:flex-row sm:flex-col">
+        <div className="w mx-auto flex h-auto max-w-[1300px] items-start justify-center gap-[20px] rounded-[10px] bg-white-A700 px-6 py-2.5 md:flex-row sm:flex-col">
           <div className="flex h-auto w-[100%] flex-col items-center justify-start gap-3.5 px-[10px] py-2.5 md:w-[30%] sm:px-5">
             <div className="flex w-[96%] flex-col items-center justify-start gap-4 md:w-full">
-
-              <div className="h-[200px] w-[200px] rounded-[100%] bg-blue_gray-100"
-                style={{ backgroundImage: `url(http://127.0.0.1:8000${tutor.user.profile_photo})` }} />
+              <div
+                className="h-[200px] w-[200px] rounded-[100%] bg-blue_gray-100"
+                style={{
+                  backgroundImage: `url(http://127.0.0.1:8000${tutor.user.profile_photo})`,
+                }}
+              />
               <Text
                 className="sm:[20px] text-center text-[24px] text-black-900 md:text-[22px]"
                 size="txtMontserratRomanSemiBold28"
@@ -123,16 +130,33 @@ const TutorProfile: React.FC = () => {
               </Text>
             </div>
             <div className="flex w-full flex-col items-center justify-start gap-3.5">
-              <ProfileSidebarSection title={"Current Availability"} items={[tutor.availability]} />
-              <ProfileSidebarSection title={"Pricing"} items={[`${tutor.rate}/hr`]} />
-              <ProfileSidebarSection title={"Qualifications"} items={[tutor.qualification]} />
-              {tutorOffers.length != 0 && <>
-                <ProfileSidebarSection title={"Tutoring Levels"} items={tutorOffers.map(offer => offer.level)} />
-                <ProfileSidebarSection title={"Subjects"} items={tutorOffers.map(offer => offer.subject)} />
-              </>}
+              <ProfileSidebarSection
+                title={"Current Availability"}
+                items={[tutor.availability]}
+              />
+              <ProfileSidebarSection
+                title={"Pricing"}
+                items={[`${tutor.rate}/hr`]}
+              />
+              <ProfileSidebarSection
+                title={"Qualifications"}
+                items={[tutor.qualification]}
+              />
+              {tutorOffers.length != 0 && (
+                <>
+                  <ProfileSidebarSection
+                    title={"Tutoring Levels"}
+                    items={tutorOffers.map((offer) => offer.level)}
+                  />
+                  <ProfileSidebarSection
+                    title={"Subjects"}
+                    items={tutorOffers.map((offer) => offer.subject)}
+                  />
+                </>
+              )}
             </div>
           </div>
-          <div className="flex md:w-[70%] flex-col items-start justify-start gap-[11px] p-[15px] h-auto w-full ">
+          <div className="flex h-auto w-full flex-col items-start justify-start gap-[11px] p-[15px] md:w-[70%] ">
             <div className="flex w-full items-center justify-between gap-1 md:flex-row sm:flex-col">
               <h1>{tutor.user.first_name + " " + tutor.user.last_name}</h1>
               <div className="flex gap-2.5">
@@ -180,10 +204,7 @@ const TutorProfile: React.FC = () => {
                     >
                       First Name
                     </Text>
-                    <Input
-                      name="emailtextentry"
-                      className="w-full p-0"
-                    />
+                    <Input name="emailtextentry" className="w-full p-0" />
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
                     <Text
@@ -192,10 +213,7 @@ const TutorProfile: React.FC = () => {
                     >
                       Last Name
                     </Text>
-                    <Input
-                      name="emailtextentry_One"
-                      className="w-full p-0"
-                    />
+                    <Input name="emailtextentry_One" className="w-full p-0" />
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
@@ -205,10 +223,7 @@ const TutorProfile: React.FC = () => {
                   >
                     Email
                   </Text>
-                  <Input
-                    name="email_entry"
-                    className="w-full p-0"
-                  />
+                  <Input name="email_entry" className="w-full p-0" />
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
                   <Text
@@ -217,10 +232,7 @@ const TutorProfile: React.FC = () => {
                   >
                     Password
                   </Text>
-                  <Input
-                    name="password_entry"
-                    className="w-full p-0"
-                  />
+                  <Input name="password_entry" className="w-full p-0" />
                 </div>
                 <Button
                   className="min-w-[198px] cursor-pointer text-center text-sm font-medium leading-[normal]"

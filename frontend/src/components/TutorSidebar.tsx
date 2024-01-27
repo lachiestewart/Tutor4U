@@ -11,7 +11,11 @@ const TutorSidebar: React.FC = () => {
     link?: string;
   };
 
-  const SidebarItem: React.FC<TutorSidebarItemProps> = ({ title, src, link }) => (
+  const SidebarItem: React.FC<TutorSidebarItemProps> = ({
+    title,
+    src,
+    link,
+  }) => (
     <div className="flex w-full flex-col items-center justify-between md:px-[10px] md:py-[5px] sm:px-[5px] sm:py-[2px]">
       <div
         className="hover:bg-violet-950 flex w-full cursor-pointer flex-row items-center justify-start rounded-xl md:gap-5 md:p-3 sm:gap-2 sm:p-2"
@@ -72,11 +76,16 @@ const TutorSidebar: React.FC = () => {
         </div>
 
         <div className="flex w-full flex-col items-start">
-          <SidebarItem title={"Dashboard"} src={"/images/img_analytics.png"} />
-          
+          <SidebarItem
+            title={"Dashboard"}
+            src={"/images/img_analytics.png"}
+            link={"/tutordashboard"}
+          />
+
           <SidebarItem
             title={"Job Board"}
             src={"/images/img_graduationcap.png"}
+            link={"/jobboard"}
           />
         </div>
       </div>
@@ -89,7 +98,11 @@ const TutorSidebar: React.FC = () => {
           title={"Account Details"}
           src={"/images/img_usdollarcircled.png"}
         />
-        <SidebarItem title={"Code of Conduct"} src={"/images/img_googleforms.png"} />
+        <SidebarItem
+          title={"Code of Conduct"}
+          src={"/images/img_googleforms.png"}
+          link={"/tutorcodeofconduct"}
+        />
         <SidebarItem title={"FAQs"} src={"/images/img_questions.png"} />
         <SidebarItem title={"Logout"} src={"/images/img_logout.png"} />
       </div>
