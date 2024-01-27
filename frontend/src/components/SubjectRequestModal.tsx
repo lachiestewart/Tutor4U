@@ -42,7 +42,7 @@ const SubjectRequestModal = (props: SignUpModalProps) => {
   };
 
   return (
-    <div className="relative z-10 ">
+    <div className="relative z-20">
       <div
         className="fixed top-0 flex h-full w-[100vw] bg-gray-900 opacity-50"
         onClick={() => props.onHide()}
