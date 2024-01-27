@@ -20,8 +20,7 @@ const Home: React.FC = () => {
 
         <div className="main-margin-div">
           <div
-            className="flex w-full lg:flex-row items-center justify-between gap-20 px-[60px] py-[15px] md:px-10 sm:px-5 sm:flex-col-reverse
-          "
+            className="flex w-full lg:flex-row items-center justify-between gap-20 px-[60px] py-[15px] md:px-10 sm:px-5 sm:flex-col-reverse"
           >
             <div className="flex w-auto flex-col lg:items-start sm:items-center text-center justify-start gap-6 py-[47px] sm:w-full sm:flex-1">
               <h1>Your Top Tutor Marketplace</h1>
