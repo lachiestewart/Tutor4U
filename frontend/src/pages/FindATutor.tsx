@@ -57,6 +57,8 @@ const FindATutor: React.FC = () => {
     setTutors(tutorList);
   };
 
+  const handleChange = (params: SearchParams) => setSearchParams(params);
+
 
   useEffect(() => {
     console.log("searching tutors...");
@@ -96,7 +98,7 @@ const FindATutor: React.FC = () => {
           </div>
 
           <div className="relative flex w-full flex-row items-start justify-center gap-2.5">
-            <TutorFilterSidebar defaultParams={defaultParams} setPageParams={setSearchParams} selectedTutors={tutors.length} totalTutors={TOTAL_TUTORS} />
+            <TutorFilterSidebar defaultParams={defaultParams} onChange={handleChange} selectedTutors={tutors.length} totalTutors={TOTAL_TUTORS} />
             <div className="relative flex h-[1208px] w-[66%] flex-col items-center justify-start gap-[15px] ">
               <div className="sticky top-5 z-10 flex w-full flex-row items-center rounded-[10px] bg-white-A700 p-2 text-left text-lg">
                 <p className="w-auto font-medium">Filtering by:</p>
