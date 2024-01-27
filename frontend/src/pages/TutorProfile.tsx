@@ -1,138 +1,140 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Text from "components/Text";
 import NavBar from "components/NavBar";
 import Button from "components/Button";
 import Input from "components/Input";
+import Sidebar from "components/Sidebar";
+import { useParams } from "react-router-dom";
+import { Offer, Tutor } from "interfaces";
+
+type ProfileSidebarSectionProps = {
+  title: string;
+  items: string[];
+}
+
+const ProfileSidebarSection: React.FC<ProfileSidebarSectionProps> = ({ title, items }) => {
+  return (<div className="flex w-auto flex-col items-center justify-start px-2.5">
+    <Text
+      className="w-[279px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
+      size="txtMontserratRomanSemiBold28"
+    >
+      {title}
+    </Text>
+    {items.map(item => (
+      <Text
+        className="w-auto text-center text-lg text-black-900"
+        size="txtMontserratRomanRegular18"
+        key={item}
+      >
+        {item}
+      </Text>
+    ))}
+  </div>)
+}
+
+const defaultTutor: Tutor = {
+  id: 0,
+  user: {
+    id: 1,
+    username: "username",
+    first_name: "first name",
+    last_name: "last name",
+    phone_number: "111 111 1111",
+    email: "username@email.com",
+    gender: "gender",
+    profile_photo: "url('images/img_frame13_231x220.png')",
+  },
+  rate: 99,
+  availability: "availability",
+  remote: true,
+  in_person: true,
+  location: "location",
+  qualification: "qualification",
+  about: "about",
+}
 
 const TutorProfile: React.FC = () => {
+
+  const [loggedIn, setLoggedIn] = useState<boolean>(true);
+  const [tutor, setTutor] = useState<Tutor>(defaultTutor);
+  const [tutorOffers, setTutorOffers] = useState<Offer[]>([] as Offer[]);
+
+  const params = useParams();
+
+  const updateTutor = async (id: number) => {
+
+    const response: Response = await fetch(
+      `http://127.0.0.1:8000/api/tutor/?id=${id}`
+    );
+
+    const responseJson = await response.json();
+
+    if (responseJson.error) {
+      console.log(responseJson.error);
+      return;
+    }
+
+    const thisTutor: Tutor = responseJson;
+
+    console.log(thisTutor.user.first_name + " " + thisTutor.user.last_name);
+    setTutor(thisTutor);
+  };
+
+  const updateTutorOffers = async (id: number) => {
+
+    const response: Response = await fetch(
+      `http://127.0.0.1:8000/api/offers/?id=${id}`
+    );
+
+    const responseJson = await response.json();
+
+    if (responseJson.error) {
+      console.log(responseJson.error);
+      return;
+    }
+
+    const thisOffers: Offer[] = responseJson;
+
+    setTutorOffers(thisOffers);
+  };
+
+  useEffect(() => {
+    if (params.id) {
+      updateTutor(+params.id);
+      updateTutorOffers(+params.id);
+    }
+  }, []);
+
   return (
     <>
-      <div className="mx-auto flex w-auto h-auto flex-col items-center justify-start gap-2.5 bg-gray-200 font-montserrat">
-        <NavBar />
+      <div className={`mx-auto flex w-auto h-auto ${loggedIn ? "flex-row" : "flex-col"} items-center justify-start gap-2.5 bg-gray-200 font-montserrat`}>
+        {loggedIn ? <Sidebar /> : <NavBar />}
         <div className="mx-7 h-auto flex max-w-[1300px] items-start justify-center gap-[20px] rounded-[10px] bg-white-A700 px-6 py-2.5 md:flex-row sm:flex-col">
           <div className="flex h-auto w-[100%] flex-col items-center justify-start gap-3.5 px-[10px] py-2.5 md:w-[30%] sm:px-5">
             <div className="flex w-[96%] flex-col items-center justify-start gap-4 md:w-full">
-              <div className="h-[200px] w-[200px] rounded-[100%] bg-blue_gray-100"></div>
+
+              <div className="h-[200px] w-[200px] rounded-[100%] bg-blue_gray-100"
+                style={{ backgroundImage: `url(http://127.0.0.1:8000${tutor.user.profile_photo})` }} />
               <Text
                 className="sm:[20px] text-center text-[24px] text-black-900 md:text-[22px]"
                 size="txtMontserratRomanSemiBold28"
-                
               >
-                About (First Name)
+                About {tutor.user.first_name}
               </Text>
             </div>
             <div className="flex w-full flex-col items-center justify-start gap-3.5">
-              <div className="flex w-auto flex-col items-center justify-start px-2.5">
-                <Text
-                  className="w-[279px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Current Availability
-                </Text>
-                <Text
-                  className="w-auto text-center text-lg text-black-900"
-                  size="txtMontserratRomanRegular18"
-                >
-                  Available
-                </Text>
-              </div>
-              <div className="flex w-auto flex-col items-center justify-start px-2.5">
-                <Text
-                  className="w-[101px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Pricing
-                </Text>
-                <Text
-                  className="w-auto text-center text-lg text-black-900"
-                  size="txtMontserratRomanRegular18"
-                >
-                  $35/hr
-                </Text>
-              </div>
-              <div className="flex w-auto flex-col items-center justify-start px-2.5">
-                <Text
-                  className="w-[200px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Qualifications
-                </Text>
-                <Text
-                  className="w-auto text-center text-lg text-black-900"
-                  size="txtMontserratRomanRegular18"
-                >
-                  BSc in Physiology
-                </Text>
-              </div>
-              <div className="flex w-auto flex-col items-center justify-start px-2.5">
-                <Text
-                  className="w-[223px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Tutoring Levels
-                </Text>
-                <div className="flex flex-col items-center justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanRegular18"
-                  >
-                    NCEA L1
-                  </Text>
-                  <Text
-                    className="mt-0.5 w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanRegular18"
-                  >
-                    NCEA L2
-                  </Text>
-                  <Text
-                    className="mt-0.5 w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanRegular18"
-                  >
-                    NCEA L3
-                  </Text>
-                </div>
-              </div>
-              <div className="flex w-auto flex-col items-center justify-start px-2.5">
-                <Text
-                  className="w-[258px] text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                  size="txtMontserratRomanSemiBold28"
-                >
-                  Tutoring Subjects
-                </Text>
-                <div className="flex flex-col items-center justify-start">
-                  <Text
-                    className="w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanRegular18"
-                  >
-                    Health
-                  </Text>
-                  <Text
-                    className="mt-[3px] w-auto text-center text-lg text-black-900"
-                    size="txtMontserratRomanRegular18"
-                  >
-                    Biology
-                  </Text>
-                </div>
-              </div>
-            </div>
-            <div className="flex w-auto flex-col items-center justify-start px-2.5">
-              <Text
-                className="w-auto text-center text-[28px] text-black-900 md:text-[26px] sm:text-2xl"
-                size="txtMontserratRomanSemiBold28"
-              >
-                Specific Courses I Tutor
-              </Text>
-              <Text
-                className="w-auto text-center text-lg text-black-900"
-                size="txtMontserratRomanRegular18"
-              >
-                CELS 170
-              </Text>
+              <ProfileSidebarSection title={"Current Availability"} items={[tutor.availability]} />
+              <ProfileSidebarSection title={"Pricing"} items={[`${tutor.rate}/hr`]} />
+              <ProfileSidebarSection title={"Qualifications"} items={[tutor.qualification]} />
+              {tutorOffers.length != 0 && <>
+                <ProfileSidebarSection title={"Tutoring Levels"} items={tutorOffers.map(offer => offer.level)} />
+                <ProfileSidebarSection title={"Subjects"} items={tutorOffers.map(offer => offer.subject)} />
+              </>}
             </div>
           </div>
           <div className="flex md:w-[70%] flex-col items-start justify-start gap-[11px] p-[15px] h-auto w-full ">
             <div className="flex w-full items-center justify-between gap-1 md:flex-row sm:flex-col">
-              <h1>Full Name</h1>
+              <h1>{tutor.user.first_name + " " + tutor.user.last_name}</h1>
               <div className="flex gap-2.5">
                 <Button
                   className="min-w-[158px] cursor-pointer text-center text-sm font-medium leading-[normal]"
@@ -141,7 +143,7 @@ const TutorProfile: React.FC = () => {
                   size="sm"
                   variant="fill"
                 >
-                  Message (FName)
+                  Message {tutor.user.first_name}
                 </Button>
                 <Button
                   className="min-w-[153px] cursor-pointer text-center text-sm font-medium leading-[normal]"
@@ -154,17 +156,7 @@ const TutorProfile: React.FC = () => {
                 </Button>
               </div>
             </div>
-            <p>
-              <>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </>
-            </p>
+            <p>{tutor.about}</p>
             <div className="flex w-full flex-col items-center justify-center rounded-[10px] bg-gray-200_01 px-5 py-2.5">
               <div className="flex w-full flex-col items-start justify-start gap-2.5 py-2.5">
                 <Text
@@ -190,10 +182,8 @@ const TutorProfile: React.FC = () => {
                     </Text>
                     <Input
                       name="emailtextentry"
-                      placeholder=""
                       className="w-full p-0"
-
-                    ></Input>
+                    />
                   </div>
                   <div className="flex w-full flex-1 flex-col items-start justify-start">
                     <Text
@@ -204,10 +194,8 @@ const TutorProfile: React.FC = () => {
                     </Text>
                     <Input
                       name="emailtextentry_One"
-                      placeholder=""
                       className="w-full p-0"
-
-                    ></Input>
+                    />
                   </div>
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
@@ -218,10 +206,9 @@ const TutorProfile: React.FC = () => {
                     Email
                   </Text>
                   <Input
-                    name="emailtextentry_Two"
-                    placeholder=""
+                    name="email_entry"
                     className="w-full p-0"
-                  ></Input>
+                  />
                 </div>
                 <div className="flex w-full flex-col items-start justify-start">
                   <Text
@@ -231,10 +218,9 @@ const TutorProfile: React.FC = () => {
                     Password
                   </Text>
                   <Input
-                    name="emailtextentry_Three"
-                    placeholder=""
+                    name="password_entry"
                     className="w-full p-0"
-                  ></Input>
+                  />
                 </div>
                 <Button
                   className="min-w-[198px] cursor-pointer text-center text-sm font-medium leading-[normal]"

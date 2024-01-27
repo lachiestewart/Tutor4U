@@ -11,7 +11,7 @@ const Home = () => {
           <Link to="/findatutor">FindATutor</Link>
         </li>
         <li>
-          <Link to="/tutorprofile">TutorProfile</Link>
+          <Link to="/tutorprofile/1">TutorProfile</Link>
         </li>
         <li>
           <Link to="/contactus">ContactUs</Link>
@@ -30,11 +30,6 @@ const Home = () => {
         </li>
         <li>
           <Link to="/tutordashboard">TutorDashboard</Link>
-        </li>
-        
-       
-        <li>
-          <Link to="/tutorprofileloggedin">TutorProfileLoggedIn</Link>
         </li>
       </ul>
     </div>

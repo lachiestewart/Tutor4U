@@ -2,15 +2,19 @@ import React from "react";
 
 import Text from "./Text";
 import { Tutor } from "interfaces";
+import { useNavigate } from "react-router-dom";
 
 type TutorCardProps = {
   tutor: Tutor;
 };
 
 const TutorCard: React.FC<TutorCardProps> = ({ tutor }) => {
+  const navigate = useNavigate();
   return (
     <>
-      <div className="bg-white-A700 transition ease-in-out duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:cursor-pointer flex flex-1 flex-col h-auto justify-start rounded-[10px] overflow-hidden w-full">
+      <div className="bg-white-A700 transition ease-in-out duration-300 transform hover:-translate-y-1 hover:shadow-lg hover:cursor-pointer flex flex-1 flex-col h-auto justify-start rounded-[10px] overflow-hidden w-full"
+        onClick={() => navigate("/tutorprofile/" + tutor.id)}
+      >
         <div
           className="bg-cover bg-gradient bg-no-repeat flex flex-col h-[231px] items-start justify-end p-2.5 w-full"
           style={{ backgroundImage: `url(http://127.0.0.1:8000${tutor.user.profile_photo})` }}
