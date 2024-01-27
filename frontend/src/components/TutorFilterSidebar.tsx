@@ -17,7 +17,7 @@ const SearchBarCategory: React.FC<SearchbarCategoryProps> = ({ title, src, child
       <img className="lg:h-auto object-cover h-[30px] w-[30px] " src={src} alt={src + "icon"} />
       <h3>{title}</h3>
     </div>
-    <div className="flex flex-row flex-wrap gap-3">{children}</div>
+    <div className="flex flex-col flex-wrap gap-2 ml-2">{children}</div>
   </>
 );
 
