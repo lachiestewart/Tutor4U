@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "components/Sidebar";
+import Sidebar from "components/TutorSidebar";
 
 import TutorDashboardProfileHeader from "components/ProfileHeader";
 import CodeOfConductTerms from "components/CodeOfConductTerms";

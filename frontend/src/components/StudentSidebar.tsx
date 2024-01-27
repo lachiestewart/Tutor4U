@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Sidebar: React.FC = () => {
+const StudentSidebar: React.FC = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState<boolean>(false);
 
@@ -14,7 +14,7 @@ const Sidebar: React.FC = () => {
   const SidebarItem: React.FC<SidebarItemProps> = ({ title, src, link }) => (
     <div className="flex w-full flex-col items-center justify-between md:px-[10px] md:py-[5px] sm:px-[5px] sm:py-[2px]">
       <div
-        className="hover:bg-violet-950 flex w-full cursor-pointer flex-row items-center justify-start rounded-xl md:gap-5 md:p-3 sm:gap-2 sm:p-2"
+        className="hover:bg-blue-950 flex w-full cursor-pointer flex-row items-center justify-start rounded-xl md:gap-5 md:p-3 sm:gap-2 sm:p-2"
         onClick={() => link && navigate(link)}
       >
         <img className="h-8 w-8 object-cover" src={src} alt={title + " icon"} />
@@ -25,10 +25,10 @@ const Sidebar: React.FC = () => {
 
   return (
     <div
-      className={`lg:w-auto sticky left-0 top-0 z-10 flex flex-col items-start justify-between bg-blue_gray-700 sm:h-[100vh]   ${open ? "lg:min-w-[300px] md:min-w-[300px] sm:w-full" : "md:w-15 "}`}
+      className={`lg:w-auto sticky left-0 top-0 z-10 flex flex-col items-start justify-between bg-blue-700 sm:h-[100vh]   ${open ? "lg:min-w-[300px] md:min-w-[300px] sm:w-full" : "md:w-15 "}`}
     >
       <div className="flex w-full flex-col items-start justify-start">
-        <div className="bg-violet-950 flex w-full flex-row items-center justify-start gap-2 p-2 py-4">
+        <div className="bg-blue-950 flex w-full flex-row items-center justify-start gap-2 p-2 py-4">
           <svg
             className="z-10 m-3 h-8 w-8 min-w-[20px] cursor-pointer"
             viewBox="0 -4.5 20 20"
@@ -100,4 +100,4 @@ const Sidebar: React.FC = () => {
   );
 };
 
-export default Sidebar;
+export default StudentSidebar;

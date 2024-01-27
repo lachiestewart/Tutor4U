@@ -1,5 +1,5 @@
 import React from "react";
-import Sidebar from "components/Sidebar";
+import Sidebar from "components/TutorSidebar";
 import Button from "components/Button";
 import TutorDashboardProfileHeader from "components/ProfileHeader";
 
@@ -8,7 +8,7 @@ const TutorDashboard: React.FC = () => {
     <>
       <div className="relative flex w-full flex-col items-start justify-center gap-2.5 bg-white-A700 font-montserrat md:flex-row ">
         <Sidebar />
-        <div className="sm:mt-[-100vh] sm:ml-[50px] md:ml-0 md:mt-0 flex w-full flex-1 flex-col items-start justify-start gap-2.5 p-[30px] md:px-5">
+        <div className="flex w-full flex-1 flex-col items-start justify-start gap-2.5 p-[30px] md:ml-0 md:mt-0 md:px-5 sm:mt-[-100vh] sm:ml-[50px]">
           <TutorDashboardProfileHeader />
           <div className="flex w-full flex-col items-start justify-start">
             <div className="flex w-full flex-col items-center justify-start gap-2.5">

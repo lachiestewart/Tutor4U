@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Sidebar from "components/Sidebar";
+import Sidebar from "components/TutorSidebar";
 
 import TutorDashboardProfileHeader from "components/ProfileHeader";
 import Onboarding1 from "components/Onboarding1";
