@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 import NavBar from "../components/NavBar";
-import Sidebar from "../components/TutorSidebar";
 import TutorCard from "../components/TutorCard";
 import TutorFilterSidebar from "../components/TutorFilterSidebar";
 import { Tutor } from "interfaces";
 import Button from "../components/Button";
+import StudentSidebar from "components/StudentSidebar";
 
 const TOTAL_TUTORS = 561;
 
@@ -73,7 +73,7 @@ const FindATutor: React.FC = () => {
         className={`relative flex w-full ${loggedIn ? "md:flex-row" : "flex-col"} items-start justify-center bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
       > */}
         <div className={`relative flex w-full items-start justify-center gap-2.5 ${loggedIn ? "flex-row" : "flex-col"} bg-gray-300 font-montserrat `}>
-        {loggedIn ? <Sidebar /> : <NavBar />}
+        {loggedIn ? <StudentSidebar /> : <NavBar />}
         <div
           className={`mx-auto flex w-[90%] flex-col items-center justify-center gap-4 ${loggedIn ? "" : ""} p-2.5 py-6 md:px-5`}
         >

@@ -65,7 +65,7 @@ const SignUpModal = (props: SignUpModalProps) => {
             we'll let you know the next steps
           </Text>
           <form
-            className="flex w-full flex-col items-center justify-start gap-2.5"
+            className="flex w-full flex-col items-center justify-start gap-4"
             onSubmit={handleSubmit}
           >
             <div className="flex md:flex-row sm:flex-col w-full gap-2">
