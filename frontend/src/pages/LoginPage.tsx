@@ -25,6 +25,8 @@ const LoginPage: React.FC = () => {
     setDisplayForgotPassword(true);
   };
 
+
+
   const handleChange = (field: keyof LoginForm, value: string) => {
     /** Updates the state of messageForm when a change is made to an input */
     setLoginForm((prevState) => ({ ...prevState, [field]: value }));
@@ -84,7 +86,6 @@ const LoginPage: React.FC = () => {
                 <button
                   className="w-1/2 min-w-[83px] rounded-[10px] bg-blue-A200 p-[5px] py-3 text-center text-sm font-medium text-white-A700"
                   type="submit"
-                  onClick={setLoginForm}
                 >
                   Login
                 </button>
@@ -108,51 +109,11 @@ const LoginPage: React.FC = () => {
             </h2>
             <button
               className="rounded-xl border-2 border-blue_gray-700 bg-blue-700 py-2 px-8 animate-bounce font-semibold text-violet-100 shadow-lg duration-300 ease-in-out  hover:border-2 hover:border-blue-900 hover:bg-blue-900 hover:text-white-A700 hover:shadow-xl"
-              shape="round"
-              color="gray_400"
-              size="md"
-              variant="fill"
-              onClick={setDisplaySignup}
             >
               Count Me In!
             </button>
           </div>
         </div>
-
-        {/* <div className="flex flex-col items-center justify-center p-[89px] px-5 md:w-[50%] sm:w-full">
-          <Text
-            className="mt-[318px] text-center text-[32px] text-indigo-600 md:text-3xl sm:text-[28px]"
-            size="txtMontserratRomanBold32Indigo600"
-          >
-            New Here?
-          </Text>
-          <Text
-            className="mt-3 w-full text-center text-[28px] leading-[36.00px] text-indigo-600 md:text-[26px] sm:text-2xl"
-            size="txtMontserratRomanSemiBold28Indigo600"
-          >
-            Create a free login to use Tutor4U’s platform!
-          </Text>
-          <div className="mb-[252px] mt-8 flex flex-col items-center justify-start gap-[46px]">
-            <Text
-              className="h-[50px] w-[158px] justify-center rounded-[10px] bg-blue-A200 py-[13px] pl-2.5 pr-3.5 text-center text-lg text-white-A700"
-              size="txtMontserratRomanBlack18"
-            >
-              <span className="font-montserrat font-black text-white-A700">
-                Tutor Sign
-              </span>
-            
-              <span className="font-montserrat font-black text-white-A700">
-                Up
-              </span>
-            </Text>
-            <Text
-              className="text-center text-lg text-white-A700"
-              size="txtMontserratRomanBlack18"
-            >
-              Student Sign-Up
-            </Text>
-          </div>
-        </div> */}
       </div>
     </div>
   );

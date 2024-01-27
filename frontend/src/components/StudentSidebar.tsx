@@ -72,29 +72,29 @@ const StudentSidebar: React.FC = () => {
         </div>
 
         <div className="flex w-full flex-col items-start">
-          <SidebarItem title={"Dashboard"} src={"images/img_analytics.png"} />
+          <SidebarItem title={"Dashboard"} src={"/images/img_analytics.png"} />
           <SidebarItem
             title={"Find A Tutor"}
-            src={"images/img_graduationcap.png"}
+            src={"/images/img_graduationcap.png"}
             link={"/findatutor"}
           />
           <SidebarItem
             title={"Lesson Requests"}
-            src={"images/img_googleforms.png"}
+            src={"/images/img_googleforms.png"}
           />
         </div>
       </div>
       <div className="flex w-full flex-col items-start">
         <SidebarItem
           title={"Profile Settings"}
-          src={"images/img_maleuser.png"}
+          src={"/images/img_maleuser.png"}
         />
         <SidebarItem
           title={"Account Details"}
-          src={"images/img_usdollarcircled.png"}
+          src={"/images/img_usdollarcircled.png"}
         />
-        <SidebarItem title={"FAQs"} src={"images/img_questions.png"} />
-        <SidebarItem title={"Logout"} src={"images/img_logout.png"} />
+        <SidebarItem title={"FAQs"} src={"/images/img_questions.png"} />
+        <SidebarItem title={"Logout"} src={"/images/img_logout.png"} />
       </div>
     </div>
   );
