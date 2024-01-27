@@ -1,6 +1,5 @@
 import React, { ReactNode, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import Button from "components/Button";
 import SignUpModal from "components/SignUpModal";
 
 const NavBar: React.FC = () => {
@@ -34,7 +33,7 @@ const NavBar: React.FC = () => {
         {!!children && (
           <img
             className="h-5 w-5 object-cover md:h-auto"
-            src="images/img_chevrondown.png"
+            src="/images/img_chevrondown.png"
             alt="chevrondown"
           />
         )}
@@ -59,7 +58,7 @@ const NavBar: React.FC = () => {
         {!!children && (
           <img
             className="h-5 w-5 object-cover md:h-auto"
-            src="images/img_chevrondown.png"
+            src="/images/img_chevrondown.png"
             alt="chevrondown"
           />
         )}
@@ -76,7 +75,7 @@ const NavBar: React.FC = () => {
           {/* Tutor4U logo */}
           <img
             className="common-pointer h-14 w-[222px] object-cover md:h-auto"
-            src="images/img_union1.png"
+            src="/images/img_union1.png"
             alt="Tutor4ULogo"
             onClick={() => navigate("/home")}
           />
@@ -162,7 +161,7 @@ const NavBar: React.FC = () => {
 
           <button
             className="bg-blue-700 border-2 hover:border-2 border-blue_gray-700 py-2 px-3 rounded-xl text-violet-100 shadow-lg hover:bg-blue-900 ease-in-out  hover:border-blue-900 duration-300 font-semibold hover:text-white-A700 hover:shadow-xl"
-            onClick={setDisplaySignup}
+            onClick={() => setDisplaySignup}
           >
             TUTOR SIGN-UP
           </button>

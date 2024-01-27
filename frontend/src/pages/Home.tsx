@@ -46,7 +46,7 @@ const Home: React.FC = () => {
                   color="blue_gray_700"
                   size="sm"
                   variant="fill"
-                  onClick={setDisplaySignup}
+                  onClick={() => setDisplaySignup(true)}
                 >
                   Register as a Tutor
                 </Button>
@@ -359,7 +359,7 @@ const Home: React.FC = () => {
                         color="blue_gray_700"
                         size="sm"
                         variant="fill"
-                        onClick={setDisplaySignup}
+                        onClick={() => setDisplaySignup(true)}
                       >
                         Sign Up Today
                       </Button>
@@ -389,7 +389,7 @@ const Home: React.FC = () => {
                         color="blue_gray_700"
                         size="sm"
                         variant="fill"
-                        onClick={setDisplaySignup}
+                        onClick={() => setDisplaySignup(true)}
                       >
                         Apply Now
                       </Button>

@@ -53,7 +53,7 @@ const FindATutor: React.FC = () => {
 
     const tutorList: Tutor[] = await response.json();
 
-    console.log(tutorList.map(tutor => tutor.user.first_name + " " + tutor.user.last_name),);
+    console.log(tutorList.map(tutor => tutor.id));//tutor.user.first_name + " " + tutor.user.last_name));
     setTutors(tutorList);
   };
 

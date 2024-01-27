@@ -44,9 +44,9 @@ const Sidebar: React.FC = () => {
               <g
                 id="Page-1"
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
               >
                 <g
                   id="Dribbble-Light-Preview"
@@ -65,36 +65,36 @@ const Sidebar: React.FC = () => {
           </svg>
           {open && (
             <img
-              src="images\img_union1.png"
+              src="/images\img_union1.png"
               className="m2 h-[60px] cursor-pointer pb-3"
             />
           )}
         </div>
 
         <div className="flex w-full flex-col items-start">
-          <SidebarItem title={"Dashboard"} src={"images/img_analytics.png"} />
+          <SidebarItem title={"Dashboard"} src={"/images/img_analytics.png"} />
           <SidebarItem
             title={"Find A Tutor"}
-            src={"images/img_graduationcap.png"}
+            src={"/images/img_graduationcap.png"}
             link={"/findatutor"}
           />
           <SidebarItem
             title={"Lesson Requests"}
-            src={"images/img_googleforms.png"}
+            src={"/images/img_googleforms.png"}
           />
         </div>
       </div>
       <div className="flex w-full flex-col items-start">
         <SidebarItem
           title={"Profile Settings"}
-          src={"images/img_maleuser.png"}
+          src={"/images/img_maleuser.png"}
         />
         <SidebarItem
           title={"Account Details"}
-          src={"images/img_usdollarcircled.png"}
+          src={"/images/img_usdollarcircled.png"}
         />
-        <SidebarItem title={"FAQs"} src={"images/img_questions.png"} />
-        <SidebarItem title={"Logout"} src={"images/img_logout.png"} />
+        <SidebarItem title={"FAQs"} src={"/images/img_questions.png"} />
+        <SidebarItem title={"Logout"} src={"/images/img_logout.png"} />
       </div>
     </div>
   );

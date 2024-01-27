@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from "./pages/NotFound";
 
-const TutorProfileLoggedIn = React.lazy(() => import("./pages/TutorProfileLoggedIn"));
 const Modals = React.lazy(() => import("./pages/Modals"));
 const TutorDashboard = React.lazy(() => import("./pages/TutorDashboard"));
 const TutorOnboarding = React.lazy(() => import("./pages/TutorOnboarding"));
@@ -26,7 +25,7 @@ const ProjectRoutes = () => {
           <Route path="*" element={<NotFound />} />
           <Route path="/home" element={<Home />} />
           <Route path="/findatutor" element={<FindATutor />} />
-          <Route path="/tutorprofile" element={<TutorProfile />} />
+          <Route path="/tutorprofile/:id" element={<TutorProfile />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/tutorcodeofconduct" element={<TutorCodeofConduct />} />
           <Route path="/loginpage" element={<LoginPage />} />
@@ -34,10 +33,6 @@ const ProjectRoutes = () => {
           <Route path="/tutordashboard" element={<TutorDashboard />} />
           <Route path="/testpage" element={<TestPage />} />
           <Route path="/modals" element={<Modals />} />
-          <Route
-            path="/tutorprofileloggedin"
-            element={<TutorProfileLoggedIn />}
-          />
         </Routes>
       </BrowserRouter>
     </React.Suspense>
