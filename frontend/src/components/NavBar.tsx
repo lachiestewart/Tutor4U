@@ -69,6 +69,7 @@ const NavBar: React.FC = () => {
 
   return (
     <>
+
       <header className="lg:flex-row flex w-full flex-col justify-between bg-blue_gray-700 px-[30px] py-[20px] md:gap-2.5 md:px-5">
         <div className="flex items-center justify-between p-2 md:w-full">
           {/* Tutor4U logo */}
@@ -162,7 +163,7 @@ const NavBar: React.FC = () => {
 
           <button
             className="rounded-xl border-2 border-blue_gray-700 bg-blue-700 py-2 px-3 font-semibold text-violet-100 shadow-lg duration-300 ease-in-out  hover:border-2 hover:border-blue-900 hover:bg-blue-900 hover:text-white-A700 hover:shadow-xl"
-            onClick={() => setDisplaySignup}
+            onClick={() => setDisplaySignup(true)}
           >
             TUTOR SIGN-UP
           </button>
