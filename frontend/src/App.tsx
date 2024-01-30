@@ -1,7 +1,12 @@
 import Routes from "./Routes";
+import UserProvider from "components/UserProvider";
 
 function App() {
-  return <Routes />;
-}
+  return (
+    <UserProvider>
+      <Routes/>
+    </UserProvider>
+  );
+};
 
 export default App;

@@ -56,27 +56,6 @@ const TutorCard: React.FC<TutorCardProps> = ({ tutor }) => {
   );
 };
 
-TutorCard.defaultProps = {
-  tutor: {
-    id: 1,
-    user: {
-      id: 1,
-      username: "username",
-      first_name: "first name",
-      last_name: "last name",
-      phone_number: "111 111 1111",
-      email: "username@email.com",
-      gender: "gender",
-      profile_photo: "url('images/img_frame13_231x220.png')",
-    },
-    rate: 99,
-    availability: "availability",
-    remote: true,
-    in_person: true,
-    location: "location",
-    qualification: "qualification",
-    about: "about",
-  },
-};
+
 
 export default TutorCard;

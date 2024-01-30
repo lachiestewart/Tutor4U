@@ -33,6 +33,8 @@ class UserManager(BaseUserManager):
 
         if not password:
             raise ValueError('Password is Required')
+        
+        extra_fields.setdefault('is_active', True)
 
         user = self.model(username=username, **extra_fields)
         user.set_password(password)
@@ -40,12 +42,9 @@ class UserManager(BaseUserManager):
         return user
 
     def create_superuser(self, username, password, **extra_fields):
-        extra_fields.setdefault('is_staff', True)
         extra_fields.setdefault('is_superuser', True)
         extra_fields.setdefault('is_active', True)
 
-        if extra_fields.get('is_staff') is not True:
-            raise ValueError('Superuser must have is_staff = True')
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser = True')
 
@@ -85,6 +84,7 @@ class Tutor(Model):
     id = BigAutoField(primary_key=True)
     user = OneToOneField(User, blank=False, on_delete=CASCADE)
     approved = BooleanField(default=False)
+    onboarding_stage = PositiveSmallIntegerField(default=0)
     rate = DecimalField(max_digits=4, decimal_places=2)
     availability = CharField(max_length=20, choices=availability_choices, default="")
     online = BooleanField(default=True)

@@ -116,7 +116,7 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
         placeholder="Search through tutors..."
         wrapClassName="border border-solid border-gray-400_02"
       />
-      <SearchBarCategory title={"Subjects"} src={"images/img_training.png"}>
+      <SearchBarCategory title={"Subjects"} src={"/images/img_training.png"}>
         <TickBoxes
           category={"subjects"}
           values={["English", "Mathematics", "Chemistry", "Spanish"]}
@@ -126,7 +126,7 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
 
       <SearchBarCategory
         title={"Tutoring Level"}
-        src={"images/img_university.png"}
+        src={"/images/img_university.png"}
       >
         <TickBoxes
           category={"levels"}
@@ -135,12 +135,12 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
         />
       </SearchBarCategory>
 
-      <SearchBarCategory title={"Tutor Rating"} src={"images/img_star.png"}>
+      <SearchBarCategory title={"Tutor Rating"} src={"/images/img_star.png"}>
         things for tutor rating input
         {/* <TickBoxes category={"min_rating"} values={["NCEA 3", "Uni 1", "Uni 2"]} /> */}
       </SearchBarCategory>
 
-      <SearchBarCategory title={"Location"} src={"images/img_location.png"}>
+      <SearchBarCategory title={"Location"} src={"/images/img_location.png"}>
         <TickBoxes
           category={"location"}
           values={["Auckland", "Christchurch"]}
@@ -148,7 +148,7 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
         />
       </SearchBarCategory>
 
-      <SearchBarCategory title={"Availability"} src={"images/img_ok.png"}>
+      <SearchBarCategory title={"Availability"} src={"/images/img_ok.png"}>
         <TickBoxes
           category={"availability"}
           values={["Available", "Limited Availability"]}
@@ -156,7 +156,7 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
         />
       </SearchBarCategory>
 
-      <SearchBarCategory title={"Gender"} src={"images/img_toilet.png"}>
+      <SearchBarCategory title={"Gender"} src={"/images/img_toilet.png"}>
         <TickBoxes
           category={"gender"}
           values={["Male", "Female", "Non-Binary", "Other"]}
@@ -166,7 +166,7 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
 
       <SearchBarCategory
         title={"Lesson Format"}
-        src={"images/img_knowledgesharing.png"}
+        src={"/images/img_knowledgesharing.png"}
       >
         <TickBoxes
           category={"lesson_format"}
@@ -175,7 +175,7 @@ const TutorFilterSidebar: React.FC<TutorFilterSidebarProps> = ({
         />
       </SearchBarCategory>
 
-      <SearchBarCategory title={"Tutor Rate"} src={"images/img_cash.png"}>
+      <SearchBarCategory title={"Tutor Rate"} src={"/images/img_cash.png"}>
         things for tutor hourly rate input min and max
         {/* <TickBoxes category={"lesson_format"} values={["Online", "Face to face"]} /> */}
       </SearchBarCategory>

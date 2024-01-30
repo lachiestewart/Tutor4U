@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 
 import NavBar from "../components/NavBar";
 import TutorCard from "../components/TutorCard";
 import TutorFilterSidebar from "../components/TutorFilterSidebar";
-import { Tutor } from "interfaces";
+import { Tutor, User } from "interfaces";
 import Button from "../components/Button";
 import StudentSidebar from "components/StudentSidebar";
 import SubjectRequestModal from "components/SubjectRequestModal";
+import { UserContext } from "components/UserProvider";
 
 const TOTAL_TUTORS = 561;
 
@@ -35,11 +36,14 @@ const defaultParams: SearchParams = {
 };
 
 const FindATutor: React.FC = () => {
-  const [loggedIn, setLoggedIn] = useState<boolean>(true);
+
+  const { user, setUser } = useContext(UserContext);
+
   const [searchParams, setSearchParams] = useState<SearchParams>(defaultParams);
   const [tutors, setTutors] = useState<Tutor[]>([]);
-  const [displaySubjectRequest, setdisplaySubjectRequest] =
-    useState<boolean>(false);
+  const [displaySubjectRequest, setdisplaySubjectRequest] = useState<boolean>(false);
+
+  const handleClick = () => user ? setUser(null) : setUser({email: "sup bitch"} as User);
 
   const updateTutors = async () => {
     const response: Response = await fetch(
@@ -72,6 +76,8 @@ const FindATutor: React.FC = () => {
 
   return (
     <>
+    {user?.email}
+    <button onClick={handleClick}>click to set site user to blank user</button>
       {/* <div
         className={`relative flex w-full ${loggedIn ? "md:flex-row" : "flex-col"} items-start justify-center bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
       > */}
@@ -79,11 +85,11 @@ const FindATutor: React.FC = () => {
         <SubjectRequestModal onHide={() => setdisplaySubjectRequest(false)} />
       )}
       <div
-        className={`relative flex w-full items-start justify-center gap-2.5 ${loggedIn ? "flex-row" : "flex-col"} bg-gray-300 font-montserrat `}
+        className={`relative flex w-full items-start justify-center gap-2.5 ${user ? "flex-row" : "flex-col"} bg-gray-300 font-montserrat `}
       >
-        {loggedIn ? <StudentSidebar /> : <NavBar />}
+        {user ? <StudentSidebar /> : <NavBar />}
         <div
-          className={`mx-auto flex w-[90%] flex-col items-center justify-center gap-4 ${loggedIn ? "" : ""} p-2.5 py-6 md:px-5`}
+          className={`mx-auto flex w-[90%] flex-col items-center justify-center gap-4 ${user ? "" : ""} p-2.5 py-6 md:px-5`}
         >
           <div className="mb-4 flex w-auto flex-col items-center justify-start gap-4 md:w-auto">
             <h1>Find A Tutor</h1>

@@ -33,7 +33,7 @@ class TutorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tutor
-        fields = ['id', 'user', 'rate', 'availability', 'online', 'face_to_face', 'location', 'qualification', 'about']
+        fields = ['id', 'user', 'approved', 'onboarding_stage', 'rate', 'availability', 'online', 'face_to_face', 'location', 'qualification', 'about']
 
 
 class OfferSerializer(serializers.ModelSerializer):

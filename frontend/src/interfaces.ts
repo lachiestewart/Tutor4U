@@ -12,6 +12,8 @@ export interface User {
 export interface Tutor {
   id: number;
   user: User;
+  approved: boolean;
+  onboarding_stage: number;
   rate: number;
   availability: string;
   remote: boolean;
