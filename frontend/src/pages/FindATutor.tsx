@@ -43,8 +43,6 @@ const FindATutor: React.FC = () => {
   const [tutors, setTutors] = useState<Tutor[]>([]);
   const [displaySubjectRequest, setdisplaySubjectRequest] = useState<boolean>(false);
 
-  const handleClick = () => user ? setUser(null) : setUser({email: "sup bitch"} as User);
-
   const updateTutors = async () => {
     const response: Response = await fetch(
       `http://127.0.0.1:8000/api/all-tutors/`,
@@ -76,8 +74,6 @@ const FindATutor: React.FC = () => {
 
   return (
     <>
-    {user?.email}
-    <button onClick={handleClick}>click to set site user to blank user</button>
       {/* <div
         className={`relative flex w-full ${loggedIn ? "md:flex-row" : "flex-col"} items-start justify-center bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
       > */}
