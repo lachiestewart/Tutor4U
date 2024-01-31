@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 
 import ForgotPasswordModal from "components/ForgotPasswordModal";
 import SignUpModal from "components/SignUpModal";
 import Input from "components/Input";
 
 import NavBar from "components/NavBar";
+import { UserContext } from "components/UserProvider";
 
 interface LoginForm {
   email: string;
@@ -16,6 +17,8 @@ const LoginPage: React.FC = () => {
     email: "",
     password: "",
   });
+
+  const { user, setUser } = useContext(UserContext);
 
   const [displaySignup, setDisplaySignup] = useState<boolean>(false);
   const [displayForgotPassword, setDisplayForgotPassword] =

@@ -37,6 +37,8 @@ const defaultParams: SearchParams = {
 
 const FindATutor: React.FC = () => {
 
+  //write function to get default search param options from backend and num of tutors
+
   const { user, setUser } = useContext(UserContext);
 
   const [searchParams, setSearchParams] = useState<SearchParams>(defaultParams);
@@ -74,9 +76,6 @@ const FindATutor: React.FC = () => {
 
   return (
     <>
-      {/* <div
-        className={`relative flex w-full ${loggedIn ? "md:flex-row" : "flex-col"} items-start justify-center bg-gray-300 font-montserrat md:w-full md:flex-col md:gap-5 sm:w-full sm:flex-col sm:gap-5`}
-      > */}
       {displaySubjectRequest && (
         <SubjectRequestModal onHide={() => setdisplaySubjectRequest(false)} />
       )}
