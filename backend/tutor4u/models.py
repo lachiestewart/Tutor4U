@@ -45,13 +45,9 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_active', True)
 
         user = self.model(email=self.normalize_email(email), **extra_fields)
-        # if not password.startswith(('pbkdf2_sha256$', 'bcrypt$', 'argon2')):
-        #     password = make_password(password)
-        print("original password", password)
 
         user.set_password(password)
 
-        print("hashed password", user.password)
         user.save()
         return user
 
@@ -70,8 +66,9 @@ class User(AbstractUser):
     """Extends the AbstractUser class, adds relevant fields"""
 
     # Fields
-    username = CharField(max_length=255, default=uuid.uuid4, unique=True)
+    id = BigAutoField(primary_key=True)
     email = EmailField(unique=True)
+    username = None  # Remove the username field
     phone_number = CharField(max_length=15, null=True, blank=True)
     gender = CharField(max_length=10, choices=gender_choices, default="")
     profile_photo = ImageField(upload_to=MEDIA_DIR, validators=[
@@ -84,8 +81,13 @@ class User(AbstractUser):
     REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.first_name + " " + self.last_name if self.first_name or self.last_name else self.email
-
+        if self.first_name or self.last_name:
+            return self.first_name + " " + self.last_name
+        elif self.email:
+            return self.email
+        else:
+            return "placeholder"
+    
 
 class Student(Model):
     """Extends the Model class, stores info about Users who are Students"""
@@ -105,7 +107,7 @@ class Tutor(Model):
     id = BigAutoField(primary_key=True)
     user = OneToOneField(User, blank=False, on_delete=CASCADE)
     approved = BooleanField(default=False)
-    onboarding_stage = PositiveSmallIntegerField(default=0)
+    onboarding_stage = PositiveSmallIntegerField(default=1, choices=[(1, 1), (2, 2), (3, 3), (4, 4)])
     rate = DecimalField(max_digits=4, decimal_places=2)
     availability = CharField(
         max_length=20, choices=availability_choices, default="")
@@ -114,6 +116,9 @@ class Tutor(Model):
     location = CharField(max_length=30, choices=location_choices)
     qualification = CharField(max_length=50)
     about = CharField(max_length=200)
+    address = CharField(max_length=100, default="")
+    linkedIn = URLField(max_length=200, null=True, blank=True)
+    website = URLField(max_length=200, null=True, blank=True)
 
     def __str__(self):
         return str(self.user)
@@ -160,3 +165,16 @@ class Lesson(Model):
 
     def __str__(self):
         return f"{self.tutor.user} - {self.student.user} - {self.subject}"
+
+
+class Onboarding(Model):
+    """Extends the Model class, stores the onboarding progress of a Tutor"""
+
+    # Fields
+    id = BigAutoField(primary_key=True)
+    tutor = ForeignKey(Tutor, blank=False, on_delete=CASCADE)
+    stage = PositiveSmallIntegerField(choices=[(1, 1), (2, 2), (3, 3), (4, 4)])
+
+
+    def __str__(self):
+        return f"{self.tutor.user} - {self.stage}"

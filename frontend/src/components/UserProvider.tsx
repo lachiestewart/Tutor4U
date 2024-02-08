@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { User } from 'interfaces';
 
 
@@ -23,6 +23,10 @@ type UserProviderProps = {
 const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
 
     const [user, setUser] = useState<User | null>(null);
+
+    useEffect(() => {console.log("updated user")},
+        [user]
+    );
 
     return (
         <UserContext.Provider value={{ user, setUser }}>

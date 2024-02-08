@@ -97,7 +97,7 @@ const SignUpModal = (props: SignUpModalProps) => {
                 <input
                   required
                   type="password"
-                  onChange={(e) => handleChange("password", e)}
+                  onChange={(e) => handleChange("password", e.target.value)}
                   placeholder="Hopefully a stronger password than abcde12345"
                   className="h-auto w-full items-start rounded-[10px] bg-white-A700 px-5 py-3"
                 ></input>
@@ -112,18 +112,12 @@ const SignUpModal = (props: SignUpModalProps) => {
                 <input
                   required
                   type="password"
-                  onChange={(e) => handleChange("password", e)}
+                  onChange={(e) => handleChange("password", e.target.value)}
                   placeholder="Just to make sure it's correct :D"
                   className="h-auto w-full items-start rounded-[10px] bg-white-A700 px-5 py-3"
                 ></input>
               </div>
               <Button>Sign Me Up!</Button>
-              {/* <button
-                className="w-1/2 min-w-[83px] rounded-[10px] bg-blue_gray-700 p-[5px] py-3 text-center text-sm font-medium text-white-A700"
-                type="submit"
-              >
-                Sign Up
-              </button> */}
             </form>
           </div>
         </div>

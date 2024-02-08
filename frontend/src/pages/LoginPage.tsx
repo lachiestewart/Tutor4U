@@ -6,6 +6,9 @@ import Input from "components/Input";
 
 import NavBar from "components/NavBar";
 import { UserContext } from "components/UserProvider";
+import { login } from "api";
+import { User } from "interfaces";
+import { useNavigate } from "react-router-dom";
 
 interface LoginForm {
   email: string;
@@ -17,6 +20,8 @@ const LoginPage: React.FC = () => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const { user, setUser } = useContext(UserContext);
 
@@ -33,7 +38,7 @@ const LoginPage: React.FC = () => {
     setLoginForm((prevState) => ({ ...prevState, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     /** Handles validation and updating the form */
     e.preventDefault();
     const validForm: boolean = Object.keys(loginForm)
@@ -42,6 +47,15 @@ const LoginPage: React.FC = () => {
     if (!validForm) return;
     console.log("messageForm", loginForm);
     //send user info to backend get user info and redirect
+    try {
+      const loginUser: User = await login(loginForm.email, loginForm.password);
+      console.log("loginUser", loginUser);
+      setUser(loginUser);
+      navigate("/home");
+    }
+    catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -82,6 +96,7 @@ const LoginPage: React.FC = () => {
                 className="w-full"
                 wrapClassName="flex h-[50px] justify-center"
                 labelClassName="text-white-A700"
+                type="password"
               ></Input>
               <div className="flex min-w-[60%] flex-row gap-5">
                 <button

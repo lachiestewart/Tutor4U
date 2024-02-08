@@ -6,6 +6,7 @@ export interface User {
   phone_number: string;
   gender: string;
   profile_photo: string;
+  role?: 'student' | 'tutor' | null; 
 }
 
 export interface Tutor {

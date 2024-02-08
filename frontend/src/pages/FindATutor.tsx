@@ -8,6 +8,7 @@ import Button from "../components/Button";
 import StudentSidebar from "components/StudentSidebar";
 import SubjectRequestModal from "components/SubjectRequestModal";
 import { UserContext } from "components/UserProvider";
+import { tutorSearch } from "api";
 
 const TOTAL_TUTORS = 561;
 
@@ -46,25 +47,18 @@ const FindATutor: React.FC = () => {
   const [displaySubjectRequest, setdisplaySubjectRequest] = useState<boolean>(false);
 
   const updateTutors = async () => {
-    const response: Response = await fetch(
-      `http://127.0.0.1:8000/api/all-tutors/`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(searchParams),
-      },
-    );
-
-    const tutorList: Tutor[] = await response.json();
-
-    console.log(
-      tutorList.map(
-        (tutor) => tutor.user.first_name + " " + tutor.user.last_name,
-      ),
-    );
-    setTutors(tutorList);
+    try {
+      const tutorList: Tutor[] = await tutorSearch(searchParams);
+      console.log(
+        tutorList.map(
+          (tutor) => tutor.user.first_name + " " + tutor.user.last_name,
+        ),
+      );
+      setTutors(tutorList);
+    }
+    catch (error) {
+      console.error(error);
+    }
   };
 
   const handleChange = (params: SearchParams) => setSearchParams(params);

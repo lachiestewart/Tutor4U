@@ -1,9 +1,11 @@
-import dotenv from 'dotenv';
+//import dotenv from 'dotenv';
 
-dotenv.config();
+import { SearchParams } from "pages/FindATutor";
+
+//dotenv.config();
 
 
-const BASE_URL = process.env.BACKEND_BASE_URL;
+const BASE_URL = "http://127.0.0.1:8000/" //process.env.BACKEND_BASE_URL;
 
 const fetchData = async (endpoint: string, request: RequestInit) => {
     
@@ -24,8 +26,9 @@ const fetchData = async (endpoint: string, request: RequestInit) => {
     }
 }
 
-const fetchTokens = async (email: string, password: string) => {
-    const endpoint: string = `/api/login`;
+
+export const login = async (email: string, password: string) => {
+    const endpoint: string = `api/login`;
     const request: RequestInit = {
         method: 'POST',
         body: JSON.stringify({
@@ -39,10 +42,22 @@ const fetchTokens = async (email: string, password: string) => {
     try {
         return await fetchData(endpoint, request);
     } catch (error) {
-        console.error(error);
+        throw error;
     }
 }
 
-
-
-export default fetchData;
+export const tutorSearch = async (searchParams: SearchParams) => {
+    const endpoint: string = `api/all-tutors`;
+    const request: RequestInit = {
+        method: 'POST',
+        body: JSON.stringify(searchParams),
+        headers: new Headers({
+            'Content-Type': 'application/json',
+        }),
+    }
+    try {
+        return await fetchData(endpoint, request);
+    } catch (error) {
+        throw error;
+    }
+  };

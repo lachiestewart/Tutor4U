@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { UserContext } from "./UserProvider";
 
 const TutorSidebar: React.FC = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState<boolean>(false);
+
+  const { user, setUser } = useContext(UserContext);
 
   type TutorSidebarItemProps = {
     title: string;
@@ -87,6 +90,12 @@ const TutorSidebar: React.FC = () => {
             src={"/images/img_graduationcap.png"}
             link={"/jobboard"}
           />
+
+          {!user?.approved &&<SidebarItem
+            title={"Onboarding"}
+            src={"/images/img_graduationcap.png"}
+            link={"/tutoronboarding"}
+          />}
         </div>
       </div>
       <div className="flex w-full flex-col items-start">
